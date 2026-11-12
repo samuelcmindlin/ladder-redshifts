@@ -1,0 +1,708 @@
+{
+ "n_sources": 200,
+ "population": "SPT-like z ~ N(3.9, 1.1) clipped to 1.5-7",
+ "scenarios": {
+  "bright (CO(4-3) S/N 12 per tuning)": {
+   "references": {
+    "Band 3 5-tuning scan (84.2-114.9)": {
+     "per_tuning": [
+      0.725,
+      0.005,
+      0.955
+     ],
+     "fixed_total": [
+      0.59,
+      0.005,
+      0.75
+     ],
+     "n_tunings": 5,
+     "held_out": {
+      "per_tuning": [
+       0.68,
+       0.0,
+       0.965
+      ],
+      "fixed_total": [
+       0.56,
+       0.0,
+       0.665
+      ]
+     }
+    },
+    "Band 2 full, 7 tunings (67-116)": {
+     "per_tuning": [
+      0.9,
+      0.005,
+      0.97
+     ],
+     "fixed_total": [
+      0.805,
+      0.0,
+      0.67
+     ],
+     "n_tunings": 7,
+     "held_out": {
+      "per_tuning": [
+       0.86,
+       0.005,
+       0.97
+      ],
+      "fixed_total": [
+       0.735,
+       0.005,
+       0.55
+      ]
+     }
+    },
+    "Band 2 SV-like, 5 tunings (76.9-111)": {
+     "per_tuning": [
+      0.76,
+      0.0,
+      0.95
+     ],
+     "fixed_total": [
+      0.67,
+      0.005,
+      0.73
+     ],
+     "n_tunings": 5,
+     "held_out": {
+      "per_tuning": [
+       0.77,
+       0.0,
+       0.96
+      ],
+      "fixed_total": [
+       0.65,
+       0.0,
+       0.66
+      ]
+     }
+    }
+   },
+   "b2_now_per_tuning": [
+    {
+     "n_tunings": 1,
+     "positions": [
+      82.0
+     ],
+     "confident_correct": 0.07,
+     "confidently_wrong": 0.0,
+     "any_line_5sigma": 0.43,
+     "held_out": {
+      "confident_correct": 0.055,
+      "confidently_wrong": 0.0,
+      "any_line_5sigma": 0.425
+     }
+    },
+    {
+     "n_tunings": 2,
+     "positions": [
+      82.0,
+      104.0
+     ],
+     "confident_correct": 0.26,
+     "confidently_wrong": 0.0,
+     "any_line_5sigma": 0.7,
+     "held_out": {
+      "confident_correct": 0.205,
+      "confidently_wrong": 0.0,
+      "any_line_5sigma": 0.645
+     }
+    },
+    {
+     "n_tunings": 3,
+     "positions": [
+      82.0,
+      104.0,
+      70.0
+     ],
+     "confident_correct": 0.555,
+     "confidently_wrong": 0.005,
+     "any_line_5sigma": 0.83,
+     "held_out": {
+      "confident_correct": 0.5,
+      "confidently_wrong": 0.015,
+      "any_line_5sigma": 0.82
+     }
+    },
+    {
+     "n_tunings": 4,
+     "positions": [
+      82.0,
+      104.0,
+      70.0,
+      75.0
+     ],
+     "confident_correct": 0.715,
+     "confidently_wrong": 0.0,
+     "any_line_5sigma": 0.855,
+     "held_out": {
+      "confident_correct": 0.68,
+      "confidently_wrong": 0.01,
+      "any_line_5sigma": 0.84
+     }
+    },
+    {
+     "n_tunings": 5,
+     "positions": [
+      82.0,
+      104.0,
+      70.0,
+      75.0,
+      108.0
+     ],
+     "confident_correct": 0.84,
+     "confidently_wrong": 0.005,
+     "any_line_5sigma": 0.905,
+     "held_out": {
+      "confident_correct": 0.76,
+      "confidently_wrong": 0.015,
+      "any_line_5sigma": 0.875
+     }
+    }
+   ],
+   "b2_now_fixed_total": [
+    {
+     "n_tunings": 1,
+     "positions": [
+      82.0
+     ],
+     "confident_correct": 0.07,
+     "confidently_wrong": 0.0,
+     "any_line_5sigma": 0.43,
+     "held_out": {
+      "confident_correct": 0.055,
+      "confidently_wrong": 0.0,
+      "any_line_5sigma": 0.425
+     }
+    },
+    {
+     "n_tunings": 2,
+     "positions": [
+      82.0,
+      104.0
+     ],
+     "confident_correct": 0.25,
+     "confidently_wrong": 0.0,
+     "any_line_5sigma": 0.645,
+     "held_out": {
+      "confident_correct": 0.205,
+      "confidently_wrong": 0.0,
+      "any_line_5sigma": 0.57
+     }
+    },
+    {
+     "n_tunings": 3,
+     "positions": [
+      82.0,
+      104.0,
+      74.0
+     ],
+     "confident_correct": 0.53,
+     "confidently_wrong": 0.0,
+     "any_line_5sigma": 0.695,
+     "held_out": {
+      "confident_correct": 0.49,
+      "confidently_wrong": 0.0,
+      "any_line_5sigma": 0.615
+     }
+    },
+    {
+     "n_tunings": 4,
+     "positions": [
+      82.0,
+      104.0,
+      74.0,
+      67.0
+     ],
+     "confident_correct": 0.615,
+     "confidently_wrong": 0.0,
+     "any_line_5sigma": 0.675,
+     "held_out": {
+      "confident_correct": 0.555,
+      "confidently_wrong": 0.01,
+      "any_line_5sigma": 0.59
+     }
+    }
+   ],
+   "b2_wsu_per_tuning": [
+    {
+     "n_tunings": 1,
+     "positions": [
+      96.0
+     ],
+     "confident_correct": 0.71,
+     "confidently_wrong": 0.0,
+     "any_line_5sigma": 0.935,
+     "held_out": {
+      "confident_correct": 0.655,
+      "confidently_wrong": 0.0,
+      "any_line_5sigma": 0.91
+     }
+    },
+    {
+     "n_tunings": 2,
+     "positions": [
+      96.0,
+      79.0
+     ],
+     "confident_correct": 0.865,
+     "confidently_wrong": 0.005,
+     "any_line_5sigma": 0.96,
+     "held_out": {
+      "confident_correct": 0.85,
+      "confidently_wrong": 0.005,
+      "any_line_5sigma": 0.965
+     }
+    }
+   ],
+   "b2_wsu_fixed_total": [
+    {
+     "n_tunings": 1,
+     "positions": [
+      96.0
+     ],
+     "confident_correct": 0.71,
+     "confidently_wrong": 0.0,
+     "any_line_5sigma": 0.935,
+     "held_out": {
+      "confident_correct": 0.655,
+      "confidently_wrong": 0.0,
+      "any_line_5sigma": 0.91
+     }
+    },
+    {
+     "n_tunings": 2,
+     "positions": [
+      96.0,
+      79.0
+     ],
+     "confident_correct": 0.85,
+     "confidently_wrong": 0.0,
+     "any_line_5sigma": 0.93,
+     "held_out": {
+      "confident_correct": 0.82,
+      "confidently_wrong": 0.005,
+      "any_line_5sigma": 0.935
+     }
+    }
+   ],
+   "b3_now_per_tuning": [
+    {
+     "n_tunings": 1,
+     "positions": [
+      96.0
+     ],
+     "confident_correct": 0.03,
+     "confidently_wrong": 0.0,
+     "any_line_5sigma": 0.35,
+     "held_out": {
+      "confident_correct": 0.045,
+      "confidently_wrong": 0.0,
+      "any_line_5sigma": 0.43
+     }
+    },
+    {
+     "n_tunings": 2,
+     "positions": [
+      96.0,
+      102.0
+     ],
+     "confident_correct": 0.235,
+     "confidently_wrong": 0.0,
+     "any_line_5sigma": 0.585,
+     "held_out": {
+      "confident_correct": 0.28,
+      "confidently_wrong": 0.0,
+      "any_line_5sigma": 0.7
+     }
+    },
+    {
+     "n_tunings": 3,
+     "positions": [
+      96.0,
+      102.0,
+      98.0
+     ],
+     "confident_correct": 0.37,
+     "confidently_wrong": 0.0,
+     "any_line_5sigma": 0.76,
+     "held_out": {
+      "confident_correct": 0.35,
+      "confidently_wrong": 0.0,
+      "any_line_5sigma": 0.815
+     }
+    },
+    {
+     "n_tunings": 4,
+     "positions": [
+      96.0,
+      102.0,
+      98.0,
+      106.0
+     ],
+     "confident_correct": 0.55,
+     "confidently_wrong": 0.005,
+     "any_line_5sigma": 0.9,
+     "held_out": {
+      "confident_correct": 0.49,
+      "confidently_wrong": 0.0,
+      "any_line_5sigma": 0.935
+     }
+    }
+   ]
+  },
+  "faint (CO(4-3) S/N 5 per tuning)": {
+   "references": {
+    "Band 3 5-tuning scan (84.2-114.9)": {
+     "per_tuning": [
+      0.545,
+      0.005,
+      0.68
+     ],
+     "fixed_total": [
+      0.115,
+      0.0,
+      0.07
+     ],
+     "n_tunings": 5,
+     "held_out": {
+      "per_tuning": [
+       0.54,
+       0.0,
+       0.595
+      ],
+      "fixed_total": [
+       0.105,
+       0.0,
+       0.085
+      ]
+     }
+    },
+    "Band 2 full, 7 tunings (67-116)": {
+     "per_tuning": [
+      0.825,
+      0.0,
+      0.75
+     ],
+     "fixed_total": [
+      0.175,
+      0.0,
+      0.04
+     ],
+     "n_tunings": 7,
+     "held_out": {
+      "per_tuning": [
+       0.765,
+       0.005,
+       0.63
+      ],
+      "fixed_total": [
+       0.13,
+       0.005,
+       0.065
+      ]
+     }
+    },
+    "Band 2 SV-like, 5 tunings (76.9-111)": {
+     "per_tuning": [
+      0.655,
+      0.005,
+      0.655
+     ],
+     "fixed_total": [
+      0.145,
+      0.0,
+      0.065
+     ],
+     "n_tunings": 5,
+     "held_out": {
+      "per_tuning": [
+       0.64,
+       0.005,
+       0.58
+      ],
+      "fixed_total": [
+       0.16,
+       0.0,
+       0.075
+      ]
+     }
+    }
+   },
+   "b2_now_per_tuning": [
+    {
+     "n_tunings": 1,
+     "positions": [
+      82.0
+     ],
+     "confident_correct": 0.045,
+     "confidently_wrong": 0.0,
+     "any_line_5sigma": 0.2,
+     "held_out": {
+      "confident_correct": 0.035,
+      "confidently_wrong": 0.0,
+      "any_line_5sigma": 0.2
+     }
+    },
+    {
+     "n_tunings": 2,
+     "positions": [
+      82.0,
+      103.0
+     ],
+     "confident_correct": 0.225,
+     "confidently_wrong": 0.0,
+     "any_line_5sigma": 0.38,
+     "held_out": {
+      "confident_correct": 0.18,
+      "confidently_wrong": 0.0,
+      "any_line_5sigma": 0.34
+     }
+    },
+    {
+     "n_tunings": 3,
+     "positions": [
+      82.0,
+      103.0,
+      75.0
+     ],
+     "confident_correct": 0.425,
+     "confidently_wrong": 0.0,
+     "any_line_5sigma": 0.475,
+     "held_out": {
+      "confident_correct": 0.415,
+      "confidently_wrong": 0.0,
+      "any_line_5sigma": 0.425
+     }
+    },
+    {
+     "n_tunings": 4,
+     "positions": [
+      82.0,
+      103.0,
+      75.0,
+      93.0
+     ],
+     "confident_correct": 0.56,
+     "confidently_wrong": 0.0,
+     "any_line_5sigma": 0.6,
+     "held_out": {
+      "confident_correct": 0.505,
+      "confidently_wrong": 0.0,
+      "any_line_5sigma": 0.54
+     }
+    },
+    {
+     "n_tunings": 5,
+     "positions": [
+      82.0,
+      103.0,
+      75.0,
+      93.0,
+      67.0
+     ],
+     "confident_correct": 0.7,
+     "confidently_wrong": 0.0,
+     "any_line_5sigma": 0.63,
+     "held_out": {
+      "confident_correct": 0.63,
+      "confidently_wrong": 0.005,
+      "any_line_5sigma": 0.57
+     }
+    }
+   ],
+   "b2_now_fixed_total": [
+    {
+     "n_tunings": 1,
+     "positions": [
+      82.0
+     ],
+     "confident_correct": 0.045,
+     "confidently_wrong": 0.0,
+     "any_line_5sigma": 0.2,
+     "held_out": {
+      "confident_correct": 0.035,
+      "confidently_wrong": 0.0,
+      "any_line_5sigma": 0.2
+     }
+    },
+    {
+     "n_tunings": 2,
+     "positions": [
+      82.0,
+      103.0
+     ],
+     "confident_correct": 0.16,
+     "confidently_wrong": 0.0,
+     "any_line_5sigma": 0.19,
+     "held_out": {
+      "confident_correct": 0.135,
+      "confidently_wrong": 0.0,
+      "any_line_5sigma": 0.15
+     }
+    },
+    {
+     "n_tunings": 3,
+     "positions": [
+      82.0,
+      103.0,
+      72.0
+     ],
+     "confident_correct": 0.195,
+     "confidently_wrong": 0.0,
+     "any_line_5sigma": 0.145,
+     "held_out": {
+      "confident_correct": 0.13,
+      "confidently_wrong": 0.0,
+      "any_line_5sigma": 0.095
+     }
+    },
+    {
+     "n_tunings": 4,
+     "positions": [
+      82.0,
+      103.0,
+      72.0,
+      95.0
+     ],
+     "confident_correct": 0.185,
+     "confidently_wrong": 0.0,
+     "any_line_5sigma": 0.09,
+     "held_out": {
+      "confident_correct": 0.175,
+      "confidently_wrong": 0.005,
+      "any_line_5sigma": 0.08
+     }
+    }
+   ],
+   "b2_wsu_per_tuning": [
+    {
+     "n_tunings": 1,
+     "positions": [
+      93.0
+     ],
+     "confident_correct": 0.615,
+     "confidently_wrong": 0.005,
+     "any_line_5sigma": 0.64,
+     "held_out": {
+      "confident_correct": 0.605,
+      "confidently_wrong": 0.0,
+      "any_line_5sigma": 0.555
+     }
+    },
+    {
+     "n_tunings": 2,
+     "positions": [
+      93.0,
+      98.0
+     ],
+     "confident_correct": 0.76,
+     "confidently_wrong": 0.0,
+     "any_line_5sigma": 0.73,
+     "held_out": {
+      "confident_correct": 0.71,
+      "confidently_wrong": 0.005,
+      "any_line_5sigma": 0.62
+     }
+    }
+   ],
+   "b2_wsu_fixed_total": [
+    {
+     "n_tunings": 1,
+     "positions": [
+      93.0
+     ],
+     "confident_correct": 0.615,
+     "confidently_wrong": 0.005,
+     "any_line_5sigma": 0.64,
+     "held_out": {
+      "confident_correct": 0.605,
+      "confidently_wrong": 0.0,
+      "any_line_5sigma": 0.555
+     }
+    },
+    {
+     "n_tunings": 2,
+     "positions": [
+      93.0,
+      77.0
+     ],
+     "confident_correct": 0.6,
+     "confidently_wrong": 0.0,
+     "any_line_5sigma": 0.33,
+     "held_out": {
+      "confident_correct": 0.59,
+      "confidently_wrong": 0.005,
+      "any_line_5sigma": 0.295
+     }
+    }
+   ],
+   "b3_now_per_tuning": [
+    {
+     "n_tunings": 1,
+     "positions": [
+      92.0
+     ],
+     "confident_correct": 0.025,
+     "confidently_wrong": 0.0,
+     "any_line_5sigma": 0.185,
+     "held_out": {
+      "confident_correct": 0.015,
+      "confidently_wrong": 0.0,
+      "any_line_5sigma": 0.22
+     }
+    },
+    {
+     "n_tunings": 2,
+     "positions": [
+      92.0,
+      98.0
+     ],
+     "confident_correct": 0.185,
+     "confidently_wrong": 0.0,
+     "any_line_5sigma": 0.37,
+     "held_out": {
+      "confident_correct": 0.175,
+      "confidently_wrong": 0.0,
+      "any_line_5sigma": 0.345
+     }
+    },
+    {
+     "n_tunings": 3,
+     "positions": [
+      92.0,
+      98.0,
+      107.0
+     ],
+     "confident_correct": 0.31,
+     "confidently_wrong": 0.0,
+     "any_line_5sigma": 0.535,
+     "held_out": {
+      "confident_correct": 0.255,
+      "confidently_wrong": 0.0,
+      "any_line_5sigma": 0.465
+     }
+    },
+    {
+     "n_tunings": 4,
+     "positions": [
+      92.0,
+      98.0,
+      107.0,
+      102.0
+     ],
+     "confident_correct": 0.455,
+     "confidently_wrong": 0.0,
+     "any_line_5sigma": 0.62,
+     "held_out": {
+      "confident_correct": 0.425,
+      "confidently_wrong": 0.0,
+      "any_line_5sigma": 0.55
+     }
+    }
+   ]
+  }
+ }
+}

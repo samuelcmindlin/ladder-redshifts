@@ -1,0 +1,338 @@
+{
+ "target": "SPT0403-58",
+ "target_offset_arcsec": [
+  0.0,
+  0.0
+ ],
+ "position_from": "phase centre (no source-finder detection within 10\")",
+ "settings": {
+  "nondet_scale": 10.0,
+  "dv_kms": 50.0,
+  "match_beams": 0.5,
+  "max_offset_arcsec": 10.0,
+  "require_detection": false
+ },
+ "counts": {
+  "measured": 2,
+  "zero-filled": 18,
+  "dropped": 0
+ },
+ "windows": [
+  {
+   "window": "SPT0403-58_Xe7_spw25",
+   "file": "member.uid___A001_X8a9_Xe7.SPT0403-58_sci.spw25.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    84.0891,
+    85.9408
+   ],
+   "native_kms": 27.6,
+   "bin": 2,
+   "sigma_mjy": 1.663,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0403-58_Xe7_spw27",
+   "file": "member.uid___A001_X8a9_Xe7.SPT0403-58_sci.spw27.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    85.9642,
+    87.8159
+   ],
+   "native_kms": 27.0,
+   "bin": 2,
+   "sigma_mjy": 1.599,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0403-58_X106_spw25",
+   "file": "member.uid___A001_X8a9_X106.SPT0403-58_sci.spw25.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    87.8339,
+    89.6856
+   ],
+   "native_kms": 26.4,
+   "bin": 2,
+   "sigma_mjy": 2.28,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0403-58_X106_spw27",
+   "file": "member.uid___A001_X8a9_X106.SPT0403-58_sci.spw27.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    89.7089,
+    91.5606
+   ],
+   "native_kms": 25.8,
+   "bin": 2,
+   "sigma_mjy": 2.202,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "measured",
+   "admit_detection": false,
+   "offset_arcsec": 0.5,
+   "beam_factor": 0.954,
+   "spectrum": "CubeSpectrum_0",
+   "noise_scale": 1.0,
+   "line_channels": 26,
+   "peak_snr": 5.9
+  },
+  {
+   "window": "SPT0403-58_X125_spw25",
+   "file": "member.uid___A001_X8a9_X125.SPT0403-58_sci.spw25.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    91.5839,
+    93.4356
+   ],
+   "native_kms": 25.3,
+   "bin": 2,
+   "sigma_mjy": 1.822,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0403-58_X125_spw27",
+   "file": "member.uid___A001_X8a9_X125.SPT0403-58_sci.spw27.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    93.4589,
+    95.3106
+   ],
+   "native_kms": 24.8,
+   "bin": 2,
+   "sigma_mjy": 1.801,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0403-58_X144_spw25",
+   "file": "member.uid___A001_X8a9_X144.SPT0403-58_sci.spw25.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    95.3342,
+    97.1859
+   ],
+   "native_kms": 24.3,
+   "bin": 2,
+   "sigma_mjy": 1.533,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0403-58_Xe7_spw29",
+   "file": "member.uid___A001_X8a9_Xe7.SPT0403-58_sci.spw29.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    96.1524,
+    98.0041
+   ],
+   "native_kms": 24.1,
+   "bin": 2,
+   "sigma_mjy": 1.685,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0,
+   "overlap_channels_dropped": 117
+  },
+  {
+   "window": "SPT0403-58_X144_spw27",
+   "file": "member.uid___A001_X8a9_X144.SPT0403-58_sci.spw27.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    97.2092,
+    99.0609
+   ],
+   "native_kms": 23.9,
+   "bin": 2,
+   "sigma_mjy": 1.447,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "measured",
+   "admit_detection": false,
+   "offset_arcsec": 0.59,
+   "beam_factor": 0.899,
+   "spectrum": "CubeSpectrum_1",
+   "noise_scale": 1.14,
+   "line_channels": 0,
+   "peak_snr": 4.4
+  },
+  {
+   "window": "SPT0403-58_Xe7_spw31",
+   "file": "member.uid___A001_X8a9_Xe7.SPT0403-58_sci.spw31.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    97.9651,
+    99.8167
+   ],
+   "native_kms": 23.7,
+   "bin": 2,
+   "sigma_mjy": 1.786,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0,
+   "overlap_channels_dropped": 117
+  },
+  {
+   "window": "SPT0403-58_X163_spw25",
+   "file": "member.uid___A001_X8a9_X163.SPT0403-58_sci.spw25.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    99.0842,
+    100.9358
+   ],
+   "native_kms": 23.4,
+   "bin": 2,
+   "sigma_mjy": 1.545,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0403-58_X106_spw29",
+   "file": "member.uid___A001_X8a9_X106.SPT0403-58_sci.spw29.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    99.8339,
+    101.6856
+   ],
+   "native_kms": 23.2,
+   "bin": 2,
+   "sigma_mjy": 2.19,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0,
+   "overlap_channels_dropped": 117
+  },
+  {
+   "window": "SPT0403-58_X163_spw27",
+   "file": "member.uid___A001_X8a9_X163.SPT0403-58_sci.spw27.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    100.9592,
+    102.8108
+   ],
+   "native_kms": 23.0,
+   "bin": 2,
+   "sigma_mjy": 1.457,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0403-58_X106_spw31",
+   "file": "member.uid___A001_X8a9_X106.SPT0403-58_sci.spw31.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    101.7089,
+    103.5606
+   ],
+   "native_kms": 22.8,
+   "bin": 2,
+   "sigma_mjy": 2.345,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0,
+   "overlap_channels_dropped": 71
+  },
+  {
+   "window": "SPT0403-58_X125_spw29",
+   "file": "member.uid___A001_X8a9_X125.SPT0403-58_sci.spw29.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    103.5839,
+    105.4356
+   ],
+   "native_kms": 22.4,
+   "bin": 2,
+   "sigma_mjy": 1.857,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0403-58_X125_spw31",
+   "file": "member.uid___A001_X8a9_X125.SPT0403-58_sci.spw31.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    105.4589,
+    107.3106
+   ],
+   "native_kms": 22.0,
+   "bin": 2,
+   "sigma_mjy": 1.936,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0403-58_X144_spw29",
+   "file": "member.uid___A001_X8a9_X144.SPT0403-58_sci.spw29.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    107.3342,
+    109.1859
+   ],
+   "native_kms": 21.6,
+   "bin": 2,
+   "sigma_mjy": 1.649,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0403-58_X144_spw31",
+   "file": "member.uid___A001_X8a9_X144.SPT0403-58_sci.spw31.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    109.2092,
+    111.0609
+   ],
+   "native_kms": 21.3,
+   "bin": 2,
+   "sigma_mjy": 1.837,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0403-58_X163_spw29",
+   "file": "member.uid___A001_X8a9_X163.SPT0403-58_sci.spw29.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    111.0842,
+    112.9358
+   ],
+   "native_kms": 20.9,
+   "bin": 2,
+   "sigma_mjy": 1.84,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0403-58_X163_spw31",
+   "file": "member.uid___A001_X8a9_X163.SPT0403-58_sci.spw31.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    112.9592,
+    114.8108
+   ],
+   "native_kms": 20.6,
+   "bin": 2,
+   "sigma_mjy": 2.431,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  }
+ ]
+}

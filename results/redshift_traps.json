@@ -1,0 +1,883 @@
+{
+ "robust_prior": [
+  {
+   "name": "HerBS-108",
+   "z_true": 3.7166,
+   "z_alt": 1.3582999999999998,
+   "note": "z-GAL quotes z = 1.25 for the CO(2-1)/(3-2) reading; the line frequencies imply 1.358 = (1+3.7166)/2 - 1.",
+   "fwhm_kms": 500,
+   "redshift_prior": "Herschel-like",
+   "nreal": 150,
+   "variants": [
+    {
+     "variant": "low excitation, weak [CI]",
+     "line_strengths": {
+      "CO(4-3)": 8.0,
+      "CO(6-5)": 6.4,
+      "[CI](1-0)": 0.8,
+      "CO(3-2)": 7.4
+     },
+     "steps": [
+      {
+       "step": "3 mm + 2 mm scans",
+       "confident_correct": 0.5133333333333333,
+       "confident_wrong": 0.0,
+       "flagged_ambiguous": 0.4866666666666667,
+       "median_p_true": 0.9556580101567947,
+       "median_p_alt": 0.04434187786054518,
+       "median_p_true_uniform_prior": 0.9541454617114749,
+       "flat_confident_wrong": 0.94,
+       "median_p_true_with_photz": 0.9678149220276411
+      },
+      {
+       "step": "+ extra 3 mm setup",
+       "confident_correct": 1.0,
+       "confident_wrong": 0.0,
+       "flagged_ambiguous": 0.0,
+       "median_p_true": 0.9999999999996694,
+       "median_p_alt": 4.994989825333008e-14,
+       "median_p_true_uniform_prior": 0.9999999999943804,
+       "flat_confident_wrong": 0.02,
+       "median_p_true_with_photz": 0.9999999999998381
+      }
+     ]
+    },
+    {
+     "variant": "median excitation, weak [CI]",
+     "line_strengths": {
+      "CO(4-3)": 8.0,
+      "CO(6-5)": 10.7,
+      "[CI](1-0)": 0.8,
+      "CO(3-2)": 5.9
+     },
+     "steps": [
+      {
+       "step": "3 mm + 2 mm scans",
+       "confident_correct": 0.09333333333333334,
+       "confident_wrong": 0.0,
+       "flagged_ambiguous": 0.9066666666666666,
+       "median_p_true": 0.6031882028867419,
+       "median_p_alt": 0.396811797113053,
+       "median_p_true_uniform_prior": 0.5961025218908798,
+       "flat_confident_wrong": 1.0,
+       "median_p_true_with_photz": 0.6793908950714054
+      },
+      {
+       "step": "+ extra 3 mm setup",
+       "confident_correct": 1.0,
+       "confident_wrong": 0.0,
+       "flagged_ambiguous": 0.0,
+       "median_p_true": 0.9999999799153441,
+       "median_p_alt": 1.6259169361657665e-08,
+       "median_p_true_uniform_prior": 0.9999999819154068,
+       "flat_confident_wrong": 0.52,
+       "median_p_true_with_photz": 0.999999984873839
+      }
+     ]
+    },
+    {
+     "variant": "high excitation, weak [CI]",
+     "line_strengths": {
+      "CO(4-3)": 8.0,
+      "CO(6-5)": 13.5,
+      "[CI](1-0)": 0.8,
+      "CO(3-2)": 5.2
+     },
+     "steps": [
+      {
+       "step": "3 mm + 2 mm scans",
+       "confident_correct": 0.04666666666666667,
+       "confident_wrong": 0.0,
+       "flagged_ambiguous": 0.9533333333333334,
+       "median_p_true": 0.39935623555578814,
+       "median_p_alt": 0.6006437644434001,
+       "median_p_true_uniform_prior": 0.39208373414234343,
+       "flat_confident_wrong": 0.9866666666666667,
+       "median_p_true_with_photz": 0.48138030941860777
+      },
+      {
+       "step": "+ extra 3 mm setup",
+       "confident_correct": 0.9866666666666667,
+       "confident_wrong": 0.0,
+       "flagged_ambiguous": 0.013333333333333334,
+       "median_p_true": 0.9999988611447945,
+       "median_p_alt": 1.0833530736876783e-06,
+       "median_p_true_uniform_prior": 0.9999988279494867,
+       "flat_confident_wrong": 0.8933333333333333,
+       "median_p_true_with_photz": 0.9999991820951228
+      }
+     ]
+    },
+    {
+     "variant": "counterfactual: typical [CI]",
+     "line_strengths": {
+      "CO(4-3)": 8.0,
+      "CO(6-5)": 10.7,
+      "[CI](1-0)": 6.1,
+      "CO(3-2)": 5.9
+     },
+     "steps": [
+      {
+       "step": "3 mm + 2 mm scans",
+       "confident_correct": 1.0,
+       "confident_wrong": 0.0,
+       "flagged_ambiguous": 0.0,
+       "median_p_true": 0.9999999814486644,
+       "median_p_alt": 1.8551335521633805e-08,
+       "median_p_true_uniform_prior": 0.9999999809213213,
+       "flat_confident_wrong": 0.006666666666666667,
+       "median_p_true_with_photz": 0.9999999866617624
+      },
+      {
+       "step": "+ extra 3 mm setup",
+       "confident_correct": 1.0,
+       "confident_wrong": 0.0,
+       "flagged_ambiguous": 0.0,
+       "median_p_true": 0.9999999999999996,
+       "median_p_alt": 2.8899067148126716e-16,
+       "median_p_true_uniform_prior": 0.9999999999999997,
+       "flat_confident_wrong": 0.006666666666666667,
+       "median_p_true_with_photz": 0.9999999999999997
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "SPT0551-50",
+   "z_true": 3.164,
+   "z_alt": 2.1229999999999998,
+   "note": "Published z = 2.1232 (CO(3-2) plus a false optical CIV marker); corrected z = 3.164.",
+   "fwhm_kms": 450,
+   "redshift_prior": "SPT-like",
+   "nreal": 150,
+   "variants": [
+    {
+     "variant": "low excitation",
+     "line_strengths": {
+      "CO(4-3)": 6.0,
+      "[CII]": 120.0,
+      "CO(8-7)": 3.24
+     },
+     "steps": [
+      {
+       "step": "Band 3 scan (one line)",
+       "confident_correct": 0.0,
+       "confident_wrong": 0.02,
+       "flagged_ambiguous": 0.98,
+       "median_p_true": 0.6873322273430427,
+       "median_p_alt": 0.1749812311309285,
+       "median_p_true_uniform_prior": 0.3807811592661047,
+       "flat_confident_wrong": 0.013333333333333334
+      },
+      {
+       "step": "+ 1 mm window",
+       "confident_correct": 0.006666666666666667,
+       "confident_wrong": 0.03333333333333333,
+       "flagged_ambiguous": 0.96,
+       "median_p_true": 0.7514457667429297,
+       "median_p_alt": 0.09088759397182146,
+       "median_p_true_uniform_prior": 0.5302108812630821,
+       "flat_confident_wrong": 0.05333333333333334
+      },
+      {
+       "step": "+ [CII] window",
+       "confident_correct": 1.0,
+       "confident_wrong": 0.0,
+       "flagged_ambiguous": 0.0,
+       "median_p_true": 0.9999999466604407,
+       "median_p_alt": 0.0,
+       "median_p_true_uniform_prior": 0.9999995873582288,
+       "flat_confident_wrong": 1.0
+      }
+     ]
+    },
+    {
+     "variant": "median excitation",
+     "line_strengths": {
+      "CO(4-3)": 6.0,
+      "[CII]": 120.0,
+      "CO(8-7)": 8.16
+     },
+     "steps": [
+      {
+       "step": "Band 3 scan (one line)",
+       "confident_correct": 0.0,
+       "confident_wrong": 0.03333333333333333,
+       "flagged_ambiguous": 0.9666666666666667,
+       "median_p_true": 0.6813042424762926,
+       "median_p_alt": 0.17346967534417068,
+       "median_p_true_uniform_prior": 0.39559661574943955,
+       "flat_confident_wrong": 0.02666666666666667
+      },
+      {
+       "step": "+ 1 mm window",
+       "confident_correct": 0.0,
+       "confident_wrong": 0.03333333333333333,
+       "flagged_ambiguous": 0.9666666666666667,
+       "median_p_true": 0.7558475462490554,
+       "median_p_alt": 0.1833378909434357,
+       "median_p_true_uniform_prior": 0.44413939326176505,
+       "flat_confident_wrong": 0.02
+      },
+      {
+       "step": "+ [CII] window",
+       "confident_correct": 1.0,
+       "confident_wrong": 0.0,
+       "flagged_ambiguous": 0.0,
+       "median_p_true": 0.9999999998836462,
+       "median_p_alt": 0.0,
+       "median_p_true_uniform_prior": 0.9999999991006003,
+       "flat_confident_wrong": 1.0
+      }
+     ]
+    },
+    {
+     "variant": "high excitation",
+     "line_strengths": {
+      "CO(4-3)": 6.0,
+      "[CII]": 120.0,
+      "CO(8-7)": 13.620000000000001
+     },
+     "steps": [
+      {
+       "step": "Band 3 scan (one line)",
+       "confident_correct": 0.0,
+       "confident_wrong": 0.0,
+       "flagged_ambiguous": 1.0,
+       "median_p_true": 0.7449116827350651,
+       "median_p_alt": 0.18966727321176427,
+       "median_p_true_uniform_prior": 0.4094447578626148,
+       "flat_confident_wrong": 0.0
+      },
+      {
+       "step": "+ 1 mm window",
+       "confident_correct": 0.0,
+       "confident_wrong": 0.0,
+       "flagged_ambiguous": 1.0,
+       "median_p_true": 0.7083393884651479,
+       "median_p_alt": 0.2546334981742555,
+       "median_p_true_uniform_prior": 0.3403768012471971,
+       "flat_confident_wrong": 0.0
+      },
+      {
+       "step": "+ [CII] window",
+       "confident_correct": 1.0,
+       "confident_wrong": 0.0,
+       "flagged_ambiguous": 0.0,
+       "median_p_true": 0.9999999999999634,
+       "median_p_alt": 0.0,
+       "median_p_true_uniform_prior": 0.9999999999997161,
+       "flat_confident_wrong": 1.0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "SPT0452-50",
+   "z_true": 5.016,
+   "z_alt": 2.008,
+   "note": "Published z = 2.011 (CO(1-0)+CO(3-2)); corrected z = 5.016. Fluxes (Jy km/s) from Riechers 2025 Table 4 where given: CO(2-1) 0.96 +/- 0.12, CO(5-4) 2.80 +/- 0.67, [CII] 54.8 +/- 4.0; CO(6-5) not quoted in what we fetched (varied); archival [CI] window depth unknown (assumed 2.0).",
+   "fwhm_kms": 450,
+   "redshift_prior": "SPT-like",
+   "nreal": 150,
+   "variants": [
+    {
+     "variant": "CO(6-5) = 2.0 Jy km/s",
+     "line_strengths": {
+      "CO(2-1)": 0.96,
+      "CO(5-4)": 2.8,
+      "[CII]": 54.8,
+      "CO(6-5)": 2.0
+     },
+     "steps": [
+      {
+       "step": "ATCA + Band 3, CO(5-4) flagged",
+       "confident_correct": 0.4266666666666667,
+       "confident_wrong": 0.0,
+       "flagged_ambiguous": 0.5733333333333334,
+       "median_p_true": 0.9438643607141131,
+       "median_p_alt": 0.0561070831817724,
+       "median_p_true_uniform_prior": 0.5970924470228433,
+       "flat_confident_wrong": 0.0
+      },
+      {
+       "step": "+ empty [CI] windows for z=2.011",
+       "confident_correct": 0.8533333333333334,
+       "confident_wrong": 0.0,
+       "flagged_ambiguous": 0.14666666666666667,
+       "median_p_true": 0.9904184303380785,
+       "median_p_alt": 0.008559957872128314,
+       "median_p_true_uniform_prior": 0.6192733394967636,
+       "flat_confident_wrong": 0.0
+      },
+      {
+       "step": "+ re-reduced Band 3 (CO(5-4))",
+       "confident_correct": 1.0,
+       "confident_wrong": 0.0,
+       "flagged_ambiguous": 0.0,
+       "median_p_true": 0.9999992198660468,
+       "median_p_alt": 7.5389992264151e-07,
+       "median_p_true_uniform_prior": 0.9907739770058521,
+       "flat_confident_wrong": 0.0
+      },
+      {
+       "step": "+ [CII] window",
+       "confident_correct": 1.0,
+       "confident_wrong": 0.0,
+       "flagged_ambiguous": 0.0,
+       "median_p_true": 1.0,
+       "median_p_alt": 1.547551532053374e-44,
+       "median_p_true_uniform_prior": 1.0,
+       "flat_confident_wrong": 0.04
+      }
+     ]
+    },
+    {
+     "variant": "CO(6-5) = 3.1",
+     "line_strengths": {
+      "CO(2-1)": 0.96,
+      "CO(5-4)": 2.8,
+      "[CII]": 54.8,
+      "CO(6-5)": 3.1
+     },
+     "steps": [
+      {
+       "step": "ATCA + Band 3, CO(5-4) flagged",
+       "confident_correct": 0.06,
+       "confident_wrong": 0.0,
+       "flagged_ambiguous": 0.94,
+       "median_p_true": 0.8583734120589215,
+       "median_p_alt": 0.14159995809954973,
+       "median_p_true_uniform_prior": 0.6342321141007514,
+       "flat_confident_wrong": 0.0
+      },
+      {
+       "step": "+ empty [CI] windows for z=2.011",
+       "confident_correct": 0.8266666666666667,
+       "confident_wrong": 0.0,
+       "flagged_ambiguous": 0.17333333333333334,
+       "median_p_true": 0.9879416425028941,
+       "median_p_alt": 0.011145480542672876,
+       "median_p_true_uniform_prior": 0.9051616350122018,
+       "flat_confident_wrong": 0.0
+      },
+      {
+       "step": "+ re-reduced Band 3 (CO(5-4))",
+       "confident_correct": 0.9866666666666667,
+       "confident_wrong": 0.0,
+       "flagged_ambiguous": 0.013333333333333334,
+       "median_p_true": 0.9999984550567411,
+       "median_p_alt": 1.5136112189282831e-06,
+       "median_p_true_uniform_prior": 0.9982583779610142,
+       "flat_confident_wrong": 0.0
+      },
+      {
+       "step": "+ [CII] window",
+       "confident_correct": 1.0,
+       "confident_wrong": 0.0,
+       "flagged_ambiguous": 0.0,
+       "median_p_true": 1.0,
+       "median_p_alt": 2.6184158108621565e-44,
+       "median_p_true_uniform_prior": 1.0,
+       "flat_confident_wrong": 0.0
+      }
+     ]
+    },
+    {
+     "variant": "CO(6-5) = 5.0",
+     "line_strengths": {
+      "CO(2-1)": 0.96,
+      "CO(5-4)": 2.8,
+      "[CII]": 54.8,
+      "CO(6-5)": 5.0
+     },
+     "steps": [
+      {
+       "step": "ATCA + Band 3, CO(5-4) flagged",
+       "confident_correct": 0.0,
+       "confident_wrong": 0.0,
+       "flagged_ambiguous": 1.0,
+       "median_p_true": 0.679150721608113,
+       "median_p_alt": 0.32084905086890714,
+       "median_p_true_uniform_prior": 0.4457038154682381,
+       "flat_confident_wrong": 0.0
+      },
+      {
+       "step": "+ empty [CI] windows for z=2.011",
+       "confident_correct": 0.9066666666666666,
+       "confident_wrong": 0.0,
+       "flagged_ambiguous": 0.09333333333333334,
+       "median_p_true": 0.9978654433825636,
+       "median_p_alt": 0.002134554411118612,
+       "median_p_true_uniform_prior": 0.993787187200836,
+       "flat_confident_wrong": 0.0
+      },
+      {
+       "step": "+ re-reduced Band 3 (CO(5-4))",
+       "confident_correct": 0.9866666666666667,
+       "confident_wrong": 0.0,
+       "flagged_ambiguous": 0.013333333333333334,
+       "median_p_true": 0.9999988907836017,
+       "median_p_alt": 1.109107578781973e-06,
+       "median_p_true_uniform_prior": 0.9999697557829179,
+       "flat_confident_wrong": 0.0
+      },
+      {
+       "step": "+ [CII] window",
+       "confident_correct": 1.0,
+       "confident_wrong": 0.0,
+       "flagged_ambiguous": 0.0,
+       "median_p_true": 1.0,
+       "median_p_alt": 4.78136358579093e-41,
+       "median_p_true_uniform_prior": 1.0,
+       "flat_confident_wrong": 0.0
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "narrow_prior_v0": [
+  {
+   "name": "HerBS-108",
+   "z_true": 3.7166,
+   "z_alt": 1.3582999999999998,
+   "note": "z-GAL quotes z = 1.25 for the CO(2-1)/(3-2) reading; the line frequencies imply 1.358 = (1+3.7166)/2 - 1.",
+   "fwhm_kms": 500,
+   "redshift_prior": "Herschel-like",
+   "nreal": 150,
+   "variants": [
+    {
+     "variant": "low excitation, weak [CI]",
+     "line_strengths": {
+      "CO(4-3)": 8.0,
+      "CO(6-5)": 6.4,
+      "[CI](1-0)": 0.8,
+      "CO(3-2)": 7.4
+     },
+     "steps": [
+      {
+       "step": "3 mm + 2 mm scans",
+       "confident_correct": 0.18,
+       "confident_wrong": 0.013333333333333334,
+       "flagged_ambiguous": 0.8066666666666666,
+       "median_p_true": 0.6829294171618341,
+       "median_p_alt": 0.31707053484145076,
+       "median_p_true_uniform_prior": 0.6758285307016276,
+       "flat_confident_wrong": 0.94,
+       "median_p_true_with_photz": 0.750262495742374
+      },
+      {
+       "step": "+ extra 3 mm setup",
+       "confident_correct": 1.0,
+       "confident_wrong": 0.0,
+       "flagged_ambiguous": 0.0,
+       "median_p_true": 0.999999999985477,
+       "median_p_alt": 5.055988296023096e-12,
+       "median_p_true_uniform_prior": 0.9999999996024286,
+       "flat_confident_wrong": 0.02,
+       "median_p_true_with_photz": 0.9999999999961788
+      }
+     ]
+    },
+    {
+     "variant": "median excitation, weak [CI]",
+     "line_strengths": {
+      "CO(4-3)": 8.0,
+      "CO(6-5)": 10.7,
+      "[CI](1-0)": 0.8,
+      "CO(3-2)": 5.9
+     },
+     "steps": [
+      {
+       "step": "3 mm + 2 mm scans",
+       "confident_correct": 0.08,
+       "confident_wrong": 0.09333333333333334,
+       "flagged_ambiguous": 0.8266666666666667,
+       "median_p_true": 0.3906972791245189,
+       "median_p_alt": 0.6093027208752824,
+       "median_p_true_uniform_prior": 0.38396465505877786,
+       "flat_confident_wrong": 1.0,
+       "median_p_true_with_photz": 0.4715446531455056
+      },
+      {
+       "step": "+ extra 3 mm setup",
+       "confident_correct": 0.9933333333333333,
+       "confident_wrong": 0.0,
+       "flagged_ambiguous": 0.006666666666666667,
+       "median_p_true": 0.9999999574466198,
+       "median_p_alt": 4.2551019864709014e-08,
+       "median_p_true_uniform_prior": 0.999999946987101,
+       "flat_confident_wrong": 0.52,
+       "median_p_true_with_photz": 0.9999999694116007
+      }
+     ]
+    },
+    {
+     "variant": "high excitation, weak [CI]",
+     "line_strengths": {
+      "CO(4-3)": 8.0,
+      "CO(6-5)": 13.5,
+      "[CI](1-0)": 0.8,
+      "CO(3-2)": 5.2
+     },
+     "steps": [
+      {
+       "step": "3 mm + 2 mm scans",
+       "confident_correct": 0.04,
+       "confident_wrong": 0.24666666666666667,
+       "flagged_ambiguous": 0.7133333333333334,
+       "median_p_true": 0.30221978513385783,
+       "median_p_alt": 0.6977802148661276,
+       "median_p_true_uniform_prior": 0.2959737271720626,
+       "flat_confident_wrong": 0.9866666666666667,
+       "median_p_true_with_photz": 0.37657783257928407
+      },
+      {
+       "step": "+ extra 3 mm setup",
+       "confident_correct": 0.9866666666666667,
+       "confident_wrong": 0.0,
+       "flagged_ambiguous": 0.013333333333333334,
+       "median_p_true": 0.9999977310687473,
+       "median_p_alt": 2.1112636494494088e-06,
+       "median_p_true_uniform_prior": 0.9999976602413867,
+       "flat_confident_wrong": 0.8933333333333333,
+       "median_p_true_with_photz": 0.9999983754735678
+      }
+     ]
+    },
+    {
+     "variant": "counterfactual: typical [CI]",
+     "line_strengths": {
+      "CO(4-3)": 8.0,
+      "CO(6-5)": 10.7,
+      "[CI](1-0)": 6.1,
+      "CO(3-2)": 5.9
+     },
+     "steps": [
+      {
+       "step": "3 mm + 2 mm scans",
+       "confident_correct": 1.0,
+       "confident_wrong": 0.0,
+       "flagged_ambiguous": 0.0,
+       "median_p_true": 0.999999985158853,
+       "median_p_alt": 1.4841146756536437e-08,
+       "median_p_true_uniform_prior": 0.9999999847369766,
+       "flat_confident_wrong": 0.006666666666666667,
+       "median_p_true_with_photz": 0.9999999893293539
+      },
+      {
+       "step": "+ extra 3 mm setup",
+       "confident_correct": 1.0,
+       "confident_wrong": 0.0,
+       "flagged_ambiguous": 0.0,
+       "median_p_true": 0.9999999999999998,
+       "median_p_alt": 2.311955020479278e-16,
+       "median_p_true_uniform_prior": 0.9999999999999998,
+       "flat_confident_wrong": 0.006666666666666667,
+       "median_p_true_with_photz": 0.9999999999999998
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "SPT0551-50",
+   "z_true": 3.164,
+   "z_alt": 2.1229999999999998,
+   "note": "Published z = 2.1232 (CO(3-2) plus a false optical CIV marker); corrected z = 3.164.",
+   "fwhm_kms": 450,
+   "redshift_prior": "SPT-like",
+   "nreal": 150,
+   "variants": [
+    {
+     "variant": "low excitation",
+     "line_strengths": {
+      "CO(4-3)": 6.0,
+      "[CII]": 120.0,
+      "CO(8-7)": 3.24
+     },
+     "steps": [
+      {
+       "step": "Band 3 scan (one line)",
+       "confident_correct": 0.0,
+       "confident_wrong": 0.02,
+       "flagged_ambiguous": 0.98,
+       "median_p_true": 0.6777802599484952,
+       "median_p_alt": 0.17255560671657866,
+       "median_p_true_uniform_prior": 0.37746817049310205,
+       "flat_confident_wrong": 0.013333333333333334
+      },
+      {
+       "step": "+ 1 mm window",
+       "confident_correct": 0.006666666666666667,
+       "confident_wrong": 0.03333333333333333,
+       "flagged_ambiguous": 0.96,
+       "median_p_true": 0.7444008585613925,
+       "median_p_alt": 0.09023573048763343,
+       "median_p_true_uniform_prior": 0.5218570089620083,
+       "flat_confident_wrong": 0.05333333333333334
+      },
+      {
+       "step": "+ [CII] window",
+       "confident_correct": 1.0,
+       "confident_wrong": 0.0,
+       "flagged_ambiguous": 0.0,
+       "median_p_true": 0.9999999466673613,
+       "median_p_alt": 0.0,
+       "median_p_true_uniform_prior": 0.9999995876775509,
+       "flat_confident_wrong": 1.0
+      }
+     ]
+    },
+    {
+     "variant": "median excitation",
+     "line_strengths": {
+      "CO(4-3)": 6.0,
+      "[CII]": 120.0,
+      "CO(8-7)": 8.16
+     },
+     "steps": [
+      {
+       "step": "Band 3 scan (one line)",
+       "confident_correct": 0.0,
+       "confident_wrong": 0.03333333333333333,
+       "flagged_ambiguous": 0.9666666666666667,
+       "median_p_true": 0.6770566030435197,
+       "median_p_alt": 0.1724161380845784,
+       "median_p_true_uniform_prior": 0.39387813757615764,
+       "flat_confident_wrong": 0.02666666666666667
+      },
+      {
+       "step": "+ 1 mm window",
+       "confident_correct": 0.0,
+       "confident_wrong": 0.03333333333333333,
+       "flagged_ambiguous": 0.9666666666666667,
+       "median_p_true": 0.7554808039289225,
+       "median_p_alt": 0.18385185890199754,
+       "median_p_true_uniform_prior": 0.444755241603616,
+       "flat_confident_wrong": 0.02
+      },
+      {
+       "step": "+ [CII] window",
+       "confident_correct": 1.0,
+       "confident_wrong": 0.0,
+       "flagged_ambiguous": 0.0,
+       "median_p_true": 0.9999999998836462,
+       "median_p_alt": 0.0,
+       "median_p_true_uniform_prior": 0.9999999991006037,
+       "flat_confident_wrong": 1.0
+      }
+     ]
+    },
+    {
+     "variant": "high excitation",
+     "line_strengths": {
+      "CO(4-3)": 6.0,
+      "[CII]": 120.0,
+      "CO(8-7)": 13.620000000000001
+     },
+     "steps": [
+      {
+       "step": "Band 3 scan (one line)",
+       "confident_correct": 0.0,
+       "confident_wrong": 0.0,
+       "flagged_ambiguous": 1.0,
+       "median_p_true": 0.7390101086174901,
+       "median_p_alt": 0.18821565173896576,
+       "median_p_true_uniform_prior": 0.41083066292678666,
+       "flat_confident_wrong": 0.0
+      },
+      {
+       "step": "+ 1 mm window",
+       "confident_correct": 0.0,
+       "confident_wrong": 0.0,
+       "flagged_ambiguous": 1.0,
+       "median_p_true": 0.7080053382583708,
+       "median_p_alt": 0.2550068809323963,
+       "median_p_true_uniform_prior": 0.34037838172021506,
+       "flat_confident_wrong": 0.0
+      },
+      {
+       "step": "+ [CII] window",
+       "confident_correct": 1.0,
+       "confident_wrong": 0.0,
+       "flagged_ambiguous": 0.0,
+       "median_p_true": 0.9999999999999634,
+       "median_p_alt": 0.0,
+       "median_p_true_uniform_prior": 0.9999999999997162,
+       "flat_confident_wrong": 1.0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "SPT0452-50",
+   "z_true": 5.016,
+   "z_alt": 2.008,
+   "note": "Published z = 2.011 (CO(1-0)+CO(3-2)); corrected z = 5.016. Fluxes (Jy km/s) from Riechers 2025 Table 4 where given: CO(2-1) 0.96 +/- 0.12, CO(5-4) 2.80 +/- 0.67, [CII] 54.8 +/- 4.0; CO(6-5) not quoted in what we fetched (varied); archival [CI] window depth unknown (assumed 2.0).",
+   "fwhm_kms": 450,
+   "redshift_prior": "SPT-like",
+   "nreal": 150,
+   "variants": [
+    {
+     "variant": "CO(6-5) = 2.0 Jy km/s",
+     "line_strengths": {
+      "CO(2-1)": 0.96,
+      "CO(5-4)": 2.8,
+      "[CII]": 54.8,
+      "CO(6-5)": 2.0
+     },
+     "steps": [
+      {
+       "step": "ATCA + Band 3, CO(5-4) flagged",
+       "confident_correct": 0.4266666666666667,
+       "confident_wrong": 0.0,
+       "flagged_ambiguous": 0.5733333333333334,
+       "median_p_true": 0.943889946152334,
+       "median_p_alt": 0.05610724092949358,
+       "median_p_true_uniform_prior": 0.6003399364552737,
+       "flat_confident_wrong": 0.0
+      },
+      {
+       "step": "+ empty [CI] windows for z=2.011",
+       "confident_correct": 0.8533333333333334,
+       "confident_wrong": 0.0,
+       "flagged_ambiguous": 0.14666666666666667,
+       "median_p_true": 0.9956792052684575,
+       "median_p_alt": 0.004186993168585241,
+       "median_p_true_uniform_prior": 0.6348375620237947,
+       "flat_confident_wrong": 0.0
+      },
+      {
+       "step": "+ re-reduced Band 3 (CO(5-4))",
+       "confident_correct": 1.0,
+       "confident_wrong": 0.0,
+       "flagged_ambiguous": 0.0,
+       "median_p_true": 0.9999995791957952,
+       "median_p_alt": 3.870079365818403e-07,
+       "median_p_true_uniform_prior": 0.990788499235514,
+       "flat_confident_wrong": 0.0
+      },
+      {
+       "step": "+ [CII] window",
+       "confident_correct": 1.0,
+       "confident_wrong": 0.0,
+       "flagged_ambiguous": 0.0,
+       "median_p_true": 1.0,
+       "median_p_alt": 9.6288606949508e-45,
+       "median_p_true_uniform_prior": 1.0,
+       "flat_confident_wrong": 0.04
+      }
+     ]
+    },
+    {
+     "variant": "CO(6-5) = 3.1",
+     "line_strengths": {
+      "CO(2-1)": 0.96,
+      "CO(5-4)": 2.8,
+      "[CII]": 54.8,
+      "CO(6-5)": 3.1
+     },
+     "steps": [
+      {
+       "step": "ATCA + Band 3, CO(5-4) flagged",
+       "confident_correct": 0.06,
+       "confident_wrong": 0.0,
+       "flagged_ambiguous": 0.94,
+       "median_p_true": 0.8583763435658289,
+       "median_p_alt": 0.1416006660603303,
+       "median_p_true_uniform_prior": 0.6355518410206229,
+       "flat_confident_wrong": 0.0
+      },
+      {
+       "step": "+ empty [CI] windows for z=2.011",
+       "confident_correct": 0.9,
+       "confident_wrong": 0.0,
+       "flagged_ambiguous": 0.1,
+       "median_p_true": 0.9949114963173415,
+       "median_p_alt": 0.004904909172404038,
+       "median_p_true_uniform_prior": 0.9314849687251374,
+       "flat_confident_wrong": 0.0
+      },
+      {
+       "step": "+ re-reduced Band 3 (CO(5-4))",
+       "confident_correct": 0.9933333333333333,
+       "confident_wrong": 0.0,
+       "flagged_ambiguous": 0.006666666666666667,
+       "median_p_true": 0.9999993366118629,
+       "median_p_alt": 6.62931447018833e-07,
+       "median_p_true_uniform_prior": 0.998366828848544,
+       "flat_confident_wrong": 0.0
+      },
+      {
+       "step": "+ [CII] window",
+       "confident_correct": 1.0,
+       "confident_wrong": 0.0,
+       "flagged_ambiguous": 0.0,
+       "median_p_true": 1.0,
+       "median_p_alt": 1.3534501887469237e-44,
+       "median_p_true_uniform_prior": 1.0,
+       "flat_confident_wrong": 0.0
+      }
+     ]
+    },
+    {
+     "variant": "CO(6-5) = 5.0",
+     "line_strengths": {
+      "CO(2-1)": 0.96,
+      "CO(5-4)": 2.8,
+      "[CII]": 54.8,
+      "CO(6-5)": 5.0
+     },
+     "steps": [
+      {
+       "step": "ATCA + Band 3, CO(5-4) flagged",
+       "confident_correct": 0.0,
+       "confident_wrong": 0.0,
+       "flagged_ambiguous": 1.0,
+       "median_p_true": 0.6791507400267287,
+       "median_p_alt": 0.3208490595920077,
+       "median_p_true_uniform_prior": 0.4457091717136774,
+       "flat_confident_wrong": 0.0
+      },
+      {
+       "step": "+ empty [CI] windows for z=2.011",
+       "confident_correct": 0.92,
+       "confident_wrong": 0.0,
+       "flagged_ambiguous": 0.08,
+       "median_p_true": 0.9993498292329348,
+       "median_p_alt": 0.0006443972648416229,
+       "median_p_true_uniform_prior": 0.9975730979735266,
+       "flat_confident_wrong": 0.0
+      },
+      {
+       "step": "+ re-reduced Band 3 (CO(5-4))",
+       "confident_correct": 0.9866666666666667,
+       "confident_wrong": 0.0,
+       "flagged_ambiguous": 0.013333333333333334,
+       "median_p_true": 0.9999997022972216,
+       "median_p_alt": 2.976980610272774e-07,
+       "median_p_true_uniform_prior": 0.9999813238719882,
+       "flat_confident_wrong": 0.0
+      },
+      {
+       "step": "+ [CII] window",
+       "confident_correct": 1.0,
+       "confident_wrong": 0.0,
+       "flagged_ambiguous": 0.0,
+       "median_p_true": 1.0,
+       "median_p_alt": 2.314043548872032e-41,
+       "median_p_true_uniform_prior": 1.0,
+       "flat_confident_wrong": 0.0
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "note": "robust_prior adds a weak-[CI] template (L ratio 0.05, prior 0.2); narrow_prior_v0 was the first version."
+}

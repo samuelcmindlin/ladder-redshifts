@@ -1,0 +1,23 @@
+source,z_published,truth_status,z_engine,confidence,p_published,verdict,z_flat,conf_flat,z_sudoku,z_naive,prior,reference
+SPT0027-50,3.444,confirmed,3.4432,1.0,1.0,confident & correct,3.4432,1.0,3.4433,15.65,spt,Bakx 2026 (arXiv:2604.01089); De Breuck 2026 talk
+SPT0054-41,4.8769,confirmed,4.8762,0.687,0.687,ambiguous (best = truth),4.8762,0.69,,,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1"
+SPT0226-45,3.233,confirmed,3.2334,0.776,0.776,ambiguous (best = truth),3.2334,0.776,,,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1"
+SPT0314-44,2.9345,confirmed,2.9332,0.897,0.897,ambiguous (best = truth),2.9332,0.897,,,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1; Riechers 2025 (ApJ 980, 59)"
+SPT0402-45,2.6833,confirmed,2.6825,0.868,0.868,ambiguous (best = truth),2.6825,0.906,,48.103,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1"
+SPT0403-58,4.0564,confirmed,4.0555,1.0,1.0,confident & correct,4.0555,1.0,4.0551,17.944,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1"
+SPT0425-40,5.1353,confirmed,5.1346,1.0,1.0,confident & correct,5.1346,1.0,5.1343,5.136,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1"
+SPT0433-59,,,4.3943,0.522,,no truth,4.3943,0.704,,,spt,
+SPT0436-40,3.8519,confirmed,3.8514,1.0,1.0,confident & correct,3.8514,1.0,3.8511,17.187,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1"
+SPT0520-53,3.7785,confirmed,3.7784,1.0,1.0,confident & correct,4.972,0.658,3.7779,16.913,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1"
+SPT0528-53,4.737,confirmed,4.7358,0.76,0.76,ambiguous (best = truth),2.442,0.489,,,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1"
+SPT0549-56,,,4.7502,0.045,,no truth,4.754,0.057,,,spt,
+SPT0652-55,3.3466,confirmed,3.3465,1.0,1.0,confident & correct,2.2598,0.914,3.3445,15.289,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1"
+SPT2031-51,2.4521,confirmed,2.4523,0.45,0.45,ambiguous (best = truth),2.4523,0.499,,,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1"
+SPT2129-57,3.2601,confirmed,3.2604,0.774,0.774,ambiguous (best = truth),3.2604,0.774,,,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1"
+SPT2152-40,3.8507,confirmed,3.8514,1.0,1.0,confident & correct,2.6385,0.907,3.8506,17.184,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1"
+SPT2203-41,5.1937,confirmed,5.1942,1.0,1.0,confident & correct,5.1942,1.0,5.1941,5.195,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1"
+SPT2232-61,2.8936,confirmed,2.8934,0.899,0.899,ambiguous (best = truth),2.8934,0.899,,,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1"
+SPT2311-45,2.5073,confirmed,2.5074,0.424,0.424,ambiguous (best = truth),2.5074,0.555,,,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1"
+SPT2316-50,3.1413,confirmed,4.1775,0.114,0.016,ambiguous (best != truth),4.1784,0.141,,,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1"
+SPT2334-50,,,4.0631,0.275,,no truth,4.0631,0.285,,,spt,
+SPT2349-52,3.9,confirmed,3.9002,0.847,0.847,ambiguous (best = truth),2.6751,0.906,,,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1"

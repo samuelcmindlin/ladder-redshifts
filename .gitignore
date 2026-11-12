@@ -1,0 +1,23 @@
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.DS_Store
+.venv/
+
+# ALMA downloads (large; rebuild with scripts/alma/)
+alma_cutouts/
+alma_admit/
+# per-window cube cut-out spectra written by scripts/alma/extract_cube_spectra.py (~270 MB)
+data/*/*.npz
+data/*/*.fits
+data/extract_log.txt
+data/admit/spectra/.admit_cache/
+
+# logs written by reproduce.sh
+logs/
+
+# private draft, not part of the repository
+docs/professional-review-request.md

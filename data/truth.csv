@@ -1,0 +1,23 @@
+source,z_published,prior,reference,notes,status
+SPT0027-50,3.444,spt,Bakx 2026 (arXiv:2604.01089); De Breuck 2026 talk,"Band 2 SV; CO(3-2), CO(4-3), [CI](1-0)",confirmed
+SPT0452-50,5.016,spt,"Riechers 2025 (ApJ 980, 59; arXiv:2401.05487)",published earlier as 2.011 (octave error),confirmed
+SPT0551-50,3.164,spt,Strandet et al. 2016 (arXiv:1603.05094),published earlier as 2.1232 (wrong harmonic),confirmed
+HerBS-108,3.7166,herschel,Cox et al. 2023 (z-GAL),NOEMA; octave-ambiguous before a third line,confirmed
+SPT0054-41,4.8769,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1",3 mm scan: CO(5-4) (1 line); follow-up: CO(7-6) and [CII](2-1) from ALMA,confirmed
+SPT0226-45,3.233,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1",3 mm scan: CO(4-3) (1 line); follow-up: CO(5-4) from ALMA,confirmed
+SPT0314-44,2.9345,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1; Riechers 2025 (ApJ 980, 59)","3 mm scan: CO(3-2) (1 line); tentative in Reuter et al.; follow-up: CO(9-8), H2O and OH+ from the ACA, z = 2.9338 (Riechers 2025)",confirmed
+SPT0402-45,2.6833,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1",3 mm scan: CO(3-2) (1 line); follow-up: CO(5-4) from ALMA,confirmed
+SPT0403-58,4.0564,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1",3 mm scan: CO(4-3) CO(5-4) [CI](1-0) (3 lines),confirmed
+SPT0425-40,5.1353,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1",3 mm scan: CO(5-4) CO(6-5) (2 lines),confirmed
+SPT0436-40,3.8519,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1",3 mm scan: CO(4-3) [CI](1-0) (2 lines),confirmed
+SPT0520-53,3.7785,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1",3 mm scan: CO(4-3) [CI](1-0) (2 lines),confirmed
+SPT0528-53,4.737,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1",3 mm scan: CO(5-4) (1 line); follow-up: CO(7-6) from ALMA,confirmed
+SPT0652-55,3.3466,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1",3 mm scan: CO(4-3) [CI](1-0) (2 lines),confirmed
+SPT2031-51,2.4521,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1",3 mm scan: CO(3-2) (1 line); follow-up: CO(4-3) from ALMA,confirmed
+SPT2129-57,3.2601,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1",3 mm scan: CO(4-3) (1 line); follow-up: CO(5-4) from ALMA,confirmed
+SPT2152-40,3.8507,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1",3 mm scan: CO(4-3) [CI](1-0) (2 lines),confirmed
+SPT2203-41,5.1937,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1",3 mm scan: CO(5-4) CO(6-5) (2 lines),confirmed
+SPT2232-61,2.8936,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1",3 mm scan: CO(3-2) (1 line); follow-up: CO(5-4) from ALMA,confirmed
+SPT2311-45,2.5073,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1",3 mm scan: CO(3-2) (1 line); follow-up: CO(4-3) from ALMA,confirmed
+SPT2316-50,3.1413,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1",3 mm scan: CO(4-3) (1 line); follow-up: CO(5-4) from ALMA,confirmed
+SPT2349-52,3.9000,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1",3 mm scan: CO(4-3) (1 line); follow-up: CO(6-5) from ALMA,confirmed

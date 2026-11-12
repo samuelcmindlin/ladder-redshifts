@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this software or its results, please cite it as below."
+title: "ladder-redshifts: redshifts from molecular line ladders as missing-fundamental pitch estimation"
+abstract: >-
+  A likelihood engine for spectroscopic redshifts of dusty galaxies from their CO and [CI] line ladders, treating
+  the problem as missing-fundamental pitch estimation. It weights every predicted line by its expected S/N, counts
+  predicted-but-absent lines against a hypothesis, and reports a confidence score with each answer. Exploratory
+  work, tested on 18 real ALMA Band 3 scans (project 2016.1.00672.S), the ALMA Band 2 science-verification
+  spectrum of SPT0027-50, and synthetic surveys.
+type: software
+authors:
+  - given-names: Samuel
+    family-names: Mindlin
+version: 0.1.0
+date-released: 2026-11-02
+license: MIT
+keywords:
+  - redshift
+  - ALMA
+  - CO line ladder
+  - submillimetre galaxies
+  - pitch estimation
+  - spectral line identification

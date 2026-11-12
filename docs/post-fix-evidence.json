@@ -1,0 +1,132 @@
+{
+  "window_order": [
+    {
+      "source": "SPT2349-52",
+      "forward": [
+        3.90023950241687,
+        0.8469884540258215
+      ],
+      "reverse": [
+        3.90023950241687,
+        0.8469884540258215
+      ]
+    },
+    {
+      "source": "SPT2152-40",
+      "forward": [
+        3.8514477187089966,
+        0.9999999999072315
+      ],
+      "reverse": [
+        3.8514477187089966,
+        0.9999999999072315
+      ]
+    },
+    {
+      "source": "SPT2311-45",
+      "forward": [
+        2.5074387719860134,
+        0.42364705948239384
+      ],
+      "reverse": [
+        2.5074387719860134,
+        0.42364705948239384
+      ]
+    }
+  ],
+  "outside_coverage": {
+    "covered_data_identical": true,
+    "max_loglike_change": 0.0,
+    "note": "Only an unobserved pixel changes; the log likelihood should be invariant."
+  },
+  "equal_snr_comparator": {
+    "rows": [
+      {
+        "source": "SPT0403-58",
+        "saved_flat_z": 4.0555,
+        "saved_flat_confidence": 1.0,
+        "equal_snr_z": 4.055477580515146,
+        "equal_snr_confidence": 1.0,
+        "equal_snr_correct": true
+      },
+      {
+        "source": "SPT0425-40",
+        "saved_flat_z": 5.1346,
+        "saved_flat_confidence": 1.0,
+        "equal_snr_z": 5.134567018755296,
+        "equal_snr_confidence": 0.9999999999999999,
+        "equal_snr_correct": true
+      },
+      {
+        "source": "SPT0436-40",
+        "saved_flat_z": 3.8514,
+        "saved_flat_confidence": 1.0,
+        "equal_snr_z": 3.8514477187089966,
+        "equal_snr_confidence": 0.9999999999999999,
+        "equal_snr_correct": true
+      },
+      {
+        "source": "SPT0520-53",
+        "saved_flat_z": 4.972,
+        "saved_flat_confidence": 0.658,
+        "equal_snr_z": 4.972034104647996,
+        "equal_snr_confidence": 0.6582913666670381,
+        "equal_snr_correct": false
+      },
+      {
+        "source": "SPT0652-55",
+        "saved_flat_z": 2.2598,
+        "saved_flat_confidence": 0.914,
+        "equal_snr_z": 2.2598094985195796,
+        "equal_snr_confidence": 0.9142092160156999,
+        "equal_snr_correct": false
+      },
+      {
+        "source": "SPT2152-40",
+        "saved_flat_z": 2.6385,
+        "saved_flat_confidence": 0.907,
+        "equal_snr_z": 2.6385240803894954,
+        "equal_snr_confidence": 0.9070076354918828,
+        "equal_snr_correct": false
+      },
+      {
+        "source": "SPT2203-41",
+        "saved_flat_z": 5.1942,
+        "saved_flat_confidence": 1.0,
+        "equal_snr_z": 5.194196831674186,
+        "equal_snr_confidence": 0.9999985052125372,
+        "equal_snr_correct": true
+      }
+    ],
+    "confident_correct": 4
+  },
+  "saved_calibration": {
+    "setup": "B3 single tuning",
+    "n": 87,
+    "mean_confidence": 0.9997509856218907,
+    "accuracy": 0.9770114942528736,
+    "errors_outside_confidence_window": 2
+  },
+  "channel_spacing": [
+    {
+      "native_kms": 50,
+      "measured_filter_noise_std": 0.9567572342938954
+    },
+    {
+      "native_kms": 100,
+      "measured_filter_noise_std": 0.9486519860933695
+    },
+    {
+      "native_kms": 200,
+      "measured_filter_noise_std": 0.9685721096287868
+    }
+  ],
+  "extraction_failure": {
+    "exit_code": 1,
+    "logged_failure": true,
+    "produced_spectra": 0
+  },
+  "single_filter": {
+    "error": null
+  }
+}

@@ -1,0 +1,345 @@
+{
+ "target": "SPT0436-40",
+ "target_offset_arcsec": [
+  -2.33,
+  1.84
+ ],
+ "position_from": "source finder: 2 detection(s), S/N-weighted",
+ "settings": {
+  "nondet_scale": 10.0,
+  "dv_kms": 50.0,
+  "match_beams": 0.5,
+  "max_offset_arcsec": 10.0,
+  "require_detection": false
+ },
+ "counts": {
+  "measured": 3,
+  "zero-filled": 17,
+  "dropped": 0
+ },
+ "windows": [
+  {
+   "window": "SPT0436-40_Xea_spw25",
+   "file": "member.uid___A001_X8a9_Xea.SPT0436-40_sci.spw25.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    84.0902,
+    85.9419
+   ],
+   "native_kms": 27.6,
+   "bin": 2,
+   "sigma_mjy": 1.487,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0436-40_Xea_spw27",
+   "file": "member.uid___A001_X8a9_Xea.SPT0436-40_sci.spw27.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    85.9654,
+    87.8171
+   ],
+   "native_kms": 27.0,
+   "bin": 2,
+   "sigma_mjy": 1.419,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0436-40_X109_spw25",
+   "file": "member.uid___A001_X8a9_X109.SPT0436-40_sci.spw25.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    87.8342,
+    89.686
+   ],
+   "native_kms": 26.4,
+   "bin": 2,
+   "sigma_mjy": 1.512,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0436-40_X109_spw27",
+   "file": "member.uid___A001_X8a9_X109.SPT0436-40_sci.spw27.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    89.7093,
+    91.561
+   ],
+   "native_kms": 25.8,
+   "bin": 2,
+   "sigma_mjy": 1.483,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0436-40_X128_spw25",
+   "file": "member.uid___A001_X8a9_X128.SPT0436-40_sci.spw25.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    91.5841,
+    93.4359
+   ],
+   "native_kms": 25.3,
+   "bin": 2,
+   "sigma_mjy": 2.049,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0436-40_X128_spw27",
+   "file": "member.uid___A001_X8a9_X128.SPT0436-40_sci.spw27.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    93.4591,
+    95.3109
+   ],
+   "native_kms": 24.8,
+   "bin": 2,
+   "sigma_mjy": 1.989,
+   "seg_channels": 11,
+   "sfind_near_target": true,
+   "status": "measured",
+   "admit_detection": true,
+   "offset_arcsec": 0.54,
+   "beam_factor": 0.932,
+   "spectrum": "CubeSpectrum_1",
+   "noise_scale": 1.01,
+   "line_channels": 19,
+   "peak_snr": 15.0
+  },
+  {
+   "window": "SPT0436-40_X147_spw25",
+   "file": "member.uid___A001_X8a9_X147.SPT0436-40_sci.spw25.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    95.3355,
+    97.1873
+   ],
+   "native_kms": 24.3,
+   "bin": 2,
+   "sigma_mjy": 1.481,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0436-40_Xea_spw29",
+   "file": "member.uid___A001_X8a9_Xea.SPT0436-40_sci.spw29.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    96.1539,
+    98.0057
+   ],
+   "native_kms": 24.1,
+   "bin": 2,
+   "sigma_mjy": 1.541,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0,
+   "overlap_channels_dropped": 117
+  },
+  {
+   "window": "SPT0436-40_X147_spw27",
+   "file": "member.uid___A001_X8a9_X147.SPT0436-40_sci.spw27.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    97.2105,
+    99.0623
+   ],
+   "native_kms": 23.9,
+   "bin": 2,
+   "sigma_mjy": 1.461,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0436-40_Xea_spw31",
+   "file": "member.uid___A001_X8a9_Xea.SPT0436-40_sci.spw31.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    97.9666,
+    99.8184
+   ],
+   "native_kms": 23.7,
+   "bin": 2,
+   "sigma_mjy": 1.621,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0,
+   "overlap_channels_dropped": 117
+  },
+  {
+   "window": "SPT0436-40_X166_spw25",
+   "file": "member.uid___A001_X8a9_X166.SPT0436-40_sci.spw25.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    99.0843,
+    100.936
+   ],
+   "native_kms": 23.4,
+   "bin": 2,
+   "sigma_mjy": 1.439,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0,
+   "overlap_channels_dropped": 71
+  },
+  {
+   "window": "SPT0436-40_X109_spw29",
+   "file": "member.uid___A001_X8a9_X109.SPT0436-40_sci.spw29.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    99.8343,
+    101.686
+   ],
+   "native_kms": 23.2,
+   "bin": 2,
+   "sigma_mjy": 1.562,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "measured",
+   "admit_detection": false,
+   "offset_arcsec": 0.1,
+   "beam_factor": 0.998,
+   "spectrum": "CubeSpectrum_1",
+   "noise_scale": 0.99,
+   "line_channels": 23,
+   "peak_snr": 4.6,
+   "overlap_channels_dropped": 47
+  },
+  {
+   "window": "SPT0436-40_X166_spw27",
+   "file": "member.uid___A001_X8a9_X166.SPT0436-40_sci.spw27.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    100.9593,
+    102.811
+   ],
+   "native_kms": 23.0,
+   "bin": 2,
+   "sigma_mjy": 1.448,
+   "seg_channels": 0,
+   "sfind_near_target": true,
+   "status": "measured",
+   "admit_detection": true,
+   "offset_arcsec": 0.24,
+   "beam_factor": 0.985,
+   "spectrum": "CubeSpectrum_0",
+   "noise_scale": 0.97,
+   "line_channels": 18,
+   "peak_snr": 7.9
+  },
+  {
+   "window": "SPT0436-40_X109_spw31",
+   "file": "member.uid___A001_X8a9_X109.SPT0436-40_sci.spw31.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    101.7093,
+    103.561
+   ],
+   "native_kms": 22.8,
+   "bin": 2,
+   "sigma_mjy": 1.642,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0,
+   "overlap_channels_dropped": 71
+  },
+  {
+   "window": "SPT0436-40_X128_spw29",
+   "file": "member.uid___A001_X8a9_X128.SPT0436-40_sci.spw29.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    103.5841,
+    105.4359
+   ],
+   "native_kms": 22.4,
+   "bin": 2,
+   "sigma_mjy": 2.236,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0436-40_X128_spw31",
+   "file": "member.uid___A001_X8a9_X128.SPT0436-40_sci.spw31.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    105.4591,
+    107.3109
+   ],
+   "native_kms": 22.0,
+   "bin": 2,
+   "sigma_mjy": 2.356,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0436-40_X147_spw29",
+   "file": "member.uid___A001_X8a9_X147.SPT0436-40_sci.spw29.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    107.3357,
+    109.1875
+   ],
+   "native_kms": 21.6,
+   "bin": 2,
+   "sigma_mjy": 1.739,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0436-40_X147_spw31",
+   "file": "member.uid___A001_X8a9_X147.SPT0436-40_sci.spw31.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    109.2107,
+    111.0625
+   ],
+   "native_kms": 21.3,
+   "bin": 2,
+   "sigma_mjy": 1.861,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0436-40_X166_spw29",
+   "file": "member.uid___A001_X8a9_X166.SPT0436-40_sci.spw29.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    111.0843,
+    112.936
+   ],
+   "native_kms": 20.9,
+   "bin": 2,
+   "sigma_mjy": 1.848,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0436-40_X166_spw31",
+   "file": "member.uid___A001_X8a9_X166.SPT0436-40_sci.spw31.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    112.9593,
+    114.811
+   ],
+   "native_kms": 20.6,
+   "bin": 2,
+   "sigma_mjy": 2.359,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  }
+ ]
+}

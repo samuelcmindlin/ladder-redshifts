@@ -1,0 +1,85 @@
+{
+ "n_spectra": 600,
+ "seed": 99,
+ "dv_max_kms": 150.0,
+ "setups": {
+  "B3 scan": [
+   [
+    84.2,
+    114.9
+   ]
+  ],
+  "B3 + B4 scans": [
+   [
+    84.2,
+    114.9
+   ],
+   [
+    125.0,
+    163.0
+   ]
+  ]
+ },
+ "results": {
+  "B3 scan": {
+   "with tolerance, uniform prior": {
+    "median_confidence": 0.09842964046247671,
+    "frac_above_0p5": 0.03,
+    "frac_above_0p8": 0.006666666666666667,
+    "frac_confident": 0.0,
+    "max_confidence": 0.8954733139238821
+   },
+   "with tolerance, SPT-like prior": {
+    "median_confidence": 0.14785489967597337,
+    "frac_above_0p5": 0.04833333333333333,
+    "frac_above_0p8": 0.005,
+    "frac_confident": 0.0,
+    "max_confidence": 0.8941532670707982
+   },
+   "exact positions, uniform prior": {
+    "median_confidence": 0.06113592605458809,
+    "frac_above_0p5": 0.023333333333333334,
+    "frac_above_0p8": 0.0033333333333333335,
+    "frac_confident": 0.0,
+    "max_confidence": 0.9108771141682325
+   },
+   "exact positions, SPT-like prior": {
+    "median_confidence": 0.08452959700665386,
+    "frac_above_0p5": 0.021666666666666667,
+    "frac_above_0p8": 0.0016666666666666668,
+    "frac_confident": 0.0,
+    "max_confidence": 0.8456432945563258
+   }
+  },
+  "B3 + B4 scans": {
+   "with tolerance, uniform prior": {
+    "median_confidence": 0.15914376230644223,
+    "frac_above_0p5": 0.1,
+    "frac_above_0p8": 0.016666666666666666,
+    "frac_confident": 0.0016666666666666668,
+    "max_confidence": 0.9868722295357195
+   },
+   "with tolerance, SPT-like prior": {
+    "median_confidence": 0.1863256526265834,
+    "frac_above_0p5": 0.11833333333333333,
+    "frac_above_0p8": 0.018333333333333333,
+    "frac_confident": 0.005,
+    "max_confidence": 0.9957901443136473
+   },
+   "exact positions, uniform prior": {
+    "median_confidence": 0.0754640171914201,
+    "frac_above_0p5": 0.02666666666666667,
+    "frac_above_0p8": 0.0033333333333333335,
+    "frac_confident": 0.0016666666666666668,
+    "max_confidence": 0.9795981758212896
+   },
+   "exact positions, SPT-like prior": {
+    "median_confidence": 0.08362480955077867,
+    "frac_above_0p5": 0.045,
+    "frac_above_0p8": 0.005,
+    "frac_confident": 0.0033333333333333335,
+    "max_confidence": 0.9906498802207971
+   }
+  }
+ }
+}

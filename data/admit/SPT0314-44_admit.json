@@ -1,0 +1,338 @@
+{
+ "target": "SPT0314-44",
+ "target_offset_arcsec": [
+  -3.13,
+  -1.13
+ ],
+ "position_from": "source finder: 2 detection(s), S/N-weighted",
+ "settings": {
+  "nondet_scale": 10.0,
+  "dv_kms": 50.0,
+  "match_beams": 0.5,
+  "max_offset_arcsec": 10.0,
+  "require_detection": false
+ },
+ "counts": {
+  "measured": 2,
+  "zero-filled": 18,
+  "dropped": 0
+ },
+ "windows": [
+  {
+   "window": "SPT0314-44_Xe4_spw25",
+   "file": "member.uid___A001_X8a9_Xe4.SPT0314-44_sci.spw25.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    84.0903,
+    85.942
+   ],
+   "native_kms": 27.6,
+   "bin": 2,
+   "sigma_mjy": 1.779,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0314-44_Xe4_spw27",
+   "file": "member.uid___A001_X8a9_Xe4.SPT0314-44_sci.spw27.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    85.9654,
+    87.8172
+   ],
+   "native_kms": 27.0,
+   "bin": 2,
+   "sigma_mjy": 1.693,
+   "seg_channels": 6,
+   "sfind_near_target": true,
+   "status": "measured",
+   "admit_detection": true,
+   "offset_arcsec": 0.55,
+   "beam_factor": 0.936,
+   "spectrum": "CubeSpectrum_1",
+   "noise_scale": 0.99,
+   "line_channels": 8,
+   "peak_snr": 12.9
+  },
+  {
+   "window": "SPT0314-44_X103_spw25",
+   "file": "member.uid___A001_X8a9_X103.SPT0314-44_sci.spw25.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    87.8341,
+    89.6859
+   ],
+   "native_kms": 26.4,
+   "bin": 2,
+   "sigma_mjy": 1.379,
+   "seg_channels": 18,
+   "sfind_near_target": true,
+   "status": "measured",
+   "admit_detection": true,
+   "offset_arcsec": 0.57,
+   "beam_factor": 0.931,
+   "spectrum": "CubeSpectrum_1",
+   "noise_scale": 1.03,
+   "line_channels": 18,
+   "peak_snr": 16.4
+  },
+  {
+   "window": "SPT0314-44_X103_spw27",
+   "file": "member.uid___A001_X8a9_X103.SPT0314-44_sci.spw27.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    89.7091,
+    91.5609
+   ],
+   "native_kms": 25.8,
+   "bin": 2,
+   "sigma_mjy": 1.368,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0314-44_X122_spw25",
+   "file": "member.uid___A001_X8a9_X122.SPT0314-44_sci.spw25.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    91.5841,
+    93.4359
+   ],
+   "native_kms": 25.3,
+   "bin": 2,
+   "sigma_mjy": 1.85,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0314-44_X122_spw27",
+   "file": "member.uid___A001_X8a9_X122.SPT0314-44_sci.spw27.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    93.4591,
+    95.3109
+   ],
+   "native_kms": 24.8,
+   "bin": 2,
+   "sigma_mjy": 1.766,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0314-44_X141_spw25",
+   "file": "member.uid___A001_X8a9_X141.SPT0314-44_sci.spw25.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    95.3341,
+    97.1859
+   ],
+   "native_kms": 24.3,
+   "bin": 2,
+   "sigma_mjy": 1.661,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0314-44_Xe4_spw29",
+   "file": "member.uid___A001_X8a9_Xe4.SPT0314-44_sci.spw29.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    96.1538,
+    98.0055
+   ],
+   "native_kms": 24.1,
+   "bin": 2,
+   "sigma_mjy": 1.807,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0,
+   "overlap_channels_dropped": 117
+  },
+  {
+   "window": "SPT0314-44_X141_spw27",
+   "file": "member.uid___A001_X8a9_X141.SPT0314-44_sci.spw27.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    97.2091,
+    99.0609
+   ],
+   "native_kms": 23.9,
+   "bin": 2,
+   "sigma_mjy": 1.603,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0314-44_Xe4_spw31",
+   "file": "member.uid___A001_X8a9_Xe4.SPT0314-44_sci.spw31.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    97.9664,
+    99.8182
+   ],
+   "native_kms": 23.7,
+   "bin": 2,
+   "sigma_mjy": 1.876,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0,
+   "overlap_channels_dropped": 117
+  },
+  {
+   "window": "SPT0314-44_X160_spw25",
+   "file": "member.uid___A001_X8a9_X160.SPT0314-44_sci.spw25.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    99.0855,
+    100.9373
+   ],
+   "native_kms": 23.4,
+   "bin": 2,
+   "sigma_mjy": 1.478,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0,
+   "overlap_channels_dropped": 71
+  },
+  {
+   "window": "SPT0314-44_X103_spw29",
+   "file": "member.uid___A001_X8a9_X103.SPT0314-44_sci.spw29.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    99.8341,
+    101.6859
+   ],
+   "native_kms": 23.2,
+   "bin": 2,
+   "sigma_mjy": 1.405,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0314-44_X160_spw27",
+   "file": "member.uid___A001_X8a9_X160.SPT0314-44_sci.spw27.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    100.9606,
+    102.8123
+   ],
+   "native_kms": 23.0,
+   "bin": 2,
+   "sigma_mjy": 1.523,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0,
+   "overlap_channels_dropped": 117
+  },
+  {
+   "window": "SPT0314-44_X103_spw31",
+   "file": "member.uid___A001_X8a9_X103.SPT0314-44_sci.spw31.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    101.7091,
+    103.5609
+   ],
+   "native_kms": 22.8,
+   "bin": 2,
+   "sigma_mjy": 1.483,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0314-44_X122_spw29",
+   "file": "member.uid___A001_X8a9_X122.SPT0314-44_sci.spw29.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    103.5841,
+    105.4359
+   ],
+   "native_kms": 22.4,
+   "bin": 2,
+   "sigma_mjy": 2.062,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0314-44_X122_spw31",
+   "file": "member.uid___A001_X8a9_X122.SPT0314-44_sci.spw31.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    105.4592,
+    107.3109
+   ],
+   "native_kms": 22.0,
+   "bin": 2,
+   "sigma_mjy": 2.114,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0314-44_X141_spw29",
+   "file": "member.uid___A001_X8a9_X141.SPT0314-44_sci.spw29.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    107.3341,
+    109.1859
+   ],
+   "native_kms": 21.6,
+   "bin": 2,
+   "sigma_mjy": 1.855,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0314-44_X141_spw31",
+   "file": "member.uid___A001_X8a9_X141.SPT0314-44_sci.spw31.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    109.2091,
+    111.0609
+   ],
+   "native_kms": 21.3,
+   "bin": 2,
+   "sigma_mjy": 2.032,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0314-44_X160_spw29",
+   "file": "member.uid___A001_X8a9_X160.SPT0314-44_sci.spw29.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    111.0857,
+    112.9374
+   ],
+   "native_kms": 20.9,
+   "bin": 2,
+   "sigma_mjy": 1.884,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0314-44_X160_spw31",
+   "file": "member.uid___A001_X8a9_X160.SPT0314-44_sci.spw31.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    112.9607,
+    114.8125
+   ],
+   "native_kms": 20.6,
+   "bin": 2,
+   "sigma_mjy": 2.387,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  }
+ ]
+}

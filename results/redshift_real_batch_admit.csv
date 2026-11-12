@@ -1,0 +1,22 @@
+source,z_published,truth_status,z_engine,confidence,p_published,verdict,z_flat,conf_flat,z_sudoku,z_naive,prior,reference
+SPT0054-41,4.8769,confirmed,4.8752,0.551,0.551,ambiguous (best = truth),4.8752,0.691,,,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1"
+SPT0226-45,3.233,confirmed,,,,no spectrum on the source (ADMIT),,,,,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1"
+SPT0314-44,2.9345,confirmed,2.9339,0.884,0.884,ambiguous (best = truth),2.9339,0.897,,,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1; Riechers 2025 (ApJ 980, 59)"
+SPT0402-45,2.6833,confirmed,2.6825,0.644,0.644,ambiguous (best = truth),2.6825,0.906,,,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1"
+SPT0403-58,4.0564,confirmed,2.7915,0.619,0.023,ambiguous (best != truth),2.7915,0.902,,,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1"
+SPT0425-40,5.1353,confirmed,,,,no spectrum on the source (ADMIT),,,,,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1"
+SPT0433-59,,,,,,no spectrum on the source (ADMIT),,,,,spt,
+SPT0436-40,3.8519,confirmed,3.8514,1.0,1.0,confident & correct,3.8514,1.0,3.8511,17.187,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1"
+SPT0520-53,3.7785,confirmed,4.972,0.524,0.114,ambiguous (best != truth),4.972,0.658,,,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1"
+SPT0528-53,4.737,confirmed,,,,no spectrum on the source (ADMIT),,,,,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1"
+SPT0549-56,,,,,,no spectrum on the source (ADMIT),,,,,spt,
+SPT0652-55,3.3466,confirmed,3.3472,0.507,0.507,ambiguous (best = truth),2.2604,0.914,,,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1"
+SPT2031-51,2.4521,confirmed,2.4523,0.263,0.263,ambiguous (best = truth),2.4523,0.499,,,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1"
+SPT2129-57,3.2601,confirmed,3.2597,0.709,0.709,ambiguous (best = truth),3.2597,0.774,,,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1"
+SPT2152-40,3.8507,confirmed,3.8514,0.377,0.377,ambiguous (best = truth),2.6385,0.907,,,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1"
+SPT2203-41,5.1937,confirmed,,,,no spectrum on the source (ADMIT),,,,,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1"
+SPT2232-61,2.8936,confirmed,2.8934,0.762,0.762,ambiguous (best = truth),2.8934,0.899,,,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1"
+SPT2311-45,2.5073,confirmed,3.6767,0.304,0.18,ambiguous (best != truth),2.5074,0.555,,,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1"
+SPT2316-50,3.1413,confirmed,,,,no spectrum on the source (ADMIT),,,,,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1"
+SPT2334-50,,,,,,no spectrum on the source (ADMIT),,,,,spt,
+SPT2349-52,3.9,confirmed,,,,no spectrum on the source (ADMIT),,,,,spt,"Reuter et al. 2020 (ApJ 902, 78), Table E1"

@@ -1,0 +1,920 @@
+[
+ {
+  "source": "SPT0027-50",
+  "route": "saved spectrum",
+  "coverage_ghz": [
+   76.89,
+   111.01
+  ],
+  "prior": "spt",
+  "z_published": 3.444,
+  "z_engine": 3.4432,
+  "confidence": 1.0,
+  "verdict": "confident & correct",
+  "z_flat": 3.4432,
+  "conf_flat": 1.0,
+  "z_sudoku": 3.4433,
+  "n_sudoku": 1,
+  "z_naive": 15.65,
+  "detections": [
+   [
+    77.826,
+    24.7
+   ],
+   [
+    103.76,
+    35.2
+   ],
+   [
+    110.768,
+    12.0
+   ]
+  ],
+  "candidates": [
+   [
+    3.4432,
+    1.0
+   ]
+  ],
+  "truth_status": "confirmed",
+  "p_published": 1.0,
+  "reference": "Bakx 2026 (arXiv:2604.01089); De Breuck 2026 talk"
+ },
+ {
+  "source": "SPT0054-41",
+  "route": "saved spectrum",
+  "coverage_ghz": [
+   84.09,
+   114.81
+  ],
+  "prior": "spt",
+  "z_published": 4.8769,
+  "z_engine": 4.8762,
+  "confidence": 0.687,
+  "verdict": "ambiguous (best = truth)",
+  "z_flat": 4.8762,
+  "conf_flat": 0.69,
+  "z_sudoku": null,
+  "n_sudoku": 3,
+  "z_naive": null,
+  "detections": [
+   [
+    98.02,
+    41.9
+   ]
+  ],
+  "candidates": [
+   [
+    4.8762,
+    0.687
+   ],
+   [
+    2.5262,
+    0.28
+   ],
+   [
+    1.3508,
+    0.028
+   ],
+   [
+    3.7017,
+    0.005
+   ]
+  ],
+  "truth_status": "confirmed",
+  "p_published": 0.687,
+  "reference": "Reuter et al. 2020 (ApJ 902, 78), Table E1"
+ },
+ {
+  "source": "SPT0226-45",
+  "route": "saved spectrum",
+  "coverage_ghz": [
+   84.09,
+   114.81
+  ],
+  "prior": "spt",
+  "z_published": 3.233,
+  "z_engine": 3.2334,
+  "confidence": 0.776,
+  "verdict": "ambiguous (best = truth)",
+  "z_flat": 3.2334,
+  "conf_flat": 0.776,
+  "z_sudoku": null,
+  "n_sudoku": 3,
+  "z_naive": null,
+  "detections": [
+   [
+    108.914,
+    18.6
+   ]
+  ],
+  "candidates": [
+   [
+    3.2334,
+    0.776
+   ],
+   [
+    2.175,
+    0.205
+   ],
+   [
+    1.1167,
+    0.019
+   ]
+  ],
+  "truth_status": "confirmed",
+  "p_published": 0.776,
+  "reference": "Reuter et al. 2020 (ApJ 902, 78), Table E1"
+ },
+ {
+  "source": "SPT0314-44",
+  "route": "saved spectrum",
+  "coverage_ghz": [
+   84.09,
+   114.81
+  ],
+  "prior": "spt",
+  "z_published": 2.9345,
+  "z_engine": 2.9332,
+  "confidence": 0.897,
+  "verdict": "ambiguous (best = truth)",
+  "z_flat": 2.9332,
+  "conf_flat": 0.897,
+  "z_sudoku": null,
+  "n_sudoku": 2,
+  "z_naive": null,
+  "detections": [
+   [
+    87.922,
+    52.2
+   ]
+  ],
+  "candidates": [
+   [
+    2.9332,
+    0.897
+   ],
+   [
+    1.6222,
+    0.103
+   ]
+  ],
+  "truth_status": "confirmed",
+  "p_published": 0.897,
+  "reference": "Reuter et al. 2020 (ApJ 902, 78), Table E1; Riechers 2025 (ApJ 980, 59)"
+ },
+ {
+  "source": "SPT0402-45",
+  "route": "saved spectrum",
+  "coverage_ghz": [
+   84.09,
+   114.81
+  ],
+  "prior": "spt",
+  "z_published": 2.6833,
+  "z_engine": 2.6825,
+  "confidence": 0.868,
+  "verdict": "ambiguous (best = truth)",
+  "z_flat": 2.6825,
+  "conf_flat": 0.906,
+  "z_sudoku": null,
+  "n_sudoku": 0,
+  "z_naive": 48.103,
+  "detections": [
+   [
+    93.893,
+    32.2
+   ],
+   [
+    96.258,
+    6.4
+   ]
+  ],
+  "candidates": [
+   [
+    2.6825,
+    0.868
+   ],
+   [
+    3.9101,
+    0.041
+   ],
+   [
+    1.455,
+    0.09
+   ]
+  ],
+  "truth_status": "confirmed",
+  "p_published": 0.868,
+  "reference": "Reuter et al. 2020 (ApJ 902, 78), Table E1"
+ },
+ {
+  "source": "SPT0403-58",
+  "route": "saved spectrum",
+  "coverage_ghz": [
+   84.09,
+   114.81
+  ],
+  "prior": "spt",
+  "z_published": 4.0564,
+  "z_engine": 4.0555,
+  "confidence": 1.0,
+  "verdict": "confident & correct",
+  "z_flat": 4.0555,
+  "conf_flat": 1.0,
+  "z_sudoku": 4.0551,
+  "n_sudoku": 1,
+  "z_naive": 17.944,
+  "detections": [
+   [
+    91.193,
+    14.9
+   ],
+   [
+    97.355,
+    9.4
+   ],
+   [
+    113.987,
+    9.8
+   ]
+  ],
+  "candidates": [
+   [
+    4.0555,
+    1.0
+   ]
+  ],
+  "truth_status": "confirmed",
+  "p_published": 1.0,
+  "reference": "Reuter et al. 2020 (ApJ 902, 78), Table E1"
+ },
+ {
+  "source": "SPT0425-40",
+  "route": "saved spectrum",
+  "coverage_ghz": [
+   84.09,
+   114.81
+  ],
+  "prior": "spt",
+  "z_published": 5.1353,
+  "z_engine": 5.1346,
+  "confidence": 1.0,
+  "verdict": "confident & correct",
+  "z_flat": 5.1346,
+  "conf_flat": 1.0,
+  "z_sudoku": 5.1343,
+  "n_sudoku": 1,
+  "z_naive": 5.136,
+  "detections": [
+   [
+    93.936,
+    10.9
+   ],
+   [
+    112.717,
+    11.0
+   ]
+  ],
+  "candidates": [
+   [
+    5.1346,
+    1.0
+   ]
+  ],
+  "truth_status": "confirmed",
+  "p_published": 1.0,
+  "reference": "Reuter et al. 2020 (ApJ 902, 78), Table E1"
+ },
+ {
+  "source": "SPT0433-59",
+  "route": "saved spectrum",
+  "coverage_ghz": [
+   84.09,
+   114.81
+  ],
+  "prior": "spt",
+  "z_published": null,
+  "z_engine": 4.3943,
+  "confidence": 0.522,
+  "verdict": "no truth",
+  "z_flat": 4.3943,
+  "conf_flat": 0.704,
+  "z_sudoku": null,
+  "n_sudoku": 0,
+  "z_naive": null,
+  "detections": [],
+  "candidates": [
+   [
+    4.3943,
+    0.522
+   ],
+   [
+    4.0546,
+    0.036
+   ],
+   [
+    5.3215,
+    0.024
+   ],
+   [
+    4.1965,
+    0.022
+   ],
+   [
+    3.045,
+    0.016
+   ]
+  ],
+  "truth_status": null,
+  "p_published": null,
+  "reference": ""
+ },
+ {
+  "source": "SPT0436-40",
+  "route": "saved spectrum",
+  "coverage_ghz": [
+   84.09,
+   114.81
+  ],
+  "prior": "spt",
+  "z_published": 3.8519,
+  "z_engine": 3.8514,
+  "confidence": 1.0,
+  "verdict": "confident & correct",
+  "z_flat": 3.8514,
+  "conf_flat": 1.0,
+  "z_sudoku": 3.8511,
+  "n_sudoku": 1,
+  "z_naive": 17.187,
+  "detections": [
+   [
+    95.036,
+    26.9
+   ],
+   [
+    101.451,
+    15.2
+   ]
+  ],
+  "candidates": [
+   [
+    3.8514,
+    1.0
+   ]
+  ],
+  "truth_status": "confirmed",
+  "p_published": 1.0,
+  "reference": "Reuter et al. 2020 (ApJ 902, 78), Table E1"
+ },
+ {
+  "source": "SPT0520-53",
+  "route": "saved spectrum",
+  "coverage_ghz": [
+   84.09,
+   114.81
+  ],
+  "prior": "spt",
+  "z_published": 3.7785,
+  "z_engine": 3.7784,
+  "confidence": 1.0,
+  "verdict": "confident & correct",
+  "z_flat": 4.972,
+  "conf_flat": 0.658,
+  "z_sudoku": 3.7779,
+  "n_sudoku": 1,
+  "z_naive": 16.913,
+  "detections": [
+   [
+    96.49,
+    27.4
+   ],
+   [
+    103.0,
+    6.5
+   ]
+  ],
+  "candidates": [
+   [
+    3.7784,
+    1.0
+   ]
+  ],
+  "truth_status": "confirmed",
+  "p_published": 1.0,
+  "reference": "Reuter et al. 2020 (ApJ 902, 78), Table E1"
+ },
+ {
+  "source": "SPT0528-53",
+  "route": "saved spectrum",
+  "coverage_ghz": [
+   84.09,
+   114.81
+  ],
+  "prior": "spt",
+  "z_published": 4.737,
+  "z_engine": 4.7358,
+  "confidence": 0.76,
+  "verdict": "ambiguous (best = truth)",
+  "z_flat": 2.442,
+  "conf_flat": 0.489,
+  "z_sudoku": null,
+  "n_sudoku": 3,
+  "z_naive": null,
+  "detections": [
+   [
+    100.468,
+    14.5
+   ]
+  ],
+  "candidates": [
+   [
+    4.7358,
+    0.76
+   ],
+   [
+    3.5894,
+    0.123
+   ],
+   [
+    2.442,
+    0.057
+   ],
+   [
+    5.8828,
+    0.054
+   ],
+   [
+    1.2947,
+    0.006
+   ]
+  ],
+  "truth_status": "confirmed",
+  "p_published": 0.76,
+  "reference": "Reuter et al. 2020 (ApJ 902, 78), Table E1"
+ },
+ {
+  "source": "SPT0549-56",
+  "route": "saved spectrum",
+  "coverage_ghz": [
+   84.09,
+   114.81
+  ],
+  "prior": "spt",
+  "z_published": null,
+  "z_engine": 4.7502,
+  "confidence": 0.045,
+  "verdict": "no truth",
+  "z_flat": 4.754,
+  "conf_flat": 0.057,
+  "z_sudoku": null,
+  "n_sudoku": 0,
+  "z_naive": null,
+  "detections": [],
+  "candidates": [
+   [
+    4.7502,
+    0.045
+   ],
+   [
+    4.1396,
+    0.036
+   ],
+   [
+    4.3069,
+    0.03
+   ],
+   [
+    3.9594,
+    0.033
+   ],
+   [
+    3.5323,
+    0.024
+   ]
+  ],
+  "truth_status": null,
+  "p_published": null,
+  "reference": ""
+ },
+ {
+  "source": "SPT0652-55",
+  "route": "saved spectrum",
+  "coverage_ghz": [
+   84.09,
+   114.81
+  ],
+  "prior": "spt",
+  "z_published": 3.3466,
+  "z_engine": 3.3465,
+  "confidence": 1.0,
+  "verdict": "confident & correct",
+  "z_flat": 2.2598,
+  "conf_flat": 0.914,
+  "z_sudoku": 3.3445,
+  "n_sudoku": 1,
+  "z_naive": 15.289,
+  "detections": [
+   [
+    106.119,
+    36.8
+   ],
+   [
+    113.257,
+    7.4
+   ]
+  ],
+  "candidates": [
+   [
+    3.3465,
+    1.0
+   ]
+  ],
+  "truth_status": "confirmed",
+  "p_published": 1.0,
+  "reference": "Reuter et al. 2020 (ApJ 902, 78), Table E1"
+ },
+ {
+  "source": "SPT2031-51",
+  "route": "saved spectrum",
+  "coverage_ghz": [
+   84.05,
+   114.81
+  ],
+  "prior": "spt",
+  "z_published": 2.4521,
+  "z_engine": 2.4523,
+  "confidence": 0.45,
+  "verdict": "ambiguous (best = truth)",
+  "z_flat": 2.4523,
+  "conf_flat": 0.499,
+  "z_sudoku": null,
+  "n_sudoku": 3,
+  "z_naive": null,
+  "detections": [
+   [
+    100.156,
+    60.9
+   ]
+  ],
+  "candidates": [
+   [
+    2.4523,
+    0.45
+   ],
+   [
+    5.9034,
+    0.407
+   ],
+   [
+    4.753,
+    0.1
+   ],
+   [
+    1.3016,
+    0.044
+   ],
+   [
+    3.6031,
+    0.0
+   ]
+  ],
+  "truth_status": "confirmed",
+  "p_published": 0.45,
+  "reference": "Reuter et al. 2020 (ApJ 902, 78), Table E1"
+ },
+ {
+  "source": "SPT2129-57",
+  "route": "saved spectrum",
+  "coverage_ghz": [
+   84.07,
+   114.81
+  ],
+  "prior": "spt",
+  "z_published": 3.2601,
+  "z_engine": 3.2604,
+  "confidence": 0.774,
+  "verdict": "ambiguous (best = truth)",
+  "z_flat": 3.2604,
+  "conf_flat": 0.774,
+  "z_sudoku": null,
+  "n_sudoku": 3,
+  "z_naive": null,
+  "detections": [
+   [
+    108.233,
+    24.1
+   ]
+  ],
+  "candidates": [
+   [
+    3.2604,
+    0.774
+   ],
+   [
+    2.1952,
+    0.207
+   ],
+   [
+    1.1302,
+    0.019
+   ]
+  ],
+  "truth_status": "confirmed",
+  "p_published": 0.774,
+  "reference": "Reuter et al. 2020 (ApJ 902, 78), Table E1"
+ },
+ {
+  "source": "SPT2152-40",
+  "route": "saved spectrum",
+  "coverage_ghz": [
+   84.08,
+   114.81
+  ],
+  "prior": "spt",
+  "z_published": 3.8507,
+  "z_engine": 3.8514,
+  "confidence": 1.0,
+  "verdict": "confident & correct",
+  "z_flat": 2.6385,
+  "conf_flat": 0.907,
+  "z_sudoku": 3.8506,
+  "n_sudoku": 1,
+  "z_naive": 17.184,
+  "detections": [
+   [
+    95.046,
+    21.1
+   ],
+   [
+    101.469,
+    7.1
+   ]
+  ],
+  "candidates": [
+   [
+    3.8514,
+    1.0
+   ]
+  ],
+  "truth_status": "confirmed",
+  "p_published": 1.0,
+  "reference": "Reuter et al. 2020 (ApJ 902, 78), Table E1"
+ },
+ {
+  "source": "SPT2203-41",
+  "route": "saved spectrum",
+  "coverage_ghz": [
+   84.08,
+   114.81
+  ],
+  "prior": "spt",
+  "z_published": 5.1937,
+  "z_engine": 5.1942,
+  "confidence": 1.0,
+  "verdict": "confident & correct",
+  "z_flat": 5.1942,
+  "conf_flat": 1.0,
+  "z_sudoku": 5.1941,
+  "n_sudoku": 1,
+  "z_naive": 5.195,
+  "detections": [
+   [
+    93.035,
+    8.7
+   ],
+   [
+    111.639,
+    5.6
+   ]
+  ],
+  "candidates": [
+   [
+    5.1942,
+    1.0
+   ]
+  ],
+  "truth_status": "confirmed",
+  "p_published": 1.0,
+  "reference": "Reuter et al. 2020 (ApJ 902, 78), Table E1"
+ },
+ {
+  "source": "SPT2232-61",
+  "route": "saved spectrum",
+  "coverage_ghz": [
+   84.07,
+   114.81
+  ],
+  "prior": "spt",
+  "z_published": 2.8936,
+  "z_engine": 2.8934,
+  "confidence": 0.899,
+  "verdict": "ambiguous (best = truth)",
+  "z_flat": 2.8934,
+  "conf_flat": 0.899,
+  "z_sudoku": null,
+  "n_sudoku": 2,
+  "z_naive": null,
+  "detections": [
+   [
+    88.801,
+    38.9
+   ]
+  ],
+  "candidates": [
+   [
+    2.8934,
+    0.899
+   ],
+   [
+    1.5957,
+    0.101
+   ]
+  ],
+  "truth_status": "confirmed",
+  "p_published": 0.899,
+  "reference": "Reuter et al. 2020 (ApJ 902, 78), Table E1"
+ },
+ {
+  "source": "SPT2311-45",
+  "route": "saved spectrum",
+  "coverage_ghz": [
+   84.09,
+   114.81
+  ],
+  "prior": "spt",
+  "z_published": 2.5073,
+  "z_engine": 2.5074,
+  "confidence": 0.424,
+  "verdict": "ambiguous (best = truth)",
+  "z_flat": 2.5074,
+  "conf_flat": 0.555,
+  "z_sudoku": null,
+  "n_sudoku": 3,
+  "z_naive": null,
+  "detections": [
+   [
+    98.592,
+    26.6
+   ]
+  ],
+  "candidates": [
+   [
+    2.5074,
+    0.424
+   ],
+   [
+    6.0137,
+    0.298
+   ],
+   [
+    3.6767,
+    0.105
+   ],
+   [
+    4.8449,
+    0.131
+   ],
+   [
+    1.3383,
+    0.042
+   ]
+  ],
+  "truth_status": "confirmed",
+  "p_published": 0.424,
+  "reference": "Reuter et al. 2020 (ApJ 902, 78), Table E1"
+ },
+ {
+  "source": "SPT2316-50",
+  "route": "saved spectrum",
+  "coverage_ghz": [
+   84.09,
+   114.81
+  ],
+  "prior": "spt",
+  "z_published": 3.1413,
+  "z_engine": 4.1775,
+  "confidence": 0.114,
+  "verdict": "ambiguous (best != truth)",
+  "z_flat": 4.1784,
+  "conf_flat": 0.141,
+  "z_sudoku": null,
+  "n_sudoku": 0,
+  "z_naive": null,
+  "detections": [],
+  "candidates": [
+   [
+    4.1775,
+    0.114
+   ],
+   [
+    5.2097,
+    0.097
+   ],
+   [
+    4.973,
+    0.049
+   ],
+   [
+    2.8112,
+    0.036
+   ],
+   [
+    3.7792,
+    0.042
+   ]
+  ],
+  "truth_status": "confirmed",
+  "p_published": 0.016,
+  "reference": "Reuter et al. 2020 (ApJ 902, 78), Table E1"
+ },
+ {
+  "source": "SPT2334-50",
+  "route": "saved spectrum",
+  "coverage_ghz": [
+   84.09,
+   114.81
+  ],
+  "prior": "spt",
+  "z_published": null,
+  "z_engine": 4.0631,
+  "confidence": 0.275,
+  "verdict": "no truth",
+  "z_flat": 4.0631,
+  "conf_flat": 0.285,
+  "z_sudoku": null,
+  "n_sudoku": 0,
+  "z_naive": null,
+  "detections": [],
+  "candidates": [
+   [
+    4.0631,
+    0.275
+   ],
+   [
+    4.4359,
+    0.103
+   ],
+   [
+    5.687,
+    0.023
+   ],
+   [
+    3.3494,
+    0.017
+   ],
+   [
+    3.4596,
+    0.016
+   ]
+  ],
+  "truth_status": null,
+  "p_published": null,
+  "reference": ""
+ },
+ {
+  "source": "SPT2349-52",
+  "route": "saved spectrum",
+  "coverage_ghz": [
+   84.09,
+   114.81
+  ],
+  "prior": "spt",
+  "z_published": 3.9,
+  "z_engine": 3.9002,
+  "confidence": 0.847,
+  "verdict": "ambiguous (best = truth)",
+  "z_flat": 2.6751,
+  "conf_flat": 0.906,
+  "z_sudoku": null,
+  "n_sudoku": 3,
+  "z_naive": null,
+  "detections": [
+   [
+    94.085,
+    9.3
+   ]
+  ],
+  "candidates": [
+   [
+    3.9002,
+    0.847
+   ],
+   [
+    2.6751,
+    0.138
+   ],
+   [
+    1.4501,
+    0.014
+   ],
+   [
+    5.1243,
+    0.001
+   ]
+  ],
+  "truth_status": "confirmed",
+  "p_published": 0.847,
+  "reference": "Reuter et al. 2020 (ApJ 902, 78), Table E1"
+ }
+]

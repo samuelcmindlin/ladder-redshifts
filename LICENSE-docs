@@ -1,0 +1,17 @@
+Text, figures, audio and derived data in this repository
+(README.md, docs/, figures/, audio/, results/, and the derived files in data/)
+are licensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0).
+
+Copyright (c) 2026 Samuel C. Mindlin
+
+You are free to share and adapt this material for any purpose, provided you give
+appropriate credit, link to the licence, and indicate if changes were made.
+Full licence text: https://creativecommons.org/licenses/by/4.0/legalcode
+
+The spectra in data/ are derived from public ALMA archive data (projects 2011.0.00025.SV
+and 2016.1.00672.S). Publications that use them should also include the ALMA
+acknowledgement given in README.md. Published redshifts and positions in data/truth.csv
+and data/cutouts/ are taken from the papers cited there.
+
+The source code (ladder_redshifts/, scripts/, tests/) is licensed separately under the
+MIT licence (see LICENSE).

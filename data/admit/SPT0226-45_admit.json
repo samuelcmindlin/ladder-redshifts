@@ -1,0 +1,326 @@
+{
+ "target": "SPT0226-45",
+ "target_offset_arcsec": [
+  0.0,
+  0.0
+ ],
+ "position_from": "phase centre (no source-finder detection within 10\")",
+ "settings": {
+  "nondet_scale": 10.0,
+  "dv_kms": 50.0,
+  "match_beams": 0.5,
+  "max_offset_arcsec": 10.0,
+  "require_detection": false
+ },
+ "counts": {
+  "measured": 0,
+  "zero-filled": 20,
+  "dropped": 0
+ },
+ "windows": [
+  {
+   "window": "SPT0226-45_Xe4_spw25",
+   "file": "member.uid___A001_X8a9_Xe4.SPT0226-45_sci.spw25.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    84.0891,
+    85.9408
+   ],
+   "native_kms": 27.6,
+   "bin": 2,
+   "sigma_mjy": 1.751,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0226-45_Xe4_spw27",
+   "file": "member.uid___A001_X8a9_Xe4.SPT0226-45_sci.spw27.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    85.9642,
+    87.8159
+   ],
+   "native_kms": 27.0,
+   "bin": 2,
+   "sigma_mjy": 1.667,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0226-45_X103_spw25",
+   "file": "member.uid___A001_X8a9_X103.SPT0226-45_sci.spw25.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    87.8329,
+    89.6846
+   ],
+   "native_kms": 26.4,
+   "bin": 2,
+   "sigma_mjy": 1.435,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0226-45_X103_spw27",
+   "file": "member.uid___A001_X8a9_X103.SPT0226-45_sci.spw27.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    89.7079,
+    91.5595
+   ],
+   "native_kms": 25.8,
+   "bin": 2,
+   "sigma_mjy": 1.426,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0226-45_X122_spw25",
+   "file": "member.uid___A001_X8a9_X122.SPT0226-45_sci.spw25.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    91.5828,
+    93.4345
+   ],
+   "native_kms": 25.3,
+   "bin": 2,
+   "sigma_mjy": 1.918,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0226-45_X122_spw27",
+   "file": "member.uid___A001_X8a9_X122.SPT0226-45_sci.spw27.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    93.4578,
+    95.3095
+   ],
+   "native_kms": 24.8,
+   "bin": 2,
+   "sigma_mjy": 1.891,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0226-45_X141_spw25",
+   "file": "member.uid___A001_X8a9_X141.SPT0226-45_sci.spw25.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    95.3328,
+    97.1845
+   ],
+   "native_kms": 24.3,
+   "bin": 2,
+   "sigma_mjy": 1.682,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0226-45_Xe4_spw29",
+   "file": "member.uid___A001_X8a9_Xe4.SPT0226-45_sci.spw29.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    96.1524,
+    98.0041
+   ],
+   "native_kms": 24.1,
+   "bin": 2,
+   "sigma_mjy": 1.8,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0,
+   "overlap_channels_dropped": 117
+  },
+  {
+   "window": "SPT0226-45_X141_spw27",
+   "file": "member.uid___A001_X8a9_X141.SPT0226-45_sci.spw27.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    97.2078,
+    99.0595
+   ],
+   "native_kms": 23.9,
+   "bin": 2,
+   "sigma_mjy": 1.653,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0226-45_Xe4_spw31",
+   "file": "member.uid___A001_X8a9_Xe4.SPT0226-45_sci.spw31.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    97.9651,
+    99.8168
+   ],
+   "native_kms": 23.7,
+   "bin": 2,
+   "sigma_mjy": 1.876,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0,
+   "overlap_channels_dropped": 117
+  },
+  {
+   "window": "SPT0226-45_X160_spw25",
+   "file": "member.uid___A001_X8a9_X160.SPT0226-45_sci.spw25.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    99.0842,
+    100.9359
+   ],
+   "native_kms": 23.4,
+   "bin": 2,
+   "sigma_mjy": 1.554,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0,
+   "overlap_channels_dropped": 71
+  },
+  {
+   "window": "SPT0226-45_X103_spw29",
+   "file": "member.uid___A001_X8a9_X103.SPT0226-45_sci.spw29.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    99.8327,
+    101.6844
+   ],
+   "native_kms": 23.2,
+   "bin": 2,
+   "sigma_mjy": 1.473,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0226-45_X160_spw27",
+   "file": "member.uid___A001_X8a9_X160.SPT0226-45_sci.spw27.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    100.9592,
+    102.8109
+   ],
+   "native_kms": 23.0,
+   "bin": 2,
+   "sigma_mjy": 1.622,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0,
+   "overlap_channels_dropped": 117
+  },
+  {
+   "window": "SPT0226-45_X103_spw31",
+   "file": "member.uid___A001_X8a9_X103.SPT0226-45_sci.spw31.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    101.7077,
+    103.5594
+   ],
+   "native_kms": 22.8,
+   "bin": 2,
+   "sigma_mjy": 1.558,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0226-45_X122_spw29",
+   "file": "member.uid___A001_X8a9_X122.SPT0226-45_sci.spw29.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    103.5827,
+    105.4344
+   ],
+   "native_kms": 22.4,
+   "bin": 2,
+   "sigma_mjy": 2.073,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0226-45_X122_spw31",
+   "file": "member.uid___A001_X8a9_X122.SPT0226-45_sci.spw31.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    105.4576,
+    107.3093
+   ],
+   "native_kms": 22.0,
+   "bin": 2,
+   "sigma_mjy": 2.156,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0226-45_X141_spw29",
+   "file": "member.uid___A001_X8a9_X141.SPT0226-45_sci.spw29.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    107.3326,
+    109.1843
+   ],
+   "native_kms": 21.6,
+   "bin": 2,
+   "sigma_mjy": 1.92,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0226-45_X141_spw31",
+   "file": "member.uid___A001_X8a9_X141.SPT0226-45_sci.spw31.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    109.2076,
+    111.0593
+   ],
+   "native_kms": 21.3,
+   "bin": 2,
+   "sigma_mjy": 2.082,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0226-45_X160_spw29",
+   "file": "member.uid___A001_X8a9_X160.SPT0226-45_sci.spw29.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    111.0842,
+    112.9359
+   ],
+   "native_kms": 20.9,
+   "bin": 2,
+   "sigma_mjy": 1.999,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  },
+  {
+   "window": "SPT0226-45_X160_spw31",
+   "file": "member.uid___A001_X8a9_X160.SPT0226-45_sci.spw31.cube.I.pbcor.admit.native.tgz",
+   "freq_ghz": [
+    112.9592,
+    114.8109
+   ],
+   "native_kms": 20.6,
+   "bin": 2,
+   "sigma_mjy": 2.528,
+   "seg_channels": 0,
+   "sfind_near_target": false,
+   "status": "zero-filled",
+   "nondet_scale": 10.0
+  }
+ ]
+}
