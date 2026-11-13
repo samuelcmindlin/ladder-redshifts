@@ -14,6 +14,7 @@ authors:
 version: 0.1.0
 date-released: 2026-11-12
 license: MIT
+repository-code: "https://github.com/samuelcmindlin/ladder-redshifts"
 keywords:
   - redshift
   - ALMA

@@ -17,6 +17,9 @@ classifiers = [
     "Topic :: Scientific/Engineering :: Astronomy",
 ]
 
+[project.urls]
+Repository = "https://github.com/samuelcmindlin/ladder-redshifts"
+
 [project.optional-dependencies]
 archive = ["astropy>=5.0"]
 test = ["pytest>=7"]
