@@ -11,6 +11,8 @@
 | `redshift_atlas.png` | Synthetic atlas of 2,500 sources × 6 setups, in six panels (below). | `atlas` |
 | `redshift_traps.png` | HerBS-108, SPT0551-50 and SPT0452-50 rebuilt from their published coverage. It shows the posterior on each candidate before and after the decisive data. | `traps` |
 | `redshift_tuning.png` | Tuning optimiser. Confident, correct redshifts against the number of tunings for Band 2 now and after the upgrade, at fixed depth and at fixed total time. The layouts are chosen on one simulated population and scored on an independent one. | `tuning` |
+| `redshift_degradation.png` | The seven real multi-line spectra with noise added, mean over the sources, against the S/N the second-brightest line is left with. Panel A, answers given: the engine without a prior and with the survey prior, the guided rule and the 5σ detection rule. Panel B, best guesses: the engine and the template cross-correlation, each without and with the prior. | `degrade` |
+| `redshift_degradation_sources.png` | The same test per source, with the second line at 4.5σ, 4σ, 3.5σ and 3σ: the engine without a prior and with the survey prior, the guided rule and the 5σ rule, one row per source. | `degrade` |
 
 ## Panels
 

@@ -1,0 +1,1887 @@
+{
+ "code": "https://github.com/tjlcbakx/redshift-search-graphs",
+ "rsg_sha256": "620d6efb466ad6506f76c213fd4ec98a913a689345e6e98b9d439fa4eca40a32",
+ "z_top": 12.0,
+ "grid_points": 40000,
+ "settings": {
+  "sigma_threshold": 5,
+  "dzUncertainty": 0.13,
+  "nr_of_CO_lines": 20
+ },
+ "sources": [
+  {
+   "source": "SPT0027-50",
+   "z_published": 3.444,
+   "windows_ghz": [
+    [
+     76.886,
+     111.011
+    ]
+   ],
+   "sudoku_co": {
+    "lines": 2,
+    "label": "two lines, robust",
+    "robust": true
+   },
+   "sudoku_co_ci": {
+    "lines": 3,
+    "label": "three or more lines",
+    "robust": true
+   },
+   "engine": {
+    "z": 3.4432,
+    "confidence": 1.0,
+    "verdict": "confident & correct"
+   },
+   "repo_rule_solved": true,
+   "detections_5sigma": 3
+  },
+  {
+   "source": "SPT0054-41",
+   "z_published": 4.8769,
+   "windows_ghz": [
+    [
+     84.093,
+     85.937
+    ],
+    [
+     85.968,
+     87.812
+    ],
+    [
+     87.838,
+     89.682
+    ],
+    [
+     89.713,
+     91.557
+    ],
+    [
+     91.588,
+     93.432
+    ],
+    [
+     93.463,
+     95.307
+    ],
+    [
+     95.338,
+     103.557
+    ],
+    [
+     103.588,
+     105.432
+    ],
+    [
+     105.463,
+     107.307
+    ],
+    [
+     107.338,
+     109.182
+    ],
+    [
+     109.213,
+     111.057
+    ],
+    [
+     111.088,
+     112.932
+    ],
+    [
+     112.963,
+     114.807
+    ]
+   ],
+   "sudoku_co": {
+    "lines": 1,
+    "label": "one line, not robust",
+    "robust": false
+   },
+   "sudoku_co_ci": {
+    "lines": 1,
+    "label": "one line, not robust",
+    "robust": false
+   },
+   "engine": {
+    "z": 4.8762,
+    "confidence": 0.687,
+    "verdict": "ambiguous (best = truth)"
+   },
+   "repo_rule_solved": false,
+   "detections_5sigma": 1
+  },
+  {
+   "source": "SPT0226-45",
+   "z_published": 3.233,
+   "windows_ghz": [
+    [
+     84.093,
+     85.937
+    ],
+    [
+     85.968,
+     87.812
+    ],
+    [
+     87.837,
+     89.681
+    ],
+    [
+     89.712,
+     91.556
+    ],
+    [
+     91.587,
+     93.431
+    ],
+    [
+     93.462,
+     95.306
+    ],
+    [
+     95.337,
+     103.555
+    ],
+    [
+     103.587,
+     105.43
+    ],
+    [
+     105.462,
+     107.305
+    ],
+    [
+     107.337,
+     109.18
+    ],
+    [
+     109.212,
+     111.055
+    ],
+    [
+     111.088,
+     112.932
+    ],
+    [
+     112.963,
+     114.807
+    ]
+   ],
+   "sudoku_co": {
+    "lines": 1,
+    "label": "one line, not robust",
+    "robust": false
+   },
+   "sudoku_co_ci": {
+    "lines": 1,
+    "label": "one line, not robust",
+    "robust": false
+   },
+   "engine": {
+    "z": 3.2334,
+    "confidence": 0.776,
+    "verdict": "ambiguous (best = truth)"
+   },
+   "repo_rule_solved": false,
+   "detections_5sigma": 1
+  },
+  {
+   "source": "SPT0314-44",
+   "z_published": 2.9345,
+   "windows_ghz": [
+    [
+     84.094,
+     85.938
+    ],
+    [
+     85.969,
+     87.813
+    ],
+    [
+     87.838,
+     89.682
+    ],
+    [
+     89.713,
+     91.557
+    ],
+    [
+     91.588,
+     93.432
+    ],
+    [
+     93.463,
+     95.307
+    ],
+    [
+     95.338,
+     103.557
+    ],
+    [
+     103.588,
+     105.432
+    ],
+    [
+     105.463,
+     107.307
+    ],
+    [
+     107.338,
+     109.182
+    ],
+    [
+     109.213,
+     111.057
+    ],
+    [
+     111.09,
+     112.934
+    ],
+    [
+     112.965,
+     114.809
+    ]
+   ],
+   "sudoku_co": {
+    "lines": 1,
+    "label": "one line, robust with a photometric redshift",
+    "robust": true
+   },
+   "sudoku_co_ci": {
+    "lines": 1,
+    "label": "one line, robust with a photometric redshift",
+    "robust": true
+   },
+   "engine": {
+    "z": 2.9332,
+    "confidence": 0.897,
+    "verdict": "ambiguous (best = truth)"
+   },
+   "repo_rule_solved": false,
+   "detections_5sigma": 1
+  },
+  {
+   "source": "SPT0402-45",
+   "z_published": 2.6833,
+   "windows_ghz": [
+    [
+     84.093,
+     85.937
+    ],
+    [
+     85.968,
+     87.812
+    ],
+    [
+     87.837,
+     89.681
+    ],
+    [
+     89.712,
+     91.556
+    ],
+    [
+     91.587,
+     93.431
+    ],
+    [
+     93.462,
+     95.306
+    ],
+    [
+     95.338,
+     103.556
+    ],
+    [
+     103.587,
+     105.431
+    ],
+    [
+     105.462,
+     107.306
+    ],
+    [
+     107.338,
+     109.182
+    ],
+    [
+     109.213,
+     111.057
+    ],
+    [
+     111.087,
+     112.93
+    ],
+    [
+     112.962,
+     114.805
+    ]
+   ],
+   "sudoku_co": {
+    "lines": 1,
+    "label": "one line, robust with a photometric redshift",
+    "robust": true
+   },
+   "sudoku_co_ci": {
+    "lines": 1,
+    "label": "one line, robust with a photometric redshift",
+    "robust": true
+   },
+   "engine": {
+    "z": 2.6825,
+    "confidence": 0.868,
+    "verdict": "ambiguous (best = truth)"
+   },
+   "repo_rule_solved": false,
+   "detections_5sigma": 2
+  },
+  {
+   "source": "SPT0403-58",
+   "z_published": 4.0564,
+   "windows_ghz": [
+    [
+     84.093,
+     85.937
+    ],
+    [
+     85.968,
+     87.812
+    ],
+    [
+     87.838,
+     89.682
+    ],
+    [
+     89.713,
+     91.557
+    ],
+    [
+     91.588,
+     93.432
+    ],
+    [
+     93.463,
+     95.307
+    ],
+    [
+     95.338,
+     103.557
+    ],
+    [
+     103.588,
+     105.432
+    ],
+    [
+     105.463,
+     107.307
+    ],
+    [
+     107.338,
+     109.182
+    ],
+    [
+     109.213,
+     111.057
+    ],
+    [
+     111.088,
+     112.932
+    ],
+    [
+     112.963,
+     114.807
+    ]
+   ],
+   "sudoku_co": {
+    "lines": 2,
+    "label": "two lines, robust",
+    "robust": true
+   },
+   "sudoku_co_ci": {
+    "lines": 3,
+    "label": "three or more lines",
+    "robust": true
+   },
+   "engine": {
+    "z": 4.0555,
+    "confidence": 1.0,
+    "verdict": "confident & correct"
+   },
+   "repo_rule_solved": true,
+   "detections_5sigma": 3
+  },
+  {
+   "source": "SPT0425-40",
+   "z_published": 5.1353,
+   "windows_ghz": [
+    [
+     84.094,
+     85.938
+    ],
+    [
+     85.969,
+     87.813
+    ],
+    [
+     87.838,
+     89.682
+    ],
+    [
+     89.713,
+     91.557
+    ],
+    [
+     91.588,
+     93.432
+    ],
+    [
+     93.463,
+     95.307
+    ],
+    [
+     95.339,
+     103.557
+    ],
+    [
+     103.588,
+     105.432
+    ],
+    [
+     105.463,
+     107.307
+    ],
+    [
+     107.339,
+     109.183
+    ],
+    [
+     109.214,
+     111.058
+    ],
+    [
+     111.088,
+     112.932
+    ],
+    [
+     112.963,
+     114.807
+    ]
+   ],
+   "sudoku_co": {
+    "lines": 2,
+    "label": "two lines, robust",
+    "robust": true
+   },
+   "sudoku_co_ci": {
+    "lines": 2,
+    "label": "two lines, robust",
+    "robust": true
+   },
+   "engine": {
+    "z": 5.1346,
+    "confidence": 1.0,
+    "verdict": "confident & correct"
+   },
+   "repo_rule_solved": true,
+   "detections_5sigma": 2
+  },
+  {
+   "source": "SPT0436-40",
+   "z_published": 3.8519,
+   "windows_ghz": [
+    [
+     84.094,
+     85.938
+    ],
+    [
+     85.969,
+     87.813
+    ],
+    [
+     87.838,
+     89.682
+    ],
+    [
+     89.713,
+     91.557
+    ],
+    [
+     91.588,
+     93.432
+    ],
+    [
+     93.463,
+     95.307
+    ],
+    [
+     95.339,
+     103.557
+    ],
+    [
+     103.588,
+     105.432
+    ],
+    [
+     105.463,
+     107.307
+    ],
+    [
+     107.34,
+     109.184
+    ],
+    [
+     109.215,
+     111.059
+    ],
+    [
+     111.088,
+     112.932
+    ],
+    [
+     112.963,
+     114.807
+    ]
+   ],
+   "sudoku_co": {
+    "lines": 1,
+    "label": "one line, not robust",
+    "robust": false
+   },
+   "sudoku_co_ci": {
+    "lines": 2,
+    "label": "two lines, robust",
+    "robust": true
+   },
+   "engine": {
+    "z": 3.8514,
+    "confidence": 1.0,
+    "verdict": "confident & correct"
+   },
+   "repo_rule_solved": true,
+   "detections_5sigma": 2
+  },
+  {
+   "source": "SPT0520-53",
+   "z_published": 3.7785,
+   "windows_ghz": [
+    [
+     84.093,
+     85.937
+    ],
+    [
+     85.968,
+     87.812
+    ],
+    [
+     87.838,
+     89.682
+    ],
+    [
+     89.713,
+     91.557
+    ],
+    [
+     91.588,
+     93.432
+    ],
+    [
+     93.463,
+     95.307
+    ],
+    [
+     95.338,
+     103.557
+    ],
+    [
+     103.588,
+     105.432
+    ],
+    [
+     105.463,
+     107.307
+    ],
+    [
+     107.338,
+     109.182
+    ],
+    [
+     109.213,
+     111.057
+    ],
+    [
+     111.088,
+     112.932
+    ],
+    [
+     112.963,
+     114.807
+    ]
+   ],
+   "sudoku_co": {
+    "lines": 1,
+    "label": "one line, not robust",
+    "robust": false
+   },
+   "sudoku_co_ci": {
+    "lines": 2,
+    "label": "two lines, robust",
+    "robust": true
+   },
+   "engine": {
+    "z": 3.7784,
+    "confidence": 1.0,
+    "verdict": "confident & correct"
+   },
+   "repo_rule_solved": true,
+   "detections_5sigma": 2
+  },
+  {
+   "source": "SPT0528-53",
+   "z_published": 4.737,
+   "windows_ghz": [
+    [
+     84.093,
+     85.937
+    ],
+    [
+     85.968,
+     87.812
+    ],
+    [
+     87.838,
+     89.682
+    ],
+    [
+     89.713,
+     91.557
+    ],
+    [
+     91.588,
+     93.432
+    ],
+    [
+     93.463,
+     95.307
+    ],
+    [
+     95.338,
+     103.557
+    ],
+    [
+     103.588,
+     105.432
+    ],
+    [
+     105.463,
+     107.307
+    ],
+    [
+     107.338,
+     109.182
+    ],
+    [
+     109.213,
+     111.057
+    ],
+    [
+     111.088,
+     112.932
+    ],
+    [
+     112.963,
+     114.807
+    ]
+   ],
+   "sudoku_co": {
+    "lines": 1,
+    "label": "one line, not robust",
+    "robust": false
+   },
+   "sudoku_co_ci": {
+    "lines": 2,
+    "label": "two lines, robust",
+    "robust": true
+   },
+   "engine": {
+    "z": 4.7358,
+    "confidence": 0.76,
+    "verdict": "ambiguous (best = truth)"
+   },
+   "repo_rule_solved": false,
+   "detections_5sigma": 1
+  },
+  {
+   "source": "SPT0652-55",
+   "z_published": 3.3466,
+   "windows_ghz": [
+    [
+     84.093,
+     85.937
+    ],
+    [
+     85.968,
+     87.812
+    ],
+    [
+     87.838,
+     89.682
+    ],
+    [
+     89.713,
+     91.557
+    ],
+    [
+     91.588,
+     93.432
+    ],
+    [
+     93.463,
+     95.307
+    ],
+    [
+     95.338,
+     103.557
+    ],
+    [
+     103.588,
+     105.432
+    ],
+    [
+     105.463,
+     107.307
+    ],
+    [
+     107.338,
+     109.182
+    ],
+    [
+     109.213,
+     111.057
+    ],
+    [
+     111.088,
+     112.932
+    ],
+    [
+     112.963,
+     114.807
+    ]
+   ],
+   "sudoku_co": {
+    "lines": 1,
+    "label": "one line, not robust",
+    "robust": false
+   },
+   "sudoku_co_ci": {
+    "lines": 2,
+    "label": "two lines, robust",
+    "robust": true
+   },
+   "engine": {
+    "z": 3.3465,
+    "confidence": 1.0,
+    "verdict": "confident & correct"
+   },
+   "repo_rule_solved": true,
+   "detections_5sigma": 2
+  },
+  {
+   "source": "SPT2031-51",
+   "z_published": 2.4521,
+   "windows_ghz": [
+    [
+     84.052,
+     85.896
+    ],
+    [
+     85.969,
+     87.813
+    ],
+    [
+     87.838,
+     89.682
+    ],
+    [
+     89.713,
+     91.557
+    ],
+    [
+     91.588,
+     93.432
+    ],
+    [
+     93.463,
+     95.307
+    ],
+    [
+     95.338,
+     103.557
+    ],
+    [
+     103.588,
+     105.432
+    ],
+    [
+     105.463,
+     107.307
+    ],
+    [
+     107.338,
+     109.182
+    ],
+    [
+     109.213,
+     111.057
+    ],
+    [
+     111.088,
+     112.932
+    ],
+    [
+     112.963,
+     114.807
+    ]
+   ],
+   "sudoku_co": {
+    "lines": 1,
+    "label": "one line, not robust",
+    "robust": false
+   },
+   "sudoku_co_ci": {
+    "lines": 1,
+    "label": "one line, robust with a photometric redshift",
+    "robust": true
+   },
+   "engine": {
+    "z": 2.4523,
+    "confidence": 0.45,
+    "verdict": "ambiguous (best = truth)"
+   },
+   "repo_rule_solved": false,
+   "detections_5sigma": 1
+  },
+  {
+   "source": "SPT2129-57",
+   "z_published": 3.2601,
+   "windows_ghz": [
+    [
+     84.065,
+     85.909
+    ],
+    [
+     85.94,
+     87.784
+    ],
+    [
+     87.838,
+     89.682
+    ],
+    [
+     89.713,
+     91.557
+    ],
+    [
+     91.588,
+     93.432
+    ],
+    [
+     93.463,
+     95.307
+    ],
+    [
+     95.338,
+     103.557
+    ],
+    [
+     103.588,
+     105.432
+    ],
+    [
+     105.463,
+     107.307
+    ],
+    [
+     107.338,
+     109.182
+    ],
+    [
+     109.213,
+     111.057
+    ],
+    [
+     111.088,
+     112.932
+    ],
+    [
+     112.963,
+     114.807
+    ]
+   ],
+   "sudoku_co": {
+    "lines": 1,
+    "label": "one line, not robust",
+    "robust": false
+   },
+   "sudoku_co_ci": {
+    "lines": 1,
+    "label": "one line, not robust",
+    "robust": false
+   },
+   "engine": {
+    "z": 3.2604,
+    "confidence": 0.774,
+    "verdict": "ambiguous (best = truth)"
+   },
+   "repo_rule_solved": false,
+   "detections_5sigma": 1
+  },
+  {
+   "source": "SPT2152-40",
+   "z_published": 3.8507,
+   "windows_ghz": [
+    [
+     84.083,
+     85.926
+    ],
+    [
+     85.958,
+     87.801
+    ],
+    [
+     87.838,
+     89.681
+    ],
+    [
+     89.713,
+     91.556
+    ],
+    [
+     91.588,
+     93.431
+    ],
+    [
+     93.463,
+     95.306
+    ],
+    [
+     95.338,
+     103.556
+    ],
+    [
+     103.588,
+     105.431
+    ],
+    [
+     105.463,
+     107.306
+    ],
+    [
+     107.338,
+     109.181
+    ],
+    [
+     109.213,
+     111.056
+    ],
+    [
+     111.088,
+     112.931
+    ],
+    [
+     112.963,
+     114.806
+    ]
+   ],
+   "sudoku_co": {
+    "lines": 1,
+    "label": "one line, not robust",
+    "robust": false
+   },
+   "sudoku_co_ci": {
+    "lines": 2,
+    "label": "two lines, robust",
+    "robust": true
+   },
+   "engine": {
+    "z": 3.8514,
+    "confidence": 1.0,
+    "verdict": "confident & correct"
+   },
+   "repo_rule_solved": true,
+   "detections_5sigma": 2
+  },
+  {
+   "source": "SPT2203-41",
+   "z_published": 5.1937,
+   "windows_ghz": [
+    [
+     84.083,
+     85.927
+    ],
+    [
+     85.958,
+     87.802
+    ],
+    [
+     87.838,
+     89.682
+    ],
+    [
+     89.713,
+     91.557
+    ],
+    [
+     91.588,
+     93.432
+    ],
+    [
+     93.463,
+     95.307
+    ],
+    [
+     95.338,
+     103.557
+    ],
+    [
+     103.588,
+     105.432
+    ],
+    [
+     105.463,
+     107.307
+    ],
+    [
+     107.338,
+     109.182
+    ],
+    [
+     109.213,
+     111.057
+    ],
+    [
+     111.088,
+     112.932
+    ],
+    [
+     112.963,
+     114.807
+    ]
+   ],
+   "sudoku_co": {
+    "lines": 2,
+    "label": "two lines, robust",
+    "robust": true
+   },
+   "sudoku_co_ci": {
+    "lines": 2,
+    "label": "two lines, robust",
+    "robust": true
+   },
+   "engine": {
+    "z": 5.1942,
+    "confidence": 1.0,
+    "verdict": "confident & correct"
+   },
+   "repo_rule_solved": true,
+   "detections_5sigma": 2
+  },
+  {
+   "source": "SPT2232-61",
+   "z_published": 2.8936,
+   "windows_ghz": [
+    [
+     84.067,
+     85.911
+    ],
+    [
+     85.942,
+     87.786
+    ],
+    [
+     87.84,
+     89.684
+    ],
+    [
+     89.715,
+     91.559
+    ],
+    [
+     91.59,
+     93.434
+    ],
+    [
+     93.465,
+     95.309
+    ],
+    [
+     95.34,
+     103.559
+    ],
+    [
+     103.591,
+     105.434
+    ],
+    [
+     105.466,
+     107.309
+    ],
+    [
+     107.341,
+     109.184
+    ],
+    [
+     109.216,
+     111.059
+    ],
+    [
+     111.091,
+     112.934
+    ],
+    [
+     112.966,
+     114.809
+    ]
+   ],
+   "sudoku_co": {
+    "lines": 1,
+    "label": "one line, robust with a photometric redshift",
+    "robust": true
+   },
+   "sudoku_co_ci": {
+    "lines": 1,
+    "label": "one line, robust with a photometric redshift",
+    "robust": true
+   },
+   "engine": {
+    "z": 2.8934,
+    "confidence": 0.899,
+    "verdict": "ambiguous (best = truth)"
+   },
+   "repo_rule_solved": false,
+   "detections_5sigma": 1
+  },
+  {
+   "source": "SPT2311-45",
+   "z_published": 2.5073,
+   "windows_ghz": [
+    [
+     84.094,
+     85.937
+    ],
+    [
+     85.969,
+     87.812
+    ],
+    [
+     87.837,
+     89.681
+    ],
+    [
+     89.712,
+     91.556
+    ],
+    [
+     91.587,
+     93.43
+    ],
+    [
+     93.462,
+     95.305
+    ],
+    [
+     95.338,
+     103.556
+    ],
+    [
+     103.586,
+     105.43
+    ],
+    [
+     105.461,
+     107.305
+    ],
+    [
+     107.338,
+     109.182
+    ],
+    [
+     109.213,
+     111.057
+    ],
+    [
+     111.087,
+     112.931
+    ],
+    [
+     112.962,
+     114.806
+    ]
+   ],
+   "sudoku_co": {
+    "lines": 1,
+    "label": "one line, not robust",
+    "robust": false
+   },
+   "sudoku_co_ci": {
+    "lines": 1,
+    "label": "one line, robust with a photometric redshift",
+    "robust": true
+   },
+   "engine": {
+    "z": 2.5074,
+    "confidence": 0.424,
+    "verdict": "ambiguous (best = truth)"
+   },
+   "repo_rule_solved": false,
+   "detections_5sigma": 1
+  },
+  {
+   "source": "SPT2316-50",
+   "z_published": 3.1413,
+   "windows_ghz": [
+    [
+     84.094,
+     85.938
+    ],
+    [
+     85.969,
+     87.813
+    ],
+    [
+     87.838,
+     89.681
+    ],
+    [
+     89.713,
+     91.556
+    ],
+    [
+     91.587,
+     93.431
+    ],
+    [
+     93.462,
+     95.306
+    ],
+    [
+     95.338,
+     103.556
+    ],
+    [
+     103.587,
+     105.431
+    ],
+    [
+     105.462,
+     107.305
+    ],
+    [
+     107.338,
+     109.182
+    ],
+    [
+     109.214,
+     111.057
+    ],
+    [
+     111.087,
+     112.931
+    ],
+    [
+     112.962,
+     114.806
+    ]
+   ],
+   "sudoku_co": {
+    "lines": 1,
+    "label": "one line, not robust",
+    "robust": false
+   },
+   "sudoku_co_ci": {
+    "lines": 1,
+    "label": "one line, not robust",
+    "robust": false
+   },
+   "engine": {
+    "z": 4.1775,
+    "confidence": 0.114,
+    "verdict": "ambiguous (best != truth)"
+   },
+   "repo_rule_solved": false,
+   "detections_5sigma": 0
+  },
+  {
+   "source": "SPT2349-52",
+   "z_published": 3.9,
+   "windows_ghz": [
+    [
+     84.095,
+     85.939
+    ],
+    [
+     85.97,
+     87.814
+    ],
+    [
+     87.839,
+     89.682
+    ],
+    [
+     89.714,
+     91.557
+    ],
+    [
+     91.588,
+     93.432
+    ],
+    [
+     93.463,
+     95.307
+    ],
+    [
+     95.34,
+     103.558
+    ],
+    [
+     103.588,
+     105.432
+    ],
+    [
+     105.463,
+     107.307
+    ],
+    [
+     107.34,
+     109.184
+    ],
+    [
+     109.215,
+     111.059
+    ],
+    [
+     111.089,
+     112.932
+    ],
+    [
+     112.964,
+     114.807
+    ]
+   ],
+   "sudoku_co": {
+    "lines": 1,
+    "label": "one line, not robust",
+    "robust": false
+   },
+   "sudoku_co_ci": {
+    "lines": 2,
+    "label": "two lines, robust",
+    "robust": true
+   },
+   "engine": {
+    "z": 3.9002,
+    "confidence": 0.847,
+    "verdict": "ambiguous (best = truth)"
+   },
+   "repo_rule_solved": false,
+   "detections_5sigma": 1
+  }
+ ],
+ "atlas": {
+  "bright_snr": 16.0,
+  "setups": {
+   "B3 single tuning": {
+    "bright": {
+     "n": 1040,
+     "sudoku": {
+      "co_dz0.13": {
+       "no_line": 0.6317,
+       "one_line": 0.3615,
+       "two_lines": 0.0067,
+       "more_lines": 0.0,
+       "robust_one_line": 0.0,
+       "non_robust_two_lines": 0.0,
+       "robust_lines_only": 0.0067,
+       "robust_with_photoz": 0.0067
+      },
+      "co_dz0.20": {
+       "no_line": 0.6317,
+       "one_line": 0.3615,
+       "two_lines": 0.0067,
+       "more_lines": 0.0,
+       "robust_one_line": 0.0,
+       "non_robust_two_lines": 0.0067,
+       "robust_lines_only": 0.0,
+       "robust_with_photoz": 0.0
+      },
+      "co_ci_dz0.13": {
+       "no_line": 0.5596,
+       "one_line": 0.3923,
+       "two_lines": 0.0462,
+       "more_lines": 0.0019,
+       "robust_one_line": 0.0731,
+       "non_robust_two_lines": 0.0,
+       "robust_lines_only": 0.0481,
+       "robust_with_photoz": 0.1212
+      },
+      "co_ci_dz0.20": {
+       "no_line": 0.5596,
+       "one_line": 0.3923,
+       "two_lines": 0.0462,
+       "more_lines": 0.0019,
+       "robust_one_line": 0.0721,
+       "non_robust_two_lines": 0.0048,
+       "robust_lines_only": 0.0433,
+       "robust_with_photoz": 0.1154
+      }
+     },
+     "engine": {
+      "sled": 0.051,
+      "sled_photoz": 0.0558,
+      "repo_rule": 0.0462
+     }
+    },
+    "all": {
+     "n": 2500,
+     "sudoku": {
+      "co_dz0.13": {
+       "no_line": 0.6392,
+       "one_line": 0.3548,
+       "two_lines": 0.006,
+       "more_lines": 0.0,
+       "robust_one_line": 0.0,
+       "non_robust_two_lines": 0.0,
+       "robust_lines_only": 0.006,
+       "robust_with_photoz": 0.006
+      },
+      "co_ci_dz0.13": {
+       "no_line": 0.5752,
+       "one_line": 0.376,
+       "two_lines": 0.046,
+       "more_lines": 0.0028,
+       "robust_one_line": 0.0648,
+       "non_robust_two_lines": 0.0,
+       "robust_lines_only": 0.0488,
+       "robust_with_photoz": 0.1136
+      }
+     },
+     "engine": {
+      "sled": 0.0364,
+      "sled_photoz": 0.0408,
+      "repo_rule": 0.0304
+     }
+    }
+   },
+   "B3 scan": {
+    "bright": {
+     "n": 1040,
+     "sudoku": {
+      "co_dz0.13": {
+       "no_line": 0.0413,
+       "one_line": 0.5577,
+       "two_lines": 0.401,
+       "more_lines": 0.0,
+       "robust_one_line": 0.149,
+       "non_robust_two_lines": 0.0,
+       "robust_lines_only": 0.401,
+       "robust_with_photoz": 0.55
+      },
+      "co_dz0.20": {
+       "no_line": 0.0413,
+       "one_line": 0.5577,
+       "two_lines": 0.401,
+       "more_lines": 0.0,
+       "robust_one_line": 0.149,
+       "non_robust_two_lines": 0.0,
+       "robust_lines_only": 0.401,
+       "robust_with_photoz": 0.55
+      },
+      "co_ci_dz0.13": {
+       "no_line": 0.0413,
+       "one_line": 0.3654,
+       "two_lines": 0.3481,
+       "more_lines": 0.2452,
+       "robust_one_line": 0.2413,
+       "non_robust_two_lines": 0.0,
+       "robust_lines_only": 0.5933,
+       "robust_with_photoz": 0.8346
+      },
+      "co_ci_dz0.20": {
+       "no_line": 0.0413,
+       "one_line": 0.3654,
+       "two_lines": 0.3481,
+       "more_lines": 0.2452,
+       "robust_one_line": 0.2173,
+       "non_robust_two_lines": 0.0,
+       "robust_lines_only": 0.5933,
+       "robust_with_photoz": 0.8106
+      }
+     },
+     "engine": {
+      "sled": 0.6058,
+      "sled_photoz": 0.6981,
+      "repo_rule": 0.5962
+     }
+    },
+    "all": {
+     "n": 2500,
+     "sudoku": {
+      "co_dz0.13": {
+       "no_line": 0.0432,
+       "one_line": 0.5664,
+       "two_lines": 0.3904,
+       "more_lines": 0.0,
+       "robust_one_line": 0.1632,
+       "non_robust_two_lines": 0.0,
+       "robust_lines_only": 0.3904,
+       "robust_with_photoz": 0.5536
+      },
+      "co_ci_dz0.13": {
+       "no_line": 0.0432,
+       "one_line": 0.3824,
+       "two_lines": 0.3352,
+       "more_lines": 0.2392,
+       "robust_one_line": 0.2588,
+       "non_robust_two_lines": 0.0,
+       "robust_lines_only": 0.5744,
+       "robust_with_photoz": 0.8332
+      }
+     },
+     "engine": {
+      "sled": 0.4932,
+      "sled_photoz": 0.56,
+      "repo_rule": 0.4112
+     }
+    }
+   },
+   "B4 scan (2 mm)": {
+    "bright": {
+     "n": 1040,
+     "sudoku": {
+      "co_dz0.13": {
+       "no_line": 0.0308,
+       "one_line": 0.376,
+       "two_lines": 0.4894,
+       "more_lines": 0.1038,
+       "robust_one_line": 0.1308,
+       "non_robust_two_lines": 0.0,
+       "robust_lines_only": 0.5933,
+       "robust_with_photoz": 0.724
+      },
+      "co_dz0.20": {
+       "no_line": 0.0308,
+       "one_line": 0.376,
+       "two_lines": 0.4894,
+       "more_lines": 0.1038,
+       "robust_one_line": 0.1308,
+       "non_robust_two_lines": 0.0,
+       "robust_lines_only": 0.5933,
+       "robust_with_photoz": 0.724
+      },
+      "co_ci_dz0.13": {
+       "no_line": 0.0308,
+       "one_line": 0.2413,
+       "two_lines": 0.3788,
+       "more_lines": 0.349,
+       "robust_one_line": 0.1067,
+       "non_robust_two_lines": 0.0,
+       "robust_lines_only": 0.7279,
+       "robust_with_photoz": 0.8346
+      },
+      "co_ci_dz0.20": {
+       "no_line": 0.0308,
+       "one_line": 0.2413,
+       "two_lines": 0.3788,
+       "more_lines": 0.349,
+       "robust_one_line": 0.0971,
+       "non_robust_two_lines": 0.0,
+       "robust_lines_only": 0.7279,
+       "robust_with_photoz": 0.825
+      }
+     },
+     "engine": {
+      "sled": 0.726,
+      "sled_photoz": 0.7702,
+      "repo_rule": 0.7202
+     }
+    },
+    "all": {
+     "n": 2500,
+     "sudoku": {
+      "co_dz0.13": {
+       "no_line": 0.0312,
+       "one_line": 0.3924,
+       "two_lines": 0.4772,
+       "more_lines": 0.0992,
+       "robust_one_line": 0.1356,
+       "non_robust_two_lines": 0.0,
+       "robust_lines_only": 0.5764,
+       "robust_with_photoz": 0.712
+      },
+      "co_ci_dz0.13": {
+       "no_line": 0.0312,
+       "one_line": 0.25,
+       "two_lines": 0.3816,
+       "more_lines": 0.3372,
+       "robust_one_line": 0.1124,
+       "non_robust_two_lines": 0.0,
+       "robust_lines_only": 0.7188,
+       "robust_with_photoz": 0.8312
+      }
+     },
+     "engine": {
+      "sled": 0.6084,
+      "sled_photoz": 0.6532,
+      "repo_rule": 0.5192
+     }
+    }
+   },
+   "B2 full (WSU)": {
+    "bright": {
+     "n": 1040,
+     "sudoku": {
+      "co_dz0.13": {
+       "no_line": 0.0,
+       "one_line": 0.2442,
+       "two_lines": 0.3827,
+       "more_lines": 0.3731,
+       "robust_one_line": 0.2442,
+       "non_robust_two_lines": 0.0,
+       "robust_lines_only": 0.7558,
+       "robust_with_photoz": 1.0
+      },
+      "co_dz0.20": {
+       "no_line": 0.0,
+       "one_line": 0.2442,
+       "two_lines": 0.3827,
+       "more_lines": 0.3731,
+       "robust_one_line": 0.2442,
+       "non_robust_two_lines": 0.0,
+       "robust_lines_only": 0.7558,
+       "robust_with_photoz": 1.0
+      },
+      "co_ci_dz0.13": {
+       "no_line": 0.0,
+       "one_line": 0.2442,
+       "two_lines": 0.1048,
+       "more_lines": 0.651,
+       "robust_one_line": 0.2442,
+       "non_robust_two_lines": 0.0,
+       "robust_lines_only": 0.7558,
+       "robust_with_photoz": 1.0
+      },
+      "co_ci_dz0.20": {
+       "no_line": 0.0,
+       "one_line": 0.2442,
+       "two_lines": 0.1048,
+       "more_lines": 0.651,
+       "robust_one_line": 0.2442,
+       "non_robust_two_lines": 0.0,
+       "robust_lines_only": 0.7558,
+       "robust_with_photoz": 1.0
+      }
+     },
+     "engine": {
+      "sled": 0.8394,
+      "sled_photoz": 0.8952,
+      "repo_rule": 0.8154
+     }
+    },
+    "all": {
+     "n": 2500,
+     "sudoku": {
+      "co_dz0.13": {
+       "no_line": 0.0,
+       "one_line": 0.2612,
+       "two_lines": 0.3784,
+       "more_lines": 0.3604,
+       "robust_one_line": 0.2612,
+       "non_robust_two_lines": 0.0,
+       "robust_lines_only": 0.7388,
+       "robust_with_photoz": 1.0
+      },
+      "co_ci_dz0.13": {
+       "no_line": 0.0,
+       "one_line": 0.2612,
+       "two_lines": 0.11,
+       "more_lines": 0.6288,
+       "robust_one_line": 0.2612,
+       "non_robust_two_lines": 0.0,
+       "robust_lines_only": 0.7388,
+       "robust_with_photoz": 1.0
+      }
+     },
+     "engine": {
+      "sled": 0.6976,
+      "sled_photoz": 0.75,
+      "repo_rule": 0.5584
+     }
+    }
+   },
+   "B3 + B4 scans": {
+    "bright": {
+     "n": 1040,
+     "sudoku": {
+      "co_dz0.13": {
+       "no_line": 0.0106,
+       "one_line": 0.051,
+       "two_lines": 0.3269,
+       "more_lines": 0.6115,
+       "robust_one_line": 0.051,
+       "non_robust_two_lines": 0.0317,
+       "robust_lines_only": 0.9067,
+       "robust_with_photoz": 0.9577
+      },
+      "co_dz0.20": {
+       "no_line": 0.0106,
+       "one_line": 0.051,
+       "two_lines": 0.3269,
+       "more_lines": 0.6115,
+       "robust_one_line": 0.051,
+       "non_robust_two_lines": 0.0375,
+       "robust_lines_only": 0.901,
+       "robust_with_photoz": 0.9519
+      },
+      "co_ci_dz0.13": {
+       "no_line": 0.0106,
+       "one_line": 0.051,
+       "two_lines": 0.1269,
+       "more_lines": 0.8115,
+       "robust_one_line": 0.051,
+       "non_robust_two_lines": 0.0,
+       "robust_lines_only": 0.9385,
+       "robust_with_photoz": 0.9894
+      },
+      "co_ci_dz0.20": {
+       "no_line": 0.0106,
+       "one_line": 0.051,
+       "two_lines": 0.1269,
+       "more_lines": 0.8115,
+       "robust_one_line": 0.051,
+       "non_robust_two_lines": 0.0,
+       "robust_lines_only": 0.9385,
+       "robust_with_photoz": 0.9894
+      }
+     },
+     "engine": {
+      "sled": 0.9644,
+      "sled_photoz": 0.9779,
+      "repo_rule": 0.9558
+     }
+    },
+    "all": {
+     "n": 2500,
+     "sudoku": {
+      "co_dz0.13": {
+       "no_line": 0.0104,
+       "one_line": 0.0536,
+       "two_lines": 0.3456,
+       "more_lines": 0.5904,
+       "robust_one_line": 0.0536,
+       "non_robust_two_lines": 0.0252,
+       "robust_lines_only": 0.9108,
+       "robust_with_photoz": 0.9644
+      },
+      "co_ci_dz0.13": {
+       "no_line": 0.0104,
+       "one_line": 0.0536,
+       "two_lines": 0.1456,
+       "more_lines": 0.7904,
+       "robust_one_line": 0.0536,
+       "non_robust_two_lines": 0.0,
+       "robust_lines_only": 0.936,
+       "robust_with_photoz": 0.9896
+      }
+     },
+     "engine": {
+      "sled": 0.8456,
+      "sled_photoz": 0.8796,
+      "repo_rule": 0.6852
+     }
+    }
+   },
+   "B2 + B4": {
+    "bright": {
+     "n": 1040,
+     "sudoku": {
+      "co_dz0.13": {
+       "no_line": 0.0,
+       "one_line": 0.0308,
+       "two_lines": 0.1865,
+       "more_lines": 0.7827,
+       "robust_one_line": 0.0308,
+       "non_robust_two_lines": 0.0192,
+       "robust_lines_only": 0.95,
+       "robust_with_photoz": 0.9808
+      },
+      "co_dz0.20": {
+       "no_line": 0.0,
+       "one_line": 0.0308,
+       "two_lines": 0.1865,
+       "more_lines": 0.7827,
+       "robust_one_line": 0.0308,
+       "non_robust_two_lines": 0.0192,
+       "robust_lines_only": 0.95,
+       "robust_with_photoz": 0.9808
+      },
+      "co_ci_dz0.13": {
+       "no_line": 0.0,
+       "one_line": 0.0308,
+       "two_lines": 0.1288,
+       "more_lines": 0.8404,
+       "robust_one_line": 0.0308,
+       "non_robust_two_lines": 0.0192,
+       "robust_lines_only": 0.95,
+       "robust_with_photoz": 0.9808
+      },
+      "co_ci_dz0.20": {
+       "no_line": 0.0,
+       "one_line": 0.0308,
+       "two_lines": 0.1288,
+       "more_lines": 0.8404,
+       "robust_one_line": 0.0308,
+       "non_robust_two_lines": 0.0192,
+       "robust_lines_only": 0.95,
+       "robust_with_photoz": 0.9808
+      }
+     },
+     "engine": {
+      "sled": 0.9962,
+      "sled_photoz": 0.999,
+      "repo_rule": 0.9769
+     }
+    },
+    "all": {
+     "n": 2500,
+     "sudoku": {
+      "co_dz0.13": {
+       "no_line": 0.0,
+       "one_line": 0.0312,
+       "two_lines": 0.2024,
+       "more_lines": 0.7664,
+       "robust_one_line": 0.0312,
+       "non_robust_two_lines": 0.0228,
+       "robust_lines_only": 0.946,
+       "robust_with_photoz": 0.9772
+      },
+      "co_ci_dz0.13": {
+       "no_line": 0.0,
+       "one_line": 0.0312,
+       "two_lines": 0.1424,
+       "more_lines": 0.8264,
+       "robust_one_line": 0.0312,
+       "non_robust_two_lines": 0.0228,
+       "robust_lines_only": 0.946,
+       "robust_with_photoz": 0.9772
+      }
+     },
+     "engine": {
+      "sled": 0.882,
+      "sled_photoz": 0.9048,
+      "repo_rule": 0.6976
+     }
+    }
+   }
+  }
+ }
+}

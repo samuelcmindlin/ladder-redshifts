@@ -5,6 +5,7 @@ Modules
               (SLED-weighted likelihood, equal-weight sum, simplified Sudoku-style rule, naive spacing)
   realspec    real ALMA spectra: aperture / point-source extraction from cube cut-outs; SPT0027-50 (Band 2)
   batch_real  score every real spectrum under data/ against data/truth.csv
+  degrade     the real multi-line spectra with noise added: the engine against detection rules
   followup    which single follow-up tuning settles an ambiguous real source
   atlas       synthetic error-rate atlas for six ALMA setups
   traps       three published octave-type misidentifications, rebuilt from their coverage

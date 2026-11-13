@@ -220,19 +220,60 @@ regenerated again after them.
     compared. Bakx (2026), which studies scan strategies for Band 3 and Band 2 with the High-z Sudoku tool, is
     now cited next to `tuning.py`. "Riechers 2024" is now cited as published (Riechers 2025, ApJ 980, 59).
 
+## Comparisons added on 12 November 2026
+
+These are new tests, not fixes. The second review asked for the first. The second was added because the real
+spectra, as observed, cannot show the gain that the simulations claim.
+
+- **The High-z Sudoku code on the same sources.** `scripts/compare_sudoku.py` runs the authors' `RSGquality`
+  function, unmodified, at the published redshift of each real source and on the atlas setups
+  ([`results.md`](results.md), section 8).
+  - **What it showed.** No contradiction. Every source the engine settles is classed as robust by that code once
+    \[CI\] is counted. The stand-in rule tracks the class it imitates to within 0.02 in four of six setups and is
+    higher in the two Band 2 setups.
+  - **What it cannot show.** That code reads no spectrum and has no notion of S/N, so error rates cannot be
+    compared.
+  - **A detail found on the way.** That code places ALMA's sidebands 4–7.75 GHz from the LO, which agrees with
+    the geometry of item 25.
+- **Noise added to the real multi-line spectra.** `degrade.py` ([`results.md`](results.md), section 9). As observed,
+  the second lines of all seven sources are above 5σ, so the real data could not show the gain the simulations
+  claim. Noise is added until the second line sits at a chosen strength.
+  - **The guided rule was added to make the test fair.** Beating a rule that needs every line at 5σ, below 5σ,
+    shows nothing. `ladder.guided_rule` accepts a weaker line where a surviving solution predicts one.
+  - **The first write-up led with the wrong comparison.** It quoted the engine with the survey prior (0.92 at 4σ)
+    against a rule that had no prior (0.80). Like for like, with no prior, the engine stands at 0.87 against
+    0.80, and per source it is ahead for three of seven and behind for four. The README and
+    [`results.md`](results.md) now lead with the no-prior figures and show the per-source picture.
+  - **The rule was then given the prior too.** It answers when one remaining solution holds 0.95 of the prior
+    weight. With a broad survey prior that almost never happens, so its figures do not move.
+  - **A cross-correlation after Yun et al. (2015) was added** (`ladder.cross_correlation`), since it is the closest
+    earlier method. Compared on best guesses with no prior, the engine is at 1.00 and the cross-correlation at
+    0.96 with the second line at 4σ; 0.98 and 0.92 at 3.5σ. Multiplied by the survey prior, the
+    cross-correlation fails for the two sources at z > 5, but the paper uses a per-source photometric redshift
+    there, which this repository does not have.
+  - **What the test supports.** Somewhat more answers than an observer-style rule below 5σ, unevenly across
+    sources, at the same rate of wrong answers; and a best guess that is right slightly more often than a
+    fixed-template cross-correlation's.
+  - **What it does not.** Anything about unseen spectra, or about a practised observer. Seven sources, all from
+    the development sample; draws that share the real spectrum's noise; comparison methods of our own making.
+  - **Guarded by** `test_guided_rule_confirms_a_weak_line_and_otherwise_equals_the_detection_rule`,
+    `test_guided_rule_uses_a_prior_only_when_one_solution_dominates`,
+    `test_cross_correlation_noise_matches_shuffles_and_two_lines_give_the_redshift`,
+    `test_degradation_reaches_the_requested_second_line_snr` and
+    `test_sudoku_comparison_file_matches_the_current_engine_results`.
+
 ## Known open issues
 
-- **The comparison rule.** It is a simplified Sudoku-style rule, not the High-z Sudoku code.
-  - **What the public code is.** [tjlcbakx/redshift-search-graphs](https://github.com/tjlcbakx/redshift-search-graphs)
-    has two parts. `RSGplot` draws the redshifts allowed by a list of detected line frequencies, the frequency
-    coverage and a photometric redshift, to be read by eye. `RSGquality` takes a set of windows and a redshift
-    distribution and returns the fractions of redshifts with no, one, two or more lines in the windows, and how
-    many of the one- and two-line cases are robust. Neither takes a spectrum.
-  - **What a faithful comparison would be.** First, `RSGquality` on the layouts and populations of `atlas.py`
-    and `tuning.py`: the fraction of redshifts that are robust if every covered line is detected, against the
-    engine's fraction at finite S/N. Second, the authors' own reading of the 18 spectra, for which the rule in
-    this repository is only a stand-in. Neither has been done. The code carries no licence file, so it cannot be
-    bundled here; a script would have to take the path of the user's own copy.
+- **The comparison rule.** It is a simplified Sudoku-style rule, not the High-z Sudoku code. That code has now been
+  run on the same coverage and redshifts (see "Comparisons added on 12 November" above). What remains undone:
+  - **The reading by eye.** The code's plotting tool (`RSGplot`) shows the redshifts allowed by a list of detected
+    lines, the coverage and a photometric redshift. Its authors' reading of the 18 spectra is not reproduced; the
+    stand-in rule and the guided rule are this repository's substitutes.
+  - **Photometric redshifts for the real sources.** The Sudoku classes call five single-line sources robust given
+    a photometric redshift. The engine has not been run with the published photometric redshift of each source
+    as its prior, so that claim is untested here.
+  - **Licence.** The code carries no licence file, so it is not bundled; `scripts/compare_sudoku.py` takes the
+    path of the user's own copy.
 - **Point-source spectra.** These lose flux for extended or multiply-imaged sources.
 - **SPT0549-56.** It has no published position or redshift and no detected continuum, so its cut-out is centred on the
   pointing centre.
@@ -265,6 +306,7 @@ regenerated again after them.
   √(width) correction; full covariance propagation is not implemented.
 - **Model completeness.** Velocity offsets between lines beyond 150 km/s, non-Gaussian or multi-component lines,
   continuum residuals, several sources along one line of sight, and redshifts outside 0.5–8 are not modelled.
-- **No comparison with the template cross-correlation.** The method of Yun et al. (2015) (item 27) has not been
-  run on these spectra.
+- **The cross-correlation is a re-implementation.** The method of Yun et al. (2015) (item 27) is compared only
+  through `ladder.cross_correlation`, written from the paper's description, and without the per-source
+  photometric redshifts the paper uses. The authors' code has not been run.
 - **No external review yet.** All checks so far are internal or automated, including both reviews above.

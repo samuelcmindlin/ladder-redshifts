@@ -282,3 +282,253 @@ ones, below the five contiguous tunings of the standard scan.
 Bakx (2026) asks the same question for Band 3 and for Band 2 with 8 and 14 GHz of bandwidth, using the High-z
 Sudoku tool, which counts the lines a layout covers at each redshift. This optimiser scores simulated spectra at a
 set S/N, and its receiver models differ. The two sets of answers have not been compared.
+
+## 8. The High-z Sudoku code on the same sources and setups
+
+`python scripts/compare_sudoku.py /path/to/RSG.py` runs the public code of Bakx & Dannerbauer (2022),
+[tjlcbakx/redshift-search-graphs](https://github.com/tjlcbakx/redshift-search-graphs) (commit `e60dd15`, 8 April
+2022), unmodified, and writes `results/redshift_sudoku_comparison.json`. That code is not redistributed here.
+
+- **What that code does.** Its function `RSGquality` takes frequency windows and redshifts, not a spectrum. For each
+  redshift it counts the lines that fall inside the windows and classes the redshift as no line, one line, two
+  lines, or three or more.
+  - **One line** is robust when a photometric redshift good to Δz/(1+z) = 0.13 excludes the neighbouring CO
+    identifications at 5σ, or when those would have shown more than one line.
+  - **Two lines** are robust unless a neighbouring solution would also show exactly two CO lines.
+  - **Depth.** Every covered line counts as detected, whatever its strength.
+- **CO only, or with \[CI\].** The line list holds CO and the far-infrared fine-structure lines. \[CI\] is optional,
+  and the authors advise counting it only for deep surveys. Both versions are given.
+
+### The 19 real sources
+
+Each source is classed at its published redshift, with the windows of its own spectrum. The engine's verdicts are
+those of sections 1 and 3.
+
+| Source | Lines seen in the scan | Sudoku, CO only | Sudoku, with \[CI\] | Engine (confidence) |
+|---|---|---|---|---|
+| SPT0027-50 | 3 | two lines, robust | three or more lines | confident & correct (1.00) |
+| SPT0403-58 | 3 | two lines, robust | three or more lines | confident & correct (1.00) |
+| SPT0425-40 | 2 | two lines, robust | two lines, robust | confident & correct (1.00) |
+| SPT0436-40 | 2 | one line, not robust | two lines, robust | confident & correct (1.00) |
+| SPT0520-53 | 2 | one line, not robust | two lines, robust | confident & correct (1.00) |
+| SPT0652-55 | 2 | one line, not robust | two lines, robust | confident & correct (1.00) |
+| SPT2152-40 | 2 | one line, not robust | two lines, robust | confident & correct (1.00) |
+| SPT2203-41 | 2 | two lines, robust | two lines, robust | confident & correct (1.00) |
+| SPT2232-61 | 1 | one line, robust with photo-z | one line, robust with photo-z | ambiguous, best = published (0.90) |
+| SPT0314-44 | 1 | one line, robust with photo-z | one line, robust with photo-z | ambiguous, best = published (0.90) |
+| SPT0402-45 | 1 | one line, robust with photo-z | one line, robust with photo-z | ambiguous, best = published (0.87) |
+| SPT2349-52 | 1 | one line, not robust | two lines, robust | ambiguous, best = published (0.85) |
+| SPT0226-45 | 1 | one line, not robust | one line, not robust | ambiguous, best = published (0.78) |
+| SPT2129-57 | 1 | one line, not robust | one line, not robust | ambiguous, best = published (0.77) |
+| SPT0528-53 | 1 | one line, not robust | two lines, robust | ambiguous, best = published (0.76) |
+| SPT0054-41 | 1 | one line, not robust | one line, not robust | ambiguous, best = published (0.69) |
+| SPT2031-51 | 1 | one line, not robust | one line, robust with photo-z | ambiguous, best = published (0.45) |
+| SPT2311-45 | 1 | one line, not robust | one line, robust with photo-z | ambiguous, best = published (0.42) |
+| SPT2316-50 | 1 | one line, not robust | one line, not robust | ambiguous, best ≠ published (0.11) |
+
+- **Multi-line sources (the first eight rows).** With \[CI\] counted, Sudoku classes all eight as robust, and the
+  engine is confident and correct for all eight. With CO alone it classes the four CO(4–3) + \[CI\](1–0) sources
+  as one line, not robust, because their second line is the \[CI\] line.
+- **Single-line sources (11).** The engine leaves all eleven open. Sudoku's classes for them fall in three groups:
+  - **Five are robust given a photometric redshift** (three of them with CO alone). The engine was run here with
+    the survey's redshift distribution as its only prior, not with each source's photometric redshift, so the
+    two are answering different questions. The engine's three highest single-line confidences (0.90, 0.90, 0.87)
+    belong to the three sources that Sudoku classes this way with CO alone.
+  - **Two are "two lines, robust" once \[CI\] is counted** (SPT2349-52 and SPT0528-53): \[CI\](1–0) lies inside the
+    scan. The published scan shows one line in each. The class describes the coverage, not the depth that was
+    reached. The engine, which weighs the missing \[CI\] line against how faint it may be, gives 0.85 and 0.76.
+  - **Four are not robust** in either version.
+- **No contradiction.** Every source the engine settles is one that Sudoku classes as robust with \[CI\]. The seven
+  sources that Sudoku classes as robust and the engine leaves open are the seven above, for the reasons given.
+
+### The synthetic atlas
+
+The six setups of section 5, for the 1,040 of the atlas's 2,500 sources with CO(4–3) at S/N ≥ 16. These are the
+sources for which the engine comes closest to the unlimited depth that the Sudoku classes assume.
+
+| Setup | Sudoku robust, CO only | Sudoku robust, with \[CI\] | Engine | Engine + photo-z | Stand-in rule | Sudoku, two or more lines, with \[CI\] |
+|---|---|---|---|---|---|---|
+| B3 single tuning | 0.007 | 0.121 | 0.051 | 0.056 | 0.046 | 0.048 |
+| B3 scan | 0.550 | 0.835 | 0.606 | 0.698 | 0.596 | 0.593 |
+| B4 scan (2 mm) | 0.724 | 0.835 | 0.726 | 0.770 | 0.720 | 0.728 |
+| B2 full (WSU) | 1.000 | 1.000 | 0.839 | 0.895 | 0.815 | 0.756 |
+| B3 + B4 scans | 0.958 | 0.989 | 0.964 | 0.978 | 0.956 | 0.939 |
+| B2 + B4 | 0.981 | 0.981 | 0.996 | 0.999 | 0.977 | 0.950 |
+
+"Sudoku robust" is the authors' robust redshift coverage: two or more lines unless degenerate, plus robust single
+lines. "Engine" is the fraction of confident, correct answers. The last column is Sudoku's fraction with two or
+more lines and no degeneracy, with \[CI\] counted; that is the class the stand-in rule of this repository was
+written to imitate.
+
+- **The stand-in rule tracks the class it imitates** to within 0.02 in four setups. In the two Band 2 setups it is
+  higher (0.815 against 0.756, and 0.977 against 0.950).
+- **In the Band 3 and Band 4 scans the engine lies between Sudoku's two figures.** For the Band 3 scan it reaches
+  0.606, or 0.698 with a photometric redshift, against 0.550 (CO only) and 0.835 (with \[CI\]).
+- **For the full Band 2 it is below both** (0.839, or 0.895 with a photometric redshift, against 1.000).
+- **Why the engine falls short of the higher figure.** The Sudoku figures assume that every covered line is seen;
+  at finite depth the engine has to allow that a predicted line is too faint. The atlas's photometric redshifts
+  are also poorer (0.20 in ln(1+z)) than the 0.13 Sudoku assumes, though that matters less: with 0.20 the Band 3
+  figure with \[CI\] is 0.811.
+- **In the two-band setups they agree** to within 0.03.
+
+### What this comparison is not
+
+The Sudoku code reads no spectrum and has no notion of signal-to-noise, so there are no error rates to set side by
+side. Its graphical tool (`RSGplot`), read by eye for each source, is not reproduced here; the stand-in rule
+remains this repository's substitute for that reading.
+
+## 9. The multi-line spectra with noise added
+
+`python -m ladder_redshifts.degrade`. As observed, the seven multi-line sources of section 1 have their
+second-brightest line at 5.6σ or more, so a rule that needs every line at 5σ settles all of them, and the real
+data do not test the engine where it should gain. Here Gaussian noise is added to each real spectrum until that
+line would sit at a chosen S/N, and each method is run on 100 noise draws per source and level.
+
+Outputs: `results/redshift_degradation.json`, `figures/redshift_degradation.png` (means) and
+`figures/redshift_degradation_sources.png` (per source).
+
+### The methods
+
+- **This engine,** with no redshift prior and with the survey prior of section 1.
+- **Detection rule.** The stand-in rule of the other sections: every line at 5σ, and a single surviving solution.
+- **Guided rule.** The 5σ lines first. If they leave several solutions, one further line at 3σ (or 4σ) is accepted
+  within 150 km/s of a position a surviving solution predicts, and the rule answers when exactly one solution is
+  confirmed this way. It stands for what an observer does by eye. Given the survey prior, it also answers when
+  one remaining solution holds at least 0.95 of the prior weight.
+- **Template cross-correlation,** re-implemented from the description in Yun et al. (2015, appendix A): the
+  spectrum is cross-correlated with a template of all the lines, each weighted by its relative strength, and the
+  S/N at each trial redshift is set by shuffling the spectrum. The best guess is the redshift with the highest
+  S/N, or with the highest S/N × p(z) when a prior is given.
+- **Equal-weight sum.** As in section 1.
+
+Two kinds of outcome are kept apart. The engine, when confident, and the two rules either give an answer or give
+none, so they are compared on the answers they give. The cross-correlation always has a best redshift, so it is
+compared with the engine's best guess.
+
+### Like for like: no redshift prior
+
+The two rules and the cross-correlation use only the spectrum. Without a prior the engine does too, so this is
+the comparison in which every method has the same information.
+
+![Means over the seven sources](../figures/redshift_degradation.png)
+
+**Answers given.** Fraction of draws in which the published redshift is returned (for the engine and the
+equal-weight sum, with confidence):
+
+| S/N of the second line | Engine, no prior | Guided rule, 3σ | Guided rule, 4σ | Detection rule, 5σ | Equal-weight sum, no prior |
+|---|---|---|---|---|---|
+| 5.5 | 1.00 | 0.99 | 0.97 | 0.82 | 0.55 |
+| 5 | 1.00 | 0.96 | 0.92 | 0.52 | 0.55 |
+| 4.5 | 0.95 | 0.89 | 0.72 | 0.27 | 0.53 |
+| 4 | 0.87 | 0.80 | 0.47 | 0.13 | 0.48 |
+| 3.5 | 0.73 | 0.60 | 0.28 | 0.03 | 0.42 |
+| 3 | 0.47 | 0.33 | 0.09 | 0.00 | 0.30 |
+| 2.5 | 0.26 | 0.14 | 0.03 | 0.00 | 0.18 |
+| 2 | 0.07 | 0.06 | 0.00 | 0.00 | 0.06 |
+
+- **The engine gives somewhat more answers than the guided rule.** With the second line at 4σ it returns the
+  published redshift in 0.87 of the draws against 0.80 for the guided rule at 3σ; at 3.5σ, 0.73 against 0.60; at
+  3σ, 0.47 against 0.33.
+- **The gain is uneven across sources.** At 4σ the engine is ahead for three of the seven sources and behind for
+  four; at 3.5σ, ahead for four and behind for three; at 3σ, ahead for five and behind for two.
+  - **Where it gains.** SPT0403-58, SPT0425-40 and SPT0436-40 at 4σ, 3.5σ and 3σ, and SPT2203-41 at 3.5σ and 3σ.
+    SPT0425-40 accounts for much of the mean: its two lines are equally bright and sink together. Without it the
+    engine and the rule stand at 0.89 and 0.90 at 4σ, at 0.75 and 0.69 at 3.5σ, and at 0.52 and 0.38 at 3σ.
+  - **Where it does not.** For the three sources whose second line is a faint \[CI\] line (SPT0520-53,
+    SPT0652-55, SPT2152-40) the guided rule does as well or better at 4σ and at 3.5σ.
+- **Wrong answers are equally rare.** Of the 5,600 draws, the engine returned a different redshift with
+  confidence in 4 and the guided rule at 3σ returned one in 4. The guided rule at 4σ and the 5σ rule never did.
+- **The 5σ rule stops answering below its threshold,** as it must: 0.13 at 4σ and 0.03 at 3.5σ.
+- **The equal-weight sum never passes 0.55.** It fails on the same three sources as in section 1.
+
+![Per source](../figures/redshift_degradation_sources.png)
+
+| Source | Second line (S/N as observed) | Engine, no prior, at 4σ / 3.5σ / 3σ | Guided rule (3σ) at 4σ / 3.5σ / 3σ | Cross-correlation best guess, no prior |
+|---|---|---|---|---|
+| SPT0403-58 | CO(5–4) (9.8) | 1.00 / 0.96 / 0.70 | 0.87 / 0.64 / 0.29 | 0.96 / 0.91 / 0.88 |
+| SPT0425-40 | CO(5–4) (10.9) | 0.74 / 0.58 / 0.22 | 0.24 / 0.11 / 0.01 | 0.98 / 0.93 / 0.76 |
+| SPT0436-40 | \[CI\](1–0) (15.2) | 0.92 / 0.83 / 0.57 | 0.87 / 0.69 / 0.36 | 1.00 / 0.99 / 0.98 |
+| SPT0520-53 | \[CI\](1–0) (6.5) | 0.89 / 0.77 / 0.42 | 0.90 / 0.82 / 0.50 | 0.98 / 0.97 / 0.92 |
+| SPT0652-55 | \[CI\](1–0) (7.4) | 0.69 / 0.54 / 0.38 | 0.86 / 0.69 / 0.35 | 0.86 / 0.84 / 0.76 |
+| SPT2152-40 | \[CI\](1–0) (7.1) | 0.91 / 0.69 / 0.49 | 0.93 / 0.73 / 0.55 | 1.00 / 0.99 / 1.00 |
+| SPT2203-41 | CO(6–5) (5.6) | 0.91 / 0.71 / 0.54 | 0.94 / 0.54 / 0.23 | 0.92 / 0.84 / 0.88 |
+
+**Best guesses.** Fraction of draws in which the published redshift is ranked first:
+
+| S/N of the second line | Engine, no prior | Cross-correlation, no prior | Engine, survey prior | Cross-correlation × survey prior |
+|---|---|---|---|---|
+| 5.5 | 1.00 | 1.00 | 1.00 | 0.71 |
+| 5 | 1.00 | 0.99 | 1.00 | 0.71 |
+| 4.5 | 1.00 | 0.98 | 1.00 | 0.71 |
+| 4 | 1.00 | 0.96 | 1.00 | 0.71 |
+| 3.5 | 0.98 | 0.92 | 0.99 | 0.71 |
+| 3 | 0.93 | 0.88 | 0.95 | 0.71 |
+| 2.5 | 0.84 | 0.77 | 0.87 | 0.71 |
+| 2 | 0.67 | 0.63 | 0.74 | 0.67 |
+
+- **The engine's best guess is right slightly more often than the cross-correlation's.** With no prior the two
+  stand at 1.00 and 0.96 at 4σ, 0.98 and 0.92 at 3.5σ, and 0.93 and 0.88 at 3σ. From 4.5σ to 3.5σ the engine is
+  never behind for any source; at 3σ it is ahead for four sources and behind for three.
+- **Where the difference comes from.** It is largest for SPT0652-55 (1.00 against 0.86 at 4σ) and SPT2203-41
+  (1.00 against 0.92). The cross-correlation has one fixed set of line ratios. When the second line is weaker
+  than that template expects, reading the bright line alone at another redshift scores as high as the true
+  two-line reading. The engine's template bank allows the weaker ratio.
+
+### With the survey prior
+
+| S/N of the second line | Engine, survey prior | Guided rule (3σ) with the survey prior | Guided rule (3σ), no prior |
+|---|---|---|---|
+| 5.5 | 1.00 | 0.99 | 0.99 |
+| 5 | 1.00 | 0.96 | 0.96 |
+| 4.5 | 0.97 | 0.89 | 0.89 |
+| 4 | 0.92 | 0.80 | 0.80 |
+| 3.5 | 0.80 | 0.60 | 0.60 |
+| 3 | 0.59 | 0.33 | 0.33 |
+| 2.5 | 0.36 | 0.14 | 0.14 |
+| 2 | 0.13 | 0.06 | 0.06 |
+
+- **The engine gains from the prior: 0.92 at 4σ, 0.80 at 3.5σ and 0.59 at 3σ.** It returned a different redshift
+  with confidence in 5 of the 5,600 draws.
+- **The guided rule does not.** Given the same prior, its figures change by 0.002 at most. A broad survey prior
+  almost never puts 0.95 of its weight on one of the remaining solutions, and a prior cannot turn a missing line
+  into a detection. With the prior for both, the engine is ahead for six of seven sources at 4σ and for all
+  seven at 3.5σ and 3σ. A rule built to use the prior in some other way might do better.
+- **The cross-correlation × prior fails for the two sources at z > 5.** From 5.5σ down to 2.5σ it ranks the
+  published redshift first in 0.71 of the draws: always for five sources, never for SPT0425-40 and SPT2203-41.
+  The product of the S/N with a prior centred on z = 3.9 outweighs a second line, even with no noise added.
+  - **This is not the paper's procedure.** Yun et al. multiply by the probability of each source's own
+    photometric redshift. This repository has no photometric redshifts, so the survey prior stands in, and the
+    column tests the product rule with a population prior.
+
+### The same methods on the 19 real spectra, as observed
+
+| | Engine, no prior | Engine, survey prior | Guided rule (3σ) | Cross-correlation, no prior | Cross-correlation × survey prior |
+|---|---|---|---|---|---|
+| Answers given: correct / wrong | 8 / 0 | 8 / 0 | 8 / 0 | — | — |
+| Best guess right, 8 multi-line sources | 8 | 8 | — | 8 | 6 |
+| Best guess right, 11 single-line sources | 8 | 10 | — | 3 | 5 |
+
+- **On answers, a tie.** The engine and the guided rule both settle the eight multi-line sources (the seven above
+  and SPT0027-50) and leave the eleven single-line sources open. The prior changes nothing for the rule.
+- **The cross-correlation gets all eight multi-line sources right without a prior.**
+- **Its 3 of 11 on single-line sources is not a score.** With one line, every reading of that line alone has the
+  same S/N in the cross-correlation, so its choice among them is arbitrary. The statistic cannot rank one-line
+  readings; the engine ranks them by what else each reading predicts inside the scan.
+
+### Limits of this test
+
+- **The draws are not independent.** Each one keeps the noise of the real spectrum and adds to it. At the first
+  levels little is added (for SPT2203-41 at 5.5σ the noise rises by 2%), so those draws mostly repeat the observed
+  spectrum.
+- **Seven sources, and the ones the engine was developed on.** The test uses real line shapes, line ratios and
+  window layouts, but it is not an independent sample.
+- **The comparison methods are this repository's.** The guided rule is our construction. The cross-correlation is
+  our re-implementation and differs from the paper in three stated ways:
+  - **Weights.** The paper takes them from a composite spectrum of SPT galaxies and gives no numbers. Here they
+    are this package's line-ratio template fitted to the composite luminosities of Spilker et al. (2014,
+    Table 2).
+  - **Line width.** The paper gives none. The template lines here have the 450 km/s detection profile.
+  - **Noise.** The spectrum is divided by its noise first, which helps on scans whose noise differs between
+    windows. The S/N uses the closed-form limit of the paper's 10,000 shuffles; a test checks it against real
+    shuffles.
+- **An observer has more to go on** than either rule: line widths, the continuum and a photometric redshift.

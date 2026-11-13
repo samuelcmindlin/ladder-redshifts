@@ -99,8 +99,8 @@ ratio ln Λ(z) = ½ T², with
   probability. For one template, T above is the same weighted sum, normalised analytically by the noise and the
   coverage in place of the shuffles. What this engine adds is the bank of templates with a prior on excitation
   and \[CI\] strength, the conversion to a posterior with a confidence score and a list of competing redshifts,
-  and the velocity tolerance. Their method has not been run on the spectra here, so nothing in this repository
-  shows that the additions change an answer.
+  and the velocity tolerance. A re-implementation from the paper's description is compared with the engine
+  on noise-added real spectra in [`results.md`](results.md), section 9; the authors' own code has not been run.
 
 **Templates (the timbre prior).**
 
@@ -144,6 +144,8 @@ All share the same matched-filter front end (`ladder.py`).
 | `flat` | The same likelihood with equal weights on the S/N of every covered line: no line ratios and no noise weighting. A simplified stand-in for line-sum methods such as Lupu et al. (2012), not their procedure. |
 | `sudoku` | A simplified High-z Sudoku rule. Lines are detected at ≥ 5σ. A solution is kept if it explains every detection to within 300 km/s and predicts no line of expected S/N > 8 where the data show < 3σ. The rule answers only when a single solution survives. This is a re-implementation for comparison, not the authors' code. |
 | `naive` | Assumes the detections are adjacent CO rungs and takes the smallest spacing as the fundamental. It fails whenever [CI] sits between rungs, and is kept as a baseline. |
+| `guided` | The `sudoku` rule followed by a guided look for a weaker line. If the 5σ detections leave several solutions, a solution is confirmed when the data reach 3σ (or 4σ) within 150 km/s of a line it predicts and that no detection accounts for. The rule answers when exactly one solution is confirmed. Given a redshift prior, it also answers when one of the remaining solutions holds at least 0.95 of the prior weight among them. It stands for what an observer does by eye and is used only in the degradation test (section 10). |
+| `xcorr` | A template cross-correlation re-implemented after Yun et al. (2015, appendix A): ζ(z) is the sum over all lines of the smoothed spectrum at each line's predicted position, weighted by the line's relative strength, and its S/N is ζ less its mean, over its standard deviation, under random shuffles of the spectrum. The best guess is the redshift of highest S/N, or of highest S/N × p(z) when a prior is given. It has no confidence and never abstains. Used only in the degradation test (section 10). |
 
 ## 5. Ambiguity function
 
@@ -261,3 +263,42 @@ spectra do that.
 frequency coverage. `tuning.py` chooses tuning positions greedily for ALMA Band 2, now and after the Wideband
 Sensitivity Upgrade. It chooses them on one simulated population and reports their performance on an independent
 one.
+
+## 10. Two checks against other ways of working
+
+**The High-z Sudoku code.** `scripts/compare_sudoku.py` runs the published code of Bakx & Dannerbauer (2022),
+unmodified, from a copy the user supplies. Its function `RSGquality` classes a redshift by the lines that fall
+inside a set of frequency windows; it reads no spectrum.
+
+- **Real sources.** Each is classed at its published redshift with the windows of its own spectrum.
+- **Atlas.** The six setups are classed on the redshifts of the atlas's sources with CO(4–3) at S/N ≥ 16.
+- **A detail of the call.** `RSGquality` builds its redshift grid up to 1.5 times the largest redshift it is given
+  and reads neighbouring solutions beyond the grid at its last point. Every call therefore includes a sentinel
+  redshift of 12, whose own class is subtracted from the result. The grid has 40,000 points.
+
+**Noise added to real spectra.** `degrade.py` takes the seven multi-line spectra of 2016.1.00672.S and adds
+Gaussian noise, channel by channel, until the second-brightest line would have a chosen matched-filter S/N:
+the noise is raised by the factor (observed S/N) / (chosen S/N), and the stated noise is raised with it. Every
+method is then run on 100 draws per source and level. Each draw keeps the noise already in the real spectrum, so
+the draws of one source are not independent.
+
+- **Two kinds of outcome.** The engine (when confident), the detection rule and the guided rule give an answer or
+  none; they are compared on the answers they give. The cross-correlation always has a best redshift; it is
+  compared with the engine's best guess.
+- **Two states of knowledge.** Everything is run with no redshift prior, where each method has only the spectrum,
+  and again with the survey prior.
+
+**The cross-correlation, in detail.** `ladder.cross_correlation` is written from the description in Yun et al.
+(2015), not from their code, and differs from it in three ways.
+
+- **Weights.** The paper takes them from a composite spectrum of SPT galaxies and gives no numbers. Here they are
+  this package's line-ratio template with J_c = 6.2 and a \[CI\](1–0) ratio of 0.16, fitted to the luminosities
+  of CO(1–0), CO(4–3), CO(6–5) and \[CI\](1–0) in Table 2 of Spilker et al. (2014).
+- **Line width.** The paper gives none. The template lines have the 450 km/s detection profile.
+- **Noise.** The spectrum is divided by its noise before the cross-correlation, which helps on scans whose noise
+  differs between windows. The paper estimates the noise of ζ(z) from 10,000 shuffles of the spectrum. The code
+  uses the limit of that procedure in closed form: under a random permutation of N pixel values with mean m and
+  variance v, a weighted sum Σ a_p x_p has mean m Σ a_p and variance N/(N−1) · v · (Σ a_p² − (Σ a_p)²/N). A test
+  compares it with 1,500 real shuffles.
+- **Prior.** The paper multiplies the S/N by the probability distribution of each source's photometric redshift.
+  No photometric redshifts are used here; the survey prior stands in when a prior is given.

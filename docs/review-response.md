@@ -54,6 +54,9 @@ Items 13–19 of [`development-notes.md`](development-notes.md) record each fix 
 
 - **External review.** No external scientific review has taken place yet.
 - **Independent sample.** The calibration test needs about 100 new sources, run with a frozen version.
-- **Comparison with the published methods.** A head-to-head with High-z Sudoku itself, with a faithful Z-Spec
-  procedure, and with the template cross-correlation of Yun et al. (2015), is still to do.
+- **Comparison with the published methods.** Done since: the High-z Sudoku code, run on the same coverage and
+  redshifts (it reads no spectrum; [`results.md`](results.md), section 8), and re-implementations of an
+  observer-style rule and of the template cross-correlation of Yun et al. (2015) on noise-added real spectra
+  (section 9). Still to do: the Sudoku authors' own reading of the spectra, a faithful Z-Spec procedure, and the
+  cross-correlation authors' own code with per-source photometric redshifts.
 - **Modelling gaps.** No amplitude prior, no full channel covariance, and no velocity offsets between species.

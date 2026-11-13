@@ -29,9 +29,35 @@ cubes, and each answer is scored against the published redshift (Reuter et al. 2
 
 - **The engine and the detection rule agree on the multi-line sources.** Both recover all seven published
   redshifts. The rule needs every line above 5σ, and the faintest second lines here are at 5.6σ (SPT2203-41) and
-  6.5σ (SPT0520-53), so these spectra do not test the engine where it should gain, below that threshold. An earlier
-  version of this table had the rule at 4 of 7; the extracted noise was about 1.3 times too high, which put three
-  of those lines under its threshold ([`docs/development-notes.md`](docs/development-notes.md), item 20).
+  6.5σ (SPT0520-53), so as observed these spectra do not test the engine where it should gain, below that
+  threshold. An earlier version of this table had the rule at 4 of 7; the extracted noise was about 1.3 times too
+  high, which put three of those lines under its threshold
+  ([`docs/development-notes.md`](docs/development-notes.md), item 20).
+- **Below that threshold, like for like, the engine gives somewhat more answers.** Noise was added to the seven
+  spectra until the second line sat at a chosen strength, and every method was given the spectrum alone, with no
+  redshift prior ([`docs/results.md`](docs/results.md), section 9).
+  - **Against a rule that works as an observer would.** The rule takes the 5σ lines, then accepts one 3σ line at
+    a predicted position. With the second line at 4σ the engine returns the published redshift with confidence
+    in 87% of noise draws and the rule in 80%; at 3.5σ, 73% and 60%. A rule that needs every line at 5σ manages
+    13% and 3%.
+  - **The gain is uneven.** At 4σ the engine is ahead for three of the seven sources and behind for four; at
+    3.5σ, ahead for four and behind for three (figure below). It gains where the second line is a CO line and
+    not where it is a faint \[CI\] line.
+  - **Wrong answers are equally rare.** The engine and the rule each returned a different redshift in 4 of
+    5,600 draws.
+  - **Against a template cross-correlation.** The engine's best guess is the published redshift in 100% of draws
+    at 4σ and 98% at 3.5σ; the best guess of a cross-correlation after Yun et al. (2015), in 96% and 92%.
+  - **With the survey's redshift distribution as a prior** the engine's figures rise to 92% at 4σ and 80% at
+    3.5σ. The rule, as built, gains nothing from the same prior.
+  - **What this is not.** These are the spectra the engine was developed on, with simulated extra noise, and the
+    rule and the cross-correlation are our own constructions. It is not a test on unseen data, and it does not
+    show the engine doing better than a practised observer.
+
+  ![Per source: the engine against the guided rule](figures/redshift_degradation_sources.png)
+- **The High-z Sudoku code agrees on which sources can be settled.** The authors' own code, run on the same
+  frequency coverage at the published redshifts, classes as robust every source the engine settles, provided
+  \[CI\] is counted. That code reads no spectrum, so this checks which redshifts are solvable, not error rates
+  ([`docs/results.md`](docs/results.md), section 8).
 - **An equal-weight sum falls short here.** It prefers a wrong redshift for three of the two-line sources, with
   0.66–0.91 of its weight on it. In each case it reads CO(4–3) as CO(3–2) or CO(5–4) and treats the \[CI\](1–0)
   line as noise.
@@ -95,9 +121,9 @@ Requires Python ≥ 3.9 with numpy, scipy and matplotlib (astropy too for the ar
 
 ```bash
 python -m pip install -r requirements.txt
-python -m pytest                 # 25 regression tests, synthetic and real, under a minute
+python -m pytest                 # 30 regression tests, synthetic and real, under a minute
 bash reproduce.sh                # every real-data result and every figure from the shipped spectra, 1-2 min
-bash reproduce.sh --full         # also re-run the synthetic studies (about 1.5 hours on 2 cores)
+bash reproduce.sh --full         # also re-run the synthetic studies (about 1.7 hours on 2 cores)
 ```
 
 Run everything from the repository root. If the package is installed elsewhere (`pip install .`), set
@@ -149,6 +175,8 @@ ladder_redshifts/        the package (run modules with  python -m ladder_redshif
   ladder.py              engine: line catalogue, log-frequency grid, simulator, matched filter, estimators
   realspec.py            spectra from cube cut-outs; the SPT0027-50 Band 2 analysis
   batch_real.py          score every real spectrum under data/ against data/truth.csv
+  degrade.py             the multi-line spectra with noise added: the engine against two detection rules
+                         and a template cross-correlation
   followup.py            which single follow-up tuning settles an ambiguous source
   atlas.py               synthetic error-rate atlas, 2,500 sources x 6 ALMA setups
   traps.py               three published octave-type misidentifications, rebuilt from their coverage
@@ -157,7 +185,8 @@ ladder_redshifts/        the package (run modules with  python -m ladder_redshif
   summary.py             the headline figure above
 scripts/alma/            download and extraction tools for the ALMA archive (cut-outs and ADMIT summaries)
 scripts/                 one-off checks: the first review's diagnostics, the truth-table check, the noise
-                         calibration of the shipped spectra, the engine on pure noise
+                         calibration of the shipped spectra, the engine on pure noise, the High-z Sudoku code
+                         on the same sources (needs your own copy of that code)
 data/                    published redshifts, extracted spectra, cut-out targets and manifest (see data/README.md)
 results/                 every number reported, as JSON/CSV (see results/README.md)
 figures/                 every figure (see figures/README.md)
@@ -189,6 +218,8 @@ tests/                   regression tests
   These were also the spectra on which the method's bugs were found and fixed
   ([`docs/development-notes.md`](docs/development-notes.md)), so they are a development sample, not a blind test.
   About 100 new sources across several surveys, run with a frozen version, would test the score properly.
+  Tag `v0.1.0` is that frozen version: the 0.95 threshold, the ±0.006 window, the line list and the template
+  priors are the ones it contains.
 - **Where the truth comes from.** For the 7 multi-line sources the published redshifts came from these same 3 mm
   spectra. Agreement there shows that the engine reaches the published answer automatically; it is not an
   independent confirmation. For the 11 single-line sources the truth came from follow-up in other bands that the
@@ -199,9 +230,14 @@ tests/                   regression tests
   - **Equal-weight sum.** It weights every predicted line's S/N equally. That is in the spirit of the line sums of
     Lupu et al. (2012), but their procedure uses further statistics and tests.
   - **Detection rule.** It is a simplified version of High-z Sudoku (Bakx & Dannerbauer 2022), not the authors' code
-    ([tjlcbakx/redshift-search-graphs](https://github.com/tjlcbakx/redshift-search-graphs)).
-  - **Not compared at all.** The template cross-correlation of Yun et al. (2015), the closest earlier method
-    ([Related work](#related-work)).
+    ([tjlcbakx/redshift-search-graphs](https://github.com/tjlcbakx/redshift-search-graphs)). That code classes
+    frequency coverage and reads no spectrum. Its classes for these sources and for the atlas setups are in
+    [`docs/results.md`](docs/results.md), section 8; the authors' reading of the spectra by eye is not reproduced.
+  - **Guided rule.** The rule that accepts a weaker line at a predicted position is our own construction.
+  - **Cross-correlation.** It is our re-implementation of the closest earlier method (Yun et al. 2015), from the
+    paper's description: the weights are fitted to the composite of Spilker et al. (2014), the line width is our
+    choice, and the paper's per-source photometric redshift is not available here
+    ([`docs/results.md`](docs/results.md), section 9). The authors' code has not been run.
 
   A comparison with the published methods themselves on these spectra is the obvious next test.
 - **Spectrum extraction and noise model.**
@@ -235,7 +271,10 @@ tests/                   regression tests
   the result multiplied by a photometric-redshift probability. This is the closest earlier method. For a single
   template, the statistic T used here is that cross-correlation with an analytic normalisation; this engine adds
   a bank of templates with a prior, a posterior with a confidence score, and the velocity tolerance
-  ([`docs/method.md`](docs/method.md), section 3). The two have not been compared on the same spectra.
+  ([`docs/method.md`](docs/method.md), section 3). A re-implementation is compared with the engine in
+  [`docs/results.md`](docs/results.md), section 9; the authors' own code has not been run.
+- Spilker et al. 2014, ApJ 785, 149 (arXiv:1403.1667): the composite spectrum of SPT galaxies. Its line
+  luminosities (Table 2) set the weights of the cross-correlation re-implemented here.
 - Lupu et al. 2012, ApJ 757, 135: Z-Spec redshift search, combining the S/N of the predicted lines at each trial
   redshift (several statistics, including total-flux and pairwise S/N sums).
 - Bakx & Dannerbauer 2022, MNRAS 515, 678 (arXiv:2204.06011): High-z Sudoku; robustness of redshift solutions and

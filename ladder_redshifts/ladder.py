@@ -14,6 +14,10 @@ Estimators (all share one matched-filter front end):
   * sudoku_rule    - enumerate (detection x transition) solutions, keep those explaining every
                      detection, reject those predicting a strong line where none is seen
                      (a simplified High-z Sudoku / gcd-style rule; Bakx & Dannerbauer 2022).
+  * guided_rule    - sudoku_rule, then a look for a weaker line at the positions each surviving solution
+                     predicts (what an observer does by eye); used by degrade.py.
+  * xcorr_redshift - best redshift of a template cross-correlation, re-implemented after Yun et al. (2015);
+                     used by degrade.py.
   * flat           - generalized-likelihood harmonic sum with EQUAL weights on the S/N of all covered
                      ladder lines (no line ratios, no noise weighting); a simplified stand-in for
                      line-sum methods such as Lupu et al. 2012, not their full procedure.
@@ -423,12 +427,9 @@ def naive_spacing(dets, grid):
     return float(np.median(J * CO[0] / nu) - 1)
 
 
-def sudoku_rule(dets, grid, cover, y, ztol_kms=300.0, zmin=0.5, zmax=8.0):
-    """Simplified High-z Sudoku: unique solution explaining all detections without predicting
-    strong lines (expected S/N > 8 from the median SLED) where the data show < 3 sigma.
-    Returns (z or None, number of surviving solutions)."""
-    if not dets:
-        return None, 0
+def _rule_solutions(dets, grid, cover, y, ztol_kms=300.0, zmin=0.5, zmax=8.0):
+    """ln(1+z) of every solution that explains all detections without predicting strong lines (expected
+    S/N > 8 from the median SLED) where the data show < 3 sigma. Shared by sudoku_rule and guided_rule."""
     names, nus = line_list()
     tmpl = sled_flux(3.7, 0.29)
     lnd = np.array([grid.lnmin + p * DLN for p, _ in dets]); snr = np.array([s for _, s in dets])
@@ -452,9 +453,134 @@ def sudoku_rule(dets, grid, cover, y, ztol_kms=300.0, zmin=0.5, zmax=8.0):
                 ok = False; break
         if ok and not any(abs(lz - s) < tol for s in sols):
             sols.append(lz)
+    return sols
+
+
+def sudoku_rule(dets, grid, cover, y, ztol_kms=300.0, zmin=0.5, zmax=8.0):
+    """Simplified High-z Sudoku: unique solution explaining all detections without predicting
+    strong lines (expected S/N > 8 from the median SLED) where the data show < 3 sigma.
+    Returns (z or None, number of surviving solutions)."""
+    if not dets:
+        return None, 0
+    sols = _rule_solutions(dets, grid, cover, y, ztol_kms, zmin, zmax)
     if len(sols) == 1:
         return float(np.exp(sols[0]) - 1), 1
     return None, len(sols)
+
+
+def guided_rule(dets, grid, cover, y, confirm=3.0, ztol_kms=300.0, zmin=0.5, zmax=8.0, prior=None, share=0.95):
+    """The detection rule followed by a guided look for weaker lines, as an observer would do by eye.
+
+    If the 5 sigma detections leave one solution, that is the answer (as sudoku_rule). If they leave several,
+    a solution counts as confirmed when the data reach `confirm` sigma within DV_MAX of a line it predicts
+    inside the coverage and that no detection accounts for; the rule answers when exactly one solution is
+    confirmed.
+
+    prior: optional redshift density (a function of z), so that the rule can be given the same information as
+    the engine. When the lines do not single out a solution, the rule then also answers if one of the remaining
+    solutions (the confirmed ones, or all surviving ones when none is confirmed) holds at least `share` of the
+    prior weight among them. The weight is the density per unit ln(1+z), as in Engine.log_prior.
+    Returns (z or None, number of surviving solutions, number confirmed)."""
+    if not dets:
+        return None, 0, 0
+    sols = _rule_solutions(dets, grid, cover, y, ztol_kms, zmin, zmax)
+    if len(sols) == 1:
+        return float(np.exp(sols[0]) - 1), 1, 1
+    nus = line_list()[1]
+    lnd = np.array([grid.lnmin + p * DLN for p, _ in dets])
+    tol, n = ztol_kms / C_KMS, int(round(DV_MAX / PIX_KMS))
+    yc = np.where(cover, y, -np.inf)
+    confirmed = []
+    for lz in sols:
+        for lp in np.log(nus) - lz:
+            if np.min(np.abs(lp - lnd)) <= tol:
+                continue                                   # this line is one of the detections
+            p = int(round((lp - grid.lnmin) / DLN))
+            if 0 <= p < grid.npix and np.max(yc[max(p - n, 0):p + n + 1]) >= confirm:
+                confirmed.append(lz); break
+    if len(confirmed) == 1:
+        return float(np.exp(confirmed[0]) - 1), len(sols), 1
+    pool = confirmed if confirmed else sols
+    if prior is not None and pool:
+        z = np.exp(np.array(pool)) - 1
+        w = np.asarray(prior(z), float) * (1 + z)
+        if w.sum() > 0 and w.max() >= share * w.sum():
+            return float(z[int(np.argmax(w))]), len(sols), len(confirmed)
+    return None, len(sols), len(confirmed)
+
+
+# Line-ratio template for the cross-correlation: CO excitation and [CI] strength fitted to the composite spectrum
+# of SPT galaxies in Spilker et al. (2014, Table 2), where L' in 1e9 K km/s pc2 is 296.6 for CO(1-0), 179.1 for
+# CO(4-3), 136.3 for CO(6-5) and 47.5 for [CI](1-0): exp(-3/Jc) = 0.60 and exp(-5/Jc) = 0.46 give Jc = 6.0-6.4.
+XCORR_TEMPLATE = (6.2, 0.16)
+
+
+def _xcorr_setup(grid, weights, fwhm_kms, zmin, zmax):
+    nus = line_list()[1]
+    W = sled_flux(*XCORR_TEMPLATE) if weights is None else np.asarray(weights, float)
+    lnz = np.arange(np.log(1 + zmin), np.log(1 + zmax), DLN)
+    P = np.rint((np.log(nus)[None, :] - lnz[:, None] - grid.lnmin) / DLN).astype(int)
+    inr = (P >= 0) & (P < grid.npix)
+    return lnz, np.where(inr, P, 0), inr, W / W.max(), kernel(fwhm_kms)
+
+
+def cross_correlation(d, grid, cover, weights=None, fwhm_kms=DETECT_FWHM, zmin=0.5, zmax=8.0):
+    """S/N of a template cross-correlation at each trial redshift, after Yun et al. (2015, appendix A).
+
+    zeta(z) = sum_i W_i s(p_i(z)): the spectrum `d` (in units of its noise), smoothed with the line profile,
+    read at the pixel where redshift z puts line i of the list, and weighted by the relative strength W_i of
+    that line. Lines outside the coverage contribute nothing. This is a re-implementation from the paper's
+    description, not the authors' code, and it differs from it in three stated ways:
+      - the paper takes the weights from a composite spectrum of SPT galaxies and gives no numbers; here they
+        are this package's line-ratio template fitted to that composite (XCORR_TEMPLATE);
+      - the template lines have the detection profile's width; the paper gives no width;
+      - the spectrum is divided by its noise first, which helps on scans whose noise differs between windows.
+    The paper takes the noise of zeta at each z from 10,000 random shuffles of the spectrum. This function
+    returns the limit of that procedure in closed form, the mean and variance of a weighted sum under a random
+    permutation of the observed pixels, so it needs no random numbers; shuffled_cross_correlation does the
+    shuffles and the tests compare the two.
+    Returns (ln(1+z) grid, S/N); the S/N is 0 where no line of the list falls in the coverage."""
+    cover = np.asarray(cover, bool)
+    lnz, P, inr, W, k = _xcorr_setup(grid, weights, fwhm_kms, zmin, zmax)
+    x = d[cover]
+    n, m, v = x.size, x.mean(), x.var()
+    c = cover.astype(float)
+    s, k1, k2 = (fftconvolve(a, b, mode='same') for a, b in ((np.where(cover, d, 0.0), k), (c, k), (c, k * k)))
+    zeta = (np.where(inr, s[P], 0.0) * W).sum(1)
+    a1 = (np.where(inr, k1[P], 0.0) * W).sum(1)
+    a2 = (np.where(inr, k2[P], 0.0) * W ** 2).sum(1)
+    var = n / (n - 1.0) * v * np.clip(a2 - a1 ** 2 / n, 0.0, None)
+    ok = var > 1e-9
+    return lnz, np.where(ok, (zeta - m * a1) / np.sqrt(np.where(ok, var, 1.0)), 0.0)
+
+
+def shuffled_cross_correlation(d, grid, cover, n_shuffle, rng, weights=None, fwhm_kms=DETECT_FWHM, zmin=0.5,
+                               zmax=8.0):
+    """cross_correlation with the noise of zeta taken from `n_shuffle` random shuffles of the observed pixels,
+    as the paper does. Slow; used to check the closed form."""
+    cover = np.asarray(cover, bool)
+    lnz, P, inr, W, k = _xcorr_setup(grid, weights, fwhm_kms, zmin, zmax)
+    zeta = lambda arr: (np.where(inr, fftconvolve(arr, k, mode='same')[P], 0.0) * W).sum(1)
+    z0, x = zeta(np.where(cover, d, 0.0)), d[cover]
+    acc, acc2, buf = np.zeros(len(lnz)), np.zeros(len(lnz)), np.zeros(len(d))
+    for _ in range(n_shuffle):
+        buf[cover] = rng.permutation(x)
+        zz = zeta(buf)
+        acc += zz; acc2 += zz * zz
+    mean = acc / n_shuffle
+    std = np.sqrt(np.clip(acc2 / n_shuffle - mean ** 2, 0.0, None))
+    ok = std > 1e-5
+    return lnz, np.where(ok, (z0 - mean) / np.where(ok, std, 1.0), 0.0)
+
+
+def xcorr_redshift(d, grid, cover, prior=None, **kw):
+    """Best redshift of the template cross-correlation: the trial redshift with the highest S/N, or with the
+    highest S/N x p(z) when a redshift density `prior` is given (the paper multiplies the S/N by the probability
+    distribution of a photometric redshift). Returns (z, S/N of the cross-correlation there)."""
+    lnz, snr = cross_correlation(d, grid, cover, **kw)
+    score = snr if prior is None else np.clip(snr, 0.0, None) * np.asarray(prior(np.exp(lnz) - 1), float)
+    i = int(np.argmax(score))
+    return float(np.exp(lnz[i]) - 1), float(snr[i])
 
 
 def classify(z_est, z_true, include_cii=False):

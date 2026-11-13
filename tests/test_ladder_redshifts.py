@@ -404,6 +404,120 @@ def test_follow_up_tunings_fit_the_alma_receivers():
     assert F.sideband_offsets('Band 3') == (4.125, 7.875) and F.sideband_offsets('Band 6') == (5.375, 9.125)
 
 
+# ---- comparisons added on 12 November 2026: guided rule, degradation test, the Sudoku code's classes ----
+
+def test_guided_rule_confirms_a_weak_line_and_otherwise_equals_the_detection_rule():
+    """CO(4-3) at S/N 20 with [CI](1-0) at S/N 4 (z = 3.85, Band 3 scan), no noise. The detection rule sees one
+    line and cannot answer; the guided rule finds the second line at the position z = 3.85 predicts, provided its
+    threshold is below that line. With both lines above 5 sigma the two rules agree."""
+    from ladder_redshifts.ladder import detect, sudoku_rule, guided_rule, detection_index, BANK
+
+    class Zero:
+        def normal(self, mu, s, n):
+            return np.zeros(n)
+    g = Grid(80, 119); cov = g.mask([(84.2, 114.9)])
+    names, nus = line_list()
+    amp = np.zeros(len(nus)); amp[names.index('CO(4-3)')] = 20.0
+
+    def rules(ci):
+        amp[names.index('[CI](1-0)')] = ci
+        y = matched_filter(simulate(g, 3.85, amp, 450, Zero()), cover=cov)[detection_index(BANK)]
+        dets = detect(y, cov)
+        return dets, sudoku_rule(dets, g, cov, y)[0], [guided_rule(dets, g, cov, y, confirm=t)[0] for t in (3.0, 4.5)]
+
+    dets, z_rule, (z_g3, z_g45) = rules(4.0)
+    assert len(dets) == 1 and z_rule is None and z_g45 is None
+    assert z_g3 is not None and abs(np.log1p(z_g3) - np.log1p(3.85)) < TOL_LN
+    dets, z_rule, (z_g3, z_g45) = rules(8.0)
+    assert len(dets) == 2 and z_rule is not None and z_rule == z_g3 == z_g45
+
+
+def test_degradation_reaches_the_requested_second_line_snr():
+    """Adding noise to SPT0652-55 until its [CI](1-0) line should sit at S/N 4: the measured S/N at the line is
+    about 4, and every method's outcomes add up."""
+    from ladder_redshifts import degrade as D
+    from ladder_redshifts.batch_real import read_spectrum, to_grid_auto
+    from ladder_redshifts.realspec import run_engine
+    from ladder_redshifts.ladder import prior_spt
+    src, z = 'SPT0652-55', 3.3466
+    assert (src, z) in D.multi_line_sources() and len(D.multi_line_sources()) == 7
+    r = run_engine(*to_grid_auto(read_spectrum(ROOT / 'data' / 'spectra' / f'{src}.csv')), prior=prior_spt)
+    lines = D.published_lines(r['detections'], z)
+    assert [n for n, _, _ in lines] == ['CO(4-3)', '[CI](1-0)']
+    _, f2, snr2 = lines[1]
+    _, out = D.run_level((src, z, f2, 4.0, snr2 / 4.0, 12, [1, 2, 3]))
+    assert abs(out['second_line_snr_measured'] - 4.0) < 0.8
+    assert abs(sum(out['rule'].values()) - 1) < 1e-9 and all(abs(sum(v.values()) - 1) < 1e-9 for v in out['guided'].values())
+    e = out['spt']['engine']
+    assert e['confident_correct'] + e['confidently_wrong'] <= 1 and e['best_is_published'] >= e['confident_correct']
+
+
+def test_sudoku_comparison_file_matches_the_current_engine_results():
+    """results/redshift_sudoku_comparison.json quotes this engine's verdicts next to the classes returned by the
+    High-z Sudoku code (scripts/compare_sudoku.py, which needs that code and is not run here). The quoted
+    verdicts must be the current ones, and the classes must cover every source with a spectrum and a redshift."""
+    import csv
+    import json
+    o = json.loads((ROOT / 'results' / 'redshift_sudoku_comparison.json').read_text())
+    batch = {r['source']: r for r in json.loads((ROOT / 'results' / 'redshift_real_batch.json').read_text())}
+    with open(ROOT / 'data' / 'truth.csv', newline='') as fh:
+        want = {r['source'] for r in csv.DictReader(fh) if (ROOT / 'data' / 'spectra' / f"{r['source']}.csv").exists()}
+    assert {r['source'] for r in o['sources']} == want and len(want) == 19
+    for r in o['sources']:
+        b = batch[r['source']]
+        assert r['engine'] == dict(z=b['z_engine'], confidence=b['confidence'], verdict=b['verdict']), r['source']
+        assert r['sudoku_co']['lines'] <= r['sudoku_co_ci']['lines'] <= 3
+
+
+def test_guided_rule_uses_a_prior_only_when_one_solution_dominates():
+    """One line, CO(3-2) at S/N 20 (z = 2.64), no noise: the line leaves two solutions (CO(2-1) at z = 1.43 and
+    CO(3-2) at z = 2.64) and nothing confirms either. Without a prior the guided rule cannot answer. The broad
+    survey prior does not single one out either (0.91 of the weight, below the 0.95 required). A prior that puts
+    nearly all its weight on one solution does."""
+    from ladder_redshifts.ladder import detect, guided_rule, detection_index, prior_spt, BANK
+
+    class Zero:
+        def normal(self, mu, s, n):
+            return np.zeros(n)
+    g = Grid(80, 119); cov = g.mask([(84.2, 114.9)])
+    names, nus = line_list()
+    amp = np.zeros(len(nus)); amp[names.index('CO(3-2)')] = 20.0
+    y = matched_filter(simulate(g, 2.64, amp, 450, Zero()), cover=cov)[detection_index(BANK)]
+    dets = detect(y, cov)
+    z0, nsol, nconf = guided_rule(dets, g, cov, y)
+    assert z0 is None and nsol == 2 and nconf == 0
+    assert guided_rule(dets, g, cov, y, prior=prior_spt)[0] is None
+    z1 = guided_rule(dets, g, cov, y, prior=lambda z: np.exp(-0.5 * ((z - 2.64) / 0.05) ** 2))[0]
+    assert z1 is not None and abs(np.log1p(z1) - np.log1p(2.64)) < TOL_LN
+
+
+def test_cross_correlation_noise_matches_shuffles_and_two_lines_give_the_redshift():
+    """The template cross-correlation (after Yun et al. 2015). (1) Its closed-form noise is the limit of the
+    paper's shuffling: with 1,500 shuffles the two S/N values agree to a few per cent wherever the S/N is
+    large. (2) With CO(4-3) at S/N 15 and [CI](1-0) at S/N 6 in a Band 3 scan it returns z = 3.85. (3) With
+    CO(4-3) alone the readings of that line as CO(3-2) and as CO(4-3) score the same to a few per cent, so the
+    statistic cannot choose between them; multiplied by the survey prior, which peaks at z = 3.9, it does."""
+    from ladder_redshifts.ladder import cross_correlation, shuffled_cross_correlation, xcorr_redshift, prior_spt
+    g = Grid(80, 119); cov = g.mask([(84.2, 114.9)])
+    names, nus = line_list()
+    amp = np.zeros(len(nus)); amp[names.index('CO(4-3)')] = 15.0; amp[names.index('[CI](1-0)')] = 6.0
+    d = simulate(g, 3.85, amp, 450, np.random.default_rng(5))
+    lnz, snr = cross_correlation(d, g, cov)
+    _, snr_s = shuffled_cross_correlation(d, g, cov, 1500, np.random.default_rng(6))
+    big = np.abs(snr) > 4
+    assert big.sum() > 20 and np.all(np.abs(snr_s[big] / snr[big] - 1) < 0.12)
+    assert abs(np.median(snr_s[big] / snr[big]) - 1) < 0.04
+    z, s_best = xcorr_redshift(d, g, cov)
+    assert abs(np.log1p(z) - np.log1p(3.85)) < TOL_LN and s_best > 10
+    amp[names.index('[CI](1-0)')] = 0.0
+    d1 = simulate(g, 3.85, amp, 450, np.random.default_rng(5))
+    lnz, snr1 = cross_correlation(d1, g, cov)
+    one_line = [np.max(snr1[np.abs(lnz - (np.log(nus[j]) - np.log(nus[3]) + np.log(4.85))) < TOL_LN]) for j in (2, 3)]
+    assert abs(one_line[0] - one_line[1]) < 0.06 * one_line[1]           # CO(3-2) at z = 2.64 against CO(4-3) at 3.85
+    zp, _ = xcorr_redshift(d1, g, cov, prior=prior_spt)
+    assert abs(np.log1p(zp) - np.log1p(3.85)) < TOL_LN                   # the survey prior peaks at z = 3.9
+
+
 if __name__ == '__main__':
     import inspect
     fails = 0
