@@ -456,6 +456,15 @@ def test_degradation_reaches_the_requested_second_line_snr():
     assert all(abs(sum(v.values()) - 1) < 1e-9 for v in out['guided_photoz'].values())
     assert set(out['guided_co_only']) == set(STATES) | {'spt', 'uniform'}
     assert all(abs(sum(v.values()) - 1) < 1e-9 for v in out['guided_co_only'].values())
+    # every setting of the rule family, and the engine at each confidence threshold, are counted per draw
+    fam, curve = out['rule_family'], out['engine_curve']
+    assert [len(fam[p]) for p in D.FAMILY_PRIORS] == [72, 216] and all(0 <= a + b <= 12 for a, b in fam['photoz'])
+    j = D.rule_family().index(dict(detect=5.0, confirm=3.0, ci_counted=True, prune_expect=8.0, share=None))
+    assert fam['uniform'][j] == [round(out['guided']['3']['correct'] * 12), round(out['guided']['3']['wrong'] * 12)]
+    k = D.ENGINE_THRESHOLDS.index(0.95)
+    assert curve['uniform'][k] == [round(out['uniform']['engine']['confident_correct'] * 12),
+                                   round(out['uniform']['engine']['confidently_wrong'] * 12)]
+    assert all(curve['uniform'][i][0] >= curve['uniform'][i + 1][0] for i in range(len(D.ENGINE_THRESHOLDS) - 1))
 
 
 def test_sudoku_comparison_file_matches_the_current_engine_results():
@@ -581,3 +590,97 @@ def test_photometric_redshift_priors_settle_single_line_sources_without_a_wrong_
     q = next(r for r in rows if r['source'] == 'SPT2349-52')['states']['photoz_2024']
     assert q['pull'] == 2.75 and q['engine']['outcome'] == 'wrong' and q['engine']['confidence'] < 0.95
     assert q['guided_ci_counted']['outcome'] == q['window_co_only']['outcome'] == q['xcorr']['outcome'] == 'wrong'
+
+
+def test_the_rule_the_engine_is_compared_with_is_the_best_of_its_family_by_the_stated_criterion():
+    """results/redshift_rule_family.csv lists every rule setting; the setting named in the results file is the one
+    with the most correct answers among those that are wrong no more often than the engine; the setting used
+    before the family existed reproduces the earlier column; and the stored answers on a real spectrum are those
+    of the current code."""
+    import csv
+    import json
+    from ladder_redshifts import degrade as D
+    from ladder_redshifts.batch_real import read_spectrum, to_grid_auto
+    from ladder_redshifts.realspec import engine_likelihood
+    from ladder_redshifts.photoz import photoz_priors
+    o = json.loads((ROOT / 'results' / 'redshift_degradation.json').read_text())
+    with open(ROOT / 'results' / 'redshift_rule_family.csv', newline='') as fh:
+        rows = list(csv.DictReader(fh))
+    fam = o['rule_family']
+    assert fam['draws'] == 5600 and [fam['priors'][p]['n_settings'] for p in D.FAMILY_PRIORS] == [72, 216]
+    for p in D.FAMILY_PRIORS:
+        rr = [r for r in rows if r['prior'] == p]
+        f = fam['priors'][p]
+        cap = f['engine_confident_wrong']
+        ok = [r for r in rr if int(r['total_wrong']) <= cap]
+        best = max(ok, key=lambda r: int(r['total_correct']))
+        ch = f['chosen']['no_more_wrong_than_engine']
+        assert len(rr) == f['n_settings'] and len(ok) == f['settings_with_no_more_wrong_than_engine']
+        assert (ch['total_correct'], ch['total_wrong']) == (int(best['total_correct']), int(best['total_wrong']))
+        assert ch['setting'] == D.rule_family(p != 'uniform')[ch['index']] and int(best['index']) == ch['index']
+        e95 = next(q for q in f['engine_by_threshold'] if q['threshold'] == 0.95)
+        assert e95['engine_wrong'] == cap and e95['rule_index'] == ch['index']
+    # the single setting of the earlier comparison is one member of the family
+    old = next(r for r in rows if r['prior'] == 'uniform' and (r['detect'], r['confirm'], r['ci_counted'],
+                                                               r['prune_expect']) == ('5.0', '3.0', 'True', '8.0'))
+    for q in o['summary']:
+        assert abs(float(old[f"correct_{q['target']:g}"]) - q['guided']['3']['correct']) < 1e-9
+    # with no prior the engine is not ahead of the best rule at its own threshold; with the photometric prior it is
+    u, ph = fam['priors']['uniform'], fam['priors']['photoz']
+    at = lambda f, t: next(q for q in f['engine_by_threshold'] if q['threshold'] == t)
+    assert at(u, 0.95)['rule_correct'] > at(u, 0.95)['engine_correct'] and at(u, 0.8)['engine_correct'] > at(u, 0.8)['rule_correct']
+    assert all(q['engine_correct'] > q['rule_correct'] for q in ph['engine_by_threshold'])
+    # one real spectrum: the stored letters are the answers of the current code
+    src = 'SPT0528-53'
+    row = next(r for r in o['as_observed'] if r['source'] == src)
+    g = to_grid_auto(read_spectrum(ROOT / 'data' / 'spectra' / f'{src}.csv'))
+    like = engine_likelihood(*g)
+    for p, prior in (('uniform', None), ('photoz', photoz_priors(src)['photoz'])):
+        letters = ''.join('n' if z is None else 'c' if D.correct(z, row['z_published']) else 'w'
+                          for z in D.family_answers(like['yd'], g[0], g[3], prior))
+        assert letters == row['rule_family'][p]
+
+
+def test_wrong_rate_bound_and_the_second_sample():
+    """The exact bound on the wrong-answer rate; and the independent sample is defined, disjoint from the
+    development sample, and reached through $LADDER_REDSHIFTS_SAMPLE without any other change."""
+    import csv
+    import json
+    import os
+    import subprocess
+    from ladder_redshifts.photoz import upper_bound
+    assert abs(upper_bound(0, 15) - (1 - 0.05 ** (1 / 15))) < 1e-9 and abs(upper_bound(0, 8) - 0.312) < 1e-3
+    assert upper_bound(0, 59) < 0.05 < upper_bound(0, 58) and upper_bound(1, 15) > upper_bound(0, 15)
+    saved = json.loads((ROOT / 'results' / 'redshift_photoz.json').read_text())['summary']['all']['engine']
+    assert (saved['spt']['confident_answers'], saved['photoz']['confident_answers']) == (8, 15)
+    assert all(v['wrong'] == 0 for v in saved.values()) and saved['photoz']['wrong_rate_upper_95'] == 0.181
+    read = lambda rel: list(csv.DictReader(open(ROOT / rel, newline='')))
+    new, dev = read('data/independent/truth.csv'), read('data/truth.csv')
+    names = [r['source'] for r in new]
+    assert len(names) == 23 and not set(names) & {r['source'] for r in dev}
+    assert [r['source'] for r in read('data/independent/photoz.csv')] == names
+    assert [r['target'] for r in read('data/cutouts/2015.1.00504.S_targets.csv')] == names
+    tags = [r['notes'][r['notes'].rindex('('):] for r in new]
+    assert (sum(t in ('(2 lines)', '(3 lines)') for t in tags), tags.count('(1 line)')) == (13, 9)
+    env = dict(os.environ, LADDER_REDSHIFTS_SAMPLE='independent', LADDER_REDSHIFTS_ROOT=str(ROOT))
+    code = ('from ladder_redshifts import paths as p; from ladder_redshifts.batch_real import read_truth; '
+            'print(p.DATA.relative_to(p.ROOT).as_posix(), len(read_truth()))')
+    out = subprocess.run([sys.executable, '-c', code], env=env, capture_output=True, text=True, cwd=str(ROOT))
+    assert out.stdout.split() == ['data/independent', '23'], out.stderr
+    # archive names of the re-imaged (ARI-L) cubes that the Cycle 3 project has
+    name = 'member.uid___A001_X2f7_X446.ari_l.SPT0020-51_sci.spw0_85009MHz.12m.cube.I.pbcor.fits'
+    lst = ROOT / 'tests' / '_ari_l_names.txt'
+    man = ROOT / 'tests' / '_ari_l_manifest.tsv'
+    try:
+        lst.write_text(name + '\n' + name.replace('SPT0020-51', 'SPT0027-50') + '\n')
+        proc = subprocess.run([sys.executable, str(ROOT / 'scripts' / 'alma' / 'make_cutout_manifest.py'), '--ari-l',
+                               '--files', str(lst), '--targets', str(ROOT / 'data/cutouts/2015.1.00504.S_targets.csv'),
+                               '--out', str(man)], capture_output=True, text=True)
+        assert proc.returncode == 0, proc.stderr
+        body = man.read_text().splitlines()
+        assert len(body) == 2 and body[1].split('\t')[:3] == [name, 'cutout', 'SPT0020-51']
+    finally:
+        for f in (lst, man):
+            if f.exists():
+                f.unlink()
+

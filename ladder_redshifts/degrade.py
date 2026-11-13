@@ -16,6 +16,13 @@ a chosen matched-filter S/N (5.5 down to 2), and five methods are run on many no
 Each source's published photometric redshift is run as a third kind of prior, in the three versions of
 photoz.py, for the engine, the guided rule and the cross-correlation. The guided rule is also run in a form
 that does not count a missing [CI] line against a redshift (guided_co_only), under every prior.
+
+A comparison with one hand-built rule shows little: its thresholds decide the outcome. So a family of settings
+of the guided rule (FAMILY: 72 with no prior, 216 with a photometric prior) is run on the same draws, and the
+engine's answers are counted at several confidence thresholds (ENGINE_THRESHOLDS). The rule the engine is
+compared with is chosen by a criterion fixed beforehand (see WRONG_CAP), and the two are also compared at equal
+numbers of wrong answers.
+
 Two kinds of outcome are kept apart. The engine (when confident) and the rules give an answer or none, so they
 are compared on answers given. The cross-correlation always has a best redshift, so it is compared with the
 engine's best guess. The comparison without a prior is the like-for-like one: the rule and the
@@ -27,12 +34,15 @@ Two limits on what this shows:
     least of all at the first levels (a share 1/factor^2 of the noise variance is the original);
   - these seven spectra are the ones the engine was developed on.
 
-Writes results/redshift_degradation.json, figures/redshift_degradation.png (means) and
-figures/redshift_degradation_sources.png (per source).
-Usage: python -m ladder_redshifts.degrade [N_draws] [--plot-only]     (default 100; ~10 min on 2 cores)
+Writes results/redshift_degradation.json, results/redshift_rule_family.csv (one row per rule setting and prior),
+figures/redshift_degradation.png (means), figures/redshift_degradation_sources.png (per source) and
+figures/redshift_operating_points.png (answers against wrong answers).
+Usage: python -m ladder_redshifts.degrade [N_draws] [--plot-only]     (default 100; ~16 min on 2 cores)
 """
 from .paths import FIG, RESULTS, DATA  # noqa: E402
 import argparse
+import csv
+import itertools
 import json
 import multiprocessing as mp
 import time
@@ -53,6 +63,23 @@ PRIORS = {'spt': prior_spt, 'uniform': None}
 CONF = 0.95
 GUIDED = (3.0, 4.0)                                         # confirmation thresholds of the guided rule
 SEED = 20261113
+# A family of rule settings, so that the comparison does not rest on one hand-built rule. Each is the guided
+# rule with: the S/N at which a line counts as detected; the S/N at which a weaker line confirms a solution;
+# whether a missing [CI] line counts against a redshift; and the expected S/N above which a missing line counts
+# against one. Every setting is run with no prior and with the source's 2020 photometric redshift.
+FAMILY = dict(detect=(5.0, 4.5, 4.0), confirm=(4.0, 3.5, 3.0, 2.5), ci_counted=(True, False),
+              prune_expect=(5.0, 8.0, 12.0))
+FAMILY_SHARE = (0.95, 0.90, 0.80)       # with a prior: the share of prior weight at which one solution is taken
+FAMILY_PRIORS = ('uniform', 'photoz')
+# The engine's answers are counted at these confidence thresholds as well as at CONF, so that the engine and the
+# rules can be compared at the same number of wrong answers.
+ENGINE_THRESHOLDS = (0.5, 0.6, 0.7, 0.8, 0.9, 0.95, 0.99)
+# How the rule to compare with is chosen, fixed before the family was run. Over all noise draws, the setting with
+# the most correct answers among those that return a wrong redshift (a) no more often than the engine does with
+# the same prior, or (b) in at most 1% of draws. Ties go to the first setting in the order of rule_family().
+# The envelope takes, at each noise level separately, the best setting with at most 1% wrong at that level; it
+# is chosen with knowledge of the outcome, so it is an upper limit on any one rule of the family.
+WRONG_CAP = 0.01
 
 
 def multi_line_sources():
@@ -80,6 +107,22 @@ def correct(z, z_true):
     return z is not None and abs(np.log1p(z) - np.log1p(z_true)) < TOL_LN
 
 
+def rule_family(with_prior=False):
+    """The settings of FAMILY, in a fixed order. With a prior each is run at every value of FAMILY_SHARE."""
+    base = [dict(zip(FAMILY, v)) for v in itertools.product(*FAMILY.values())]
+    if not with_prior:
+        return [dict(v, share=None) for v in base]
+    return [dict(v, share=sh) for sh in FAMILY_SHARE for v in base]
+
+
+def family_answers(yd, grid, cov, prior=None):
+    """The answer (z or None) of every rule setting for one matched-filter trace."""
+    dets = {t: detect(yd, cov, t) for t in FAMILY['detect']}
+    return [guided_rule(dets[v['detect']], grid, cov, yd, confirm=v['confirm'], prior=prior,
+                        share=v['share'] or 0.95, ci_prunes=v['ci_counted'], prune_expect=v['prune_expect'])[0]
+            for v in rule_family(prior is not None)]
+
+
 def run_level(task):
     """All draws of one source at one noise level. Returns counts (see main)."""
     src, z_true, f2, target, factor, n, seed = task
@@ -88,6 +131,8 @@ def run_level(task):
     priors = dict(PRIORS, **photoz_priors(src))             # the source's own photometric redshift, three versions
     photoz = [p for p in priors if p in PHOTOZ_STATES]
     c = dict(rule_ok=0, rule_wrong=0, rule_none=0, second_detected=0, y2=[])
+    fam = {p: np.zeros((len(rule_family(priors[p] is not None)), 2), int) for p in FAMILY_PRIORS}   # correct, wrong
+    curve = {p: np.zeros((len(ENGINE_THRESHOLDS), 2), int) for p in FAMILY_PRIORS}  # the engine, per threshold
     for t in GUIDED:
         c[f'guided{t}'] = dict(ok=0, wrong=0, none=0)
     for p in ['spt'] + photoz:
@@ -103,6 +148,10 @@ def run_level(task):
         like = engine_likelihood(*g)                        # once per draw: it does not depend on the prior
         yd, dets = like['yd'], like['dets']
         c['y2'].append(float(yd[int(round(grid.pix(f2)))]))
+        for p in FAMILY_PRIORS:
+            for k, zg in enumerate(family_answers(yd, grid, cov, priors[p])):
+                if zg is not None:
+                    fam[p][k, 0 if correct(zg, z_true) else 1] += 1
         for t in GUIDED:
             zg = guided_rule(dets, grid, cov, yd, confirm=t)[0]
             q = c[f'guided{t}']
@@ -127,6 +176,8 @@ def run_level(task):
                 q = c[f'{p}_{m}']
                 q['cc'] += ok and conf >= CONF; q['cw'] += (not ok) and conf >= CONF; q['top'] += ok
                 q['conf'].append(conf)
+                if m == 'engine' and p in curve:
+                    curve[p][:, 0 if ok else 1] += conf >= np.array(ENGINE_THRESHOLDS)
         zr = r['sudoku'][0]                                   # the rule does not use the prior
         c['rule_ok'] += correct(zr, z_true); c['rule_wrong'] += zr is not None and not correct(zr, z_true)
         c['rule_none'] += zr is None
@@ -149,7 +200,76 @@ def run_level(task):
                           best_is_published=c[f'{p}_{m}']['top'] / n,
                           median_confidence=round(float(np.median(c[f'{p}_{m}']['conf'])), 3))
                   for m in ('engine', 'flat')}
+    # the next two are moved out of the saved levels in main
+    out['rule_family'] = {p: fam[p].tolist() for p in FAMILY_PRIORS}
+    out['engine_curve'] = {p: curve[p].tolist() for p in FAMILY_PRIORS}
     return src, out
+
+
+def family_summary(counts, curves, sources, observed):
+    """Choose the rule settings to compare with, by the criterion stated at WRONG_CAP.
+
+    counts[source][level][prior] = [[correct, wrong] per setting] over the draws of that source and level;
+    curves[source][level][prior] = [[correct, wrong] per engine threshold].
+    Returns (summary for the results file, rows for results/redshift_rule_family.csv)."""
+    names = list(sources)
+    n = sources[names[0]]['levels'][0]['draws']
+    total = n * len(names) * len(TARGETS)
+    out, rows = dict(settings=dict({k: list(v) for k, v in FAMILY.items()}, share_with_a_prior=list(FAMILY_SHARE)),
+                     wrong_cap=WRONG_CAP, draws=total, engine_thresholds=list(ENGINE_THRESHOLDS), priors={}), []
+    for p in FAMILY_PRIORS:
+        fam = rule_family(p != 'uniform')
+        a = np.array([[counts[s][k][p] for k in range(len(TARGETS))] for s in names])    # source, level, setting, 2
+        e = np.array([[curves[s][k][p] for k in range(len(TARGETS))] for s in names])    # source, level, threshold, 2
+        ok, wrong = a[..., 0].sum((0, 1)), a[..., 1].sum((0, 1))
+        rate = a / n                                                                    # per source and level
+        real = [[sum(r['rule_family'][p][j] == code for r in observed) for code in 'cwn'] for j in range(len(fam))]
+        engine_wrong = int(round(sum(q[p]['engine']['confidently_wrong'] * q['draws']
+                                     for s_ in sources.values() for q in s_['levels'])))
+        chosen = {}
+        for cap_name, cap in (('no_more_wrong_than_engine', engine_wrong), ('one_percent_wrong', WRONG_CAP * total)):
+            eligible = np.where(wrong <= cap)[0]
+            if not len(eligible):
+                chosen[cap_name] = None
+                continue
+            j = int(eligible[np.argmax(ok[eligible])])
+            chosen[cap_name] = dict(
+                setting=fam[j], index=j, wrong_allowed=int(cap), total_correct=int(ok[j]), total_wrong=int(wrong[j]),
+                levels=[dict(target=t, correct=round(float(rate[:, k, j, 0].mean()), 4),
+                             wrong=round(float(rate[:, k, j, 1].mean()), 4)) for k, t in enumerate(TARGETS)],
+                by_source={s: [round(float(x), 4) for x in rate[i, :, j, 0]] for i, s in enumerate(names)},
+                real_spectra=dict(zip(('correct', 'wrong', 'no_answer'), real[j])))
+        envelope = []
+        for k, t in enumerate(TARGETS):
+            okk = np.where(a[:, k, :, 1].sum(0) <= WRONG_CAP * n * len(names))[0]
+            j = int(okk[np.argmax(rate[:, k, okk, 0].mean(0))])
+            envelope.append(dict(target=t, correct=round(float(rate[:, k, j, 0].mean()), 4), index=j))
+        # the engine at each threshold, and the rule with the most correct answers among those with no more wrong
+        matched = []
+        for i, thr in enumerate(ENGINE_THRESHOLDS):
+            ec, ew = int(e[:, :, i, 0].sum()), int(e[:, :, i, 1].sum())
+            eligible = np.where(wrong <= ew)[0]
+            j = int(eligible[np.argmax(ok[eligible])]) if len(eligible) else None
+            matched.append(dict(threshold=thr, engine_correct=ec, engine_wrong=ew,
+                                engine_levels=[round(float((e[:, k, i, 0] / n).mean()), 4) for k in range(len(TARGETS))],
+                                rule_index=j, rule_correct=None if j is None else int(ok[j]),
+                                rule_wrong=None if j is None else int(wrong[j]),
+                                rule_levels=None if j is None else
+                                [round(float(rate[:, k, j, 0].mean()), 4) for k in range(len(TARGETS))],
+                                rule_setting=None if j is None else fam[j]))
+        out['priors'][p] = dict(n_settings=len(fam), engine_confident_wrong=engine_wrong, chosen=chosen,
+                                envelope=envelope, engine_by_threshold=matched,
+                                settings_with_no_more_wrong_than_engine=int((wrong <= engine_wrong).sum()),
+                                settings_with_at_most_one_percent_wrong=int((wrong <= WRONG_CAP * total).sum()))
+        for j, v in enumerate(fam):
+            row = dict(prior=p, index=j, **v, total_correct=int(ok[j]), total_wrong=int(wrong[j]))
+            for k, t in enumerate(TARGETS):
+                row[f'correct_{t:g}'] = round(float(rate[:, k, j, 0].mean()), 4)
+            for k, t in enumerate(TARGETS):
+                row[f'wrong_{t:g}'] = round(float(rate[:, k, j, 1].mean()), 4)
+            row.update(real_correct=real[j][0], real_wrong=real[j][1], real_no_answer=real[j][2])
+            rows.append(row)
+    return out, rows
 
 
 def as_observed():
@@ -172,6 +292,10 @@ def as_observed():
             row[f'guided_{t_:g}'] = dict(z=None if zg is None else round(zg, 4), outcome=outcome(zg))
         zg = guided_rule(dets, grid, cov, yd, confirm=GUIDED[0], prior=prior_spt)[0]
         row['guided_3_spt'] = dict(z=None if zg is None else round(zg, 4), outcome=outcome(zg))
+        # every setting of the rule family: one letter each, c(orrect), w(rong) or n(o answer)
+        fp = dict(uniform=None, photoz=photoz_priors(src).get('photoz'))
+        row['rule_family'] = {p: ''.join(outcome(zz)[0] for zz in family_answers(yd, grid, cov, fp[p]))
+                              for p in FAMILY_PRIORS if p == 'uniform' or fp[p] is not None}
         row['engine'], row['xcorr'] = {}, {}
         for p, prior in PRIORS.items():
             ze, ce = run_engine(*g, prior=prior)['sled']
@@ -234,14 +358,23 @@ def main():
             tasks.append((src, z, f2, target, snr2 / target, a.n, [SEED, i, k]))
     assert all(t[4] >= 1.0 for t in tasks), 'a target S/N above the observed one cannot be reached by adding noise'
     observed = as_observed()
+    counts, curves = {src: [] for src in sources}, {src: [] for src in sources}
     with mp.get_context('fork').Pool(2) as pool:
         for src, out in pool.imap(run_level, tasks):
+            counts[src].append(out.pop('rule_family'))
+            curves[src].append(out.pop('engine_curve'))
             sources[src]['levels'].append(out)
+    family, rows = family_summary(counts, curves, sources,
+                                  [r for r in observed if len(r['rule_family']) == len(FAMILY_PRIORS)])
     out = dict(n_draws=a.n, seed=SEED, targets=TARGETS, confidence_threshold=CONF,
                note='noise added to the real spectra; second line = second-brightest detected line of the '
                     'published redshift; fractions are over draws, the summary is the mean over sources',
-               sources=sources, summary=summarise(sources), as_observed=observed)
+               sources=sources, summary=summarise(sources), rule_family=family, as_observed=observed)
     path.write_text(json.dumps(out, indent=1) + '\n')
+    with open(RESULTS / 'redshift_rule_family.csv', 'w', newline='') as fh:
+        w = csv.DictWriter(fh, fieldnames=list(rows[0]), lineterminator='\n')
+        w.writeheader()
+        w.writerows(rows)
     print(f'\n{a.n} draws x {len(sources)} sources. Columns: second-line S/N | no prior: engine confident+correct, '
           'guided rule correct, engine best guess, cross-correlation best guess | survey prior: the same four '
           '| 5 sigma rule')
@@ -263,7 +396,21 @@ def main():
             f"{q['guided_co_only'][p]['correct']:.3f} {q['guided_co_only'][p]['wrong']:.3f} "
             f"{q[p]['engine']['best_is_published']:.3f} {q['xcorr'][p]['best_is_published']:.3f}"
             for p in q['guided_photoz']))
-    print(f'[{time.time() - t0:.0f}s] wrote {path.name}')
+    print(f'Rule family, {family["draws"]} draws.')
+    for p, f in family['priors'].items():
+        print(f"  prior {p}, {f['n_settings']} settings: engine confident and wrong in {f['engine_confident_wrong']} draws; "
+              f"{f['settings_with_no_more_wrong_than_engine']} settings are wrong no more often, "
+              f"{f['settings_with_at_most_one_percent_wrong']} in at most 1%")
+        for name, ch in f['chosen'].items():
+            if ch:
+                print(f"    {name}: {ch['setting']} correct {ch['total_correct']} wrong {ch['total_wrong']} | "
+                      + ' '.join(f"{q['correct']:.3f}" for q in ch['levels']) + f" | real spectra {ch['real_spectra']}")
+        print('    envelope: ' + ' '.join(f"{q['correct']:.3f}" for q in f['envelope']))
+        print('    engine:   ' + ' '.join(f"{q[p]['engine']['confident_correct']:.3f}" for q in out['summary']))
+        for q in f['engine_by_threshold']:
+            print(f"    engine at {q['threshold']}: correct {q['engine_correct']} wrong {q['engine_wrong']} | best rule "
+                  f"with no more wrong: correct {q['rule_correct']} wrong {q['rule_wrong']} {q['rule_setting']}")
+    print(f'[{time.time() - t0:.0f}s] wrote {path.name} and redshift_rule_family.csv')
     plot(out)
 
 
@@ -298,19 +445,31 @@ def _style(ax):
 def plot(o):
     plot_curves(o)
     plot_sources(o)
+    plot_operating(o)
+
+
+def _chosen(o, prior):
+    """The rule setting the engine is compared with: the most correct answers among the settings of the family
+    that return a wrong redshift no more often than the engine does with the same prior."""
+    return o['rule_family']['priors'][prior]['chosen']['no_more_wrong_than_engine']
 
 
 def plot_curves(o):
-    """Mean over the sources against the S/N left to the second line. Solid: no prior. Dashed: survey prior."""
+    """Mean over the sources against the S/N left to the second line. Solid: no prior. Dashed: survey prior
+    (engine, cross-correlation) or the single rule setting used before the family was run."""
     rows = o['summary']
     x = [q['target'] for q in rows]
     eng, rule3, rule5, xc = COL[0], COL[1], COL[2], COL[3]
+    best = _chosen(o, 'uniform')
+    best_of = {q['target']: q['correct'] for q in best['levels']}
     panels = [
-        ('A. Answers given: the published redshift, returned', [
-            ('engine, no prior (confident)', eng, 'o', '-', lambda q: q['uniform']['engine']['confident_correct']),
-            ('engine, survey prior (confident)', eng, 'o', '--', lambda q: q['spt']['engine']['confident_correct']),
-            ('guided rule: 5σ lines, then one at 3σ', rule3, 'D', '-', lambda q: q['guided']['3']['correct']),
-            ('detection rule: every line at 5σ', rule5, 's', '-', lambda q: q['rule']['correct'])]),
+        ('A. Answers given: the published redshift, returned (engine: with confidence)', [
+            ('engine, no prior', eng, 'o', '-', lambda q: q['uniform']['engine']['confident_correct']),
+            ('engine, survey prior', eng, 'o', '--', lambda q: q['spt']['engine']['confident_correct']),
+            (f"best of {o['rule_family']['priors']['uniform']['n_settings']} rule settings", rule3, 'D', '-',
+             lambda q: best_of[q['target']]),
+            ('one rule setting (5σ, then 3σ)', rule3, 'D', '--', lambda q: q['guided']['3']['correct']),
+            ('every line at 5σ', rule5, 's', '-', lambda q: q['rule']['correct'])]),
         ('B. Best guesses: the published redshift ranked first', [
             ('engine, no prior', eng, 'o', '-', lambda q: q['uniform']['engine']['best_is_published']),
             ('engine, survey prior', eng, 'o', '--', lambda q: q['spt']['engine']['best_is_published']),
@@ -326,7 +485,7 @@ def plot_curves(o):
         ax.set_xticks(x); ax.set_ylim(0, 1.03)
         ax.set_xlabel('matched-filter S/N of the second-brightest line after adding noise', fontsize=9, color=INK2)
         ax.grid(axis='y', color=GRID_C, lw=0.8)
-        ax.legend(fontsize=8.5, frameon=False, loc=where, labelcolor=INK, handlelength=4.2)
+        ax.legend(fontsize=8.3, frameon=False, loc=where, labelcolor=INK, handlelength=3.4)
         _style(ax)
     axs[0].set_ylabel('fraction of noise draws (mean of the sources)', fontsize=9, color=INK2)
     axs[0].axvline(5.0, color=INK2, lw=0.8, ls=':')
@@ -335,6 +494,7 @@ def plot_curves(o):
     fig.suptitle(f'Real multi-line spectra with noise added: {n_src} sources of 2016.1.00672.S, {n} noise draws '
                  'per source and level', fontsize=10.5, color=INK, x=0.012, ha='left')
     total, wrong = wrong_counts(o)
+    wrong = dict(list(wrong.items())[:2] + [('best rule setting', best['total_wrong'])] + list(wrong.items())[2:])
     fig.text(0.012, 0.012, f'A different redshift returned as an answer, of {total:,} draws in all: '
              + '; '.join(f'{k} {v}' for k, v in wrong.items()) + '.', fontsize=8, color=INK2, ha='left', va='bottom')
     fig.tight_layout(rect=(0, 0.04, 1, 0.95))
@@ -352,17 +512,17 @@ def plot_sources(o, levels=(4.5, 4.0, 3.5, 3.0)):
         lv = [o['sources'][s]['levels'][k] for s in names]
         e = np.array([q['uniform']['engine']['confident_correct'] for q in lv])
         ep = np.array([q['spt']['engine']['confident_correct'] for q in lv])
-        g = np.array([q['guided']['3']['correct'] for q in lv])
+        g = np.array([_chosen(o, 'uniform')['by_source'][s][k] for s in names])
         r = np.array([q['rule']['correct'] for q in lv])
         ax.hlines(y, np.minimum(e, g), np.maximum(e, g), color='#c3c2b7', lw=2, zorder=1)
         ax.plot(r, y, 's', color=COL[2], ms=7, mec=SURF, mew=1.2, zorder=2, label='detection rule: every line at 5σ')
         ax.plot(g, y, 'D', color=COL[1], ms=7, mec=SURF, mew=1.2, zorder=3,
-                label='guided rule: 5σ lines, then one at 3σ')
+                label=f"best of {o['rule_family']['priors']['uniform']['n_settings']} rule settings, no prior")
         ax.plot(ep, y, 'o', mfc=SURF, mec=COL[0], ms=7.5, mew=1.5, zorder=4, label='engine, survey prior')
         ax.plot(e, y, 'o', color=COL[0], ms=7.5, mec=SURF, mew=1.2, zorder=5, label='engine, no prior')
         ahead, behind = int((e > g).sum()), int((e < g).sum())
         ax.set_title(f'second line at {t:g}σ', fontsize=10, color=INK, loc='left')
-        ax.set_xlabel(f'engine (no prior) ahead of the guided rule\nfor {ahead} of {len(names)}, behind for {behind}',
+        ax.set_xlabel(f'engine (no prior) ahead of the best rule\nfor {ahead} of {len(names)}, behind for {behind}',
                       fontsize=8.5, color=INK2)
         ax.set_xlim(-0.04, 1.04); ax.set_xticks([0, 0.5, 1]); ax.set_xticklabels(['0', '0.5', '1'])
         ax.set_ylim(-0.6, len(names) - 0.4)
@@ -380,6 +540,47 @@ def plot_sources(o, levels=(4.5, 4.0, 3.5, 3.0)):
                  fontsize=10.5, color=INK, x=0.012, y=0.995, ha='left')
     fig.tight_layout(rect=(0, 0, 1, 0.91))
     fig.savefig(FIG / 'redshift_degradation_sources.png', dpi=130, facecolor=SURF)
+    plt.close(fig)
+
+
+def plot_operating(o, shown=30):
+    """Answers against wrong answers over all draws: the engine at each confidence threshold and every rule
+    setting, with no prior and with each source's 2020 photometric redshift."""
+    path = RESULTS / 'redshift_rule_family.csv'
+    if not path.exists():
+        return
+    with open(path, newline='') as fh:
+        rows = list(csv.DictReader(fh))
+    total = o['rule_family']['draws']
+    fig, axs = plt.subplots(1, 2, figsize=(12.4, 5.4), facecolor=SURF, sharey=True)
+    titles = dict(uniform='A. No redshift prior', photoz="B. Each source's 2020 photometric redshift as the prior")
+    for ax, p in zip(axs, FAMILY_PRIORS):
+        f = o['rule_family']['priors'][p]
+        rr = [(int(r['total_wrong']), int(r['total_correct']) / total) for r in rows if r['prior'] == p]
+        inside = [q for q in rr if q[0] <= shown]
+        ax.plot([q[0] for q in inside], [q[1] for q in inside], 'D', color=COL[1], ms=5, alpha=0.55, mec='none',
+                label=f"rule settings ({len(inside)} of {len(rr)}; the others give more than {shown} wrong answers)",
+                zorder=2)
+        ch = f['chosen']['no_more_wrong_than_engine']
+        ax.plot([ch['total_wrong']], [ch['total_correct'] / total], 'D', mfc='none', mec=INK, ms=10, mew=1.5,
+                label='the rule setting the engine is compared with', zorder=4)
+        e = [q for q in f['engine_by_threshold'] if q['engine_wrong'] <= shown]
+        ax.plot([q['engine_wrong'] for q in e], [q['engine_correct'] / total for q in e], '-o', color=COL[0], ms=7.5,
+                lw=2, mec=SURF, mew=1.2, label='engine, at the confidence thresholds marked', zorder=3)
+        for q in e:
+            ax.annotate(f"{q['threshold']:g}", (q['engine_wrong'], q['engine_correct'] / total),
+                        textcoords='offset points', xytext=(7, -11), fontsize=8.5, color=INK2)
+        ax.set_title(titles[p], fontsize=10, color=INK, loc='left')
+        ax.set_xlim(-1, shown + 1.5)
+        ax.set_xlabel(f'draws in which a different redshift is returned, of {total:,}', fontsize=9, color=INK2)
+        ax.grid(color=GRID_C, lw=0.8)
+        ax.legend(fontsize=8.5, frameon=False, loc='lower right', labelcolor=INK)
+        _style(ax)
+    axs[0].set_ylabel('fraction of all draws in which the published redshift is returned', fontsize=9, color=INK2)
+    fig.suptitle('Answers against wrong answers, over all noise levels: the engine and every rule setting',
+                 fontsize=10.5, color=INK, x=0.012, ha='left')
+    fig.tight_layout(rect=(0, 0, 1, 0.95))
+    fig.savefig(FIG / 'redshift_operating_points.png', dpi=130, facecolor=SURF)
     plt.close(fig)
 
 

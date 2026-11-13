@@ -112,7 +112,8 @@ def analyse():
         like = engine_likelihood(*g)
         yd, dets = like['yd'], like['dets']
         near = np.abs(like['e'].lnz - np.log1p(z_true)) < CONF_WIN
-        row = dict(source=src, z_published=z_true, lines='one' if '(1 line)' in t['notes'] else 'several',
+        lines = 'one' if '(1 line)' in t['notes'] else 'none' if '(0 lines' in t['notes'] else 'several'
+        row = dict(source=src, z_published=z_true, lines=lines,
                    detections=len(dets), reference={}, states={})
         for name, prior in (('uniform', None), ('spt', prior_spt)):
             r = engine_posterior(like, prior)
@@ -146,11 +147,21 @@ def analyse():
     return rows
 
 
+def upper_bound(wrong, n, level=0.95):
+    """Exact one-sided upper confidence bound on a rate, from `wrong` cases out of n (Clopper-Pearson)."""
+    from scipy.stats import beta
+    return 1.0 if wrong >= n else float(beta.ppf(level, wrong + 1, n - wrong))
+
+
 def summarise(rows):
-    """Counts per group of sources (one line in the scan, or several), prior version and method."""
+    """Counts per group of sources (one line in the scan, or several), prior version and method; and, over all
+    sources, how many answers the engine gave with confidence, how many were wrong, and the 95% upper bound on
+    the rate of wrong answers that those counts allow."""
     out = {}
-    for group in ('one', 'several'):
+    for group in ('one', 'several', 'none'):
         rr = [r for r in rows if r['lines'] == group]
+        if not rr:
+            continue
         g = dict(n=len(rr), sources=[r['source'] for r in rr], reference={}, states={})
         for name in ('uniform', 'spt'):
             ok = [abs(np.log1p(r['reference'][name]['z']) - np.log1p(r['z_published'])) < TOL_LN for r in rr]
@@ -168,6 +179,14 @@ def summarise(rows):
                 s[key] = {o: sum(q[key]['outcome'] == o for q in qq) for o in ('correct', 'wrong', 'none')}
             g['states'][state] = s
         out[group] = g
+    conf = {}
+    for name in ('uniform', 'spt') + tuple(STATES):
+        ee = [r['reference'][name] if name in r['reference'] else r['states'][name]['engine'] for r in rows]
+        n = int(sum(e['confidence'] >= CONF for e in ee))
+        wrong = int(sum(e['confidence'] >= CONF and abs(np.log1p(e['z']) - np.log1p(r['z_published'])) >= TOL_LN
+                        for e, r in zip(ee, rows)))
+        conf[name] = dict(confident_answers=n, wrong=wrong, wrong_rate_upper_95=round(upper_bound(wrong, n), 3))
+    out['all'] = dict(n=len(rows), engine=conf)
     return out
 
 
@@ -282,16 +301,19 @@ def plot_noise():
     path = RESULTS / 'redshift_degradation.json'
     o = json.loads(path.read_text()) if path.exists() else {}
     rows = o.get('summary', [])
-    if not rows or 'guided_co_only' not in rows[0]:
+    if not rows or 'rule_family' not in o:
         return
     x = [q['target'] for q in rows]
     blue, orange = COL[0], COL[1]
+    fam = o['rule_family']['priors']['photoz']
+    best = fam['chosen']['no_more_wrong_than_engine']
+    best_of = {q['target']: q for q in best['levels']}
     series = [('engine, photometric prior (confident)', blue, 'o', '-', True, lambda q, k: q['photoz']['engine'][k[0]]),
               ('engine, no prior (confident)', INK2, 'o', '--', False, lambda q, k: q['uniform']['engine'][k[0]]),
-              ('guided rule, photometric prior, [CI] counted', orange, 'D', '-', True,
-               lambda q, k: q['guided_photoz']['photoz'][k[1]]),
-              ('guided rule, photometric prior, CO lines only', orange, 'D', '--', False,
-               lambda q, k: q['guided_co_only']['photoz'][k[1]])]
+              (f"best of {fam['n_settings']} rule settings, photometric prior", orange, 'D', '-', True,
+               lambda q, k: best_of[q['target']][k[1]]),
+              ('the rule as first built ([CI] counted), photometric prior', orange, 'D', '--', False,
+               lambda q, k: q['guided_photoz']['photoz'][k[1]])]
     panels = [('A. The published redshift, returned as an answer', ('confident_correct', 'correct'), (0, 1.03)),
               ('B. A different redshift, returned as an answer', ('confidently_wrong', 'wrong'), (0, 0.155))]
     fig, axs = plt.subplots(1, 2, figsize=(12.4, 5.3), facecolor=SURF)
@@ -309,17 +331,16 @@ def plot_noise():
     lv = [q for s_ in o['sources'].values() for q in s_['levels']]
     total = sum(q['draws'] for q in lv)
     count = lambda f: int(round(sum(f(q) * q['draws'] for q in lv)))
-    wrong = {p: (count(lambda q: q[p]['engine']['confidently_wrong']), count(lambda q: q['guided_photoz'][p]['wrong']),
-                 count(lambda q: q['guided_co_only'][p]['wrong'])) for p in STATES}
+    wrong = {p: (count(lambda q: q[p]['engine']['confidently_wrong']), count(lambda q: q['guided_photoz'][p]['wrong']))
+             for p in STATES}
     n_src, n = rows[0]['n_sources'], rows[0]['draws_per_source']
     fig.suptitle(f'Real multi-line spectra with noise added, each source with its 2020 photometric redshift as the '
                  f'prior: {n_src} sources, {n} noise draws per source and level', fontsize=10.5, color=INK, x=0.012,
                  ha='left')
-    fig.text(0.012, 0.012, f'A different redshift returned, of {total:,} draws in all (engine; guided rule; guided rule '
-             'with CO lines only): ' + '; '.join(f"{lab} {w[0]}, {w[1]}, {w[2]}" for lab, w in
-                                                 (('2020 values', wrong['photoz']), ('2024 revision', wrong['photoz_2024']),
-                                                  ('recalibrated', wrong['photoz_recal']))) + '.',
-             fontsize=8, color=INK2, ha='left', va='bottom')
+    fig.text(0.012, 0.012, f"A different redshift returned, of {total:,} draws in all: engine {wrong['photoz'][0]}, "
+             f"best rule setting {best['total_wrong']}, the rule as first built {wrong['photoz'][1]}. With the 2024 "
+             f"revision the engine returned one in {wrong['photoz_2024'][0]} draws, with the recalibrated values in "
+             f"{wrong['photoz_recal'][0]}.", fontsize=8, color=INK2, ha='left', va='bottom')
     fig.tight_layout(rect=(0, 0.04, 1, 0.95))
     fig.savefig(FIG / 'redshift_photoz_noise.png', dpi=130, facecolor=SURF)
     plt.close(fig)

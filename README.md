@@ -33,28 +33,41 @@ cubes, and each answer is scored against the published redshift (Reuter et al. 2
   threshold. An earlier version of this table had the rule at 4 of 7; the extracted noise was about 1.3 times too
   high, which put three of those lines under its threshold
   ([`docs/development-notes.md`](docs/development-notes.md), item 20).
-- **Below that threshold, like for like, the engine gives somewhat more answers.** Noise was added to the seven
-  spectra until the second line sat at a chosen strength, and every method was given the spectrum alone, with no
-  redshift prior ([`docs/results.md`](docs/results.md), section 9).
-  - **Against a rule that works as an observer would.** The rule takes the 5σ lines, then accepts one 3σ line at
-    a predicted position. With the second line at 4σ the engine returns the published redshift with confidence
-    in 87% of noise draws and the rule in 80%; at 3.5σ, 73% and 60%. A form of the rule that does not count a
-    missing \[CI\] line against a redshift does a little better (82% and 62%). A rule that needs every line at
-    5σ manages 13% and 3%.
-  - **The gain is uneven.** At 4σ the engine is ahead for three of the seven sources and behind for four; at
-    3.5σ, ahead for four and behind for three (figure below). It gains where the second line is a CO line and
-    not where it is a faint \[CI\] line.
-  - **Wrong answers are equally rare.** The engine and the rule each returned a different redshift in 4 of
-    5,600 draws.
+- **Below that threshold, with no prior, the engine has no advantage over a well-chosen rule.** Noise was added
+  to the seven spectra until the second line sat at a chosen strength, and every method was given the spectrum
+  alone ([`docs/results.md`](docs/results.md), section 9).
+  - **Against the best of 72 rule settings.** The settings vary the S/N at which a line counts, the S/N at which
+    a weaker line confirms a redshift, and how missing lines are treated. The one compared with was fixed in
+    advance as the setting with the most correct answers among those that are wrong no more often than the
+    engine. With the second line at 4σ the engine returns the published redshift with confidence in 87% of noise
+    draws and that rule in 89%; at 3.5σ, 73% and 73%; at 3σ, 47% and 51%. Each was wrong in 4 of 5,600 draws.
+  - **A correction.** Until 13 November 2026 this page compared the engine with a single rule setting and
+    reported 87% against 80%. That lead came from the setting. A rule that needs every line at 5σ still manages
+    only 13% at 4σ.
+  - **Per source the engine is behind more often than ahead:** ahead for two of the seven sources and behind for
+    five at 4σ (figure below). It is ahead where the second line is a CO line as bright as the first, and behind
+    where it is a \[CI\] line.
+  - **Which is ahead depends on how many wrong answers are tolerated.** With at most 4 wrong answers in 5,600
+    the best rule returns slightly more. With 10, the engine at a threshold of 0.8 returns the published
+    redshift in 77% of all draws and the best rule in 69%.
   - **Against a template cross-correlation.** The engine's best guess is the published redshift in 100% of draws
     at 4σ and 98% at 3.5σ; the best guess of a cross-correlation after Yun et al. (2015), in 96% and 92%.
-  - **With the survey's redshift distribution as a prior** the engine's figures rise to 92% at 4σ and 80% at
-    3.5σ. The rule, as built, gains nothing from the same prior.
   - **What this is not.** These are the spectra the engine was developed on, with simulated extra noise, and the
-    rule and the cross-correlation are our own constructions. It is not a test on unseen data, and it does not
-    show the engine doing better than a practised observer.
+    rules and the cross-correlation are our own constructions.
 
-  ![Per source: the engine against the guided rule](figures/redshift_degradation_sources.png)
+  ![Answers against wrong answers: the engine and every rule setting](figures/redshift_operating_points.png)
+- **With a redshift prior the engine is ahead of every rule setting tried.** This is the one comparison in which
+  it is. The rules were given the same prior, each source's published photometric redshift, and 216 settings
+  were run ([`docs/results.md`](docs/results.md), section 10).
+  - **At the same number of wrong answers** the engine returns the published redshift in 95% of draws with the
+    second line at 4σ and the best rule in 89%; at 3.5σ, 89% and 76%; at 3σ, 73% and 53%. The engine was wrong
+    in 9 of 5,600 draws and that rule in 7.
+  - **Per source** the engine is ahead for six of the seven at 4σ and behind for none.
+  - **Why.** The rules use a prior only to break a tie between solutions they have already listed. The engine
+    weighs it against the lines at every redshift.
+  - **What this is not.** Seven sources from the development sample, and one family of rules of our own making.
+
+  ![Per source: the engine against the best rule, no prior](figures/redshift_degradation_sources.png)
 - **The High-z Sudoku code agrees on which sources can be settled.** The authors' own code, run on the same
   frequency coverage at the published redshifts, classes as robust every source the engine settles, provided
   \[CI\] is counted. That code reads no spectrum, so this checks which redshifts are solvable, not error rates
@@ -72,19 +85,21 @@ cubes, and each answer is scored against the published redshift (Reuter et al. 2
   - **How many depends on which values are believed.** Seven with the 2020 values as published, six with the
     collaboration's 2024 revision, and four when the 2020 values are recalibrated against 60 other SPT sources.
     The engine is confident of a wrong redshift in none of the three.
-  - **Rules given the same photometric redshifts settle about as many, with some wrong answers.** Two rules,
-    each in two forms, settle two to seven of the eleven. Five of the ten combinations of rule and prior return
-    at least one wrong redshift.
+  - **Rules given the same photometric redshifts settle fewer, or make more mistakes.** The rule settings that
+    are as reliable as the engine in the noise test settle at most four of the eleven. The settings that settle
+    seven return a wrong redshift at least five times as often as the engine in that test.
   - **One revised value shows the limit.** The 2024 photometric redshift of SPT2349-52 is 2.8 errors from the
     published redshift and sits on the wrong reading of its line. Every rule then answers wrongly, and the
     engine gives that wrong redshift 0.93, just under its threshold of 0.95.
-  - **With noise added to the multi-line spectra** the engine with the photometric prior returns the published
-    redshift with confidence in 95% of draws with the second line at 4σ and 89% at 3.5σ. A guided rule with the
-    same prior, counting CO lines only, manages 84% and 69%. Each gave a wrong answer in fewer than 10 of 5,600
-    draws.
-  - **What this is not.** Eleven sources, from the development sample; a difference of one or two sources
-    between methods shows nothing. The photometric redshifts rest on a dust-temperature prior measured on the
-    same sample.
+  - **No wrong answer is not the same as a low rate of wrong answers.** On the 19 real spectra the engine gave
+    15 confident answers with the 2020 photometric prior, none wrong. That bounds its wrong-answer rate below
+    18% at 95% confidence. About 60 are needed to bound it below 5%.
+  - **What this is not.** Eleven sources, from the development sample; a difference of a few sources between
+    methods shows nothing. The photometric redshifts rest on a dust-temperature prior measured on the same
+    sample.
+- **A test on 23 sources the engine was not developed on is planned and not yet run.** The plan, the sample and
+  the outcomes to be reported were fixed in tag `v0.2.0`, before any of those spectra was downloaded
+  ([`docs/independent-test-plan.md`](docs/independent-test-plan.md)).
 
   ![The one-line sources with their photometric redshifts as priors](figures/redshift_photoz.png)
 - **Second real test.** For SPT0027-50 (ALMA Band 2 science verification, 76.9–111.0 GHz) the engine gives
@@ -143,9 +158,9 @@ Requires Python ≥ 3.9 with numpy, scipy and matplotlib (astropy too for the ar
 
 ```bash
 python -m pip install -r requirements.txt
-python -m pytest                 # 32 regression tests, synthetic and real, under a minute
+python -m pytest                 # 34 regression tests, synthetic and real, under a minute
 bash reproduce.sh                # every real-data result and every figure from the shipped spectra, 1-2 min
-bash reproduce.sh --full         # also re-run the synthetic studies (about 1.7 hours on 2 cores)
+bash reproduce.sh --full         # also re-run the synthetic studies (about 1.8 hours on 2 cores)
 ```
 
 Run everything from the repository root. If the package is installed elsewhere (`pip install .`), set
@@ -197,8 +212,8 @@ ladder_redshifts/        the package (run modules with  python -m ladder_redshif
   ladder.py              engine: line catalogue, log-frequency grid, simulator, matched filter, estimators
   realspec.py            spectra from cube cut-outs; the SPT0027-50 Band 2 analysis
   batch_real.py          score every real spectrum under data/ against data/truth.csv
-  degrade.py             the multi-line spectra with noise added: the engine against two detection rules
-                         and a template cross-correlation
+  degrade.py             the multi-line spectra with noise added: the engine against a family of detection
+                         rules and a template cross-correlation
   photoz.py              each source's published photometric redshift as its prior
   followup.py            which single follow-up tuning settles an ambiguous source
   atlas.py               synthetic error-rate atlas, 2,500 sources x 6 ALMA setups
@@ -210,7 +225,8 @@ scripts/alma/            download and extraction tools for the ALMA archive (cut
 scripts/                 one-off checks: the first review's diagnostics, the truth-table check, the noise
                          calibration of the shipped spectra, the engine on pure noise, the High-z Sudoku code
                          on the same sources (needs your own copy of that code), the photometric-redshift
-                         table and its accuracy (needs the SPT collaboration's posted tables)
+                         table and its accuracy, the independent test sample (both need the SPT
+                         collaboration's posted tables)
 data/                    published redshifts, extracted spectra, cut-out targets and manifest (see data/README.md)
 results/                 every number reported, as JSON/CSV (see results/README.md)
 figures/                 every figure (see figures/README.md)
@@ -242,8 +258,9 @@ tests/                   regression tests
   These were also the spectra on which the method's bugs were found and fixed
   ([`docs/development-notes.md`](docs/development-notes.md)), so they are a development sample, not a blind test.
   About 100 new sources across several surveys, run with a frozen version, would test the score properly.
-  Tag `v0.1.0` is that frozen version: the 0.95 threshold, the ±0.006 window, the line list and the template
-  priors are the ones it contains.
+  Tags `v0.1.0` and `v0.2.0` hold the same engine: the 0.95 threshold, the ±0.006 window, the line list and the
+  template priors. `v0.2.0` adds the comparisons of sections 9 and 10 and the plan for a test on 23 further
+  sources ([`docs/independent-test-plan.md`](docs/independent-test-plan.md)).
 - **Where the truth comes from.** For the 7 multi-line sources the published redshifts came from these same 3 mm
   spectra. Agreement there shows that the engine reaches the published answer automatically; it is not an
   independent confirmation. For the 11 single-line sources the truth came from follow-up in other bands that the
@@ -259,8 +276,10 @@ tests/                   regression tests
     ([tjlcbakx/redshift-search-graphs](https://github.com/tjlcbakx/redshift-search-graphs)). That code classes
     frequency coverage and reads no spectrum. Its classes for these sources and for the atlas setups are in
     [`docs/results.md`](docs/results.md), section 8; the authors' reading of the spectra by eye is not reproduced.
-  - **Guided rule.** The rule that accepts a weaker line at a predicted position is our own construction. So is
-    the window rule of section 10, which borrows only the photometric accuracy that the Sudoku code assumes.
+  - **Guided rule.** The rule that accepts a weaker line at a predicted position is our own construction, and
+    so is the family of 72 settings built on it. So is the window rule of section 10, which borrows only the
+    photometric accuracy that the Sudoku code assumes. The first comparison used one setting of this rule and
+    overstated the engine; a rule we did not think of could do better than any of the 72.
   - **Cross-correlation.** It is our re-implementation of the closest earlier method (Yun et al. 2015), from the
     paper's description: the weights are fitted to the composite of Spilker et al. (2014), the line width is our
     choice, and the paper's photometric redshifts came from a radio-to-millimetre spectral index, not from the
@@ -288,7 +307,9 @@ tests/                   regression tests
   ([`docs/review-response.md`](docs/review-response.md)) and eight more on 12 November, among them a noise scale
   that changed the comparison above ([`docs/development-notes.md`](docs/development-notes.md), items 20–27). What
   the second review left open is listed under "Known open issues" there: chiefly the comparisons with the
-  published methods and the weight the engine gives to line ratios. None of this is peer-reviewed yet.
+  published methods and the weight the engine gives to line ratios. On 13 November a claim made here, that the
+  engine gives more answers than a detection rule from the same spectrum alone, was withdrawn after a wider
+  family of rules was run (development notes, "a claim withdrawn"). None of this is peer-reviewed yet.
 
 ## Related work
 

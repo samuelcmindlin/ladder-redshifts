@@ -41,7 +41,7 @@ PRIORS = {'uniform': None, 'spt': prior_spt, 'herschel': prior_herschel}
 
 def discover():
     groups = defaultdict(list)
-    for f in sorted((DATA).rglob('*.npz')):
+    for f in sorted(DATA.glob('*/*.npz')):                # data/<source>/<source>_<window>.npz; not a second sample's
         m = re.match(r'(.+)_(spw\d+|f\d+\.\d+)$', f.stem)
         if m and 'collapsed' not in f.stem:
             groups[m.group(1)].append(f)

@@ -1,0 +1,24 @@
+source,z_published,prior,reference,notes,status
+SPT0020-51,4.123,spt,"Reuter et al. 2020, Tables E.1 and F.1","Table E.1, lines from 3 mm scans: CO(4-3), CO(5-4), [CI](1-0) (3 lines)",confirmed
+SPT0106-64,4.910,spt,"Reuter et al. 2020, Tables E.1 and F.1","Table E.1, lines from 3 mm scans: CO(5-4) (1 line)",confirmed
+SPT0109-47,3.614,spt,"Reuter et al. 2020, Tables E.1 and F.1","Table E.1, lines from 3 mm scans: CO(4-3), [CI](1-0) (2 lines)",confirmed
+SPT0112-55,3.443,spt,"Reuter et al. 2020, Tables E.1 and F.1","Table E.1, lines from 3 mm scans: CO(4-3), [CI](1-0) (0 lines in the Cycle 3 scan used here)",confirmed
+SPT0136-63,4.299,spt,"Reuter et al. 2020, Tables E.1 and F.1","Table E.1, lines from 3 mm scans: CO(4-3), CO(5-4), [CI](1-0) (3 lines)",confirmed
+SPT0147-64,4.803,spt,"Reuter et al. 2020, Tables E.1 and F.1","Table E.1, lines from 3 mm scans: CO(5-4), [CI](1-0) (2 lines)",confirmed
+SPT0150-59,2.788,spt,"Reuter et al. 2020, Tables E.1 and F.1","Table E.1, lines from 3 mm scans: CO(3-2) (1 line)",tentative
+SPT0155-62,4.349,spt,"Reuter et al. 2020, Tables E.1 and F.1","Table E.1, lines from 3 mm scans: CO(4-3), CO(5-4), [CI](1-0) (3 lines)",confirmed
+SPT0202-61,5.018,spt,"Reuter et al. 2020, Tables E.1 and F.1","Table E.1, lines from 3 mm scans: CO(5-4), CO(6-5) (2 lines)",confirmed
+SPT0245-63,5.626,spt,"Reuter et al. 2020, Tables E.1 and F.1","Table E.1, lines from 3 mm scans: CO(5-4), CO(6-5) (2 lines)",confirmed
+SPT0311-58,6.901,spt,"Reuter et al. 2020, Tables E.1 and F.1","Table E.1, lines from 3 mm scans: CO(6-5), CO(7-6), [CI](2-1) (3 lines)",confirmed
+SPT0348-62,5.654,spt,"Reuter et al. 2020, Tables E.1 and F.1","Table E.1, lines from 3 mm scans: CO(5-4), CO(6-5) (2 lines)",confirmed
+SPT0516-59,3.404,spt,"Reuter et al. 2020, Tables E.1 and F.1","Table E.1, lines from 3 mm scans: CO(4-3) (1 line)",confirmed
+SPT0544-40,4.269,spt,"Reuter et al. 2020, Tables E.1 and F.1","Table E.1, lines from 3 mm scans: CO(4-3), CO(5-4), [CI](1-0) (3 lines)",confirmed
+SPT0552-42,4.438,spt,"Reuter et al. 2020, Tables E.1 and F.1","Table E.1, lines from 3 mm scans: CO(4-3), CO(5-4) (2 lines)",confirmed
+SPT0553-50,5.323,spt,"Reuter et al. 2020, Tables E.1 and F.1","Table E.1, lines from 3 mm scans: CO(5-4), CO(6-5) (2 lines)",confirmed
+SPT0555-62,4.815,spt,"Reuter et al. 2020, Tables E.1 and F.1","Table E.1, lines from 3 mm scans: CO(5-4) (1 line)",confirmed
+SPT0604-64,2.481,spt,"Reuter et al. 2020, Tables E.1 and F.1","Table E.1, lines from 3 mm scans: CO(3-2) (1 line)",confirmed
+SPT0611-55,2.026,spt,"Reuter et al. 2020, Tables E.1 and F.1","Table E.1, lines from 3 mm scans: CO(3-2) (1 line)",confirmed
+SPT0625-58,2.727,spt,"Reuter et al. 2020, Tables E.1 and F.1","Table E.1, lines from 3 mm scans: CO(3-2) (1 line)",confirmed
+SPT2037-65,3.998,spt,"Reuter et al. 2020, Tables E.1 and F.1","Table E.1, lines from 3 mm scans: CO(4-3) (1 line)",confirmed
+SPT2048-55,4.090,spt,"Reuter et al. 2020, Tables E.1 and F.1","Table E.1, lines from 3 mm scans: CO(4-3), CO(5-4), [CI](1-0) (3 lines)",confirmed
+SPT2101-60,3.155,spt,"Reuter et al. 2020, Tables E.1 and F.1","Table E.1, lines from 3 mm scans: CO(4-3) (1 line)",confirmed

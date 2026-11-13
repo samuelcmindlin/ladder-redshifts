@@ -329,3 +329,27 @@ the draws of one source are not independent.
   forms) and the cross-correlation. The likelihood is computed once per draw and each prior applied to it
   (`realspec.engine_likelihood`, `engine_posterior`), so the results under the earlier priors are unchanged.
 
+**A family of rule settings, and the engine's threshold** (`degrade.py`; [`results.md`](results.md), sections 9
+and 10).
+
+- **Why.** The guided rule has thresholds, and a comparison with one setting of them mostly measures that
+  setting. The first comparison did exactly that and overstated the engine.
+- **The family.** Every combination of four dials, 72 settings:
+  - a line counts as detected from 5, 4.5 or 4σ;
+  - a weaker line confirms a solution from 4, 3.5, 3 or 2.5σ;
+  - a missing \[CI\] line counts against a redshift, or not;
+  - a missing line counts against a redshift when its expected S/N is above 5, 8 or 12.
+
+  With a prior, each is run with the share of prior weight at which one solution is taken set to 0.95, 0.90 or
+  0.80: 216 settings.
+- **Which setting is quoted.** Fixed before the family was run: over all draws, the setting with the most
+  correct answers among those that return a wrong redshift no more often than the engine does with the same
+  prior. A second choice allows up to 1% of draws wrong. The best setting at each noise level separately is
+  given as an upper limit; it is chosen with knowledge of the outcome.
+- **The engine at other thresholds.** Its answers are counted at confidence 0.5, 0.6, 0.7, 0.8, 0.9, 0.95 and
+  0.99. For each, the rule setting with the most correct answers among those with no more wrong answers is
+  found, so the two are compared at equal numbers of wrong answers.
+- **A bias to keep in mind.** The quoted rule setting is picked by its score on the same draws it is then scored
+  on. The engine's 0.95 was fixed beforehand. This favours the rule slightly.
+- **Bound on the wrong-answer rate.** k wrong answers among n confident ones give an exact (Clopper-Pearson)
+  one-sided 95% upper bound; for k = 0 it is 1 − 0.05^(1/n).

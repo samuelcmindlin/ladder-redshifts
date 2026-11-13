@@ -385,8 +385,20 @@ second-brightest line at 5.6σ or more, so a rule that needs every line at 5σ s
 data do not test the engine where it should gain. Here Gaussian noise is added to each real spectrum until that
 line would sit at a chosen S/N, and each method is run on 100 noise draws per source and level.
 
-Outputs: `results/redshift_degradation.json`, `figures/redshift_degradation.png` (means) and
-`figures/redshift_degradation_sources.png` (per source).
+Outputs: `results/redshift_degradation.json`, `results/redshift_rule_family.csv`,
+`figures/redshift_degradation.png` (means), `figures/redshift_degradation_sources.png` (per source) and
+`figures/redshift_operating_points.png`.
+
+**What this section shows, in short** (revised on 13 November 2026, when a family of rule settings was run):
+
+- **With no prior the engine has no advantage over a well-chosen detection rule.** At its 0.95 threshold it is
+  level with the best of 72 rule settings that is wrong no more often: 0.87 against 0.89 with the second line at
+  4σ, 0.73 against 0.73 at 3.5σ, 0.47 against 0.51 at 3σ.
+- **An earlier version of this section said otherwise.** It compared the engine with one rule setting and found
+  0.87 against 0.80. That lead came from the setting, not from the method.
+- **Which is ahead depends on how many wrong answers are tolerated.** The best rule is ahead when almost none
+  are; the engine, at a lower threshold, is ahead when a few per thousand are.
+- **With a redshift prior the engine is ahead** (the survey prior below; photometric priors in section 10).
 
 ### The methods
 
@@ -427,32 +439,89 @@ equal-weight sum, with confidence):
 | 2.5 | 0.26 | 0.14 | 0.03 | 0.00 | 0.18 |
 | 2 | 0.07 | 0.06 | 0.00 | 0.00 | 0.06 |
 
-- **The engine gives somewhat more answers than the guided rule.** With the second line at 4σ it returns the
-  published redshift in 0.87 of the draws against 0.80 for the guided rule at 3σ; at 3.5σ, 0.73 against 0.60; at
-  3σ, 0.47 against 0.33.
-- **The gain is uneven across sources.** At 4σ the engine is ahead for three of the seven sources and behind for
-  four; at 3.5σ, ahead for four and behind for three; at 3σ, ahead for five and behind for two.
-  - **Where it gains.** SPT0403-58, SPT0425-40 and SPT0436-40 at 4σ, 3.5σ and 3σ, and SPT2203-41 at 3.5σ and 3σ.
-    SPT0425-40 accounts for much of the mean: its two lines are equally bright and sink together. Without it the
-    engine and the rule stand at 0.89 and 0.90 at 4σ, at 0.75 and 0.69 at 3.5σ, and at 0.52 and 0.38 at 3σ.
-  - **Where it does not.** For the three sources whose second line is a faint \[CI\] line (SPT0520-53,
-    SPT0652-55, SPT2152-40) the guided rule does as well or better at 4σ and at 3.5σ.
+- **Against these two settings of the guided rule the engine gives more answers:** 0.87 against 0.80 with the
+  second line at 4σ, 0.73 against 0.60 at 3.5σ, 0.47 against 0.33 at 3σ. The next subsection shows that other
+  settings of the same rule close that gap.
 - **Wrong answers are equally rare.** Of the 5,600 draws, the engine returned a different redshift with
   confidence in 4 and the guided rule at 3σ returned one in 4. The guided rule at 4σ and the 5σ rule never did.
 - **The 5σ rule stops answering below its threshold,** as it must: 0.13 at 4σ and 0.03 at 3.5σ.
 - **The equal-weight sum never passes 0.55.** It fails on the same three sources as in section 1.
 
+### A family of rules, and the engine at other thresholds
+
+The guided rule above is one setting of a rule with four dials. To stop the comparison resting on that one
+setting, 72 were run on the same draws:
+
+- **Lines count as detected from** 5σ, 4.5σ or 4σ.
+- **A weaker line confirms a solution from** 4σ, 3.5σ, 3σ or 2.5σ.
+- **A missing \[CI\] line** counts against a redshift, or does not.
+- **A missing line counts against a redshift** when its expected S/N is above 5, 8 or 12.
+
+The rule the engine is compared with was fixed before the family was run: over all 5,600 draws, the setting
+with the most correct answers among those that return a wrong redshift no more often than the engine does
+(4 draws). That is: lines from 4.5σ, confirmation from 2.5σ, CO lines only, a missing line counted above 5.
+
+| S/N of the second line | Engine, no prior (0.95) | Best rule, wrong no more often than the engine | Best rule, up to 1% wrong | Best setting at each level |
+|---|---|---|---|---|
+| 5.5 | 1.00 | 1.00 | 0.99 | 1.00 |
+| 5 | 1.00 | 0.99 | 0.99 | 0.99 |
+| 4.5 | 0.95 | 0.94 | 0.95 | 0.96 |
+| 4 | 0.87 | 0.89 | 0.93 | 0.93 |
+| 3.5 | 0.73 | 0.73 | 0.84 | 0.84 |
+| 3 | 0.47 | 0.51 | 0.61 | 0.61 |
+| 2.5 | 0.26 | 0.29 | 0.39 | 0.35 |
+| 2 | 0.07 | 0.14 | 0.17 | 0.17 |
+
+- **At its own threshold the engine is level with the best rule, or slightly behind.** Both return a wrong
+  redshift in 4 of 5,600 draws.
+- **Per source the engine is behind more often than ahead:** ahead for two sources and behind for five at 4σ,
+  ahead for three and behind for four at 3.5σ and at 3σ.
+  - **Where it is ahead.** SPT0403-58 and SPT0425-40, whose second line is a CO line as bright as the first.
+    For SPT0425-40 the engine stands at 0.74 at 4σ against 0.47.
+  - **Where it is behind.** The four sources whose second line is \[CI\], and SPT2203-41 at 4σ. For SPT0652-55
+    the rule stands at 0.98 at 4σ against 0.69 for the engine.
+  - **Without SPT0425-40** the engine and the rule stand at 0.89 and 0.96 at 4σ, 0.75 and 0.81 at 3.5σ, and 0.52
+    and 0.59 at 3σ.
+- **A rule allowed more wrong answers gives more answers.** Lines from 4σ and confirmation from 2.5σ returns the
+  published redshift in 0.93 of draws at 4σ and 0.84 at 3.5σ, with 21 wrong answers in all against the engine's 4.
+
 ![Per source](../figures/redshift_degradation_sources.png)
 
-| Source | Second line (S/N as observed) | Engine, no prior, at 4σ / 3.5σ / 3σ | Guided rule (3σ) at 4σ / 3.5σ / 3σ | Cross-correlation best guess, no prior |
+| Source | Second line (S/N as observed) | Engine, no prior, at 4σ / 3.5σ / 3σ | Best rule at 4σ / 3.5σ / 3σ | Cross-correlation best guess, no prior |
 |---|---|---|---|---|
-| SPT0403-58 | CO(5–4) (9.8) | 1.00 / 0.96 / 0.70 | 0.87 / 0.64 / 0.29 | 0.96 / 0.91 / 0.88 |
-| SPT0425-40 | CO(5–4) (10.9) | 0.74 / 0.58 / 0.22 | 0.24 / 0.11 / 0.01 | 0.98 / 0.93 / 0.76 |
-| SPT0436-40 | \[CI\](1–0) (15.2) | 0.92 / 0.83 / 0.57 | 0.87 / 0.69 / 0.36 | 1.00 / 0.99 / 0.98 |
-| SPT0520-53 | \[CI\](1–0) (6.5) | 0.89 / 0.77 / 0.42 | 0.90 / 0.82 / 0.50 | 0.98 / 0.97 / 0.92 |
-| SPT0652-55 | \[CI\](1–0) (7.4) | 0.69 / 0.54 / 0.38 | 0.86 / 0.69 / 0.35 | 0.86 / 0.84 / 0.76 |
-| SPT2152-40 | \[CI\](1–0) (7.1) | 0.91 / 0.69 / 0.49 | 0.93 / 0.73 / 0.55 | 1.00 / 0.99 / 1.00 |
-| SPT2203-41 | CO(6–5) (5.6) | 0.91 / 0.71 / 0.54 | 0.94 / 0.54 / 0.23 | 0.92 / 0.84 / 0.88 |
+| SPT0403-58 | CO(5–4) (9.8) | 1.00 / 0.96 / 0.70 | 0.89 / 0.53 / 0.29 | 0.96 / 0.91 / 0.88 |
+| SPT0425-40 | CO(5–4) (10.9) | 0.74 / 0.58 / 0.22 | 0.47 / 0.26 / 0.02 | 0.98 / 0.93 / 0.76 |
+| SPT0436-40 | \[CI\](1–0) (15.2) | 0.92 / 0.83 / 0.57 | 0.98 / 0.86 / 0.60 | 1.00 / 0.99 / 0.98 |
+| SPT0520-53 | \[CI\](1–0) (6.5) | 0.89 / 0.77 / 0.42 | 0.98 / 0.94 / 0.77 | 0.98 / 0.97 / 0.92 |
+| SPT0652-55 | \[CI\](1–0) (7.4) | 0.69 / 0.54 / 0.38 | 0.98 / 0.89 / 0.75 | 0.86 / 0.84 / 0.76 |
+| SPT2152-40 | \[CI\](1–0) (7.1) | 0.91 / 0.69 / 0.49 | 1.00 / 0.97 / 0.82 | 1.00 / 0.99 / 1.00 |
+| SPT2203-41 | CO(6–5) (5.6) | 0.91 / 0.71 / 0.54 | 0.93 / 0.65 / 0.34 | 0.92 / 0.84 / 0.88 |
+
+**The engine's threshold is a dial too.** Lowering it gives more answers and more wrong ones, as lowering a
+rule's thresholds does. The fair comparison is at the same number of wrong answers. Over all 5,600 draws:
+
+![Answers against wrong answers](../figures/redshift_operating_points.png)
+
+| Engine threshold | Engine: published redshift returned | Engine: wrong, of 5,600 | Best rule with no more wrong: returned | Its wrong answers |
+|---|---|---|---|---|
+| 0.99 | 0.56 | 1 | 0.61 | 1 |
+| 0.95 | 0.67 | 4 | 0.69 | 4 |
+| 0.9 | 0.71 | 6 | 0.69 | 4 |
+| 0.8 | 0.77 | 10 | 0.69 | 4 |
+| 0.7 | 0.81 | 14 | 0.71 | 12 |
+| 0.6 | 0.83 | 26 | 0.73 | 21 |
+| 0.5 | 0.86 | 63 | 0.73 | 21 |
+
+- **Neither is ahead everywhere.** With at most 4 wrong answers in 5,600 the best rule returns more: 0.69 against
+  0.67, and 0.61 against 0.56 with at most 1. With 6 or more the engine returns more: 0.77 against 0.69 at 10,
+  and 0.83 against 0.73 at 26.
+- **Counts of 1 to 4 wrong draws are too small to separate the two** at the strict end. One draw going the other
+  way would reverse the order there.
+- **The rule had an advantage in this comparison.** It was picked from 72 settings by its score on these same
+  draws. The engine's 0.95 was fixed before the test. On new spectra the picked setting would be expected to do
+  a little worse than here.
+- **On the real spectra as observed** all 72 settings give the same answers as the engine: the eight multi-line
+  sources correct, none wrong, the eleven one-line sources left open.
 
 **Best guesses.** Fraction of draws in which the published redshift is ranked first:
 
@@ -492,8 +561,10 @@ equal-weight sum, with confidence):
   with confidence in 5 of the 5,600 draws.
 - **The guided rule does not.** Given the same prior, its figures change by 0.002 at most. A broad survey prior
   almost never puts 0.95 of its weight on one of the remaining solutions, and a prior cannot turn a missing line
-  into a detection. With the prior for both, the engine is ahead for six of seven sources at 4σ and for all
-  seven at 3.5σ and 3σ. A rule built to use the prior in some other way might do better.
+  into a detection. A rule built to use the prior in some other way might do better.
+- **Against the best rule of the family with no prior** (0.89, 0.73 and 0.51) the engine with the survey prior
+  is ahead by 0.03 at 4σ, 0.07 at 3.5σ and 0.08 at 3σ. That is not like for like: the family was not run with
+  the survey prior. Section 10 runs it with photometric priors.
 - **The cross-correlation × prior fails for the two sources at z > 5.** From 5.5σ down to 2.5σ it ranks the
   published redshift first in 0.71 of the draws: always for five sources, never for SPT0425-40 and SPT2203-41.
   The product of the S/N with a prior centred on z = 3.9 outweighs a second line, even with no noise added.
@@ -640,7 +711,14 @@ Answers given for the eleven one-line sources, correct / wrong:
 - **The Sudoku class "robust given a photometric redshift"** (section 8) assumes a value within 0.13 (1 + z) of
   the truth. Of the five sources in that class, four have such a 2020 value and the engine settles all four.
   The fifth, SPT2311-45, has a value 0.20 (1 + z) from the truth, and the engine leaves it open at 0.84.
-- **Eleven sources.** A difference of one or two sources between methods is not evidence that one is better.
+- **The rule settings that match the engine in the noise test settle fewer.** The family of rule settings of
+  section 9 was run with the 2020 values as well, 216 settings in all (below). On the 19 real spectra they give
+  11 to 15 correct answers, against the engine's 15, and 24 of them give a wrong one.
+  - **The settings that reach 15** count a missing \[CI\] line against a redshift. In the noise test below they
+    return a wrong redshift in 51 or more of 5,600 draws, against the engine's 9.
+  - **The 26 settings that are wrong no more often than the engine** in the noise test give at most 12: the eight
+    multi-line sources and four of the eleven one-line sources, where the engine settles seven.
+- **Eleven sources.** A difference of a few sources between methods is not evidence that one is better.
 
 **Cross-correlation × p(z).** This is the rule of Yun et al. (2015, appendix A2): the S/N curve multiplied by the
 probability of the photometric redshift. Sources for which the best redshift is the published one:
@@ -664,45 +742,61 @@ published redshift is returned as an answer:
 
 ![Noise added, photometric priors](../figures/redshift_photoz_noise.png)
 
-| S/N of the second line | Engine, no prior | Engine, photometric prior | Guided rule, same prior, CO only | Guided rule, same prior, \[CI\] counted: correct / wrong |
+| S/N of the second line | Engine, no prior | Engine, photometric prior | Best of 216 rule settings, same prior | The rule as first built (\[CI\] counted), same prior: correct / wrong |
 |---|---|---|---|---|
-| 5.5 | 1.00 | 1.00 | 0.99 | 0.99 / 0.00 |
-| 5 | 1.00 | 1.00 | 0.96 | 0.96 / 0.00 |
-| 4.5 | 0.95 | 0.98 | 0.90 | 0.89 / 0.01 |
-| 4 | 0.87 | 0.95 | 0.84 | 0.80 / 0.03 |
-| 3.5 | 0.73 | 0.89 | 0.69 | 0.63 / 0.06 |
-| 3 | 0.47 | 0.73 | 0.49 | 0.39 / 0.10 |
-| 2.5 | 0.26 | 0.51 | 0.29 | 0.17 / 0.12 |
+| 5.5 | 1.00 | 1.00 | 1.00 | 0.99 / 0.00 |
+| 5 | 1.00 | 1.00 | 0.99 | 0.96 / 0.00 |
+| 4.5 | 0.95 | 0.98 | 0.94 | 0.89 / 0.01 |
+| 4 | 0.87 | 0.95 | 0.89 | 0.80 / 0.03 |
+| 3.5 | 0.73 | 0.89 | 0.76 | 0.63 / 0.06 |
+| 3 | 0.47 | 0.73 | 0.53 | 0.39 / 0.10 |
+| 2.5 | 0.26 | 0.51 | 0.32 | 0.17 / 0.12 |
 | 2 | 0.07 | 0.29 | 0.17 | 0.13 / 0.04 |
 
-| Source | z_phot, 2020 (offset) | Engine, photometric prior, at 4σ / 3.5σ / 3σ | Guided rule, same prior, CO only | Engine, no prior |
+| Source | z_phot, 2020 (offset) | Engine, photometric prior, at 4σ / 3.5σ / 3σ | Best of 216 rule settings, same prior | Engine, no prior |
 |---|---|---|---|---|
-| SPT0403-58 | 4.3 ± 0.7 (+0.3) | 1.00 / 0.99 / 0.88 | 0.87 / 0.65 / 0.30 | 1.00 / 0.96 / 0.70 |
-| SPT0425-40 | 3.7 ± 1.1 (−1.3) | 0.73 / 0.55 / 0.21 | 0.24 / 0.11 / 0.01 | 0.74 / 0.58 / 0.22 |
-| SPT0436-40 | 6.1 ± 1.3 (+1.7) | 0.98 / 0.90 / 0.68 | 0.87 / 0.69 / 0.36 | 0.92 / 0.83 / 0.57 |
+| SPT0403-58 | 4.3 ± 0.7 (+0.3) | 1.00 / 0.99 / 0.88 | 0.94 / 0.81 / 0.41 | 1.00 / 0.96 / 0.70 |
+| SPT0425-40 | 3.7 ± 1.1 (−1.3) | 0.73 / 0.55 / 0.21 | 0.48 / 0.25 / 0.03 | 0.74 / 0.58 / 0.22 |
+| SPT0436-40 | 6.1 ± 1.3 (+1.7) | 0.98 / 0.90 / 0.68 | 0.89 / 0.71 / 0.38 | 0.92 / 0.83 / 0.57 |
 | SPT0520-53 | 4.2 ± 0.7 (+0.6) | 0.96 / 0.90 / 0.63 | 0.94 / 0.86 / 0.58 | 0.89 / 0.77 / 0.42 |
-| SPT0652-55 | 4.2 ± 0.5 (+1.7) | 1.00 / 1.00 / 1.00 | 1.00 / 0.99 / 0.99 | 0.69 / 0.54 / 0.38 |
-| SPT2152-40 | 4.9 ± 0.5 (+2.1) | 1.00 / 0.99 / 0.97 | 1.00 / 1.00 / 0.97 | 0.91 / 0.69 / 0.49 |
-| SPT2203-41 | 5.3 ± 0.9 (+0.1) | 0.99 / 0.89 / 0.76 | 0.94 / 0.54 / 0.23 | 0.91 / 0.71 / 0.54 |
+| SPT0652-55 | 4.2 ± 0.5 (+1.7) | 1.00 / 1.00 / 1.00 | 0.99 / 0.99 / 0.99 | 0.69 / 0.54 / 0.38 |
+| SPT2152-40 | 4.9 ± 0.5 (+2.1) | 1.00 / 0.99 / 0.97 | 1.00 / 1.00 / 0.96 | 0.91 / 0.69 / 0.49 |
+| SPT2203-41 | 5.3 ± 0.9 (+0.1) | 0.99 / 0.89 / 0.76 | 0.96 / 0.68 / 0.36 | 0.91 / 0.71 / 0.54 |
 
 - **With the photometric prior the engine stands at 0.95 with the second line at 4σ, 0.89 at 3.5σ and 0.73 at
   3σ.** With no prior it was 0.87, 0.73 and 0.47; with the survey prior 0.92, 0.80 and 0.59. The 2024 revision
   gives 0.95, 0.89 and 0.76, and the recalibrated values 0.94, 0.87 and 0.72.
-- **The guided rule with the same prior, counting CO lines only, stands at 0.84, 0.69 and 0.49.** Per source the
-  engine is ahead for five of seven at 4σ, with the other two level at 1.00; for six at 3.5σ, behind for one; and
-  for six at 3σ, behind for none.
+- **The best rule with the same prior stands at 0.89, 0.76 and 0.53.** It is the setting, of 216, with the most
+  correct answers among those that are wrong no more often than the engine: lines from 4.5σ, confirmation from
+  3σ, CO lines only, and the prior deciding when one solution holds 0.95 of its weight. The 216 are the 72
+  settings of section 9, each with that share at 0.95, 0.90 or 0.80.
+- **Per source the engine is ahead for six of seven at 4σ and behind for none;** ahead for six and behind for one
+  at 3.5σ; ahead for all seven at 3σ.
+- **The engine is ahead at every number of wrong answers,** unlike the case with no prior. Over all 5,600 draws:
+
+  | Engine threshold | Engine: published redshift returned | Engine: wrong, of 5,600 | Best rule with no more wrong: returned | Its wrong answers |
+  |---|---|---|---|---|
+  | 0.99 | 0.72 | 2 | 0.59 | 2 |
+  | 0.95 | 0.79 | 9 | 0.70 | 7 |
+  | 0.9 | 0.83 | 17 | 0.74 | 16 |
+  | 0.8 | 0.86 | 28 | 0.77 | 26 |
+
+  No rule setting with 30 or fewer wrong answers returns the published redshift in more than 0.77 of the draws
+  (panel B of the figure in section 9).
 - **Wrong answers stay rare for both.** Of 5,600 draws the engine returned a different redshift with confidence
-  in 9 (5 with either other version), and the CO-only rule in 6 (11 and 10).
+  in 9 (5 with either other version), and the best rule in 7.
 - **The rule that counts \[CI\] gives wrong answers once it has a prior:** 249 of 5,600 draws, nearly all for
   SPT0652-55 and SPT2152-40. When their \[CI\] line falls below 3σ this rule drops the true redshift, because it
   expects that line. The prior, which is 1.7 and 2.1 errors high for these two, then picks the CO(5–4) reading.
-  - **Section 9 is little affected.** With no prior the same rule gives no answer in those draws. The CO-only
-    form does slightly better there: 0.82, 0.62 and 0.36 at 4σ, 3.5σ and 3σ, against 0.80, 0.60 and 0.33, with the
-    same 4 wrong answers. Against it the engine (0.87, 0.73, 0.47) is ahead for three sources and behind for
-    four at 4σ, and ahead for four and behind for three at 3.5σ and at 3σ.
-- **Where the prior does the work.** SPT0652-55 and SPT2152-40 reach about 1.00 for the engine and for the CO-only
+  - **This is what led to the family of settings.** With no prior the same rule gives no answer in those draws,
+    so the fault did not show in section 9. Running the rule without the \[CI\] assumption, and then with other
+    thresholds, is what showed that the engine's lead with no prior came from the rule's settings.
+- **Where the prior does the work.** SPT0652-55 and SPT2152-40 reach about 1.00 for the engine and for the best
   rule alike: the prior rules out the lower reading, and nothing more is needed. The engine's lead is in the
-  sources whose second line is a CO line (SPT0403-58, SPT0425-40, SPT2203-41), as in section 9.
+  sources whose second line is a CO line (SPT0403-58, SPT0425-40, SPT2203-41) and in SPT0436-40.
+- **Why a prior favours the engine.** The rule uses the prior only to break a tie between solutions it has
+  already listed. The engine weighs it against the lines at every redshift, so a weak second line and a prior
+  that leans the same way add up.
 - **A prior that is off does not help.** SPT0425-40's value is 1.3 errors low, and the engine gains nothing from
   it (0.73 at 4σ, against 0.74 with no prior).
 - **Cross-correlation × p(z)** ranks the published redshift first in 0.43 of the draws from 5.5σ down to 2.5σ
@@ -712,14 +806,23 @@ published redshift is returned as an answer:
 ### What this section shows, and what it does not
 
 - **What it shows.** Given the photometric redshifts that existed, the engine turns four to seven of the eleven
-  one-line scans into confident redshifts, all of them correct. Rules given the same information settle about
-  as many, and gave a wrong answer in five of ten combinations of rule and prior.
+  one-line scans into confident redshifts, all of them correct. With such a prior it also returns more answers
+  than any of 216 rule settings at the same number of wrong answers, on the seven multi-line spectra with
+  noise added. This is the one comparison in which the engine is ahead of the rules.
+- **What it does not show.** That holds for seven sources and one family of rules, both from this repository.
+  With no prior the same family matches the engine (section 9).
 - **The count depends on which photometric redshifts are believed:** seven, six or four.
 - **The threshold has little margin against a photometric redshift that is far off.** One value 2.8 errors from
   the truth took the engine to 0.93 for a wrong redshift. In the 2020 table 11% of the 81 values are more than
   two errors off.
 - **These are the development spectra** (see the limits of section 9), and the photometric redshifts rest on a
   dust-temperature prior measured on the same sample.
-- **The rules are this repository's.** An observer would also weigh line widths and the continuum.
+- **The rules are this repository's.** They use a prior in one way: as a tie-break at a fixed share. An observer
+  would also weigh line widths and the continuum.
+- **No confident wrong answer does not mean a low rate of them.** On the 19 real spectra the engine gave 8
+  confident answers with the survey prior and 15 with the 2020 photometric prior, none wrong. Those counts put
+  the 95% upper bound on its wrong-answer rate at 31% and 18%. About 60 confident answers with none wrong are
+  needed to bound it below 5%. [`independent-test-plan.md`](independent-test-plan.md) sets out a test on 23
+  further sources.
 - **Follow-up is still what confirmed these redshifts.** With the photometric prior the engine would have left
   four to seven of the eleven for follow-up, not none.

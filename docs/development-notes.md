@@ -302,6 +302,44 @@ call five single-line sources robust given a photometric redshift, and the engin
   `test_photometric_redshift_priors_settle_single_line_sources_without_a_wrong_call` and the photometric part
   of `test_degradation_reaches_the_requested_second_line_snr`.
 
+## The comparison rule re-examined, 13 November 2026: a claim withdrawn
+
+Until this date the README and section 9 of the results said that, with no prior, the engine gave more answers
+than "a rule that works as an observer would" once the second line fell below 5σ: 87% against 80% at 4σ. That
+claim is withdrawn.
+
+- **How it was found.** Giving the rule a photometric prior exposed a fault in it: it ruled a redshift out when
+  a \[CI\] line was missing. Removing that assumption raised the rule from 80% to 82%. That raised the
+  question of what its other thresholds were worth, so 72 settings were run.
+- **What the family showed.** A setting that counts lines from 4.5σ and confirms from 2.5σ returns the published
+  redshift in 89% of draws at 4σ, with the same 4 wrong answers in 5,600 as the engine. Per source the engine is
+  behind it for five of seven sources at 4σ.
+- **What was wrong with the first comparison.** One rule, with thresholds chosen by us before any test (5σ and
+  3σ), was treated as "the" rule. The engine was never tuned against it, but the rule was never given a chance
+  to be good either.
+- **What survives.**
+  - With a photometric prior the engine is ahead of all 216 settings at every number of wrong answers. The same
+    scrutiny was applied before saying so: the share of prior weight at which a rule answers was added to the
+    family for this reason.
+  - With no prior, the engine at a lower threshold returns more answers than any setting once 6 or more wrong
+    answers in 5,600 are tolerated.
+  - The engine gives a number where a rule gives yes or no, and it needs no thresholds chosen per survey.
+- **What does not.** Any statement that the engine extracts more redshifts than a detection rule from the same
+  spectrum alone.
+- **Guarded by** `test_the_rule_the_engine_is_compared_with_is_the_best_of_its_family_by_the_stated_criterion`.
+
+## A test on unseen spectra, planned on 13 November 2026
+
+- **The plan** is [`independent-test-plan.md`](independent-test-plan.md): 23 sources of ALMA project
+  2015.1.00504.S, with the sample, the data handling, the outcomes and their reading fixed in tag `v0.2.0`.
+- **Nothing of that sample has been downloaded.** The archive was queried only for the list of targets and the
+  kinds of file it holds. The project has re-imaged (ARI-L) cubes, not pipeline cubes, so the manifest builder
+  and the extractor learned their file names.
+- **`LADDER_REDSHIFTS_SAMPLE`** redirects the data, results and figures folders to a sub-folder, so that the new
+  sample is scored by the same code with no edits.
+- **Bounds.** `photoz.upper_bound` gives the exact 95% upper bound on the wrong-answer rate: 31% from 8 confident
+  answers, 18% from 15.
+
 ## Known open issues
 
 - **The comparison rule.** It is a simplified Sudoku-style rule, not the High-z Sudoku code. That code has now been

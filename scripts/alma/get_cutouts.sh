@@ -12,6 +12,7 @@
 #   MANIFEST=path/to/manifest.tsv     default: data/cutouts/2016.1.00672.S_cutout_manifest.tsv
 #   DEST=path/to/folder               default: alma_cutouts/ in the repository root (about 3.9 GB; ignored by git)
 #   FULL=1                            if a cut-out fails on every mirror, download the whole cube instead (62 MB)
+#   FULL=2                            do not ask for cut-outs at all: download whole cubes
 set -u
 ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
 export MANIFEST="${MANIFEST:-$ROOT/data/cutouts/2016.1.00672.S_cutout_manifest.tsv}"
@@ -42,6 +43,7 @@ fetch() {
   rdeg=$(awk -v r="$radius" 'BEGIN { printf "%.6f", r / 3600 }')
   for host in almascience.eso.org almascience.nao.ac.jp almascience.nrao.edu; do
     if [ "$kind" = "cutout" ]; then
+      [ "$FULL" = "2" ] && break
       url="https://$host/soda/sync?ID=$file&CIRCLE=$ra%20$dec%20$rdeg"
     else
       url="https://$host/dataPortal/$file"
@@ -56,7 +58,7 @@ fetch() {
       sleep 10
     done
   done
-  if [ "$kind" = "cutout" ] && [ "$FULL" = "1" ]; then
+  if [ "$kind" = "cutout" ] && [ "$FULL" != "0" ]; then
     for host in almascience.eso.org almascience.nao.ac.jp almascience.nrao.edu; do
       if curl -fsSL --connect-timeout 30 --max-time 1800 -o "$out.part" "https://$host/dataPortal/$file" 2>/dev/null \
          && valid "$out.part"; then
@@ -78,12 +80,12 @@ if [ "${1:-}" = "--test" ]; then
   fetch "$n"
   if valid "$DEST/$file"; then
     size=$(wc -c < "$DEST/$file" | tr -d ' ')
-    nx=$(dims "$DEST/$file" | cut -d' ' -f1)
-    echo "Received $((size / 1024)) kB, image $(dims "$DEST/$file") pixels (the whole cube is 62,400 kB, 256 x 256 x 238)."
-    if [ "${nx:-999}" -lt 200 ]; then
+    echo "Received $((size / 1024)) kB, image $(dims "$DEST/$file") pixels."
+    # a cut-out of 20-30 arcsec is a few MB; a whole cube of these projects is 40-60 MB
+    if [ "$size" -lt 20000000 ]; then
       echo "The cut-out service works. Now run:  bash scripts/alma/get_cutouts.sh"
     else
-      echo "The archive sent the WHOLE cube: it ignored the cut-out request (FULL=1 downloads whole cubes, ~26 GB)."
+      echo "The archive sent the WHOLE cube: it ignored the cut-out request (FULL=1 downloads whole cubes)."
     fi
   else
     echo "The cut-out did not arrive. What the archive answered (first lines):"

@@ -116,7 +116,7 @@ def process_cube(path, box_as, dv_kms, out_npz, fh, centre=None):
 
 def target_and_tag(name, path=None):
     """Target name and spectral-window tag from a pipeline file name, or from the FITS header."""
-    m = re.search(r'\.([^.]+)_sci\.spw(\d+)\.', name)
+    m = re.search(r'\.([^.]+)_sci\.spw(\d+)[._]', name)     # also ARI-L names: ..._sci.spw0_85009MHz.12m.cube...
     if m:
         return m.group(1), f'spw{m.group(2)}'
     if path is not None:

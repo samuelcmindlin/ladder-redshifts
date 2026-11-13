@@ -427,9 +427,9 @@ def naive_spacing(dets, grid):
     return float(np.median(J * CO[0] / nu) - 1)
 
 
-def _rule_solutions(dets, grid, cover, y, ztol_kms=300.0, zmin=0.5, zmax=8.0, ci_prunes=True):
+def _rule_solutions(dets, grid, cover, y, ztol_kms=300.0, zmin=0.5, zmax=8.0, ci_prunes=True, prune_expect=8.0):
     """ln(1+z) of every solution that explains all detections without predicting strong lines (expected
-    S/N > 8 from the median SLED) where the data show < 3 sigma. Shared by sudoku_rule and guided_rule.
+    S/N > prune_expect from the median SLED) where the data show < 3 sigma. Shared by sudoku_rule and guided_rule.
 
     ci_prunes=False keeps a solution whose only missing strong line is [CI]: the [CI] to CO ratio varies by a
     large factor from galaxy to galaxy, so an observer would not rule a redshift out on a missing [CI] line."""
@@ -452,7 +452,7 @@ def _rule_solutions(dets, grid, cover, y, ztol_kms=300.0, zmin=0.5, zmax=8.0, ci
             if i in match or (not ci_prunes and names[i].startswith('[CI]')):
                 continue
             p = int(round((lp - grid.lnmin) / DLN))
-            if 0 <= p < grid.npix and cover[p] and scale * tmpl[i] > 8 and y[p] < 3:
+            if 0 <= p < grid.npix and cover[p] and scale * tmpl[i] > prune_expect and y[p] < 3:
                 ok = False; break
         if ok and not any(abs(lz - s) < tol for s in sols):
             sols.append(lz)
@@ -472,7 +472,7 @@ def sudoku_rule(dets, grid, cover, y, ztol_kms=300.0, zmin=0.5, zmax=8.0):
 
 
 def guided_rule(dets, grid, cover, y, confirm=3.0, ztol_kms=300.0, zmin=0.5, zmax=8.0, prior=None, share=0.95,
-                ci_prunes=True):
+                ci_prunes=True, prune_expect=8.0):
     """The detection rule followed by a guided look for weaker lines, as an observer would do by eye.
 
     If the 5 sigma detections leave one solution, that is the answer (as sudoku_rule). If they leave several,
@@ -484,11 +484,11 @@ def guided_rule(dets, grid, cover, y, confirm=3.0, ztol_kms=300.0, zmin=0.5, zma
     the engine. When the lines do not single out a solution, the rule then also answers if one of the remaining
     solutions (the confirmed ones, or all surviving ones when none is confirmed) holds at least `share` of the
     prior weight among them. The weight is the density per unit ln(1+z), as in Engine.log_prior.
-    ci_prunes: see _rule_solutions.
+    ci_prunes, prune_expect: see _rule_solutions. `dets` may come from detect() at a threshold other than 5.
     Returns (z or None, number of surviving solutions, number confirmed)."""
     if not dets:
         return None, 0, 0
-    sols = _rule_solutions(dets, grid, cover, y, ztol_kms, zmin, zmax, ci_prunes)
+    sols = _rule_solutions(dets, grid, cover, y, ztol_kms, zmin, zmax, ci_prunes, prune_expect)
     if len(sols) == 1:
         return float(np.exp(sols[0]) - 1), 1, 1
     nus = line_list()[1]

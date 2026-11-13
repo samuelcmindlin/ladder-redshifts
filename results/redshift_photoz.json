@@ -300,6 +300,36 @@
      }
     }
    }
+  },
+  "all": {
+   "n": 19,
+   "engine": {
+    "uniform": {
+     "confident_answers": 8,
+     "wrong": 0,
+     "wrong_rate_upper_95": 0.312
+    },
+    "spt": {
+     "confident_answers": 8,
+     "wrong": 0,
+     "wrong_rate_upper_95": 0.312
+    },
+    "photoz": {
+     "confident_answers": 15,
+     "wrong": 0,
+     "wrong_rate_upper_95": 0.181
+    },
+    "photoz_2024": {
+     "confident_answers": 14,
+     "wrong": 0,
+     "wrong_rate_upper_95": 0.193
+    },
+    "photoz_recal": {
+     "confident_answers": 12,
+     "wrong": 0,
+     "wrong_rate_upper_95": 0.221
+    }
+   }
   }
  },
  "sources": [
