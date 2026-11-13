@@ -262,6 +262,46 @@ spectra, as observed, cannot show the gain that the simulations claim.
     `test_degradation_reaches_the_requested_second_line_snr` and
     `test_sudoku_comparison_file_matches_the_current_engine_results`.
 
+## Photometric redshifts as priors, added on 13 November 2026
+
+A new test, not a fix ([`results.md`](results.md), section 10). The open issue it closes was: the Sudoku classes
+call five single-line sources robust given a photometric redshift, and the engine had never been given one.
+
+- **Where the values came from.** Table F.1 of Reuter et al. (2020), read twice: from the arXiv copy of the
+  paper, and from the machine-readable table the SPT-SMG collaboration posts. All 81 rows agree.
+  - **One row needs care.** The posted file replaces the SPT0452-50 row with values recomputed for its corrected
+    redshift and keeps the printed row as a comment. `scripts/photoz_calibration.py` takes the printed
+    photometric redshift (4.4 ± 0.7) from the comment.
+  - **A second posted file** revises the photometric redshifts (2024). Both versions are run.
+  - **The tables are not copied here** (no licence file). `data/photoz.csv` holds three columns for the 21
+    sources this repository uses.
+- **The printed errors were checked before being trusted.** For the 60 SPT sources outside this sample the
+  2020 values run high by 0.48 errors and scatter by 1.10 errors. A third version of the prior applies that
+  shift and widening. It lowers the engine's count from seven to four.
+- **What it showed.** With the photometric prior the engine is confident and correct for four to seven of the
+  eleven one-line sources, and confident and wrong for none. Rules given the same values settle about as many
+  and made six wrong calls over ten combinations of rule and prior.
+- **What it showed against the engine.** With the 2024 value for SPT2349-52, which is 2.8 errors off, the engine
+  gives a wrong redshift 0.93. Nothing in the engine protects it from a prior that is far off; the 0.95
+  threshold held by a small margin.
+- **The comparison rule was weaker than it should have been.** The detection rule drops a redshift when a
+  predicted \[CI\] line is missing. Given a photometric prior, the guided rule then returned a wrong redshift
+  in 249 of 5,600 noise draws, nearly all for two sources whose \[CI\] line had sunk below 3σ. A form that
+  counts CO lines only (`ci_prunes=False`) gives 6 wrong answers and more correct ones, and is the form the
+  engine is now compared with when a photometric prior is used.
+  - **Effect on the earlier comparison.** With no prior the CO-only form stands at 0.82 and 0.62 with the
+    second line at 4σ and 3.5σ, against 0.80 and 0.60 for the form used until now. The engine's 0.87 and 0.73
+    are unchanged; the README quotes both forms.
+- **The cross-correlation with a per-source p(z)** is now run as the paper describes (S/N × p(z)). With these
+  narrow dust-continuum priors it fails for four sources that have two detected lines. The paper's p(z) is
+  broader, so this says how the product behaves, not how the paper's results would change.
+- **`run_engine` was split** into `engine_likelihood` and `engine_posterior` so that several priors share one
+  likelihood. Every number in the earlier `results/redshift_degradation.json` is reproduced exactly by the new
+  code; only new columns were added.
+- **Guarded by** `test_photometric_redshift_table_matches_its_calibration_record`,
+  `test_photometric_redshift_priors_settle_single_line_sources_without_a_wrong_call` and the photometric part
+  of `test_degradation_reaches_the_requested_second_line_snr`.
+
 ## Known open issues
 
 - **The comparison rule.** It is a simplified Sudoku-style rule, not the High-z Sudoku code. That code has now been
@@ -269,9 +309,10 @@ spectra, as observed, cannot show the gain that the simulations claim.
   - **The reading by eye.** The code's plotting tool (`RSGplot`) shows the redshifts allowed by a list of detected
     lines, the coverage and a photometric redshift. Its authors' reading of the 18 spectra is not reproduced; the
     stand-in rule and the guided rule are this repository's substitutes.
-  - **Photometric redshifts for the real sources.** The Sudoku classes call five single-line sources robust given
-    a photometric redshift. The engine has not been run with the published photometric redshift of each source
-    as its prior, so that claim is untested here.
+  - **Photometric redshifts for the real sources.** Done on 13 November (see above): with the published
+    photometric redshifts the engine settles four of the five sources that the Sudoku classes call robust given
+    a photometric redshift. What remains is a prior that allows for a photometric redshift being far off, for
+    example a mixture with a broad component; none is implemented.
   - **Licence.** The code carries no licence file, so it is not bundled; `scripts/compare_sudoku.py` takes the
     path of the user's own copy.
 - **Point-source spectra.** These lose flux for extended or multiply-imaged sources.

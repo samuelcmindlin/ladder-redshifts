@@ -6,6 +6,7 @@ not shipped, but the scripts in `scripts/alma/` rebuild them from the public ALM
 | Path | Contents |
 |---|---|
 | `truth.csv` | Published redshifts. Columns: `source`, `z_published`, `prior` (`spt` or `herschel`), `reference`, `notes` (which lines the published scan itself showed, and which came from follow-up), `status` (`confirmed`, or `tentative` for a published but unconfirmed identification). |
+| `photoz.csv` | Photometric redshifts of the 21 SPT sources in `truth.csv`, from Reuter et al. (2020, ApJ 902, 78), Table F.1. Columns: `source`; `z_phot`, `z_phot_err` (as printed in the 2020 paper); `z_phot_2024`, `z_phot_2024_err` (the collaboration's 2024 revision). Written and checked by `scripts/photoz_calibration.py` from the tables the collaboration posts at <https://github.com/spt-smg/publicdata>, which are not copied here. For SPT0452-50 the 2020 value is the one printed in the journal (4.4 ± 0.7), which the posted file keeps as a comment. |
 | `spectra/<SOURCE>.csv` | One spectrum per source from the cube route. The 21 sources are from project 2016.1.00672.S, as point-source spectra at the published position; SPT0027-50 is an aperture spectrum. These are what `batch_real` scores. |
 | `admit/spectra/<SOURCE>.csv` | ADMIT-route pseudo-spectra of the same 21 sources (`batch_real --admit`). |
 | `admit/<SOURCE>_admit.json` | Per-window summary of what ADMIT gave for each source: target position, which windows were measured, zero-filled or dropped, and why. |

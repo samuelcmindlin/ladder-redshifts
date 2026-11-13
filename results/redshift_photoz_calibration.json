@@ -1,0 +1,129 @@
+{
+ "paper": "Reuter et al. 2020 (ApJ 902, 78), Table F.1",
+ "tables": "https://github.com/spt-smg/publicdata, directory reuter2020_final_dndz",
+ "files": {
+  "spt_dndz_tab_f1.txt": "0942cec4315eaa294effde634fa71d1828b788f9829c2cf0e97357af06e4756a",
+  "spt_dndz_tab_f1_kappa_wd03.txt": "cf6adbd28bee73582b57291eb4177acacd93834ea7bc87eecd4dd05189198290"
+ },
+ "definitions": "pull = (z_spec - z_phot) / published error; dz_over_1pz = (z_phot - z_spec) / (1 + z_spec); z_spec of SPT0452-50 is the corrected 5.016 throughout",
+ "sample": [
+  "SPT0027-50",
+  "SPT0054-41",
+  "SPT0226-45",
+  "SPT0314-44",
+  "SPT0402-45",
+  "SPT0403-58",
+  "SPT0425-40",
+  "SPT0436-40",
+  "SPT0452-50",
+  "SPT0520-53",
+  "SPT0528-53",
+  "SPT0551-50",
+  "SPT0652-55",
+  "SPT2031-51",
+  "SPT2129-57",
+  "SPT2152-40",
+  "SPT2203-41",
+  "SPT2232-61",
+  "SPT2311-45",
+  "SPT2316-50",
+  "SPT2349-52"
+ ],
+ "published_2020": {
+  "all": {
+   "n": 81,
+   "pull_mean": -0.493,
+   "pull_sd": 1.061,
+   "pull_rms": 1.164,
+   "within_1_sigma": 0.605,
+   "within_2_sigma": 0.889,
+   "largest_pull": -3.08,
+   "dz_over_1pz_mean": 0.069,
+   "dz_over_1pz_median": 0.058,
+   "dz_over_1pz_sd": 0.142,
+   "dz_over_1pz_nmad": 0.116
+  },
+  "outside_sample": {
+   "n": 60,
+   "pull_mean": -0.479,
+   "pull_sd": 1.101,
+   "pull_rms": 1.192,
+   "within_1_sigma": 0.6,
+   "within_2_sigma": 0.883,
+   "largest_pull": -3.08,
+   "dz_over_1pz_mean": 0.068,
+   "dz_over_1pz_median": 0.059,
+   "dz_over_1pz_sd": 0.141,
+   "dz_over_1pz_nmad": 0.113
+  },
+  "sample": {
+   "n": 21,
+   "pull_mean": -0.533,
+   "pull_sd": 0.959,
+   "pull_rms": 1.077,
+   "within_1_sigma": 0.619,
+   "within_2_sigma": 0.905,
+   "largest_pull": -2.1,
+   "dz_over_1pz_mean": 0.073,
+   "dz_over_1pz_median": 0.058,
+   "dz_over_1pz_sd": 0.146,
+   "dz_over_1pz_nmad": 0.136
+  }
+ },
+ "revised_2024": {
+  "all": {
+   "n": 81,
+   "pull_mean": 0.291,
+   "pull_sd": 1.04,
+   "pull_rms": 1.073,
+   "within_1_sigma": 0.667,
+   "within_2_sigma": 0.938,
+   "largest_pull": 3.0,
+   "dz_over_1pz_mean": -0.019,
+   "dz_over_1pz_median": -0.019,
+   "dz_over_1pz_sd": 0.11,
+   "dz_over_1pz_nmad": 0.097
+  },
+  "outside_sample": {
+   "n": 60,
+   "pull_mean": 0.278,
+   "pull_sd": 1.069,
+   "pull_rms": 1.096,
+   "within_1_sigma": 0.6,
+   "within_2_sigma": 0.95,
+   "largest_pull": 3.0,
+   "dz_over_1pz_mean": -0.016,
+   "dz_over_1pz_median": -0.015,
+   "dz_over_1pz_sd": 0.115,
+   "dz_over_1pz_nmad": 0.115
+  },
+  "sample": {
+   "n": 21,
+   "pull_mean": 0.328,
+   "pull_sd": 0.975,
+   "pull_rms": 1.006,
+   "within_1_sigma": 0.857,
+   "within_2_sigma": 0.905,
+   "largest_pull": 2.75,
+   "dz_over_1pz_mean": -0.026,
+   "dz_over_1pz_median": -0.023,
+   "dz_over_1pz_sd": 0.097,
+   "dz_over_1pz_nmad": 0.082
+  },
+  "rows_changed": 78
+ },
+ "recalibration": {
+  "from_sources": "the 60 sources of the table that are not in data/truth.csv",
+  "shift_in_published_errors": -0.479,
+  "width_factor": 1.101,
+  "meaning": "recalibrated centre = z_phot + shift * error; recalibrated width = factor * error"
+ },
+ "spt0452_50": {
+  "z_spec_in_journal_table": 2.01,
+  "z_phot": 4.4,
+  "z_phot_err": 0.7,
+  "pull_at_journal_z_spec": -3.41,
+  "pull_at_corrected_z_spec": 0.88,
+  "larger_pulls_elsewhere_in_table": 0
+ }
+}

@@ -450,6 +450,12 @@ def test_degradation_reaches_the_requested_second_line_snr():
     assert abs(sum(out['rule'].values()) - 1) < 1e-9 and all(abs(sum(v.values()) - 1) < 1e-9 for v in out['guided'].values())
     e = out['spt']['engine']
     assert e['confident_correct'] + e['confidently_wrong'] <= 1 and e['best_is_published'] >= e['confident_correct']
+    # the source's own photometric redshift, in its three versions, is run as a prior as well
+    from ladder_redshifts.photoz import STATES
+    assert set(out['guided_photoz']) == set(STATES) <= set(out) and set(STATES) <= set(out['xcorr'])
+    assert all(abs(sum(v.values()) - 1) < 1e-9 for v in out['guided_photoz'].values())
+    assert set(out['guided_co_only']) == set(STATES) | {'spt', 'uniform'}
+    assert all(abs(sum(v.values()) - 1) < 1e-9 for v in out['guided_co_only'].values())
 
 
 def test_sudoku_comparison_file_matches_the_current_engine_results():
@@ -528,3 +534,50 @@ if __name__ == '__main__':
             except AssertionError as e:
                 fails += 1; print('FAIL', name, e)
     sys.exit(1 if fails else 0)
+
+
+def test_photometric_redshift_table_matches_its_calibration_record():
+    """data/photoz.csv lists every SPT source of the truth table, and the recalibration used by the code is the one
+    scripts/photoz_calibration.py derived from the 60 SPT sources outside this sample."""
+    import json
+    from ladder_redshifts import photoz as P
+    from ladder_redshifts.batch_real import read_truth
+    table = P.read_photoz()
+    cal = json.loads((ROOT / 'results' / 'redshift_photoz_calibration.json').read_text())
+    assert sorted(table) == cal['sample'] == sorted(s for s in read_truth() if s.startswith('SPT')) and len(table) == 21
+    assert all(0.2 <= e <= 1.5 and 0.2 <= e2 <= 1.5 and 1.5 < z < 7 and 1.5 < z2 < 7 for z, e, z2, e2 in table.values())
+    rc = cal['recalibration']
+    assert cal['published_2020']['outside_sample']['n'] == 60
+    assert (P.RECAL['shift'], P.RECAL['width']) == (rc['shift_in_published_errors'], rc['width_factor'])
+    st = P.photoz_states('SPT0314-44')                       # 2.8 +/- 0.5 in the 2020 paper, 2.9 +/- 0.4 in 2024
+    assert st['photoz'] == (2.8, 0.5) and st['photoz_2024'] == (2.9, 0.4)
+    assert abs(st['photoz_recal'][0] - (2.8 - 0.479 * 0.5)) < 1e-12 and abs(st['photoz_recal'][1] - 0.5505) < 1e-12
+    assert P.photoz_states('HerBS-108') == {}
+    g, w = P.gaussian(3.0, 0.5), P.window(3.0)
+    assert abs(g(3.5) - np.exp(-0.5)) < 1e-12 and w(3.5) == 1 and w(3.53) == 0
+
+
+def test_photometric_redshift_priors_settle_single_line_sources_without_a_wrong_call():
+    """With each source's published photometric redshift as the prior, the engine becomes confident of some of the
+    one-line sources and is never confident of a wrong redshift; the saved results are those of the current code."""
+    import json
+    from ladder_redshifts import photoz as P
+    rows = P.analyse()
+    saved = json.loads((ROOT / 'results' / 'redshift_photoz.json').read_text())
+    assert json.loads(json.dumps(rows)) == saved['sources']
+    assert json.loads(json.dumps(P.summarise(rows))) == saved['summary']
+    one, several = saved['summary']['one'], saved['summary']['several']
+    assert (one['n'], several['n']) == (11, 8)
+    assert one['reference']['spt']['confident_correct'] == 0 and one['reference']['spt']['best_is_published'] == 10
+    for g in (one, several):
+        assert all(s['engine']['confident_wrong'] == 0 for s in g['states'].values())
+    assert [one['states'][s]['engine']['confident_correct'] for s in P.STATES] == [7, 6, 4]
+    assert all(s['engine']['confident_correct'] == 8 for s in several['states'].values())
+    # SPT0528-53: its [CI] line is missing, so the rule drops the published redshift unless only CO lines count
+    r = next(r for r in rows if r['source'] == 'SPT0528-53')
+    near = lambda zs: any(abs(np.log1p(z) - np.log1p(r['z_published'])) < TOL_LN for z in zs)
+    assert near(r['rule_solutions']['co_only']) and not near(r['rule_solutions']['ci_counted'])
+    # SPT2349-52: the 2024 photometric redshift is 2.75 sigma from the published redshift and every method follows it
+    q = next(r for r in rows if r['source'] == 'SPT2349-52')['states']['photoz_2024']
+    assert q['pull'] == 2.75 and q['engine']['outcome'] == 'wrong' and q['engine']['confidence'] < 0.95
+    assert q['guided_ci_counted']['outcome'] == q['window_co_only']['outcome'] == q['xcorr']['outcome'] == 'wrong'

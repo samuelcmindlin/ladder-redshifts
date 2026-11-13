@@ -17,6 +17,7 @@ run ladder_redshifts.batch_real --admit         # the ADMIT-route pseudo-spectra
 run ladder_redshifts.realspec                   # SPT0027-50, Band 2 science verification
 run ladder_redshifts.ambiguity                  # undertone family, ambiguity function, sonification
 run ladder_redshifts.summary                    # headline figure
+run ladder_redshifts.photoz                     # each source's photometric redshift as its prior
 if [ "${1:-}" = "--full" ]; then
   run ladder_redshifts.atlas 2500               # ~7 min
   run ladder_redshifts.traps 150                # ~7 min

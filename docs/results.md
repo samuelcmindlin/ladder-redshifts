@@ -333,7 +333,8 @@ those of sections 1 and 3.
   - **Five are robust given a photometric redshift** (three of them with CO alone). The engine was run here with
     the survey's redshift distribution as its only prior, not with each source's photometric redshift, so the
     two are answering different questions. The engine's three highest single-line confidences (0.90, 0.90, 0.87)
-    belong to the three sources that Sudoku classes this way with CO alone.
+    belong to the three sources that Sudoku classes this way with CO alone. Section 10 runs the engine with
+    the published photometric redshift of each source: it then settles four of these five.
   - **Two are "two lines, robust" once \[CI\] is counted** (SPT2349-52 and SPT0528-53): \[CI\](1–0) lies inside the
     scan. The published scan shows one line in each. The class describes the coverage, not the depth that was
     reached. The engine, which weighs the missing \[CI\] line against how faint it may be, gives 0.85 and 0.76.
@@ -497,8 +498,8 @@ equal-weight sum, with confidence):
   published redshift first in 0.71 of the draws: always for five sources, never for SPT0425-40 and SPT2203-41.
   The product of the S/N with a prior centred on z = 3.9 outweighs a second line, even with no noise added.
   - **This is not the paper's procedure.** Yun et al. multiply by the probability of each source's own
-    photometric redshift. This repository has no photometric redshifts, so the survey prior stands in, and the
-    column tests the product rule with a population prior.
+    photometric redshift. Here the survey prior stands in, so the column tests the product rule with a
+    population prior. Section 10 repeats it with each source's published photometric redshift.
 
 ### The same methods on the 19 real spectra, as observed
 
@@ -532,3 +533,193 @@ equal-weight sum, with confidence):
     windows. The S/N uses the closed-form limit of the paper's 10,000 shuffles; a test checks it against real
     shuffles.
 - **An observer has more to go on** than either rule: line widths, the continuum and a photometric redshift.
+  Section 10 gives the engine and the rules the photometric redshift.
+
+## 10. Each source's photometric redshift as the prior
+
+Sections 1 and 9 give the engine, at most, the survey's redshift distribution. The survey team knew more about
+each source: a photometric redshift from the dust continuum (Reuter et al. 2020, Table F.1). Here that value is
+the prior, source by source. Script: `python -m ladder_redshifts.photoz`; numbers in
+`results/redshift_photoz.json` and in the photometric columns of `results/redshift_degradation.json`.
+
+### The photometric redshifts
+
+- **Source.** Table F.1 lists z_phot ± error for all 81 SPT sources, from a modified-blackbody fit with a prior on
+  the dust temperature. The collaboration posts the table in machine-readable form
+  (<https://github.com/spt-smg/publicdata>). `data/photoz.csv` holds the rows of the 21 SPT sources in
+  `data/truth.csv`. `scripts/photoz_calibration.py` writes that file from the posted tables and checks it against
+  them. The same values were read from the arXiv copy of the paper, and all 81 rows agree.
+- **Three versions are run**, each as a Gaussian in z:
+  - **2020, as published.** Centre z_phot, standard deviation the printed error. This is the main case.
+  - **2024 revision.** The collaboration refitted the photometric redshifts after the redshift of SPT0452-50 was
+    corrected. 78 of the 81 entries changed.
+  - **2020, recalibrated.** Against the spectroscopic redshifts of the 60 SPT sources that are not in this
+    sample, the 2020 values run high by 0.48 of their error on average and scatter by 1.10 errors about that. The
+    recalibrated prior is moved down by 0.48 errors and widened by 1.10. No source tested here enters those two
+    numbers.
+- **How accurate they are.** Over the 81 sources, (z_phot − z_spec)/(1 + z_spec) has a median of +0.06 and a
+  standard deviation of 0.14 for the 2020 values (60% within one error, 89% within two), and −0.02 and 0.11 for
+  the 2024 revision. Neighbouring readings of one line differ by a factor (J + 1)/J in 1 + z, which is 1.33 to
+  1.2 for J = 3 to 5. A scatter of 0.14 is about half that spacing, so a photometric redshift often picks between
+  two readings but cannot be relied on to.
+- **A circularity.** The dust-temperature prior behind these values was measured on this same SPT sample, using
+  its spectroscopic redshifts, including those of the sources tested here.
+- **The two SPT redshifts that were later corrected** (section 6). In the 2020 table SPT0452-50 has
+  z_spec = 2.010 and z_phot = 4.4 ± 0.7. That is 3.4 errors apart, the largest difference in the table (the next
+  is 3.1). The corrected redshift, 5.016, is 0.9 errors from it. For SPT0551-50, z_phot = 3.5 ± 0.5 lies 0.7
+  errors from the corrected 3.164 and 2.8 from the first published 2.123. These are the published numbers; the
+  trap simulations of section 6 were not re-run with them.
+
+### The eleven one-line sources, as observed
+
+![One-line sources with photometric priors](../figures/redshift_photoz.png)
+
+Confidence of the engine's best redshift under each prior. Bold marks 0.95 or more. Where the best redshift is
+not the published one, it is named. The offset is (z_phot − published z) / error.
+
+| Source | Published z | z_phot, 2020 (offset) | z_phot, 2024 (offset) | Engine: survey prior | Engine: 2020 | Engine: 2024 | Engine: recalibrated |
+|---|---|---|---|---|---|---|---|
+| SPT2031-51 | 2.452 | 2.9 ± 0.4 (+1.1) | 2.8 ± 0.4 (+0.9) | 0.45 | **1.00** | **1.00** | **0.99** |
+| SPT2311-45 | 2.507 | 3.2 ± 0.5 (+1.4) | 3.0 ± 0.5 (+1.0) | 0.42 | 0.84 | 0.93 | 0.93 |
+| SPT0402-45 | 2.683 | 2.8 ± 0.3 (+0.4) | 2.6 ± 0.3 (−0.3) | 0.87 | **1.00** | **1.00** | **1.00** |
+| SPT2232-61 | 2.894 | 3.1 ± 0.5 (+0.4) | 2.9 ± 0.4 (0.0) | 0.90 | **0.99** | **1.00** | **0.95** |
+| SPT0314-44 | 2.934 | 2.8 ± 0.5 (−0.3) | 2.9 ± 0.4 (−0.1) | 0.90 | **0.96** | **1.00** | 0.84 |
+| SPT2316-50 | 3.141 | 3.6 ± 1.0 (+0.5) | 3.0 ± 0.5 (−0.3) | 0.11 for z = 4.178 | 0.11 for z = 4.178 | 0.15 for z = 2.811 | 0.09 for z = 4.178 |
+| SPT0226-45 | 3.233 | 3.9 ± 0.6 (+1.1) | 3.0 ± 0.4 (−0.6) | 0.78 | **0.98** | 0.90 | 0.92 |
+| SPT2129-57 | 3.260 | 4.1 ± 0.4 (+2.1) | 3.4 ± 0.5 (+0.3) | 0.77 | **1.00** | **0.96** | **1.00** |
+| SPT2349-52 | 3.900 | 4.1 ± 1.0 (+0.2) | 2.8 ± 0.4 (−2.8) | 0.85 | 0.89 | 0.93 for z = 2.675 | 0.80 |
+| SPT0528-53 | 4.737 | 4.3 ± 0.9 (−0.5) | 4.4 ± 0.6 (−0.6) | 0.76 | 0.84 | 0.93 | 0.77 |
+| SPT0054-41 | 4.877 | 4.3 ± 0.7 (−0.8) | 4.3 ± 0.6 (−1.0) | 0.69 | **0.96** | **0.98** | 0.82 |
+
+- **Four to seven of the eleven are settled, all correctly.** Seven with the 2020 values as published, six with
+  the 2024 revision, four with the recalibrated values. With the survey prior it was none. In no version is the
+  engine confident of a wrong redshift.
+- **Four are settled in every version:** SPT2031-51, SPT0402-45, SPT2232-61 and SPT2129-57. Three depend on the
+  version: SPT0314-44, SPT0226-45 and SPT0054-41.
+- **Four stay open in every version:** SPT2311-45, SPT0528-53, SPT2349-52 and SPT2316-50. The last has no line
+  above 5σ in our extraction (2.2σ at the published CO(4–3) position), so there is nothing for a prior to choose
+  between.
+- **SPT0314-44.** Of these eleven it is the one whose redshift in Reuter et al. rested on the photometric
+  redshift and not on a second line; the confirming lines came in 2025. The engine gives the published redshift
+  0.96 with the 2020 value, which agrees with the paper's reading, and 0.84 with the recalibrated one.
+- **A prior need not be accurate to help.** The 2020 value for SPT2129-57 is 2.1 errors too high, and the engine
+  still reaches 1.00. The prior rules out the lower reading (z = 2.195); the scan rules out the higher one, because
+  CO(5–4) at z = 4.32 would put CO(4–3) inside the band.
+- **A prior that points at the wrong reading misleads.** The 2024 value for SPT2349-52, 2.8 ± 0.4, lies 2.8 errors
+  below the published 3.900 and next to the CO(3–2) reading at 2.675. The engine's best redshift moves to 2.675
+  with a confidence of 0.93, just under the threshold of 0.95. That is a near miss, not a success.
+
+### The same photometric redshifts given to the rules and the cross-correlation
+
+Answers given for the eleven one-line sources, correct / wrong:
+
+| Prior | Engine (0.95 or more) | Guided rule, \[CI\] counted | Guided rule, CO only | Window rule, \[CI\] counted | Window rule, CO only |
+|---|---|---|---|---|---|
+| 2020, as published | 7 / 0 | 7 / 0 | 4 / 0 | 5 / 0 | 5 / 1 |
+| 2024 revision | 6 / 0 | 6 / 2 | 3 / 1 | 7 / 1 | 7 / 1 |
+| 2020, recalibrated | 4 / 0 | 4 / 0 | 2 / 0 | — | — |
+
+- **The rules.**
+  - **Guided rule.** The rule of section 9, given the same Gaussian. It answers when the lines single out one
+    solution, or when one remaining solution holds 0.95 of the prior weight.
+  - **Window rule.** It answers when exactly one solution lies within 0.13 (1 + z_phot) of the photometric
+    redshift. That half-width is the photometric accuracy the High-z Sudoku code assumes by default.
+  - **Two forms of each.** In one, a strong \[CI\] line that is predicted and missing counts against a redshift,
+    as in the rest of this repository. In the other only CO lines count.
+- **In number of answers, a tie.** The engine equals the best rule with the 2020 and the recalibrated values and
+  is one behind the window rules with the 2024 revision.
+- **The rules gave wrong answers and the engine did not.** Five of the ten rule and prior combinations returned
+  at least one wrong redshift, six wrong answers in all.
+  - **Four are SPT2349-52 with the 2024 revision,** where the engine stopped at 0.93 for the same wrong redshift.
+  - **SPT0528-53** (guided rule, \[CI\] counted, 2024). Its \[CI\] line is missing, so this rule had dropped the
+    published redshift before the prior was applied, and answered 5.883.
+  - **SPT2311-45** (window rule, CO only, 2020). The window holds the CO(4–3) reading at 3.676 and not the
+    published 2.507.
+- **SPT0402-45.** No rule answers in any version. The second feature at 96.26 GHz (HCN(4–3), section 1) is not in
+  their line list, so no redshift explains both detections. The engine is confident and correct in all three.
+- **The Sudoku class "robust given a photometric redshift"** (section 8) assumes a value within 0.13 (1 + z) of
+  the truth. Of the five sources in that class, four have such a 2020 value and the engine settles all four.
+  The fifth, SPT2311-45, has a value 0.20 (1 + z) from the truth, and the engine leaves it open at 0.84.
+- **Eleven sources.** A difference of one or two sources between methods is not evidence that one is better.
+
+**Cross-correlation × p(z).** This is the rule of Yun et al. (2015, appendix A2): the S/N curve multiplied by the
+probability of the photometric redshift. Sources for which the best redshift is the published one:
+
+| Prior | Engine, 11 one-line | Cross-correlation × p(z), 11 one-line | Engine, 8 multi-line | Cross-correlation × p(z), 8 multi-line |
+|---|---|---|---|---|
+| 2020, as published | 10 | 7 | 8 | 4 |
+| 2024 revision | 9 | 9 | 8 | 7 |
+| 2020, recalibrated | 10 | 7 | 8 | 4 |
+
+- **It fails for four sources with two detected lines** (SPT0425-40, SPT0436-40, SPT0652-55, SPT2152-40), whose
+  2020 values are 1.3 to 2.1 errors from the published redshift. An S/N multiplied by a Gaussian lets a prior that
+  is two errors off outweigh a second line.
+- **This is not a test of that paper.** Its p(z) came from a radio-to-millimetre spectral index and is much
+  broader than the dust-continuum Gaussians used here. The table shows how the product behaves with a narrow p(z).
+
+### The multi-line spectra with noise added
+
+The test of section 9, with each source's 2020 photometric redshift as the prior. Fraction of draws in which the
+published redshift is returned as an answer:
+
+![Noise added, photometric priors](../figures/redshift_photoz_noise.png)
+
+| S/N of the second line | Engine, no prior | Engine, photometric prior | Guided rule, same prior, CO only | Guided rule, same prior, \[CI\] counted: correct / wrong |
+|---|---|---|---|---|
+| 5.5 | 1.00 | 1.00 | 0.99 | 0.99 / 0.00 |
+| 5 | 1.00 | 1.00 | 0.96 | 0.96 / 0.00 |
+| 4.5 | 0.95 | 0.98 | 0.90 | 0.89 / 0.01 |
+| 4 | 0.87 | 0.95 | 0.84 | 0.80 / 0.03 |
+| 3.5 | 0.73 | 0.89 | 0.69 | 0.63 / 0.06 |
+| 3 | 0.47 | 0.73 | 0.49 | 0.39 / 0.10 |
+| 2.5 | 0.26 | 0.51 | 0.29 | 0.17 / 0.12 |
+| 2 | 0.07 | 0.29 | 0.17 | 0.13 / 0.04 |
+
+| Source | z_phot, 2020 (offset) | Engine, photometric prior, at 4σ / 3.5σ / 3σ | Guided rule, same prior, CO only | Engine, no prior |
+|---|---|---|---|---|
+| SPT0403-58 | 4.3 ± 0.7 (+0.3) | 1.00 / 0.99 / 0.88 | 0.87 / 0.65 / 0.30 | 1.00 / 0.96 / 0.70 |
+| SPT0425-40 | 3.7 ± 1.1 (−1.3) | 0.73 / 0.55 / 0.21 | 0.24 / 0.11 / 0.01 | 0.74 / 0.58 / 0.22 |
+| SPT0436-40 | 6.1 ± 1.3 (+1.7) | 0.98 / 0.90 / 0.68 | 0.87 / 0.69 / 0.36 | 0.92 / 0.83 / 0.57 |
+| SPT0520-53 | 4.2 ± 0.7 (+0.6) | 0.96 / 0.90 / 0.63 | 0.94 / 0.86 / 0.58 | 0.89 / 0.77 / 0.42 |
+| SPT0652-55 | 4.2 ± 0.5 (+1.7) | 1.00 / 1.00 / 1.00 | 1.00 / 0.99 / 0.99 | 0.69 / 0.54 / 0.38 |
+| SPT2152-40 | 4.9 ± 0.5 (+2.1) | 1.00 / 0.99 / 0.97 | 1.00 / 1.00 / 0.97 | 0.91 / 0.69 / 0.49 |
+| SPT2203-41 | 5.3 ± 0.9 (+0.1) | 0.99 / 0.89 / 0.76 | 0.94 / 0.54 / 0.23 | 0.91 / 0.71 / 0.54 |
+
+- **With the photometric prior the engine stands at 0.95 with the second line at 4σ, 0.89 at 3.5σ and 0.73 at
+  3σ.** With no prior it was 0.87, 0.73 and 0.47; with the survey prior 0.92, 0.80 and 0.59. The 2024 revision
+  gives 0.95, 0.89 and 0.76, and the recalibrated values 0.94, 0.87 and 0.72.
+- **The guided rule with the same prior, counting CO lines only, stands at 0.84, 0.69 and 0.49.** Per source the
+  engine is ahead for five of seven at 4σ, with the other two level at 1.00; for six at 3.5σ, behind for one; and
+  for six at 3σ, behind for none.
+- **Wrong answers stay rare for both.** Of 5,600 draws the engine returned a different redshift with confidence
+  in 9 (5 with either other version), and the CO-only rule in 6 (11 and 10).
+- **The rule that counts \[CI\] gives wrong answers once it has a prior:** 249 of 5,600 draws, nearly all for
+  SPT0652-55 and SPT2152-40. When their \[CI\] line falls below 3σ this rule drops the true redshift, because it
+  expects that line. The prior, which is 1.7 and 2.1 errors high for these two, then picks the CO(5–4) reading.
+  - **Section 9 is little affected.** With no prior the same rule gives no answer in those draws. The CO-only
+    form does slightly better there: 0.82, 0.62 and 0.36 at 4σ, 3.5σ and 3σ, against 0.80, 0.60 and 0.33, with the
+    same 4 wrong answers. Against it the engine (0.87, 0.73, 0.47) is ahead for three sources and behind for
+    four at 4σ, and ahead for four and behind for three at 3.5σ and at 3σ.
+- **Where the prior does the work.** SPT0652-55 and SPT2152-40 reach about 1.00 for the engine and for the CO-only
+  rule alike: the prior rules out the lower reading, and nothing more is needed. The engine's lead is in the
+  sources whose second line is a CO line (SPT0403-58, SPT0425-40, SPT2203-41), as in section 9.
+- **A prior that is off does not help.** SPT0425-40's value is 1.3 errors low, and the engine gains nothing from
+  it (0.73 at 4σ, against 0.74 with no prior).
+- **Cross-correlation × p(z)** ranks the published redshift first in 0.43 of the draws from 5.5σ down to 2.5σ
+  with the 2020 values: always for three sources and never for the four named above. With the 2024 revision it
+  is 0.86.
+
+### What this section shows, and what it does not
+
+- **What it shows.** Given the photometric redshifts that existed, the engine turns four to seven of the eleven
+  one-line scans into confident redshifts, all of them correct. Rules given the same information settle about
+  as many, and gave a wrong answer in five of ten combinations of rule and prior.
+- **The count depends on which photometric redshifts are believed:** seven, six or four.
+- **The threshold has little margin against a photometric redshift that is far off.** One value 2.8 errors from
+  the truth took the engine to 0.93 for a wrong redshift. In the 2020 table 11% of the 81 values are more than
+  two errors off.
+- **These are the development spectra** (see the limits of section 9), and the photometric redshifts rest on a
+  dust-temperature prior measured on the same sample.
+- **The rules are this repository's.** An observer would also weigh line widths and the continuum.
+- **Follow-up is still what confirmed these redshifts.** With the photometric prior the engine would have left
+  four to seven of the eleven for follow-up, not none.

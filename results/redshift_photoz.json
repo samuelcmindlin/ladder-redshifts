@@ -1,0 +1,3859 @@
+{
+ "confidence_threshold": 0.95,
+ "window_half_width": 0.13,
+ "recalibration": {
+  "shift": -0.479,
+  "width": 1.101
+ },
+ "states": {
+  "photoz": "photometric redshift, as published (2020)",
+  "photoz_2024": "photometric redshift, 2024 revision",
+  "photoz_recal": "photometric redshift, 2020 recalibrated"
+ },
+ "note": "prior = Gaussian in z at the photometric redshift; pull = (published z - centre) / width; p_published = posterior mass within the confidence window of the published redshift; guided, window and pick are given with a missing [CI] line counted against a redshift (ci_counted) and with CO lines only (co_only)",
+ "summary": {
+  "one": {
+   "n": 11,
+   "sources": [
+    "SPT0054-41",
+    "SPT0226-45",
+    "SPT0314-44",
+    "SPT0402-45",
+    "SPT0528-53",
+    "SPT2031-51",
+    "SPT2129-57",
+    "SPT2232-61",
+    "SPT2311-45",
+    "SPT2316-50",
+    "SPT2349-52"
+   ],
+   "reference": {
+    "uniform": {
+     "confident_correct": 0,
+     "confident_wrong": 0,
+     "best_is_published": 8
+    },
+    "spt": {
+     "confident_correct": 0,
+     "confident_wrong": 0,
+     "best_is_published": 10
+    }
+   },
+   "states": {
+    "photoz": {
+     "engine": {
+      "confident_correct": 7,
+      "confident_wrong": 0,
+      "best_is_published": 10
+     },
+     "xcorr": {
+      "correct": 7,
+      "wrong": 4,
+      "none": 0
+     },
+     "guided_ci_counted": {
+      "correct": 7,
+      "wrong": 0,
+      "none": 4
+     },
+     "window_ci_counted": {
+      "correct": 5,
+      "wrong": 0,
+      "none": 6
+     },
+     "pick_ci_counted": {
+      "correct": 8,
+      "wrong": 1,
+      "none": 2
+     },
+     "guided_co_only": {
+      "correct": 4,
+      "wrong": 0,
+      "none": 7
+     },
+     "window_co_only": {
+      "correct": 5,
+      "wrong": 1,
+      "none": 5
+     },
+     "pick_co_only": {
+      "correct": 8,
+      "wrong": 1,
+      "none": 2
+     }
+    },
+    "photoz_2024": {
+     "engine": {
+      "confident_correct": 6,
+      "confident_wrong": 0,
+      "best_is_published": 9
+     },
+     "xcorr": {
+      "correct": 9,
+      "wrong": 2,
+      "none": 0
+     },
+     "guided_ci_counted": {
+      "correct": 6,
+      "wrong": 2,
+      "none": 3
+     },
+     "window_ci_counted": {
+      "correct": 7,
+      "wrong": 1,
+      "none": 3
+     },
+     "pick_ci_counted": {
+      "correct": 7,
+      "wrong": 2,
+      "none": 2
+     },
+     "guided_co_only": {
+      "correct": 3,
+      "wrong": 1,
+      "none": 7
+     },
+     "window_co_only": {
+      "correct": 7,
+      "wrong": 1,
+      "none": 3
+     },
+     "pick_co_only": {
+      "correct": 8,
+      "wrong": 1,
+      "none": 2
+     }
+    },
+    "photoz_recal": {
+     "engine": {
+      "confident_correct": 4,
+      "confident_wrong": 0,
+      "best_is_published": 10
+     },
+     "xcorr": {
+      "correct": 7,
+      "wrong": 4,
+      "none": 0
+     },
+     "guided_ci_counted": {
+      "correct": 4,
+      "wrong": 0,
+      "none": 7
+     },
+     "pick_ci_counted": {
+      "correct": 8,
+      "wrong": 1,
+      "none": 2
+     },
+     "guided_co_only": {
+      "correct": 2,
+      "wrong": 0,
+      "none": 9
+     },
+     "pick_co_only": {
+      "correct": 7,
+      "wrong": 2,
+      "none": 2
+     }
+    }
+   }
+  },
+  "several": {
+   "n": 8,
+   "sources": [
+    "SPT0027-50",
+    "SPT0403-58",
+    "SPT0425-40",
+    "SPT0436-40",
+    "SPT0520-53",
+    "SPT0652-55",
+    "SPT2152-40",
+    "SPT2203-41"
+   ],
+   "reference": {
+    "uniform": {
+     "confident_correct": 8,
+     "confident_wrong": 0,
+     "best_is_published": 8
+    },
+    "spt": {
+     "confident_correct": 8,
+     "confident_wrong": 0,
+     "best_is_published": 8
+    }
+   },
+   "states": {
+    "photoz": {
+     "engine": {
+      "confident_correct": 8,
+      "confident_wrong": 0,
+      "best_is_published": 8
+     },
+     "xcorr": {
+      "correct": 4,
+      "wrong": 4,
+      "none": 0
+     },
+     "guided_ci_counted": {
+      "correct": 8,
+      "wrong": 0,
+      "none": 0
+     },
+     "window_ci_counted": {
+      "correct": 8,
+      "wrong": 0,
+      "none": 0
+     },
+     "pick_ci_counted": {
+      "correct": 8,
+      "wrong": 0,
+      "none": 0
+     },
+     "guided_co_only": {
+      "correct": 8,
+      "wrong": 0,
+      "none": 0
+     },
+     "window_co_only": {
+      "correct": 8,
+      "wrong": 0,
+      "none": 0
+     },
+     "pick_co_only": {
+      "correct": 8,
+      "wrong": 0,
+      "none": 0
+     }
+    },
+    "photoz_2024": {
+     "engine": {
+      "confident_correct": 8,
+      "confident_wrong": 0,
+      "best_is_published": 8
+     },
+     "xcorr": {
+      "correct": 7,
+      "wrong": 1,
+      "none": 0
+     },
+     "guided_ci_counted": {
+      "correct": 8,
+      "wrong": 0,
+      "none": 0
+     },
+     "window_ci_counted": {
+      "correct": 8,
+      "wrong": 0,
+      "none": 0
+     },
+     "pick_ci_counted": {
+      "correct": 8,
+      "wrong": 0,
+      "none": 0
+     },
+     "guided_co_only": {
+      "correct": 8,
+      "wrong": 0,
+      "none": 0
+     },
+     "window_co_only": {
+      "correct": 8,
+      "wrong": 0,
+      "none": 0
+     },
+     "pick_co_only": {
+      "correct": 8,
+      "wrong": 0,
+      "none": 0
+     }
+    },
+    "photoz_recal": {
+     "engine": {
+      "confident_correct": 8,
+      "confident_wrong": 0,
+      "best_is_published": 8
+     },
+     "xcorr": {
+      "correct": 4,
+      "wrong": 4,
+      "none": 0
+     },
+     "guided_ci_counted": {
+      "correct": 8,
+      "wrong": 0,
+      "none": 0
+     },
+     "pick_ci_counted": {
+      "correct": 8,
+      "wrong": 0,
+      "none": 0
+     },
+     "guided_co_only": {
+      "correct": 8,
+      "wrong": 0,
+      "none": 0
+     },
+     "pick_co_only": {
+      "correct": 8,
+      "wrong": 0,
+      "none": 0
+     }
+    }
+   }
+  }
+ },
+ "sources": [
+  {
+   "source": "SPT0027-50",
+   "z_published": 3.444,
+   "lines": "several",
+   "detections": 3,
+   "reference": {
+    "uniform": {
+     "z": 3.4432,
+     "confidence": 1.0,
+     "p_published": 1.0
+    },
+    "spt": {
+     "z": 3.4432,
+     "confidence": 1.0,
+     "p_published": 1.0
+    }
+   },
+   "states": {
+    "photoz": {
+     "centre": 3.7,
+     "width": 0.5,
+     "pull": -0.51,
+     "engine": {
+      "z": 3.4432,
+      "confidence": 1.0,
+      "outcome": "correct",
+      "p_published": 1.0,
+      "candidates": [
+       [
+        3.4432,
+        1.0
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 3.4432,
+      "outcome": "correct"
+     },
+     "guided_ci_counted": {
+      "z": 3.4433,
+      "outcome": "correct"
+     },
+     "window_ci_counted": {
+      "z": 3.4433,
+      "outcome": "correct"
+     },
+     "pick_ci_counted": {
+      "z": 3.4433,
+      "outcome": "correct",
+      "share": 1.0
+     },
+     "guided_co_only": {
+      "z": 3.4433,
+      "outcome": "correct"
+     },
+     "window_co_only": {
+      "z": 3.4433,
+      "outcome": "correct"
+     },
+     "pick_co_only": {
+      "z": 3.4433,
+      "outcome": "correct",
+      "share": 1.0
+     }
+    },
+    "photoz_2024": {
+     "centre": 3.2,
+     "width": 0.4,
+     "pull": 0.61,
+     "engine": {
+      "z": 3.4432,
+      "confidence": 1.0,
+      "outcome": "correct",
+      "p_published": 1.0,
+      "candidates": [
+       [
+        3.4432,
+        1.0
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 3.4432,
+      "outcome": "correct"
+     },
+     "guided_ci_counted": {
+      "z": 3.4433,
+      "outcome": "correct"
+     },
+     "window_ci_counted": {
+      "z": 3.4433,
+      "outcome": "correct"
+     },
+     "pick_ci_counted": {
+      "z": 3.4433,
+      "outcome": "correct",
+      "share": 1.0
+     },
+     "guided_co_only": {
+      "z": 3.4433,
+      "outcome": "correct"
+     },
+     "window_co_only": {
+      "z": 3.4433,
+      "outcome": "correct"
+     },
+     "pick_co_only": {
+      "z": 3.4433,
+      "outcome": "correct",
+      "share": 1.0
+     }
+    },
+    "photoz_recal": {
+     "centre": 3.461,
+     "width": 0.55,
+     "pull": -0.03,
+     "engine": {
+      "z": 3.4432,
+      "confidence": 1.0,
+      "outcome": "correct",
+      "p_published": 1.0,
+      "candidates": [
+       [
+        3.4432,
+        1.0
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 3.4432,
+      "outcome": "correct"
+     },
+     "guided_ci_counted": {
+      "z": 3.4433,
+      "outcome": "correct"
+     },
+     "pick_ci_counted": {
+      "z": 3.4433,
+      "outcome": "correct",
+      "share": 1.0
+     },
+     "guided_co_only": {
+      "z": 3.4433,
+      "outcome": "correct"
+     },
+     "pick_co_only": {
+      "z": 3.4433,
+      "outcome": "correct",
+      "share": 1.0
+     }
+    }
+   },
+   "candidates_no_prior": [
+    [
+     3.4432,
+     1.0
+    ]
+   ],
+   "rule_solutions": {
+    "ci_counted": [
+     3.4433
+    ],
+    "co_only": [
+     3.4433
+    ]
+   }
+  },
+  {
+   "source": "SPT0054-41",
+   "z_published": 4.8769,
+   "lines": "one",
+   "detections": 1,
+   "reference": {
+    "uniform": {
+     "z": 4.8762,
+     "confidence": 0.499,
+     "p_published": 0.4988
+    },
+    "spt": {
+     "z": 4.8762,
+     "confidence": 0.687,
+     "p_published": 0.6871
+    }
+   },
+   "states": {
+    "photoz": {
+     "centre": 4.3,
+     "width": 0.7,
+     "pull": 0.82,
+     "engine": {
+      "z": 4.8762,
+      "confidence": 0.963,
+      "outcome": "correct",
+      "p_published": 0.9627,
+      "candidates": [
+       [
+        4.8762,
+        0.963
+       ],
+       [
+        2.5262,
+        0.033
+       ],
+       [
+        3.7017,
+        0.005
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 4.8782,
+      "outcome": "correct"
+     },
+     "guided_ci_counted": {
+      "z": 4.8791,
+      "outcome": "correct"
+     },
+     "window_ci_counted": {
+      "z": 4.8791,
+      "outcome": "correct"
+     },
+     "pick_ci_counted": {
+      "z": 4.8791,
+      "outcome": "correct",
+      "share": 0.967
+     },
+     "guided_co_only": {
+      "z": null,
+      "outcome": "none"
+     },
+     "window_co_only": {
+      "z": null,
+      "outcome": "none"
+     },
+     "pick_co_only": {
+      "z": 4.8791,
+      "outcome": "correct",
+      "share": 0.55
+     }
+    },
+    "photoz_2024": {
+     "centre": 4.3,
+     "width": 0.6,
+     "pull": 0.96,
+     "engine": {
+      "z": 4.8762,
+      "confidence": 0.984,
+      "outcome": "correct",
+      "p_published": 0.9836,
+      "candidates": [
+       [
+        4.8762,
+        0.984
+       ],
+       [
+        2.5262,
+        0.012
+       ],
+       [
+        3.7017,
+        0.005
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 4.8782,
+      "outcome": "correct"
+     },
+     "guided_ci_counted": {
+      "z": 4.8791,
+      "outcome": "correct"
+     },
+     "window_ci_counted": {
+      "z": 4.8791,
+      "outcome": "correct"
+     },
+     "pick_ci_counted": {
+      "z": 4.8791,
+      "outcome": "correct",
+      "share": 0.988
+     },
+     "guided_co_only": {
+      "z": null,
+      "outcome": "none"
+     },
+     "window_co_only": {
+      "z": null,
+      "outcome": "none"
+     },
+     "pick_co_only": {
+      "z": 4.8791,
+      "outcome": "correct",
+      "share": 0.559
+     }
+    },
+    "photoz_recal": {
+     "centre": 3.965,
+     "width": 0.771,
+     "pull": 1.18,
+     "engine": {
+      "z": 4.8762,
+      "confidence": 0.817,
+      "outcome": "correct",
+      "p_published": 0.8175,
+      "candidates": [
+       [
+        4.8762,
+        0.817
+       ],
+       [
+        2.5262,
+        0.173
+       ],
+       [
+        3.7017,
+        0.007
+       ],
+       [
+        1.3508,
+        0.002
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 3.7033,
+      "outcome": "wrong"
+     },
+     "guided_ci_counted": {
+      "z": null,
+      "outcome": "none"
+     },
+     "pick_ci_counted": {
+      "z": 4.8791,
+      "outcome": "correct",
+      "share": 0.822
+     },
+     "guided_co_only": {
+      "z": null,
+      "outcome": "none"
+     },
+     "pick_co_only": {
+      "z": 3.7035,
+      "outcome": "wrong",
+      "share": 0.557
+     }
+    }
+   },
+   "candidates_no_prior": [
+    [
+     4.8762,
+     0.499
+    ],
+    [
+     2.5262,
+     0.299
+    ],
+    [
+     1.3508,
+     0.2
+    ]
+   ],
+   "rule_solutions": {
+    "ci_counted": [
+     1.3518,
+     2.5279,
+     4.8791
+    ],
+    "co_only": [
+     1.3518,
+     2.5279,
+     3.7035,
+     4.8791
+    ]
+   }
+  },
+  {
+   "source": "SPT0226-45",
+   "z_published": 3.233,
+   "lines": "one",
+   "detections": 1,
+   "reference": {
+    "uniform": {
+     "z": 3.2334,
+     "confidence": 0.444,
+     "p_published": 0.4444
+    },
+    "spt": {
+     "z": 3.2334,
+     "confidence": 0.776,
+     "p_published": 0.7764
+    }
+   },
+   "states": {
+    "photoz": {
+     "centre": 3.9,
+     "width": 0.6,
+     "pull": -1.11,
+     "engine": {
+      "z": 3.2334,
+      "confidence": 0.978,
+      "outcome": "correct",
+      "p_published": 0.9782,
+      "candidates": [
+       [
+        3.2334,
+        0.978
+       ],
+       [
+        2.175,
+        0.022
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 4.291,
+      "outcome": "wrong"
+     },
+     "guided_ci_counted": {
+      "z": 3.233,
+      "outcome": "correct"
+     },
+     "window_ci_counted": {
+      "z": null,
+      "outcome": "none"
+     },
+     "pick_ci_counted": {
+      "z": 3.233,
+      "outcome": "correct",
+      "share": 0.978
+     },
+     "guided_co_only": {
+      "z": 3.233,
+      "outcome": "correct"
+     },
+     "window_co_only": {
+      "z": null,
+      "outcome": "none"
+     },
+     "pick_co_only": {
+      "z": 3.233,
+      "outcome": "correct",
+      "share": 0.978
+     }
+    },
+    "photoz_2024": {
+     "centre": 3.0,
+     "width": 0.4,
+     "pull": 0.58,
+     "engine": {
+      "z": 3.2334,
+      "confidence": 0.904,
+      "outcome": "correct",
+      "p_published": 0.9042,
+      "candidates": [
+       [
+        3.2334,
+        0.904
+       ],
+       [
+        2.175,
+        0.096
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 3.2334,
+      "outcome": "correct"
+     },
+     "guided_ci_counted": {
+      "z": null,
+      "outcome": "none"
+     },
+     "window_ci_counted": {
+      "z": 3.233,
+      "outcome": "correct"
+     },
+     "pick_ci_counted": {
+      "z": 3.233,
+      "outcome": "correct",
+      "share": 0.904
+     },
+     "guided_co_only": {
+      "z": null,
+      "outcome": "none"
+     },
+     "window_co_only": {
+      "z": 3.233,
+      "outcome": "correct"
+     },
+     "pick_co_only": {
+      "z": 3.233,
+      "outcome": "correct",
+      "share": 0.904
+     }
+    },
+    "photoz_recal": {
+     "centre": 3.613,
+     "width": 0.661,
+     "pull": -0.57,
+     "engine": {
+      "z": 3.2334,
+      "confidence": 0.923,
+      "outcome": "correct",
+      "p_published": 0.9231,
+      "candidates": [
+       [
+        3.2334,
+        0.923
+       ],
+       [
+        2.175,
+        0.076
+       ],
+       [
+        1.1167,
+        0.0
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 3.2334,
+      "outcome": "correct"
+     },
+     "guided_ci_counted": {
+      "z": null,
+      "outcome": "none"
+     },
+     "pick_ci_counted": {
+      "z": 3.233,
+      "outcome": "correct",
+      "share": 0.923
+     },
+     "guided_co_only": {
+      "z": null,
+      "outcome": "none"
+     },
+     "pick_co_only": {
+      "z": 3.233,
+      "outcome": "correct",
+      "share": 0.923
+     }
+    }
+   },
+   "candidates_no_prior": [
+    [
+     3.2334,
+     0.444
+    ],
+    [
+     2.175,
+     0.333
+    ],
+    [
+     1.1167,
+     0.222
+    ]
+   ],
+   "rule_solutions": {
+    "ci_counted": [
+     1.1168,
+     2.175,
+     3.233
+    ],
+    "co_only": [
+     1.1168,
+     2.175,
+     3.233
+    ]
+   }
+  },
+  {
+   "source": "SPT0314-44",
+   "z_published": 2.9345,
+   "lines": "one",
+   "detections": 1,
+   "reference": {
+    "uniform": {
+     "z": 2.9332,
+     "confidence": 0.6,
+     "p_published": 0.6
+    },
+    "spt": {
+     "z": 2.9332,
+     "confidence": 0.897,
+     "p_published": 0.8969
+    }
+   },
+   "states": {
+    "photoz": {
+     "centre": 2.8,
+     "width": 0.5,
+     "pull": 0.27,
+     "engine": {
+      "z": 2.9332,
+      "confidence": 0.959,
+      "outcome": "correct",
+      "p_published": 0.9587,
+      "candidates": [
+       [
+        2.9332,
+        0.959
+       ],
+       [
+        1.6222,
+        0.041
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 2.9326,
+      "outcome": "correct"
+     },
+     "guided_ci_counted": {
+      "z": 2.933,
+      "outcome": "correct"
+     },
+     "window_ci_counted": {
+      "z": 2.933,
+      "outcome": "correct"
+     },
+     "pick_ci_counted": {
+      "z": 2.933,
+      "outcome": "correct",
+      "share": 0.959
+     },
+     "guided_co_only": {
+      "z": 2.933,
+      "outcome": "correct"
+     },
+     "window_co_only": {
+      "z": 2.933,
+      "outcome": "correct"
+     },
+     "pick_co_only": {
+      "z": 2.933,
+      "outcome": "correct",
+      "share": 0.959
+     }
+    },
+    "photoz_2024": {
+     "centre": 2.9,
+     "width": 0.4,
+     "pull": 0.09,
+     "engine": {
+      "z": 2.9332,
+      "confidence": 0.996,
+      "outcome": "correct",
+      "p_published": 0.9959,
+      "candidates": [
+       [
+        2.9332,
+        0.996
+       ],
+       [
+        1.6222,
+        0.004
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 2.9326,
+      "outcome": "correct"
+     },
+     "guided_ci_counted": {
+      "z": 2.933,
+      "outcome": "correct"
+     },
+     "window_ci_counted": {
+      "z": 2.933,
+      "outcome": "correct"
+     },
+     "pick_ci_counted": {
+      "z": 2.933,
+      "outcome": "correct",
+      "share": 0.996
+     },
+     "guided_co_only": {
+      "z": 2.933,
+      "outcome": "correct"
+     },
+     "window_co_only": {
+      "z": 2.933,
+      "outcome": "correct"
+     },
+     "pick_co_only": {
+      "z": 2.933,
+      "outcome": "correct",
+      "share": 0.996
+     }
+    },
+    "photoz_recal": {
+     "centre": 2.56,
+     "width": 0.55,
+     "pull": 0.68,
+     "engine": {
+      "z": 2.9332,
+      "confidence": 0.836,
+      "outcome": "correct",
+      "p_published": 0.836,
+      "candidates": [
+       [
+        2.9332,
+        0.836
+       ],
+       [
+        1.6222,
+        0.164
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 2.9326,
+      "outcome": "correct"
+     },
+     "guided_ci_counted": {
+      "z": null,
+      "outcome": "none"
+     },
+     "pick_ci_counted": {
+      "z": 2.933,
+      "outcome": "correct",
+      "share": 0.836
+     },
+     "guided_co_only": {
+      "z": null,
+      "outcome": "none"
+     },
+     "pick_co_only": {
+      "z": 2.933,
+      "outcome": "correct",
+      "share": 0.836
+     }
+    }
+   },
+   "candidates_no_prior": [
+    [
+     2.9332,
+     0.6
+    ],
+    [
+     1.6222,
+     0.4
+    ]
+   ],
+   "rule_solutions": {
+    "ci_counted": [
+     1.6222,
+     2.933
+    ],
+    "co_only": [
+     1.6222,
+     2.933
+    ]
+   }
+  },
+  {
+   "source": "SPT0402-45",
+   "z_published": 2.6833,
+   "lines": "one",
+   "detections": 2,
+   "reference": {
+    "uniform": {
+     "z": 2.6825,
+     "confidence": 0.591,
+     "p_published": 0.5909
+    },
+    "spt": {
+     "z": 2.6825,
+     "confidence": 0.868,
+     "p_published": 0.8684
+    }
+   },
+   "states": {
+    "photoz": {
+     "centre": 2.8,
+     "width": 0.3,
+     "pull": -0.39,
+     "engine": {
+      "z": 2.6825,
+      "confidence": 1.0,
+      "outcome": "correct",
+      "p_published": 0.9999,
+      "candidates": [
+       [
+        2.6825,
+        1.0
+       ],
+       [
+        3.9101,
+        0.0
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 2.6825,
+      "outcome": "correct"
+     },
+     "guided_ci_counted": {
+      "z": null,
+      "outcome": "none"
+     },
+     "window_ci_counted": {
+      "z": null,
+      "outcome": "none"
+     },
+     "pick_ci_counted": {
+      "z": null,
+      "outcome": "none",
+      "share": null
+     },
+     "guided_co_only": {
+      "z": null,
+      "outcome": "none"
+     },
+     "window_co_only": {
+      "z": null,
+      "outcome": "none"
+     },
+     "pick_co_only": {
+      "z": null,
+      "outcome": "none",
+      "share": null
+     }
+    },
+    "photoz_2024": {
+     "centre": 2.6,
+     "width": 0.3,
+     "pull": 0.28,
+     "engine": {
+      "z": 2.6825,
+      "confidence": 1.0,
+      "outcome": "correct",
+      "p_published": 0.9995,
+      "candidates": [
+       [
+        2.6825,
+        1.0
+       ],
+       [
+        1.455,
+        0.0
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 2.6825,
+      "outcome": "correct"
+     },
+     "guided_ci_counted": {
+      "z": null,
+      "outcome": "none"
+     },
+     "window_ci_counted": {
+      "z": null,
+      "outcome": "none"
+     },
+     "pick_ci_counted": {
+      "z": null,
+      "outcome": "none",
+      "share": null
+     },
+     "guided_co_only": {
+      "z": null,
+      "outcome": "none"
+     },
+     "window_co_only": {
+      "z": null,
+      "outcome": "none"
+     },
+     "pick_co_only": {
+      "z": null,
+      "outcome": "none",
+      "share": null
+     }
+    },
+    "photoz_recal": {
+     "centre": 2.656,
+     "width": 0.33,
+     "pull": 0.08,
+     "engine": {
+      "z": 2.6825,
+      "confidence": 0.999,
+      "outcome": "correct",
+      "p_published": 0.9991,
+      "candidates": [
+       [
+        2.6825,
+        0.999
+       ],
+       [
+        1.455,
+        0.001
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 2.6825,
+      "outcome": "correct"
+     },
+     "guided_ci_counted": {
+      "z": null,
+      "outcome": "none"
+     },
+     "pick_ci_counted": {
+      "z": null,
+      "outcome": "none",
+      "share": null
+     },
+     "guided_co_only": {
+      "z": null,
+      "outcome": "none"
+     },
+     "pick_co_only": {
+      "z": null,
+      "outcome": "none",
+      "share": null
+     }
+    }
+   },
+   "candidates_no_prior": [
+    [
+     2.6825,
+     0.591
+    ],
+    [
+     1.455,
+     0.394
+    ]
+   ],
+   "rule_solutions": {
+    "ci_counted": [],
+    "co_only": []
+   }
+  },
+  {
+   "source": "SPT0403-58",
+   "z_published": 4.0564,
+   "lines": "several",
+   "detections": 3,
+   "reference": {
+    "uniform": {
+     "z": 4.0555,
+     "confidence": 1.0,
+     "p_published": 1.0
+    },
+    "spt": {
+     "z": 4.0555,
+     "confidence": 1.0,
+     "p_published": 1.0
+    }
+   },
+   "states": {
+    "photoz": {
+     "centre": 4.3,
+     "width": 0.7,
+     "pull": -0.35,
+     "engine": {
+      "z": 4.0555,
+      "confidence": 1.0,
+      "outcome": "correct",
+      "p_published": 1.0,
+      "candidates": [
+       [
+        4.0555,
+        1.0
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 4.0555,
+      "outcome": "correct"
+     },
+     "guided_ci_counted": {
+      "z": 4.0551,
+      "outcome": "correct"
+     },
+     "window_ci_counted": {
+      "z": 4.0551,
+      "outcome": "correct"
+     },
+     "pick_ci_counted": {
+      "z": 4.0551,
+      "outcome": "correct",
+      "share": 1.0
+     },
+     "guided_co_only": {
+      "z": 4.0551,
+      "outcome": "correct"
+     },
+     "window_co_only": {
+      "z": 4.0551,
+      "outcome": "correct"
+     },
+     "pick_co_only": {
+      "z": 4.0551,
+      "outcome": "correct",
+      "share": 1.0
+     }
+    },
+    "photoz_2024": {
+     "centre": 3.9,
+     "width": 0.6,
+     "pull": 0.26,
+     "engine": {
+      "z": 4.0555,
+      "confidence": 1.0,
+      "outcome": "correct",
+      "p_published": 1.0,
+      "candidates": [
+       [
+        4.0555,
+        1.0
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 4.0555,
+      "outcome": "correct"
+     },
+     "guided_ci_counted": {
+      "z": 4.0551,
+      "outcome": "correct"
+     },
+     "window_ci_counted": {
+      "z": 4.0551,
+      "outcome": "correct"
+     },
+     "pick_ci_counted": {
+      "z": 4.0551,
+      "outcome": "correct",
+      "share": 1.0
+     },
+     "guided_co_only": {
+      "z": 4.0551,
+      "outcome": "correct"
+     },
+     "window_co_only": {
+      "z": 4.0551,
+      "outcome": "correct"
+     },
+     "pick_co_only": {
+      "z": 4.0551,
+      "outcome": "correct",
+      "share": 1.0
+     }
+    },
+    "photoz_recal": {
+     "centre": 3.965,
+     "width": 0.771,
+     "pull": 0.12,
+     "engine": {
+      "z": 4.0555,
+      "confidence": 1.0,
+      "outcome": "correct",
+      "p_published": 1.0,
+      "candidates": [
+       [
+        4.0555,
+        1.0
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 4.0555,
+      "outcome": "correct"
+     },
+     "guided_ci_counted": {
+      "z": 4.0551,
+      "outcome": "correct"
+     },
+     "pick_ci_counted": {
+      "z": 4.0551,
+      "outcome": "correct",
+      "share": 1.0
+     },
+     "guided_co_only": {
+      "z": 4.0551,
+      "outcome": "correct"
+     },
+     "pick_co_only": {
+      "z": 4.0551,
+      "outcome": "correct",
+      "share": 1.0
+     }
+    }
+   },
+   "candidates_no_prior": [
+    [
+     4.0555,
+     1.0
+    ]
+   ],
+   "rule_solutions": {
+    "ci_counted": [
+     4.0551
+    ],
+    "co_only": [
+     4.0551
+    ]
+   }
+  },
+  {
+   "source": "SPT0425-40",
+   "z_published": 5.1353,
+   "lines": "several",
+   "detections": 2,
+   "reference": {
+    "uniform": {
+     "z": 5.1346,
+     "confidence": 1.0,
+     "p_published": 1.0
+    },
+    "spt": {
+     "z": 5.1346,
+     "confidence": 1.0,
+     "p_published": 1.0
+    }
+   },
+   "states": {
+    "photoz": {
+     "centre": 3.7,
+     "width": 1.1,
+     "pull": 1.3,
+     "engine": {
+      "z": 5.1346,
+      "confidence": 1.0,
+      "outcome": "correct",
+      "p_published": 1.0,
+      "candidates": [
+       [
+        5.1346,
+        1.0
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 3.9084,
+      "outcome": "wrong"
+     },
+     "guided_ci_counted": {
+      "z": 5.1343,
+      "outcome": "correct"
+     },
+     "window_ci_counted": {
+      "z": 5.1343,
+      "outcome": "correct"
+     },
+     "pick_ci_counted": {
+      "z": 5.1343,
+      "outcome": "correct",
+      "share": 1.0
+     },
+     "guided_co_only": {
+      "z": 5.1343,
+      "outcome": "correct"
+     },
+     "window_co_only": {
+      "z": 5.1343,
+      "outcome": "correct"
+     },
+     "pick_co_only": {
+      "z": 5.1343,
+      "outcome": "correct",
+      "share": 1.0
+     }
+    },
+    "photoz_2024": {
+     "centre": 3.9,
+     "width": 0.6,
+     "pull": 2.06,
+     "engine": {
+      "z": 5.1346,
+      "confidence": 1.0,
+      "outcome": "correct",
+      "p_published": 1.0,
+      "candidates": [
+       [
+        5.1346,
+        1.0
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 3.9084,
+      "outcome": "wrong"
+     },
+     "guided_ci_counted": {
+      "z": 5.1343,
+      "outcome": "correct"
+     },
+     "window_ci_counted": {
+      "z": 5.1343,
+      "outcome": "correct"
+     },
+     "pick_ci_counted": {
+      "z": 5.1343,
+      "outcome": "correct",
+      "share": 1.0
+     },
+     "guided_co_only": {
+      "z": 5.1343,
+      "outcome": "correct"
+     },
+     "window_co_only": {
+      "z": 5.1343,
+      "outcome": "correct"
+     },
+     "pick_co_only": {
+      "z": 5.1343,
+      "outcome": "correct",
+      "share": 1.0
+     }
+    },
+    "photoz_recal": {
+     "centre": 3.173,
+     "width": 1.211,
+     "pull": 1.62,
+     "engine": {
+      "z": 5.1346,
+      "confidence": 1.0,
+      "outcome": "correct",
+      "p_published": 1.0,
+      "candidates": [
+       [
+        5.1346,
+        1.0
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 3.0905,
+      "outcome": "wrong"
+     },
+     "guided_ci_counted": {
+      "z": 5.1343,
+      "outcome": "correct"
+     },
+     "pick_ci_counted": {
+      "z": 5.1343,
+      "outcome": "correct",
+      "share": 1.0
+     },
+     "guided_co_only": {
+      "z": 5.1343,
+      "outcome": "correct"
+     },
+     "pick_co_only": {
+      "z": 5.1343,
+      "outcome": "correct",
+      "share": 1.0
+     }
+    }
+   },
+   "candidates_no_prior": [
+    [
+     5.1346,
+     1.0
+    ]
+   ],
+   "rule_solutions": {
+    "ci_counted": [
+     5.1343
+    ],
+    "co_only": [
+     5.1343
+    ]
+   }
+  },
+  {
+   "source": "SPT0436-40",
+   "z_published": 3.8519,
+   "lines": "several",
+   "detections": 2,
+   "reference": {
+    "uniform": {
+     "z": 3.8514,
+     "confidence": 1.0,
+     "p_published": 1.0
+    },
+    "spt": {
+     "z": 3.8514,
+     "confidence": 1.0,
+     "p_published": 1.0
+    }
+   },
+   "states": {
+    "photoz": {
+     "centre": 6.1,
+     "width": 1.3,
+     "pull": -1.73,
+     "engine": {
+      "z": 3.8514,
+      "confidence": 1.0,
+      "outcome": "correct",
+      "p_published": 1.0,
+      "candidates": [
+       [
+        3.8514,
+        1.0
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 6.2758,
+      "outcome": "wrong"
+     },
+     "guided_ci_counted": {
+      "z": 3.8511,
+      "outcome": "correct"
+     },
+     "window_ci_counted": {
+      "z": 3.8511,
+      "outcome": "correct"
+     },
+     "pick_ci_counted": {
+      "z": 3.8511,
+      "outcome": "correct",
+      "share": 1.0
+     },
+     "guided_co_only": {
+      "z": 3.8511,
+      "outcome": "correct"
+     },
+     "window_co_only": {
+      "z": 3.8511,
+      "outcome": "correct"
+     },
+     "pick_co_only": {
+      "z": 3.8511,
+      "outcome": "correct",
+      "share": 1.0
+     }
+    },
+    "photoz_2024": {
+     "centre": 3.8,
+     "width": 0.6,
+     "pull": 0.09,
+     "engine": {
+      "z": 3.8514,
+      "confidence": 1.0,
+      "outcome": "correct",
+      "p_published": 1.0,
+      "candidates": [
+       [
+        3.8514,
+        1.0
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 3.8514,
+      "outcome": "correct"
+     },
+     "guided_ci_counted": {
+      "z": 3.8511,
+      "outcome": "correct"
+     },
+     "window_ci_counted": {
+      "z": 3.8511,
+      "outcome": "correct"
+     },
+     "pick_ci_counted": {
+      "z": 3.8511,
+      "outcome": "correct",
+      "share": 1.0
+     },
+     "guided_co_only": {
+      "z": 3.8511,
+      "outcome": "correct"
+     },
+     "window_co_only": {
+      "z": 3.8511,
+      "outcome": "correct"
+     },
+     "pick_co_only": {
+      "z": 3.8511,
+      "outcome": "correct",
+      "share": 1.0
+     }
+    },
+    "photoz_recal": {
+     "centre": 5.477,
+     "width": 1.431,
+     "pull": -1.14,
+     "engine": {
+      "z": 3.8514,
+      "confidence": 1.0,
+      "outcome": "correct",
+      "p_published": 1.0,
+      "candidates": [
+       [
+        3.8514,
+        1.0
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 5.0634,
+      "outcome": "wrong"
+     },
+     "guided_ci_counted": {
+      "z": 3.8511,
+      "outcome": "correct"
+     },
+     "pick_ci_counted": {
+      "z": 3.8511,
+      "outcome": "correct",
+      "share": 1.0
+     },
+     "guided_co_only": {
+      "z": 3.8511,
+      "outcome": "correct"
+     },
+     "pick_co_only": {
+      "z": 3.8511,
+      "outcome": "correct",
+      "share": 1.0
+     }
+    }
+   },
+   "candidates_no_prior": [
+    [
+     3.8514,
+     1.0
+    ]
+   ],
+   "rule_solutions": {
+    "ci_counted": [
+     3.8511
+    ],
+    "co_only": [
+     3.8511
+    ]
+   }
+  },
+  {
+   "source": "SPT0520-53",
+   "z_published": 3.7785,
+   "lines": "several",
+   "detections": 2,
+   "reference": {
+    "uniform": {
+     "z": 3.7784,
+     "confidence": 1.0,
+     "p_published": 1.0
+    },
+    "spt": {
+     "z": 3.7784,
+     "confidence": 1.0,
+     "p_published": 1.0
+    }
+   },
+   "states": {
+    "photoz": {
+     "centre": 4.2,
+     "width": 0.7,
+     "pull": -0.6,
+     "engine": {
+      "z": 3.7784,
+      "confidence": 1.0,
+      "outcome": "correct",
+      "p_published": 1.0,
+      "candidates": [
+       [
+        3.7784,
+        1.0
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 3.7784,
+      "outcome": "correct"
+     },
+     "guided_ci_counted": {
+      "z": 3.7779,
+      "outcome": "correct"
+     },
+     "window_ci_counted": {
+      "z": 3.7779,
+      "outcome": "correct"
+     },
+     "pick_ci_counted": {
+      "z": 3.7779,
+      "outcome": "correct",
+      "share": 1.0
+     },
+     "guided_co_only": {
+      "z": 3.7779,
+      "outcome": "correct"
+     },
+     "window_co_only": {
+      "z": 3.7779,
+      "outcome": "correct"
+     },
+     "pick_co_only": {
+      "z": 3.7779,
+      "outcome": "correct",
+      "share": 1.0
+     }
+    },
+    "photoz_2024": {
+     "centre": 4.0,
+     "width": 0.5,
+     "pull": -0.44,
+     "engine": {
+      "z": 3.7784,
+      "confidence": 1.0,
+      "outcome": "correct",
+      "p_published": 1.0,
+      "candidates": [
+       [
+        3.7784,
+        1.0
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 3.7784,
+      "outcome": "correct"
+     },
+     "guided_ci_counted": {
+      "z": 3.7779,
+      "outcome": "correct"
+     },
+     "window_ci_counted": {
+      "z": 3.7779,
+      "outcome": "correct"
+     },
+     "pick_ci_counted": {
+      "z": 3.7779,
+      "outcome": "correct",
+      "share": 1.0
+     },
+     "guided_co_only": {
+      "z": 3.7779,
+      "outcome": "correct"
+     },
+     "window_co_only": {
+      "z": 3.7779,
+      "outcome": "correct"
+     },
+     "pick_co_only": {
+      "z": 3.7779,
+      "outcome": "correct",
+      "share": 1.0
+     }
+    },
+    "photoz_recal": {
+     "centre": 3.865,
+     "width": 0.771,
+     "pull": -0.11,
+     "engine": {
+      "z": 3.7784,
+      "confidence": 1.0,
+      "outcome": "correct",
+      "p_published": 1.0,
+      "candidates": [
+       [
+        3.7784,
+        1.0
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 3.7784,
+      "outcome": "correct"
+     },
+     "guided_ci_counted": {
+      "z": 3.7779,
+      "outcome": "correct"
+     },
+     "pick_ci_counted": {
+      "z": 3.7779,
+      "outcome": "correct",
+      "share": 1.0
+     },
+     "guided_co_only": {
+      "z": 3.7779,
+      "outcome": "correct"
+     },
+     "pick_co_only": {
+      "z": 3.7779,
+      "outcome": "correct",
+      "share": 1.0
+     }
+    }
+   },
+   "candidates_no_prior": [
+    [
+     3.7784,
+     1.0
+    ]
+   ],
+   "rule_solutions": {
+    "ci_counted": [
+     3.7779
+    ],
+    "co_only": [
+     3.7779
+    ]
+   }
+  },
+  {
+   "source": "SPT0528-53",
+   "z_published": 4.737,
+   "lines": "one",
+   "detections": 1,
+   "reference": {
+    "uniform": {
+     "z": 4.7358,
+     "confidence": 0.617,
+     "p_published": 0.6169
+    },
+    "spt": {
+     "z": 4.7358,
+     "confidence": 0.76,
+     "p_published": 0.7603
+    }
+   },
+   "states": {
+    "photoz": {
+     "centre": 4.3,
+     "width": 0.9,
+     "pull": 0.49,
+     "engine": {
+      "z": 4.7358,
+      "confidence": 0.842,
+      "outcome": "correct",
+      "p_published": 0.8422,
+      "candidates": [
+       [
+        4.7358,
+        0.842
+       ],
+       [
+        3.5894,
+        0.087
+       ],
+       [
+        5.8828,
+        0.054
+       ],
+       [
+        2.442,
+        0.015
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 4.7348,
+      "outcome": "correct"
+     },
+     "guided_ci_counted": {
+      "z": null,
+      "outcome": "none"
+     },
+     "window_ci_counted": {
+      "z": null,
+      "outcome": "none"
+     },
+     "pick_ci_counted": {
+      "z": 5.8826,
+      "outcome": "wrong",
+      "share": 0.779
+     },
+     "guided_co_only": {
+      "z": null,
+      "outcome": "none"
+     },
+     "window_co_only": {
+      "z": 4.7356,
+      "outcome": "correct"
+     },
+     "pick_co_only": {
+      "z": 4.7356,
+      "outcome": "correct",
+      "share": 0.493
+     }
+    },
+    "photoz_2024": {
+     "centre": 4.4,
+     "width": 0.6,
+     "pull": 0.56,
+     "engine": {
+      "z": 4.7358,
+      "confidence": 0.93,
+      "outcome": "correct",
+      "p_published": 0.93,
+      "candidates": [
+       [
+        4.7358,
+        0.93
+       ],
+       [
+        3.5894,
+        0.055
+       ],
+       [
+        5.8828,
+        0.014
+       ],
+       [
+        3.8986,
+        0.0
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 4.7348,
+      "outcome": "correct"
+     },
+     "guided_ci_counted": {
+      "z": 5.8826,
+      "outcome": "wrong"
+     },
+     "window_ci_counted": {
+      "z": null,
+      "outcome": "none"
+     },
+     "pick_ci_counted": {
+      "z": 5.8826,
+      "outcome": "wrong",
+      "share": 0.951
+     },
+     "guided_co_only": {
+      "z": null,
+      "outcome": "none"
+     },
+     "window_co_only": {
+      "z": 4.7356,
+      "outcome": "correct"
+     },
+     "pick_co_only": {
+      "z": 4.7356,
+      "outcome": "correct",
+      "share": 0.692
+     }
+    },
+    "photoz_recal": {
+     "centre": 3.869,
+     "width": 0.991,
+     "pull": 0.88,
+     "engine": {
+      "z": 4.7358,
+      "confidence": 0.767,
+      "outcome": "correct",
+      "p_published": 0.7674,
+      "candidates": [
+       [
+        4.7358,
+        0.767
+       ],
+       [
+        3.5894,
+        0.136
+       ],
+       [
+        2.442,
+        0.054
+       ],
+       [
+        5.8828,
+        0.038
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 3.5894,
+      "outcome": "wrong"
+     },
+     "guided_ci_counted": {
+      "z": null,
+      "outcome": "none"
+     },
+     "pick_ci_counted": {
+      "z": 2.4418,
+      "outcome": "wrong",
+      "share": 0.562
+     },
+     "guided_co_only": {
+      "z": null,
+      "outcome": "none"
+     },
+     "pick_co_only": {
+      "z": 3.5887,
+      "outcome": "wrong",
+      "share": 0.42
+     }
+    }
+   },
+   "candidates_no_prior": [
+    [
+     4.7358,
+     0.617
+    ],
+    [
+     5.8828,
+     0.166
+    ],
+    [
+     3.5894,
+     0.078
+    ],
+    [
+     2.442,
+     0.083
+    ],
+    [
+     1.2947,
+     0.055
+    ]
+   ],
+   "rule_solutions": {
+    "ci_counted": [
+     1.2947,
+     2.4418,
+     5.8826
+    ],
+    "co_only": [
+     1.2947,
+     2.4418,
+     3.5887,
+     4.7356,
+     5.8826
+    ]
+   }
+  },
+  {
+   "source": "SPT0652-55",
+   "z_published": 3.3466,
+   "lines": "several",
+   "detections": 2,
+   "reference": {
+    "uniform": {
+     "z": 3.3465,
+     "confidence": 1.0,
+     "p_published": 1.0
+    },
+    "spt": {
+     "z": 3.3465,
+     "confidence": 1.0,
+     "p_published": 1.0
+    }
+   },
+   "states": {
+    "photoz": {
+     "centre": 4.2,
+     "width": 0.5,
+     "pull": -1.71,
+     "engine": {
+      "z": 3.3465,
+      "confidence": 1.0,
+      "outcome": "correct",
+      "p_published": 1.0,
+      "candidates": [
+       [
+        3.3465,
+        1.0
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 4.4295,
+      "outcome": "wrong"
+     },
+     "guided_ci_counted": {
+      "z": 3.3445,
+      "outcome": "correct"
+     },
+     "window_ci_counted": {
+      "z": 3.3445,
+      "outcome": "correct"
+     },
+     "pick_ci_counted": {
+      "z": 3.3445,
+      "outcome": "correct",
+      "share": 1.0
+     },
+     "guided_co_only": {
+      "z": 3.3445,
+      "outcome": "correct"
+     },
+     "window_co_only": {
+      "z": 3.3445,
+      "outcome": "correct"
+     },
+     "pick_co_only": {
+      "z": 3.3445,
+      "outcome": "correct",
+      "share": 1.0
+     }
+    },
+    "photoz_2024": {
+     "centre": 3.7,
+     "width": 0.5,
+     "pull": -0.71,
+     "engine": {
+      "z": 3.3465,
+      "confidence": 1.0,
+      "outcome": "correct",
+      "p_published": 1.0,
+      "candidates": [
+       [
+        3.3465,
+        1.0
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 3.345,
+      "outcome": "correct"
+     },
+     "guided_ci_counted": {
+      "z": 3.3445,
+      "outcome": "correct"
+     },
+     "window_ci_counted": {
+      "z": 3.3445,
+      "outcome": "correct"
+     },
+     "pick_ci_counted": {
+      "z": 3.3445,
+      "outcome": "correct",
+      "share": 1.0
+     },
+     "guided_co_only": {
+      "z": 3.3445,
+      "outcome": "correct"
+     },
+     "window_co_only": {
+      "z": 3.3445,
+      "outcome": "correct"
+     },
+     "pick_co_only": {
+      "z": 3.3445,
+      "outcome": "correct",
+      "share": 1.0
+     }
+    },
+    "photoz_recal": {
+     "centre": 3.961,
+     "width": 0.55,
+     "pull": -1.12,
+     "engine": {
+      "z": 3.3465,
+      "confidence": 1.0,
+      "outcome": "correct",
+      "p_published": 1.0,
+      "candidates": [
+       [
+        3.3465,
+        1.0
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 4.4295,
+      "outcome": "wrong"
+     },
+     "guided_ci_counted": {
+      "z": 3.3445,
+      "outcome": "correct"
+     },
+     "pick_ci_counted": {
+      "z": 3.3445,
+      "outcome": "correct",
+      "share": 1.0
+     },
+     "guided_co_only": {
+      "z": 3.3445,
+      "outcome": "correct"
+     },
+     "pick_co_only": {
+      "z": 3.3445,
+      "outcome": "correct",
+      "share": 1.0
+     }
+    }
+   },
+   "candidates_no_prior": [
+    [
+     3.3465,
+     1.0
+    ]
+   ],
+   "rule_solutions": {
+    "ci_counted": [
+     3.3445
+    ],
+    "co_only": [
+     3.3445
+    ]
+   }
+  },
+  {
+   "source": "SPT2031-51",
+   "z_published": 2.4521,
+   "lines": "one",
+   "detections": 1,
+   "reference": {
+    "uniform": {
+     "z": 5.9034,
+     "confidence": 0.527,
+     "p_published": 0.2637
+    },
+    "spt": {
+     "z": 2.4523,
+     "confidence": 0.45,
+     "p_published": 0.4495
+    }
+   },
+   "states": {
+    "photoz": {
+     "centre": 2.9,
+     "width": 0.4,
+     "pull": -1.12,
+     "engine": {
+      "z": 2.4523,
+      "confidence": 1.0,
+      "outcome": "correct",
+      "p_published": 0.9996,
+      "candidates": [
+       [
+        2.4523,
+        1.0
+       ],
+       [
+        1.3016,
+        0.0
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 2.4523,
+      "outcome": "correct"
+     },
+     "guided_ci_counted": {
+      "z": 2.4525,
+      "outcome": "correct"
+     },
+     "window_ci_counted": {
+      "z": 2.4525,
+      "outcome": "correct"
+     },
+     "pick_ci_counted": {
+      "z": 2.4525,
+      "outcome": "correct",
+      "share": 1.0
+     },
+     "guided_co_only": {
+      "z": null,
+      "outcome": "none"
+     },
+     "window_co_only": {
+      "z": 2.4525,
+      "outcome": "correct"
+     },
+     "pick_co_only": {
+      "z": 2.4525,
+      "outcome": "correct",
+      "share": 0.653
+     }
+    },
+    "photoz_2024": {
+     "centre": 2.8,
+     "width": 0.4,
+     "pull": -0.87,
+     "engine": {
+      "z": 2.4523,
+      "confidence": 0.999,
+      "outcome": "correct",
+      "p_published": 0.9991,
+      "candidates": [
+       [
+        2.4523,
+        0.999
+       ],
+       [
+        1.3016,
+        0.001
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 2.4523,
+      "outcome": "correct"
+     },
+     "guided_ci_counted": {
+      "z": 2.4525,
+      "outcome": "correct"
+     },
+     "window_ci_counted": {
+      "z": 2.4525,
+      "outcome": "correct"
+     },
+     "pick_ci_counted": {
+      "z": 2.4525,
+      "outcome": "correct",
+      "share": 0.999
+     },
+     "guided_co_only": {
+      "z": null,
+      "outcome": "none"
+     },
+     "window_co_only": {
+      "z": 2.4525,
+      "outcome": "correct"
+     },
+     "pick_co_only": {
+      "z": 2.4525,
+      "outcome": "correct",
+      "share": 0.794
+     }
+    },
+    "photoz_recal": {
+     "centre": 2.708,
+     "width": 0.44,
+     "pull": -0.58,
+     "engine": {
+      "z": 2.4523,
+      "confidence": 0.995,
+      "outcome": "correct",
+      "p_published": 0.9952,
+      "candidates": [
+       [
+        2.4523,
+        0.995
+       ],
+       [
+        1.3016,
+        0.005
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 2.4523,
+      "outcome": "correct"
+     },
+     "guided_ci_counted": {
+      "z": 2.4525,
+      "outcome": "correct"
+     },
+     "pick_ci_counted": {
+      "z": 2.4525,
+      "outcome": "correct",
+      "share": 0.995
+     },
+     "guided_co_only": {
+      "z": null,
+      "outcome": "none"
+     },
+     "pick_co_only": {
+      "z": 2.4525,
+      "outcome": "correct",
+      "share": 0.83
+     }
+    }
+   },
+   "candidates_no_prior": [
+    [
+     5.9034,
+     0.527
+    ],
+    [
+     2.4523,
+     0.264
+    ],
+    [
+     1.3016,
+     0.176
+    ],
+    [
+     4.753,
+     0.033
+    ]
+   ],
+   "rule_solutions": {
+    "ci_counted": [
+     1.3018,
+     2.4525,
+     5.904
+    ],
+    "co_only": [
+     1.3018,
+     2.4525,
+     3.6034,
+     4.7535,
+     5.904
+    ]
+   }
+  },
+  {
+   "source": "SPT2129-57",
+   "z_published": 3.2601,
+   "lines": "one",
+   "detections": 1,
+   "reference": {
+    "uniform": {
+     "z": 3.2604,
+     "confidence": 0.444,
+     "p_published": 0.4444
+    },
+    "spt": {
+     "z": 3.2604,
+     "confidence": 0.774,
+     "p_published": 0.7739
+    }
+   },
+   "states": {
+    "photoz": {
+     "centre": 4.1,
+     "width": 0.4,
+     "pull": -2.1,
+     "engine": {
+      "z": 3.2604,
+      "confidence": 1.0,
+      "outcome": "correct",
+      "p_published": 0.9999,
+      "candidates": [
+       [
+        3.2604,
+        1.0
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 4.3237,
+      "outcome": "wrong"
+     },
+     "guided_ci_counted": {
+      "z": 3.2597,
+      "outcome": "correct"
+     },
+     "window_ci_counted": {
+      "z": null,
+      "outcome": "none"
+     },
+     "pick_ci_counted": {
+      "z": 3.2597,
+      "outcome": "correct",
+      "share": 1.0
+     },
+     "guided_co_only": {
+      "z": 3.2597,
+      "outcome": "correct"
+     },
+     "window_co_only": {
+      "z": null,
+      "outcome": "none"
+     },
+     "pick_co_only": {
+      "z": 3.2597,
+      "outcome": "correct",
+      "share": 1.0
+     }
+    },
+    "photoz_2024": {
+     "centre": 3.4,
+     "width": 0.5,
+     "pull": -0.28,
+     "engine": {
+      "z": 3.2604,
+      "confidence": 0.959,
+      "outcome": "correct",
+      "p_published": 0.959,
+      "candidates": [
+       [
+        3.2604,
+        0.959
+       ],
+       [
+        2.1952,
+        0.041
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 3.2597,
+      "outcome": "correct"
+     },
+     "guided_ci_counted": {
+      "z": 3.2597,
+      "outcome": "correct"
+     },
+     "window_ci_counted": {
+      "z": 3.2597,
+      "outcome": "correct"
+     },
+     "pick_ci_counted": {
+      "z": 3.2597,
+      "outcome": "correct",
+      "share": 0.959
+     },
+     "guided_co_only": {
+      "z": 3.2597,
+      "outcome": "correct"
+     },
+     "window_co_only": {
+      "z": 3.2597,
+      "outcome": "correct"
+     },
+     "pick_co_only": {
+      "z": 3.2597,
+      "outcome": "correct",
+      "share": 0.959
+     }
+    },
+    "photoz_recal": {
+     "centre": 3.908,
+     "width": 0.44,
+     "pull": -1.47,
+     "engine": {
+      "z": 3.2604,
+      "confidence": 0.999,
+      "outcome": "correct",
+      "p_published": 0.9989,
+      "candidates": [
+       [
+        3.2604,
+        0.999
+       ],
+       [
+        2.1952,
+        0.001
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 4.3237,
+      "outcome": "wrong"
+     },
+     "guided_ci_counted": {
+      "z": 3.2597,
+      "outcome": "correct"
+     },
+     "pick_ci_counted": {
+      "z": 3.2597,
+      "outcome": "correct",
+      "share": 0.999
+     },
+     "guided_co_only": {
+      "z": 3.2597,
+      "outcome": "correct"
+     },
+     "pick_co_only": {
+      "z": 3.2597,
+      "outcome": "correct",
+      "share": 0.999
+     }
+    }
+   },
+   "candidates_no_prior": [
+    [
+     3.2604,
+     0.444
+    ],
+    [
+     2.1952,
+     0.333
+    ],
+    [
+     1.1302,
+     0.222
+    ]
+   ],
+   "rule_solutions": {
+    "ci_counted": [
+     1.13,
+     2.195,
+     3.2597
+    ],
+    "co_only": [
+     1.13,
+     2.195,
+     3.2597
+    ]
+   }
+  },
+  {
+   "source": "SPT2152-40",
+   "z_published": 3.8507,
+   "lines": "several",
+   "detections": 2,
+   "reference": {
+    "uniform": {
+     "z": 3.8514,
+     "confidence": 1.0,
+     "p_published": 1.0
+    },
+    "spt": {
+     "z": 3.8514,
+     "confidence": 1.0,
+     "p_published": 1.0
+    }
+   },
+   "states": {
+    "photoz": {
+     "centre": 4.9,
+     "width": 0.5,
+     "pull": -2.1,
+     "engine": {
+      "z": 3.8514,
+      "confidence": 1.0,
+      "outcome": "correct",
+      "p_published": 1.0,
+      "candidates": [
+       [
+        3.8514,
+        1.0
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 5.0634,
+      "outcome": "wrong"
+     },
+     "guided_ci_counted": {
+      "z": 3.8506,
+      "outcome": "correct"
+     },
+     "window_ci_counted": {
+      "z": 3.8506,
+      "outcome": "correct"
+     },
+     "pick_ci_counted": {
+      "z": 3.8506,
+      "outcome": "correct",
+      "share": 1.0
+     },
+     "guided_co_only": {
+      "z": 3.8506,
+      "outcome": "correct"
+     },
+     "window_co_only": {
+      "z": 3.8506,
+      "outcome": "correct"
+     },
+     "pick_co_only": {
+      "z": 3.8506,
+      "outcome": "correct",
+      "share": 1.0
+     }
+    },
+    "photoz_2024": {
+     "centre": 4.3,
+     "width": 0.6,
+     "pull": -0.75,
+     "engine": {
+      "z": 3.8514,
+      "confidence": 1.0,
+      "outcome": "correct",
+      "p_published": 1.0,
+      "candidates": [
+       [
+        3.8514,
+        1.0
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 3.8506,
+      "outcome": "correct"
+     },
+     "guided_ci_counted": {
+      "z": 3.8506,
+      "outcome": "correct"
+     },
+     "window_ci_counted": {
+      "z": 3.8506,
+      "outcome": "correct"
+     },
+     "pick_ci_counted": {
+      "z": 3.8506,
+      "outcome": "correct",
+      "share": 1.0
+     },
+     "guided_co_only": {
+      "z": 3.8506,
+      "outcome": "correct"
+     },
+     "window_co_only": {
+      "z": 3.8506,
+      "outcome": "correct"
+     },
+     "pick_co_only": {
+      "z": 3.8506,
+      "outcome": "correct",
+      "share": 1.0
+     }
+    },
+    "photoz_recal": {
+     "centre": 4.661,
+     "width": 0.55,
+     "pull": -1.47,
+     "engine": {
+      "z": 3.8514,
+      "confidence": 1.0,
+      "outcome": "correct",
+      "p_published": 1.0,
+      "candidates": [
+       [
+        3.8514,
+        1.0
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 5.0634,
+      "outcome": "wrong"
+     },
+     "guided_ci_counted": {
+      "z": 3.8506,
+      "outcome": "correct"
+     },
+     "pick_ci_counted": {
+      "z": 3.8506,
+      "outcome": "correct",
+      "share": 1.0
+     },
+     "guided_co_only": {
+      "z": 3.8506,
+      "outcome": "correct"
+     },
+     "pick_co_only": {
+      "z": 3.8506,
+      "outcome": "correct",
+      "share": 1.0
+     }
+    }
+   },
+   "candidates_no_prior": [
+    [
+     3.8514,
+     1.0
+    ]
+   ],
+   "rule_solutions": {
+    "ci_counted": [
+     3.8506
+    ],
+    "co_only": [
+     3.8506
+    ]
+   }
+  },
+  {
+   "source": "SPT2203-41",
+   "z_published": 5.1937,
+   "lines": "several",
+   "detections": 2,
+   "reference": {
+    "uniform": {
+     "z": 5.1942,
+     "confidence": 1.0,
+     "p_published": 1.0
+    },
+    "spt": {
+     "z": 5.1942,
+     "confidence": 1.0,
+     "p_published": 1.0
+    }
+   },
+   "states": {
+    "photoz": {
+     "centre": 5.3,
+     "width": 0.9,
+     "pull": -0.12,
+     "engine": {
+      "z": 5.1942,
+      "confidence": 1.0,
+      "outcome": "correct",
+      "p_published": 1.0,
+      "candidates": [
+       [
+        5.1942,
+        1.0
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 5.1942,
+      "outcome": "correct"
+     },
+     "guided_ci_counted": {
+      "z": 5.1941,
+      "outcome": "correct"
+     },
+     "window_ci_counted": {
+      "z": 5.1941,
+      "outcome": "correct"
+     },
+     "pick_ci_counted": {
+      "z": 5.1941,
+      "outcome": "correct",
+      "share": 1.0
+     },
+     "guided_co_only": {
+      "z": 5.1941,
+      "outcome": "correct"
+     },
+     "window_co_only": {
+      "z": 5.1941,
+      "outcome": "correct"
+     },
+     "pick_co_only": {
+      "z": 5.1941,
+      "outcome": "correct",
+      "share": 1.0
+     }
+    },
+    "photoz_2024": {
+     "centre": 4.7,
+     "width": 0.6,
+     "pull": 0.82,
+     "engine": {
+      "z": 5.1942,
+      "confidence": 1.0,
+      "outcome": "correct",
+      "p_published": 1.0,
+      "candidates": [
+       [
+        5.1942,
+        1.0
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 5.1942,
+      "outcome": "correct"
+     },
+     "guided_ci_counted": {
+      "z": 5.1941,
+      "outcome": "correct"
+     },
+     "window_ci_counted": {
+      "z": 5.1941,
+      "outcome": "correct"
+     },
+     "pick_ci_counted": {
+      "z": 5.1941,
+      "outcome": "correct",
+      "share": 1.0
+     },
+     "guided_co_only": {
+      "z": 5.1941,
+      "outcome": "correct"
+     },
+     "window_co_only": {
+      "z": 5.1941,
+      "outcome": "correct"
+     },
+     "pick_co_only": {
+      "z": 5.1941,
+      "outcome": "correct",
+      "share": 1.0
+     }
+    },
+    "photoz_recal": {
+     "centre": 4.869,
+     "width": 0.991,
+     "pull": 0.33,
+     "engine": {
+      "z": 5.1942,
+      "confidence": 1.0,
+      "outcome": "correct",
+      "p_published": 1.0,
+      "candidates": [
+       [
+        5.1942,
+        1.0
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 5.1942,
+      "outcome": "correct"
+     },
+     "guided_ci_counted": {
+      "z": 5.1941,
+      "outcome": "correct"
+     },
+     "pick_ci_counted": {
+      "z": 5.1941,
+      "outcome": "correct",
+      "share": 1.0
+     },
+     "guided_co_only": {
+      "z": 5.1941,
+      "outcome": "correct"
+     },
+     "pick_co_only": {
+      "z": 5.1941,
+      "outcome": "correct",
+      "share": 1.0
+     }
+    }
+   },
+   "candidates_no_prior": [
+    [
+     5.1942,
+     1.0
+    ]
+   ],
+   "rule_solutions": {
+    "ci_counted": [
+     5.1941
+    ],
+    "co_only": [
+     5.1941
+    ]
+   }
+  },
+  {
+   "source": "SPT2232-61",
+   "z_published": 2.8936,
+   "lines": "one",
+   "detections": 1,
+   "reference": {
+    "uniform": {
+     "z": 2.8934,
+     "confidence": 0.6,
+     "p_published": 0.6
+    },
+    "spt": {
+     "z": 2.8934,
+     "confidence": 0.899,
+     "p_published": 0.8985
+    }
+   },
+   "states": {
+    "photoz": {
+     "centre": 3.1,
+     "width": 0.5,
+     "pull": -0.41,
+     "engine": {
+      "z": 2.8934,
+      "confidence": 0.992,
+      "outcome": "correct",
+      "p_published": 0.9922,
+      "candidates": [
+       [
+        2.8934,
+        0.992
+       ],
+       [
+        1.5957,
+        0.008
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 2.8941,
+      "outcome": "correct"
+     },
+     "guided_ci_counted": {
+      "z": 2.8942,
+      "outcome": "correct"
+     },
+     "window_ci_counted": {
+      "z": 2.8942,
+      "outcome": "correct"
+     },
+     "pick_ci_counted": {
+      "z": 2.8942,
+      "outcome": "correct",
+      "share": 0.992
+     },
+     "guided_co_only": {
+      "z": 2.8942,
+      "outcome": "correct"
+     },
+     "window_co_only": {
+      "z": 2.8942,
+      "outcome": "correct"
+     },
+     "pick_co_only": {
+      "z": 2.8942,
+      "outcome": "correct",
+      "share": 0.992
+     }
+    },
+    "photoz_2024": {
+     "centre": 2.9,
+     "width": 0.4,
+     "pull": -0.02,
+     "engine": {
+      "z": 2.8934,
+      "confidence": 0.997,
+      "outcome": "correct",
+      "p_published": 0.9967,
+      "candidates": [
+       [
+        2.8934,
+        0.997
+       ],
+       [
+        1.5957,
+        0.003
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 2.8941,
+      "outcome": "correct"
+     },
+     "guided_ci_counted": {
+      "z": 2.8942,
+      "outcome": "correct"
+     },
+     "window_ci_counted": {
+      "z": 2.8942,
+      "outcome": "correct"
+     },
+     "pick_ci_counted": {
+      "z": 2.8942,
+      "outcome": "correct",
+      "share": 0.997
+     },
+     "guided_co_only": {
+      "z": 2.8942,
+      "outcome": "correct"
+     },
+     "window_co_only": {
+      "z": 2.8942,
+      "outcome": "correct"
+     },
+     "pick_co_only": {
+      "z": 2.8942,
+      "outcome": "correct",
+      "share": 0.997
+     }
+    },
+    "photoz_recal": {
+     "centre": 2.861,
+     "width": 0.55,
+     "pull": 0.06,
+     "engine": {
+      "z": 2.8934,
+      "confidence": 0.954,
+      "outcome": "correct",
+      "p_published": 0.9545,
+      "candidates": [
+       [
+        2.8934,
+        0.954
+       ],
+       [
+        1.5957,
+        0.046
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 2.8941,
+      "outcome": "correct"
+     },
+     "guided_ci_counted": {
+      "z": 2.8942,
+      "outcome": "correct"
+     },
+     "pick_ci_counted": {
+      "z": 2.8942,
+      "outcome": "correct",
+      "share": 0.954
+     },
+     "guided_co_only": {
+      "z": 2.8942,
+      "outcome": "correct"
+     },
+     "pick_co_only": {
+      "z": 2.8942,
+      "outcome": "correct",
+      "share": 0.954
+     }
+    }
+   },
+   "candidates_no_prior": [
+    [
+     2.8934,
+     0.6
+    ],
+    [
+     1.5957,
+     0.4
+    ]
+   ],
+   "rule_solutions": {
+    "ci_counted": [
+     1.5961,
+     2.8942
+    ],
+    "co_only": [
+     1.5961,
+     2.8942
+    ]
+   }
+  },
+  {
+   "source": "SPT2311-45",
+   "z_published": 2.5073,
+   "lines": "one",
+   "detections": 1,
+   "reference": {
+    "uniform": {
+     "z": 6.0137,
+     "confidence": 0.502,
+     "p_published": 0.2512
+    },
+    "spt": {
+     "z": 2.5074,
+     "confidence": 0.424,
+     "p_published": 0.4236
+    }
+   },
+   "states": {
+    "photoz": {
+     "centre": 3.2,
+     "width": 0.5,
+     "pull": -1.39,
+     "engine": {
+      "z": 2.5074,
+      "confidence": 0.839,
+      "outcome": "correct",
+      "p_published": 0.8389,
+      "candidates": [
+       [
+        2.5074,
+        0.839
+       ],
+       [
+        3.6767,
+        0.158
+       ],
+       [
+        4.8449,
+        0.002
+       ],
+       [
+        1.3383,
+        0.001
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 3.6767,
+      "outcome": "wrong"
+     },
+     "guided_ci_counted": {
+      "z": 2.5075,
+      "outcome": "correct"
+     },
+     "window_ci_counted": {
+      "z": null,
+      "outcome": "none"
+     },
+     "pick_ci_counted": {
+      "z": 2.5075,
+      "outcome": "correct",
+      "share": 0.998
+     },
+     "guided_co_only": {
+      "z": null,
+      "outcome": "none"
+     },
+     "window_co_only": {
+      "z": 3.6763,
+      "outcome": "wrong"
+     },
+     "pick_co_only": {
+      "z": 3.6763,
+      "outcome": "wrong",
+      "share": 0.684
+     }
+    },
+    "photoz_2024": {
+     "centre": 3.0,
+     "width": 0.5,
+     "pull": -0.99,
+     "engine": {
+      "z": 2.5074,
+      "confidence": 0.927,
+      "outcome": "correct",
+      "p_published": 0.9273,
+      "candidates": [
+       [
+        2.5074,
+        0.927
+       ],
+       [
+        3.6767,
+        0.068
+       ],
+       [
+        1.3383,
+        0.004
+       ],
+       [
+        4.8449,
+        0.0
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 2.5074,
+      "outcome": "correct"
+     },
+     "guided_ci_counted": {
+      "z": 2.5075,
+      "outcome": "correct"
+     },
+     "window_ci_counted": {
+      "z": 2.5075,
+      "outcome": "correct"
+     },
+     "pick_ci_counted": {
+      "z": 2.5075,
+      "outcome": "correct",
+      "share": 0.996
+     },
+     "guided_co_only": {
+      "z": null,
+      "outcome": "none"
+     },
+     "window_co_only": {
+      "z": 2.5075,
+      "outcome": "correct"
+     },
+     "pick_co_only": {
+      "z": 2.5075,
+      "outcome": "correct",
+      "share": 0.533
+     }
+    },
+    "photoz_recal": {
+     "centre": 2.961,
+     "width": 0.55,
+     "pull": -0.82,
+     "engine": {
+      "z": 2.5074,
+      "confidence": 0.925,
+      "outcome": "correct",
+      "p_published": 0.9248,
+      "candidates": [
+       [
+        2.5074,
+        0.925
+       ],
+       [
+        3.6767,
+        0.063
+       ],
+       [
+        1.3383,
+        0.011
+       ],
+       [
+        4.8449,
+        0.001
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 2.5074,
+      "outcome": "correct"
+     },
+     "guided_ci_counted": {
+      "z": 2.5075,
+      "outcome": "correct"
+     },
+     "pick_ci_counted": {
+      "z": 2.5075,
+      "outcome": "correct",
+      "share": 0.988
+     },
+     "guided_co_only": {
+      "z": null,
+      "outcome": "none"
+     },
+     "pick_co_only": {
+      "z": 2.5075,
+      "outcome": "correct",
+      "share": 0.549
+     }
+    }
+   },
+   "candidates_no_prior": [
+    [
+     6.0137,
+     0.502
+    ],
+    [
+     2.5074,
+     0.251
+    ],
+    [
+     1.3383,
+     0.167
+    ],
+    [
+     3.6767,
+     0.029
+    ],
+    [
+     4.8449,
+     0.051
+    ]
+   ],
+   "rule_solutions": {
+    "ci_counted": [
+     1.3382,
+     2.5075,
+     6.0132
+    ],
+    "co_only": [
+     1.3382,
+     2.5075,
+     3.6763,
+     4.8451,
+     6.0132
+    ]
+   }
+  },
+  {
+   "source": "SPT2316-50",
+   "z_published": 3.1413,
+   "lines": "one",
+   "detections": 0,
+   "reference": {
+    "uniform": {
+     "z": 4.1775,
+     "confidence": 0.056,
+     "p_published": 0.0098
+    },
+    "spt": {
+     "z": 4.1775,
+     "confidence": 0.114,
+     "p_published": 0.0163
+    }
+   },
+   "states": {
+    "photoz": {
+     "centre": 3.6,
+     "width": 1.0,
+     "pull": -0.46,
+     "engine": {
+      "z": 4.1775,
+      "confidence": 0.114,
+      "outcome": "wrong",
+      "p_published": 0.0213,
+      "candidates": [
+       [
+        4.1775,
+        0.114
+       ],
+       [
+        5.2097,
+        0.062
+       ],
+       [
+        2.8112,
+        0.049
+       ],
+       [
+        3.7792,
+        0.048
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 3.7792,
+      "outcome": "wrong"
+     },
+     "guided_ci_counted": {
+      "z": null,
+      "outcome": "none"
+     },
+     "window_ci_counted": {
+      "z": null,
+      "outcome": "none"
+     },
+     "pick_ci_counted": {
+      "z": null,
+      "outcome": "none",
+      "share": null
+     },
+     "guided_co_only": {
+      "z": null,
+      "outcome": "none"
+     },
+     "window_co_only": {
+      "z": null,
+      "outcome": "none"
+     },
+     "pick_co_only": {
+      "z": null,
+      "outcome": "none",
+      "share": null
+     }
+    },
+    "photoz_2024": {
+     "centre": 3.0,
+     "width": 0.5,
+     "pull": 0.28,
+     "engine": {
+      "z": 2.8112,
+      "confidence": 0.15,
+      "outcome": "wrong",
+      "p_published": 0.0545,
+      "candidates": [
+       [
+        2.8112,
+        0.15
+       ],
+       [
+        2.5843,
+        0.092
+       ],
+       [
+        4.1012,
+        0.021
+       ],
+       [
+        3.3501,
+        0.042
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 2.8118,
+      "outcome": "wrong"
+     },
+     "guided_ci_counted": {
+      "z": null,
+      "outcome": "none"
+     },
+     "window_ci_counted": {
+      "z": null,
+      "outcome": "none"
+     },
+     "pick_ci_counted": {
+      "z": null,
+      "outcome": "none",
+      "share": null
+     },
+     "guided_co_only": {
+      "z": null,
+      "outcome": "none"
+     },
+     "window_co_only": {
+      "z": null,
+      "outcome": "none"
+     },
+     "pick_co_only": {
+      "z": null,
+      "outcome": "none",
+      "share": null
+     }
+    },
+    "photoz_recal": {
+     "centre": 3.121,
+     "width": 1.101,
+     "pull": 0.02,
+     "engine": {
+      "z": 4.1775,
+      "confidence": 0.086,
+      "outcome": "wrong",
+      "p_published": 0.024,
+      "candidates": [
+       [
+        4.1775,
+        0.086
+       ],
+       [
+        2.8112,
+        0.065
+       ],
+       [
+        2.5843,
+        0.049
+       ],
+       [
+        3.7792,
+        0.041
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 2.8118,
+      "outcome": "wrong"
+     },
+     "guided_ci_counted": {
+      "z": null,
+      "outcome": "none"
+     },
+     "pick_ci_counted": {
+      "z": null,
+      "outcome": "none",
+      "share": null
+     },
+     "guided_co_only": {
+      "z": null,
+      "outcome": "none"
+     },
+     "pick_co_only": {
+      "z": null,
+      "outcome": "none",
+      "share": null
+     }
+    }
+   },
+   "candidates_no_prior": [
+    [
+     4.1775,
+     0.056
+    ],
+    [
+     5.2097,
+     0.093
+    ],
+    [
+     6.1662,
+     0.032
+    ],
+    [
+     4.973,
+     0.037
+    ],
+    [
+     2.8112,
+     0.028
+    ],
+    [
+     2.5843,
+     0.022
+    ]
+   ],
+   "rule_solutions": {
+    "ci_counted": [],
+    "co_only": []
+   }
+  },
+  {
+   "source": "SPT2349-52",
+   "z_published": 3.9,
+   "lines": "one",
+   "detections": 1,
+   "reference": {
+    "uniform": {
+     "z": 3.9002,
+     "confidence": 0.664,
+     "p_published": 0.6639
+    },
+    "spt": {
+     "z": 3.9002,
+     "confidence": 0.847,
+     "p_published": 0.847
+    }
+   },
+   "states": {
+    "photoz": {
+     "centre": 4.1,
+     "width": 1.0,
+     "pull": -0.2,
+     "engine": {
+      "z": 3.9002,
+      "confidence": 0.894,
+      "outcome": "correct",
+      "p_published": 0.8936,
+      "candidates": [
+       [
+        3.9002,
+        0.894
+       ],
+       [
+        2.6751,
+        0.1
+       ],
+       [
+        1.4501,
+        0.005
+       ],
+       [
+        5.1243,
+        0.001
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 3.9002,
+      "outcome": "correct"
+     },
+     "guided_ci_counted": {
+      "z": null,
+      "outcome": "none"
+     },
+     "window_ci_counted": {
+      "z": 3.9003,
+      "outcome": "correct"
+     },
+     "pick_ci_counted": {
+      "z": 3.9003,
+      "outcome": "correct",
+      "share": 0.774
+     },
+     "guided_co_only": {
+      "z": null,
+      "outcome": "none"
+     },
+     "window_co_only": {
+      "z": 3.9003,
+      "outcome": "correct"
+     },
+     "pick_co_only": {
+      "z": 3.9003,
+      "outcome": "correct",
+      "share": 0.774
+     }
+    },
+    "photoz_2024": {
+     "centre": 2.8,
+     "width": 0.4,
+     "pull": 2.75,
+     "engine": {
+      "z": 2.6751,
+      "confidence": 0.925,
+      "outcome": "wrong",
+      "p_published": 0.0729,
+      "candidates": [
+       [
+        2.6751,
+        0.925
+       ],
+       [
+        3.9002,
+        0.073
+       ],
+       [
+        1.4501,
+        0.002
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 2.6751,
+      "outcome": "wrong"
+     },
+     "guided_ci_counted": {
+      "z": 2.6752,
+      "outcome": "wrong"
+     },
+     "window_ci_counted": {
+      "z": 2.6752,
+      "outcome": "wrong"
+     },
+     "pick_ci_counted": {
+      "z": 2.6752,
+      "outcome": "wrong",
+      "share": 0.967
+     },
+     "guided_co_only": {
+      "z": 2.6752,
+      "outcome": "wrong"
+     },
+     "window_co_only": {
+      "z": 2.6752,
+      "outcome": "wrong"
+     },
+     "pick_co_only": {
+      "z": 2.6752,
+      "outcome": "wrong",
+      "share": 0.967
+     }
+    },
+    "photoz_recal": {
+     "centre": 3.621,
+     "width": 1.101,
+     "pull": 0.25,
+     "engine": {
+      "z": 3.9002,
+      "confidence": 0.802,
+      "outcome": "correct",
+      "p_published": 0.8021,
+      "candidates": [
+       [
+        3.9002,
+        0.802
+       ],
+       [
+        2.6751,
+        0.173
+       ],
+       [
+        1.4501,
+        0.024
+       ],
+       [
+        5.1243,
+        0.001
+       ]
+      ]
+     },
+     "xcorr": {
+      "z": 3.9002,
+      "outcome": "correct"
+     },
+     "guided_ci_counted": {
+      "z": null,
+      "outcome": "none"
+     },
+     "pick_ci_counted": {
+      "z": 3.9003,
+      "outcome": "correct",
+      "share": 0.621
+     },
+     "guided_co_only": {
+      "z": null,
+      "outcome": "none"
+     },
+     "pick_co_only": {
+      "z": 3.9003,
+      "outcome": "correct",
+      "share": 0.621
+     }
+    }
+   },
+   "candidates_no_prior": [
+    [
+     3.9002,
+     0.664
+    ],
+    [
+     2.6751,
+     0.201
+    ],
+    [
+     1.4501,
+     0.134
+    ]
+   ],
+   "rule_solutions": {
+    "ci_counted": [
+     1.4503,
+     2.6752,
+     3.9003
+    ],
+    "co_only": [
+     1.4503,
+     2.6752,
+     3.9003
+    ]
+   }
+  }
+ ]
+}

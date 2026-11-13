@@ -13,6 +13,9 @@ a chosen matched-filter S/N (5.5 down to 2), and five methods are run on many no
     surviving solutions predicts (ladder.guided_rule), with and without the survey prior. It stands for what an
     observer does by eye; the 5 sigma rule alone would be too easy to beat;
   - a template cross-correlation after Yun et al. 2015 (ladder.xcorr_redshift), with and without the prior.
+Each source's published photometric redshift is run as a third kind of prior, in the three versions of
+photoz.py, for the engine, the guided rule and the cross-correlation. The guided rule is also run in a form
+that does not count a missing [CI] line against a redshift (guided_co_only), under every prior.
 Two kinds of outcome are kept apart. The engine (when confident) and the rules give an answer or none, so they
 are compared on answers given. The cross-correlation always has a best redshift, so it is compared with the
 engine's best guess. The comparison without a prior is the like-for-like one: the rule and the
@@ -40,7 +43,8 @@ import matplotlib.pyplot as plt
 from .ladder import (line_list, matched_filter, detection_index, detect, guided_rule, xcorr_redshift,  # noqa: E402
                      prior_spt, BANK, C_KMS, TOL_LN)
 from .batch_real import read_spectrum, to_grid_auto, read_truth  # noqa: E402
-from .realspec import run_engine, degrade  # noqa: E402
+from .realspec import run_engine, engine_likelihood, engine_posterior, degrade  # noqa: E402
+from .photoz import photoz_priors, STATES as PHOTOZ_STATES  # noqa: E402
 
 INK, INK2, GRID_C, SURF = '#0b0b0b', '#52514e', '#e4e3df', '#fcfcfb'
 COL = ['#2a78d6', '#eb6834', '#1baf7a', '#eda100', '#e87ba4', '#008300']
@@ -81,32 +85,42 @@ def run_level(task):
     src, z_true, f2, target, factor, n, seed = task
     spec = read_spectrum(DATA / 'spectra' / f'{src}.csv')
     rng = np.random.default_rng(seed)
-    kdet = detection_index(BANK)
+    priors = dict(PRIORS, **photoz_priors(src))             # the source's own photometric redshift, three versions
+    photoz = [p for p in priors if p in PHOTOZ_STATES]
     c = dict(rule_ok=0, rule_wrong=0, rule_none=0, second_detected=0, y2=[])
     for t in GUIDED:
         c[f'guided{t}'] = dict(ok=0, wrong=0, none=0)
-    c['guided_spt'] = dict(ok=0, wrong=0, none=0)
-    for p in PRIORS:
+    for p in ['spt'] + photoz:
+        c[f'guided_{p}'] = dict(ok=0, wrong=0, none=0)
+    for p in priors:
+        c[f'guidedco_{p}'] = dict(ok=0, wrong=0, none=0)
         c[f'{p}_xcorr'] = 0
         for m in ('engine', 'flat'):
             c[f'{p}_{m}'] = dict(cc=0, cw=0, top=0, conf=[])
     for _ in range(n):
         g = to_grid_auto(degrade(spec, factor, rng))
         grid, d, _, cov = g
-        yd = matched_filter(d, BANK, cov)[kdet]
+        like = engine_likelihood(*g)                        # once per draw: it does not depend on the prior
+        yd, dets = like['yd'], like['dets']
         c['y2'].append(float(yd[int(round(grid.pix(f2)))]))
-        dets = detect(yd, cov)
         for t in GUIDED:
             zg = guided_rule(dets, grid, cov, yd, confirm=t)[0]
             q = c[f'guided{t}']
             q['ok'] += correct(zg, z_true); q['wrong'] += zg is not None and not correct(zg, z_true)
             q['none'] += zg is None
-        zg = guided_rule(dets, grid, cov, yd, confirm=GUIDED[0], prior=prior_spt)[0]
-        q = c['guided_spt']
-        q['ok'] += correct(zg, z_true); q['wrong'] += zg is not None and not correct(zg, z_true); q['none'] += zg is None
-        for p, prior in PRIORS.items():
+        for p in ['spt'] + photoz:
+            zg = guided_rule(dets, grid, cov, yd, confirm=GUIDED[0], prior=priors[p])[0]
+            q = c[f'guided_{p}']
+            q['ok'] += correct(zg, z_true); q['wrong'] += zg is not None and not correct(zg, z_true)
+            q['none'] += zg is None
+        for p, prior in priors.items():
+            # the same rule when a missing [CI] line is not counted against a redshift (ladder._rule_solutions)
+            zg = guided_rule(dets, grid, cov, yd, confirm=GUIDED[0], prior=prior, ci_prunes=False)[0]
+            q = c[f'guidedco_{p}']
+            q['ok'] += correct(zg, z_true); q['wrong'] += zg is not None and not correct(zg, z_true)
+            q['none'] += zg is None
             c[f'{p}_xcorr'] += correct(xcorr_redshift(d, grid, cov, prior=prior)[0], z_true)
-            r = run_engine(*g, prior=prior)
+            r = engine_posterior(like, prior)
             for m, key in (('engine', 'sled'), ('flat', 'flat')):
                 z, conf = r[key]
                 ok = correct(z, z_true)
@@ -125,8 +139,12 @@ def run_level(task):
                                       no_answer=c[f'guided{t}']['none'] / n) for t in GUIDED},
                guided_spt=dict(correct=c['guided_spt']['ok'] / n, wrong=c['guided_spt']['wrong'] / n,
                                no_answer=c['guided_spt']['none'] / n),
-               xcorr={p: dict(best_is_published=c[f'{p}_xcorr'] / n) for p in PRIORS})
-    for p in PRIORS:
+               guided_photoz={p: dict(correct=c[f'guided_{p}']['ok'] / n, wrong=c[f'guided_{p}']['wrong'] / n,
+                                      no_answer=c[f'guided_{p}']['none'] / n) for p in photoz},
+               guided_co_only={p: dict(correct=c[f'guidedco_{p}']['ok'] / n, wrong=c[f'guidedco_{p}']['wrong'] / n,
+                                       no_answer=c[f'guidedco_{p}']['none'] / n) for p in priors},
+               xcorr={p: dict(best_is_published=c[f'{p}_xcorr'] / n) for p in priors})
+    for p in priors:
         out[p] = {m: dict(confident_correct=c[f'{p}_{m}']['cc'] / n, confidently_wrong=c[f'{p}_{m}']['cw'] / n,
                           best_is_published=c[f'{p}_{m}']['top'] / n,
                           median_confidence=round(float(np.median(c[f'{p}_{m}']['conf'])), 3))
@@ -176,9 +194,13 @@ def summarise(sources):
                                for kk in lv[0]['guided'][t]} for t in lv[0]['guided']},
                    guided_spt={kk: round(float(np.mean([q['guided_spt'][kk] for q in lv])), 4)
                                for kk in lv[0]['guided_spt']},
+                   guided_photoz={p: {kk: round(float(np.mean([q['guided_photoz'][p][kk] for q in lv])), 4)
+                                      for kk in lv[0]['guided_photoz'][p]} for p in lv[0]['guided_photoz']},
+                   guided_co_only={p: {kk: round(float(np.mean([q['guided_co_only'][p][kk] for q in lv])), 4)
+                                       for kk in lv[0]['guided_co_only'][p]} for p in lv[0]['guided_co_only']},
                    xcorr={p: dict(best_is_published=round(float(np.mean([q['xcorr'][p]['best_is_published']
-                                                                        for q in lv])), 4)) for p in PRIORS})
-        for p in PRIORS:
+                                                                        for q in lv])), 4)) for p in lv[0]['xcorr']})
+        for p in lv[0]['xcorr']:
             row[p] = {m: {kk: round(float(np.mean([q[p][m][kk] for q in lv])), 4)
                           for kk in ('confident_correct', 'confidently_wrong', 'best_is_published')}
                       for m in ('engine', 'flat')}
@@ -230,6 +252,17 @@ def main():
               f"{sp['engine']['confident_correct']:.3f} {q['guided_spt']['correct']:.3f} "
               f"{sp['engine']['best_is_published']:.3f} {q['xcorr']['spt']['best_is_published']:.3f} | "
               f"{q['rule']['correct']:.3f}")
+    print('With each source\'s photometric redshift as the prior. Columns: second-line S/N | then, for the 2020 '
+          'values, the 2024 revision and the recalibrated 2020 values: engine confident+correct, engine confident '
+          'and wrong, guided rule correct, guided rule wrong, the same two with CO lines only, engine best guess, '
+          'cross-correlation best guess')
+    for q in out['summary']:
+        print(f"  {q['target']:4.1f} | " + ' | '.join(
+            f"{q[p]['engine']['confident_correct']:.3f} {q[p]['engine']['confidently_wrong']:.3f} "
+            f"{q['guided_photoz'][p]['correct']:.3f} {q['guided_photoz'][p]['wrong']:.3f} "
+            f"{q['guided_co_only'][p]['correct']:.3f} {q['guided_co_only'][p]['wrong']:.3f} "
+            f"{q[p]['engine']['best_is_published']:.3f} {q['xcorr'][p]['best_is_published']:.3f}"
+            for p in q['guided_photoz']))
     print(f'[{time.time() - t0:.0f}s] wrote {path.name}')
     plot(out)
 
@@ -244,6 +277,15 @@ def wrong_counts(o):
                'guided rule': count(lambda q: q['guided']['3']['wrong']),
                'guided rule, survey prior': count(lambda q: q['guided_spt']['wrong']),
                'detection rule': count(lambda q: q['rule']['wrong'])}
+
+
+def wrong_counts_photoz(o):
+    """The same count with each source's photometric redshift as the prior:
+    {version: (engine, guided rule, guided rule with CO lines only)}."""
+    lv = [q for s in o['sources'].values() for q in s['levels']]
+    count = lambda f: int(round(sum(f(q) * q['draws'] for q in lv)))
+    return {p: (count(lambda q: q[p]['engine']['confidently_wrong']), count(lambda q: q['guided_photoz'][p]['wrong']),
+                count(lambda q: q['guided_co_only'][p]['wrong'])) for p in lv[0]['guided_photoz']}
 
 
 def _style(ax):

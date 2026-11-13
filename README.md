@@ -38,8 +38,9 @@ cubes, and each answer is scored against the published redshift (Reuter et al. 2
   redshift prior ([`docs/results.md`](docs/results.md), section 9).
   - **Against a rule that works as an observer would.** The rule takes the 5σ lines, then accepts one 3σ line at
     a predicted position. With the second line at 4σ the engine returns the published redshift with confidence
-    in 87% of noise draws and the rule in 80%; at 3.5σ, 73% and 60%. A rule that needs every line at 5σ manages
-    13% and 3%.
+    in 87% of noise draws and the rule in 80%; at 3.5σ, 73% and 60%. A form of the rule that does not count a
+    missing \[CI\] line against a redshift does a little better (82% and 62%). A rule that needs every line at
+    5σ manages 13% and 3%.
   - **The gain is uneven.** At 4σ the engine is ahead for three of the seven sources and behind for four; at
     3.5σ, ahead for four and behind for three (figure below). It gains where the second line is a CO line and
     not where it is a faint \[CI\] line.
@@ -61,10 +62,31 @@ cubes, and each answer is scored against the published redshift (Reuter et al. 2
 - **An equal-weight sum falls short here.** It prefers a wrong redshift for three of the two-line sources, with
   0.66–0.91 of its weight on it. In each case it reads CO(4–3) as CO(3–2) or CO(5–4) and treats the \[CI\](1–0)
   line as noise.
-- **Single-line sources stay ambiguous, as they should.** All eleven have been confirmed by follow-up in other
-  bands, which the engine never saw: ten in Reuter et al., and SPT0314-44, tentative there, by Riechers (2025).
-  For each source the engine lists the competing redshifts with their weights, and a follow-up planner
-  (`followup.py`) names the tunings that would decide between them.
+- **With the survey prior alone, single-line sources stay ambiguous, as they should.** All eleven have been
+  confirmed by follow-up in other bands, which the engine never saw: ten in Reuter et al., and SPT0314-44,
+  tentative there, by Riechers (2025). For each source the engine lists the competing redshifts with their
+  weights, and a follow-up planner (`followup.py`) names the tunings that would decide between them.
+- **With each source's published photometric redshift as the prior, the engine settles four to seven of the
+  eleven, all correctly.** The survey team had a photometric redshift for every source (Reuter et al. 2020,
+  Table F.1). Used as a Gaussian prior, source by source ([`docs/results.md`](docs/results.md), section 10):
+  - **How many depends on which values are believed.** Seven with the 2020 values as published, six with the
+    collaboration's 2024 revision, and four when the 2020 values are recalibrated against 60 other SPT sources.
+    The engine is confident of a wrong redshift in none of the three.
+  - **Rules given the same photometric redshifts settle about as many, with some wrong answers.** Two rules,
+    each in two forms, settle two to seven of the eleven. Five of the ten combinations of rule and prior return
+    at least one wrong redshift.
+  - **One revised value shows the limit.** The 2024 photometric redshift of SPT2349-52 is 2.8 errors from the
+    published redshift and sits on the wrong reading of its line. Every rule then answers wrongly, and the
+    engine gives that wrong redshift 0.93, just under its threshold of 0.95.
+  - **With noise added to the multi-line spectra** the engine with the photometric prior returns the published
+    redshift with confidence in 95% of draws with the second line at 4σ and 89% at 3.5σ. A guided rule with the
+    same prior, counting CO lines only, manages 84% and 69%. Each gave a wrong answer in fewer than 10 of 5,600
+    draws.
+  - **What this is not.** Eleven sources, from the development sample; a difference of one or two sources
+    between methods shows nothing. The photometric redshifts rest on a dust-temperature prior measured on the
+    same sample.
+
+  ![The one-line sources with their photometric redshifts as priors](figures/redshift_photoz.png)
 - **Second real test.** For SPT0027-50 (ALMA Band 2 science verification, 76.9–111.0 GHz) the engine gives
   z = 3.4432 at confidence 1.00 (published 3.444).
 - **Prior check.** With a flat redshift prior in place of the SPT-like one, all 7 multi-line sources are still
@@ -121,7 +143,7 @@ Requires Python ≥ 3.9 with numpy, scipy and matplotlib (astropy too for the ar
 
 ```bash
 python -m pip install -r requirements.txt
-python -m pytest                 # 30 regression tests, synthetic and real, under a minute
+python -m pytest                 # 32 regression tests, synthetic and real, under a minute
 bash reproduce.sh                # every real-data result and every figure from the shipped spectra, 1-2 min
 bash reproduce.sh --full         # also re-run the synthetic studies (about 1.7 hours on 2 cores)
 ```
@@ -177,6 +199,7 @@ ladder_redshifts/        the package (run modules with  python -m ladder_redshif
   batch_real.py          score every real spectrum under data/ against data/truth.csv
   degrade.py             the multi-line spectra with noise added: the engine against two detection rules
                          and a template cross-correlation
+  photoz.py              each source's published photometric redshift as its prior
   followup.py            which single follow-up tuning settles an ambiguous source
   atlas.py               synthetic error-rate atlas, 2,500 sources x 6 ALMA setups
   traps.py               three published octave-type misidentifications, rebuilt from their coverage
@@ -186,7 +209,8 @@ ladder_redshifts/        the package (run modules with  python -m ladder_redshif
 scripts/alma/            download and extraction tools for the ALMA archive (cut-outs and ADMIT summaries)
 scripts/                 one-off checks: the first review's diagnostics, the truth-table check, the noise
                          calibration of the shipped spectra, the engine on pure noise, the High-z Sudoku code
-                         on the same sources (needs your own copy of that code)
+                         on the same sources (needs your own copy of that code), the photometric-redshift
+                         table and its accuracy (needs the SPT collaboration's posted tables)
 data/                    published redshifts, extracted spectra, cut-out targets and manifest (see data/README.md)
 results/                 every number reported, as JSON/CSV (see results/README.md)
 figures/                 every figure (see figures/README.md)
@@ -225,7 +249,9 @@ tests/                   regression tests
   independent confirmation. For the 11 single-line sources the truth came from follow-up in other bands that the
   engine never saw.
 - **The prior.** The SPT-like redshift prior, N(3.9, 1.1), comes from the same survey. The flat-prior results above
-  show how much depends on it.
+  show how much depends on it. The photometric redshifts are also the survey's own: they rest on a
+  dust-temperature prior measured on this sample with its spectroscopic redshifts, and the 2020 values run high
+  by about half their error bar.
 - **The comparisons are our own simplified re-implementations.**
   - **Equal-weight sum.** It weights every predicted line's S/N equally. That is in the spirit of the line sums of
     Lupu et al. (2012), but their procedure uses further statistics and tests.
@@ -233,11 +259,13 @@ tests/                   regression tests
     ([tjlcbakx/redshift-search-graphs](https://github.com/tjlcbakx/redshift-search-graphs)). That code classes
     frequency coverage and reads no spectrum. Its classes for these sources and for the atlas setups are in
     [`docs/results.md`](docs/results.md), section 8; the authors' reading of the spectra by eye is not reproduced.
-  - **Guided rule.** The rule that accepts a weaker line at a predicted position is our own construction.
+  - **Guided rule.** The rule that accepts a weaker line at a predicted position is our own construction. So is
+    the window rule of section 10, which borrows only the photometric accuracy that the Sudoku code assumes.
   - **Cross-correlation.** It is our re-implementation of the closest earlier method (Yun et al. 2015), from the
     paper's description: the weights are fitted to the composite of Spilker et al. (2014), the line width is our
-    choice, and the paper's per-source photometric redshift is not available here
-    ([`docs/results.md`](docs/results.md), section 9). The authors' code has not been run.
+    choice, and the paper's photometric redshifts came from a radio-to-millimetre spectral index, not from the
+    dust continuum as here ([`docs/results.md`](docs/results.md), sections 9 and 10). The authors' code has not
+    been run.
 
   A comparison with the published methods themselves on these spectra is the obvious next test.
 - **Spectrum extraction and noise model.**
@@ -298,6 +326,9 @@ Observatory is operated by ESO, AUI/NRAO and NAOJ. The National Radio Astronomy 
 Observatory are facilities of the U.S. National Science Foundation operated under cooperative agreement by
 Associated Universities, Inc. (Wording: [ALMA publication
 acknowledgement](https://almascience.eso.org/alma-data/publication-acknowledgement).)
+
+The photometric redshifts are from Table F.1 of Reuter et al. (2020), as posted by the SPT-SMG collaboration at
+[spt-smg/publicdata](https://github.com/spt-smg/publicdata).
 
 This is independent research by Samuel Mindlin. Code, data reduction and documentation were developed with substantial
 help from an AI assistant (Anthropic's Claude). Every number above is regenerated by the code and tests in this

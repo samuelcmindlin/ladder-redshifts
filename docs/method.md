@@ -119,7 +119,8 @@ The likelihood ratio Λ is averaged over the 15 templates (with their prior weig
 
 - **What is normalised.** P(z) ∝ π(z) Σ_θ π(θ) Λ_θ(z) on z = 0.5–8, normalised over z.
 - **Redshift priors.** Uniform in z; SPT-like (normal, mean 3.9, s.d. 1.1, from Reuter et al. 2020); or
-  Herschel-like (lognormal in 1+z, modelled on the z-GAL sample, median z ≈ 2.6).
+  Herschel-like (lognormal in 1+z, modelled on the z-GAL sample, median z ≈ 2.6). A source's own photometric
+  redshift can be used in their place, as a normal distribution in z (section 10).
 - **Not a full Bayesian posterior.** Λ is a *profile* likelihood (maximised over the line amplitude), not a
   marginal likelihood with an amplitude prior. The code calls P(z) the posterior for brevity.
 - **Confidence.** The mass of P(z) within |Δ ln(1+z)| < 0.006 (1800 km/s) of its maximum. The window is wide
@@ -144,7 +145,7 @@ All share the same matched-filter front end (`ladder.py`).
 | `flat` | The same likelihood with equal weights on the S/N of every covered line: no line ratios and no noise weighting. A simplified stand-in for line-sum methods such as Lupu et al. (2012), not their procedure. |
 | `sudoku` | A simplified High-z Sudoku rule. Lines are detected at ≥ 5σ. A solution is kept if it explains every detection to within 300 km/s and predicts no line of expected S/N > 8 where the data show < 3σ. The rule answers only when a single solution survives. This is a re-implementation for comparison, not the authors' code. |
 | `naive` | Assumes the detections are adjacent CO rungs and takes the smallest spacing as the fundamental. It fails whenever [CI] sits between rungs, and is kept as a baseline. |
-| `guided` | The `sudoku` rule followed by a guided look for a weaker line. If the 5σ detections leave several solutions, a solution is confirmed when the data reach 3σ (or 4σ) within 150 km/s of a line it predicts and that no detection accounts for. The rule answers when exactly one solution is confirmed. Given a redshift prior, it also answers when one of the remaining solutions holds at least 0.95 of the prior weight among them. It stands for what an observer does by eye and is used only in the degradation test (section 10). |
+| `guided` | The `sudoku` rule followed by a guided look for a weaker line. If the 5σ detections leave several solutions, a solution is confirmed when the data reach 3σ (or 4σ) within 150 km/s of a line it predicts and that no detection accounts for. The rule answers when exactly one solution is confirmed. Given a redshift prior, it also answers when one of the remaining solutions holds at least 0.95 of the prior weight among them. It stands for what an observer does by eye and is used in the degradation and photometric-prior tests (section 10). With `ci_prunes=False` a missing \[CI\] line does not count against a solution. |
 | `xcorr` | A template cross-correlation re-implemented after Yun et al. (2015, appendix A): ζ(z) is the sum over all lines of the smoothed spectrum at each line's predicted position, weighted by the line's relative strength, and its S/N is ζ less its mean, over its standard deviation, under random shuffles of the spectrum. The best guess is the redshift of highest S/N, or of highest S/N × p(z) when a prior is given. It has no confidence and never abstains. Used only in the degradation test (section 10). |
 
 ## 5. Ambiguity function
@@ -300,5 +301,31 @@ the draws of one source are not independent.
   uses the limit of that procedure in closed form: under a random permutation of N pixel values with mean m and
   variance v, a weighted sum Σ a_p x_p has mean m Σ a_p and variance N/(N−1) · v · (Σ a_p² − (Σ a_p)²/N). A test
   compares it with 1,500 real shuffles.
-- **Prior.** The paper multiplies the S/N by the probability distribution of each source's photometric redshift.
-  No photometric redshifts are used here; the survey prior stands in when a prior is given.
+- **Prior.** The paper multiplies the S/N by the probability distribution of each source's photometric redshift,
+  which it takes from a radio-to-millimetre spectral index. In the noise-added test the survey prior stands in
+  for it; in the photometric-prior test below it is each source's dust-continuum photometric redshift.
+
+**Each source's photometric redshift as the prior** (`photoz.py`; [`results.md`](results.md), section 10).
+
+- **The prior.** A normal distribution in z, centred on the published photometric redshift, with the published
+  error as its standard deviation. It replaces the survey prior; the two are not multiplied.
+- **Three versions.** The values printed in Reuter et al. (2020, Table F.1); the collaboration's 2024 revision of
+  that table; and the 2020 values recalibrated. The recalibration takes the pull, (z_spec − z_phot) / error,
+  of the 60 SPT sources that are not in this sample: its mean is −0.479 and its standard deviation 1.101. The
+  recalibrated centre is z_phot − 0.479 × error and the width 1.101 × error
+  (`scripts/photoz_calibration.py`, `results/redshift_photoz_calibration.json`).
+- **The rules with a photometric redshift.**
+  - **Guided rule.** As above, with the same normal distribution: when the lines do not single out a solution,
+    it answers if one remaining solution holds 0.95 of the prior weight.
+  - **Window rule.** The guided rule with a top-hat prior of half-width 0.13 (1 + z_phot), which is the default
+    photometric accuracy (`dzUncertainty`) of the High-z Sudoku code. It answers when exactly one solution lies
+    in the window. It is not that code's procedure, which classes coverage at a known redshift.
+  - **Two forms.** The detection rule drops a solution that predicts a line of expected S/N > 8 where the data
+    show < 3σ, and by default that includes \[CI\]. With `ci_prunes=False` only CO lines count. The
+    \[CI\]-to-CO ratio varies by a large factor between galaxies, so the second form is closer to what an
+    observer does. Both are reported.
+- **The cross-correlation** is multiplied by the same normal distribution, as in the paper.
+- **In the noise-added test** the three versions are run as further priors for the engine, the guided rule (both
+  forms) and the cross-correlation. The likelihood is computed once per draw and each prior applied to it
+  (`realspec.engine_likelihood`, `engine_posterior`), so the results under the earlier priors are unchanged.
+

@@ -302,7 +302,9 @@ def degrade(spec, factor, rng):
     return out
 
 
-def run_engine(grid, d, sig, cov, prior=None, bank=BANK):
+def engine_likelihood(grid, d, sig, cov, bank=BANK):
+    """The part of run_engine that does not depend on the redshift prior: engines, likelihoods and detections.
+    Several priors can then be applied to one spectrum (engine_posterior) without repeating it."""
     T, lw = templates_grid(robust=True)
     sig_e = np.where(np.isfinite(sig), sig / np.nanmin(sig[np.isfinite(sig)]), 1.0)
     e = Engine(grid, cov, T, sigma=sig_e, logw=lw, zmin=0.5, zmax=8.0)
@@ -311,11 +313,16 @@ def run_engine(grid, d, sig, cov, prior=None, bank=BANK):
     Y = matched_filter(d, bank, cov)
     # solutions are chosen with a velocity offset of up to DV_MAX allowed per line; the redshift quoted for a
     # solution is the one at which its lines sit where predicted (the exact-position likelihood, dv_max = 0)
-    L, L0 = e.loglike(Y, bank), e.loglike(Y, bank, dv_max=0)
-    zs, c, p = e.posterior(L, prior=prior, refine=L0)
-    zf, cf, _ = ef.posterior(ef.loglike(Y, bank), prior=prior, refine=ef.loglike(Y, bank, dv_max=0))
     yd = Y[detection_index(bank)]
-    dets = detect(yd, cov)
+    return dict(grid=grid, cov=cov, e=e, ef=ef, L=e.loglike(Y, bank), L0=e.loglike(Y, bank, dv_max=0),
+                Lf=ef.loglike(Y, bank), Lf0=ef.loglike(Y, bank, dv_max=0), yd=yd, dets=detect(yd, cov))
+
+
+def engine_posterior(s, prior=None):
+    """The results of run_engine for one redshift prior, from the output of engine_likelihood."""
+    grid, cov, e, ef, L0, yd, dets = (s[k] for k in ('grid', 'cov', 'e', 'ef', 'L0', 'yd', 'dets'))
+    zs, c, p = e.posterior(s['L'], prior=prior, refine=L0)
+    zf, cf, _ = ef.posterior(s['Lf'], prior=prior, refine=s['Lf0'])
     zn = naive_spacing(dets, grid)
     zr, nsol = sudoku_rule(dets, grid, cov, yd)
     # candidate list: posterior mass per cluster
@@ -332,8 +339,12 @@ def run_engine(grid, d, sig, cov, prior=None, bank=BANK):
         if len(cands) >= 6:
             break
     return dict(sled=(float(zs), float(c)), flat=(float(zf), float(cf)), naive=zn, sudoku=(zr, nsol),
-                detections=[(float(np.exp(grid.lnmin + q * DLN)), float(s)) for q, s in dets],
+                detections=[(float(np.exp(grid.lnmin + q * DLN)), float(s_)) for q, s_ in dets],
                 candidates=cands, lnz=e.lnz, post=p)
+
+
+def run_engine(grid, d, sig, cov, prior=None, bank=BANK):
+    return engine_posterior(engine_likelihood(grid, d, sig, cov, bank), prior)
 
 
 def read_csv_spectrum(path):
