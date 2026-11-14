@@ -25,5 +25,22 @@ files.
 | `redshift_photoz.json` | Each source's published photometric redshift as its prior, on the 19 real spectra that have one. For each source and each of three versions of the prior (2020 as published, 2024 revision, 2020 recalibrated): centre, width and offset from the published z; the engine's best z, confidence, `p_published` and candidates; the guided rule and the window rule, each with a missing \[CI\] line counted (`ci_counted`) and with CO lines only (`co_only`); the rule solution the prior favours (`pick`); the cross-correlation × p(z). `summary` counts outcomes for the one-line and the multi-line sources, and under `all` gives the number of confident answers, how many were wrong, and the exact 95% upper bound on the wrong-answer rate. | `photoz` |
 | `redshift_photoz_calibration.json` | How well the photometric redshifts of Reuter et al. (2020, Table F.1) match the spectroscopic ones, for all 81 SPT sources, the 60 outside this sample and the 21 in it, for the 2020 values and the 2024 revision; the shift and widening used for the recalibrated prior; the SPT0452-50 entry; SHA-256 of the two posted tables it was computed from. | `scripts/photoz_calibration.py` (needs the posted tables) |
 
-A second sample is kept apart: with `LADDER_REDSHIFTS_SAMPLE=independent` the same modules write to
-`results/independent/` (see [`docs/independent-test-plan.md`](../docs/independent-test-plan.md)). Nothing is there yet.
+## `independent/`: the test on 23 sources the engine was not developed on
+
+Written by the same modules with `LADDER_REDSHIFTS_SAMPLE=independent`, in the single run of 14 November 2026
+([`docs/results.md`](../docs/results.md), section 11). `reproduce.sh` does not touch this folder.
+
+| File | Contents | Written by |
+|---|---|---|
+| `redshift_real_batch.json`, `.csv` | As above, for the 23 spectra of `data/independent/`. The `route` field records that they were made from the cut-outs. | `batch_real` |
+| `redshift_photoz.json` | As above, for the same spectra. | `photoz` |
+| `redshift_degradation.json`, `redshift_rule_family.csv` | The noise-added test on the five multi-line sources that show two lines at 5σ. `as_observed` covers all 23 sources. The rule settings named under `chosen` there are re-chosen on this sample; the two settings chosen beforehand are in `report.json`. | `scripts/independent_noise_test.py` |
+| `report.json` | The outcomes fixed in the plan: confident answers and wrong ones with their bounds, counts by group, the engine against the two rule settings chosen beforehand (as observed and with noise added, per source), and one row per source. | `scripts/independent_report.py` |
+
+To re-run from the saved spectra (the numbers are reproduced; `route` then reads "saved spectrum"):
+
+```bash
+export LADDER_REDSHIFTS_SAMPLE=independent
+python -m ladder_redshifts.batch_real && python -m ladder_redshifts.photoz
+python scripts/independent_noise_test.py && python scripts/independent_report.py
+```

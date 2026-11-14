@@ -40,3 +40,11 @@
 - **D.** Errors fall on harmonic ratios.
 - **E.** Calibration.
 - **F.** Redshift deserts.
+
+## `independent/`: the 23 sources of the independent test
+
+| Figure | What it shows | Made by |
+|---|---|---|
+| `independent/summary.png` | One row per source, grouped by the number of lines published from the 3 mm scan: the engine's probability for the published redshift with the survey prior and with the source's 2020 photometric redshift, on a logit axis, and the answers of the two rule settings chosen beforehand. | `scripts/independent_report.py` |
+| `independent/redshift_real_batch.png` | The 23 spectra with the engine's lines at its best redshift, as `redshift_real_batch.png`. | `batch_real` |
+| `independent/redshift_photoz.png` | The nine one-line sources with their photometric redshifts as priors, as `redshift_photoz.png`. | `photoz` |

@@ -1,0 +1,1624 @@
+{
+ "plan": "docs/independent-test-plan.md",
+ "code": "tag v0.2.0",
+ "sample": 23,
+ "primary": {
+  "spt": {
+   "confident_answers": 11,
+   "wrong": 0,
+   "wrong_rate_upper_95": 0.238,
+   "pooled_confident_answers": 19,
+   "pooled_wrong": 0,
+   "pooled_wrong_rate_upper_95": 0.146
+  },
+  "photoz": {
+   "confident_answers": 17,
+   "wrong": 0,
+   "wrong_rate_upper_95": 0.162,
+   "pooled_confident_answers": 32,
+   "pooled_wrong": 0,
+   "pooled_wrong_rate_upper_95": 0.089
+  }
+ },
+ "groups": {
+  "several": {
+   "n": 13,
+   "engine": {
+    "uniform": {
+     "confident_correct": 9,
+     "confident_wrong": 0,
+     "best_is_published": 12
+    },
+    "spt": {
+     "confident_correct": 9,
+     "confident_wrong": 0,
+     "best_is_published": 12
+    },
+    "photoz": {
+     "confident_correct": 11,
+     "confident_wrong": 0,
+     "best_is_published": 12
+    },
+    "photoz_2024": {
+     "confident_correct": 10,
+     "confident_wrong": 0,
+     "best_is_published": 12
+    }
+   },
+   "chosen_rule": {
+    "uniform": {
+     "correct": 7,
+     "wrong": 1,
+     "none": 5
+    },
+    "photoz": {
+     "correct": 9,
+     "wrong": 0,
+     "none": 4
+    }
+   },
+   "rule_5sigma": {
+    "correct": 5,
+    "wrong": 0,
+    "none": 8
+   },
+   "xcorr_best_is_published": {
+    "uniform": 11,
+    "photoz": 9
+   }
+  },
+  "one": {
+   "n": 9,
+   "engine": {
+    "uniform": {
+     "confident_correct": 0,
+     "confident_wrong": 0,
+     "best_is_published": 6
+    },
+    "spt": {
+     "confident_correct": 2,
+     "confident_wrong": 0,
+     "best_is_published": 7
+    },
+    "photoz": {
+     "confident_correct": 6,
+     "confident_wrong": 0,
+     "best_is_published": 7
+    },
+    "photoz_2024": {
+     "confident_correct": 5,
+     "confident_wrong": 0,
+     "best_is_published": 7
+    }
+   },
+   "chosen_rule": {
+    "uniform": {
+     "correct": 0,
+     "wrong": 0,
+     "none": 9
+    },
+    "photoz": {
+     "correct": 1,
+     "wrong": 0,
+     "none": 8
+    }
+   },
+   "rule_5sigma": {
+    "correct": 0,
+    "wrong": 0,
+    "none": 9
+   },
+   "xcorr_best_is_published": {
+    "uniform": 3,
+    "photoz": 5
+   }
+  },
+  "none": {
+   "n": 1,
+   "engine": {
+    "uniform": {
+     "confident_correct": 0,
+     "confident_wrong": 0,
+     "best_is_published": 0
+    },
+    "spt": {
+     "confident_correct": 0,
+     "confident_wrong": 0,
+     "best_is_published": 0
+    },
+    "photoz": {
+     "confident_correct": 0,
+     "confident_wrong": 0,
+     "best_is_published": 0
+    },
+    "photoz_2024": {
+     "confident_correct": 0,
+     "confident_wrong": 0,
+     "best_is_published": 0
+    }
+   },
+   "chosen_rule": {
+    "uniform": {
+     "correct": 0,
+     "wrong": 0,
+     "none": 1
+    },
+    "photoz": {
+     "correct": 0,
+     "wrong": 0,
+     "none": 1
+    }
+   },
+   "rule_5sigma": {
+    "correct": 0,
+    "wrong": 0,
+    "none": 1
+   },
+   "xcorr_best_is_published": {
+    "uniform": 0,
+    "photoz": 0
+   }
+  }
+ },
+ "as_observed_engine_against_chosen_rule": {
+  "uniform": {
+   "engine_only": [
+    "SPT0020-51",
+    "SPT0552-42"
+   ],
+   "rule_only": [],
+   "sign_test_p": 0.5,
+   "rule_wrong": [
+    "SPT0552-42"
+   ]
+  },
+  "photoz": {
+   "engine_only": [
+    "SPT0106-64",
+    "SPT0311-58",
+    "SPT0516-59",
+    "SPT0552-42",
+    "SPT0604-64",
+    "SPT0625-58",
+    "SPT2037-65"
+   ],
+   "rule_only": [],
+   "sign_test_p": 0.016,
+   "rule_wrong": []
+  }
+ },
+ "noise_added": {
+  "sources": [
+   "SPT0109-47",
+   "SPT0136-63",
+   "SPT0155-62",
+   "SPT0245-63",
+   "SPT2048-55"
+  ],
+  "draws": 4000,
+  "priors": {
+   "uniform": {
+    "setting": {
+     "detect": 4.5,
+     "confirm": 2.5,
+     "ci_counted": false,
+     "prune_expect": 5.0,
+     "share": null
+    },
+    "levels": [
+     {
+      "target": 4.0,
+      "engine": 0.902,
+      "rule": 0.694,
+      "engine_ahead": 4,
+      "engine_behind": 1,
+      "development_ahead": 2,
+      "development_behind": 5,
+      "pooled_sign_test_p": 1.0
+     },
+     {
+      "target": 3.5,
+      "engine": 0.74,
+      "rule": 0.476,
+      "engine_ahead": 4,
+      "engine_behind": 1,
+      "development_ahead": 3,
+      "development_behind": 4,
+      "pooled_sign_test_p": 0.774
+     },
+     {
+      "target": 3.0,
+      "engine": 0.492,
+      "rule": 0.286,
+      "engine_ahead": 4,
+      "engine_behind": 1,
+      "development_ahead": 3,
+      "development_behind": 4,
+      "pooled_sign_test_p": 0.774
+     }
+    ],
+    "rule_wrong": 7,
+    "rule_correct": 2148,
+    "engine_wrong": 0,
+    "engine_correct": 2716,
+    "by_source": {
+     "SPT0109-47": {
+      "engine": [
+       0.87,
+       0.59,
+       0.34
+      ],
+      "rule": [
+       0.98,
+       0.9,
+       0.72
+      ]
+     },
+     "SPT0136-63": {
+      "engine": [
+       0.94,
+       0.83,
+       0.55
+      ],
+      "rule": [
+       0.72,
+       0.35,
+       0.17
+      ]
+     },
+     "SPT0155-62": {
+      "engine": [
+       0.86,
+       0.73,
+       0.55
+      ],
+      "rule": [
+       0.78,
+       0.53,
+       0.17
+      ]
+     },
+     "SPT0245-63": {
+      "engine": [
+       0.93,
+       0.77,
+       0.56
+      ],
+      "rule": [
+       0.83,
+       0.54,
+       0.35
+      ]
+     },
+     "SPT2048-55": {
+      "engine": [
+       0.91,
+       0.78,
+       0.46
+      ],
+      "rule": [
+       0.16,
+       0.06,
+       0.02
+      ]
+     }
+    },
+    "engine_by_threshold": [
+     {
+      "threshold": 0.5,
+      "engine_correct": 3396,
+      "engine_wrong": 41,
+      "rule_correct": 2861,
+      "rule_wrong": 7
+     },
+     {
+      "threshold": 0.6,
+      "engine_correct": 3300,
+      "engine_wrong": 13,
+      "rule_correct": 2861,
+      "rule_wrong": 7
+     },
+     {
+      "threshold": 0.7,
+      "engine_correct": 3206,
+      "engine_wrong": 9,
+      "rule_correct": 2861,
+      "rule_wrong": 7
+     },
+     {
+      "threshold": 0.8,
+      "engine_correct": 3087,
+      "engine_wrong": 5,
+      "rule_correct": 2693,
+      "rule_wrong": 5
+     },
+     {
+      "threshold": 0.9,
+      "engine_correct": 2895,
+      "engine_wrong": 2,
+      "rule_correct": 2456,
+      "rule_wrong": 1
+     },
+     {
+      "threshold": 0.95,
+      "engine_correct": 2716,
+      "engine_wrong": 0,
+      "rule_correct": 2253,
+      "rule_wrong": 0
+     },
+     {
+      "threshold": 0.99,
+      "engine_correct": 2319,
+      "engine_wrong": 0,
+      "rule_correct": 2253,
+      "rule_wrong": 0
+     }
+    ]
+   },
+   "photoz": {
+    "setting": {
+     "detect": 4.5,
+     "confirm": 3.0,
+     "ci_counted": false,
+     "prune_expect": 8.0,
+     "share": 0.95
+    },
+    "levels": [
+     {
+      "target": 4.0,
+      "engine": 0.974,
+      "rule": 0.844,
+      "engine_ahead": 5,
+      "engine_behind": 0,
+      "development_ahead": 6,
+      "development_behind": 0,
+      "pooled_sign_test_p": 0.001
+     },
+     {
+      "target": 3.5,
+      "engine": 0.902,
+      "rule": 0.576,
+      "engine_ahead": 5,
+      "engine_behind": 0,
+      "development_ahead": 6,
+      "development_behind": 1,
+      "pooled_sign_test_p": 0.006
+     },
+     {
+      "target": 3.0,
+      "engine": 0.666,
+      "rule": 0.288,
+      "engine_ahead": 5,
+      "engine_behind": 0,
+      "development_ahead": 7,
+      "development_behind": 0,
+      "pooled_sign_test_p": 0.0
+     }
+    ],
+    "rule_wrong": 22,
+    "rule_correct": 2294,
+    "engine_wrong": 5,
+    "engine_correct": 3101,
+    "by_source": {
+     "SPT0109-47": {
+      "engine": [
+       1.0,
+       0.98,
+       0.91
+      ],
+      "rule": [
+       0.93,
+       0.75,
+       0.47
+      ]
+     },
+     "SPT0136-63": {
+      "engine": [
+       0.95,
+       0.94,
+       0.68
+      ],
+      "rule": [
+       0.77,
+       0.41,
+       0.14
+      ]
+     },
+     "SPT0155-62": {
+      "engine": [
+       0.93,
+       0.7,
+       0.32
+      ],
+      "rule": [
+       0.87,
+       0.61,
+       0.29
+      ]
+     },
+     "SPT0245-63": {
+      "engine": [
+       1.0,
+       0.95,
+       0.86
+      ],
+      "rule": [
+       0.9,
+       0.61,
+       0.38
+      ]
+     },
+     "SPT2048-55": {
+      "engine": [
+       0.99,
+       0.94,
+       0.56
+      ],
+      "rule": [
+       0.75,
+       0.5,
+       0.16
+      ]
+     }
+    },
+    "engine_by_threshold": [
+     {
+      "threshold": 0.5,
+      "engine_correct": 3551,
+      "engine_wrong": 53,
+      "rule_correct": 3031,
+      "rule_wrong": 18
+     },
+     {
+      "threshold": 0.6,
+      "engine_correct": 3492,
+      "engine_wrong": 30,
+      "rule_correct": 3031,
+      "rule_wrong": 18
+     },
+     {
+      "threshold": 0.7,
+      "engine_correct": 3435,
+      "engine_wrong": 19,
+      "rule_correct": 3031,
+      "rule_wrong": 18
+     },
+     {
+      "threshold": 0.8,
+      "engine_correct": 3350,
+      "engine_wrong": 14,
+      "rule_correct": 2871,
+      "rule_wrong": 12
+     },
+     {
+      "threshold": 0.9,
+      "engine_correct": 3234,
+      "engine_wrong": 7,
+      "rule_correct": 2839,
+      "rule_wrong": 3
+     },
+     {
+      "threshold": 0.95,
+      "engine_correct": 3101,
+      "engine_wrong": 5,
+      "rule_correct": 2839,
+      "rule_wrong": 3
+     },
+     {
+      "threshold": 0.99,
+      "engine_correct": 2780,
+      "engine_wrong": 2,
+      "rule_correct": 2698,
+      "rule_wrong": 1
+     }
+    ]
+   }
+  }
+ },
+ "sources": [
+  {
+   "source": "SPT0020-51",
+   "z_published": 4.123,
+   "group": "several",
+   "status": "confident & correct",
+   "detections_5sigma": 1,
+   "engine": {
+    "uniform": {
+     "z": 4.12,
+     "confidence": 1.0,
+     "p_published": 1.0,
+     "correct": true
+    },
+    "spt": {
+     "z": 4.12,
+     "confidence": 1.0,
+     "p_published": 1.0,
+     "correct": true
+    },
+    "photoz": {
+     "z": 4.12,
+     "confidence": 1.0,
+     "p_published": 1.0,
+     "correct": true
+    },
+    "photoz_2024": {
+     "z": 4.12,
+     "confidence": 1.0,
+     "p_published": 1.0,
+     "correct": true
+    }
+   },
+   "photoz": {
+    "centre": 4.2,
+    "width": 0.7,
+    "offset": 0.11
+   },
+   "rule": {
+    "uniform": "none",
+    "photoz": "correct"
+   },
+   "rule_5sigma": "none",
+   "xcorr": {
+    "uniform": "correct",
+    "spt": "correct"
+   },
+   "xcorr_photoz": "correct"
+  },
+  {
+   "source": "SPT0106-64",
+   "z_published": 4.91,
+   "group": "one",
+   "status": "ambiguous (best = truth)",
+   "detections_5sigma": 1,
+   "engine": {
+    "uniform": {
+     "z": 4.9096,
+     "confidence": 0.496,
+     "p_published": 0.496,
+     "correct": true
+    },
+    "spt": {
+     "z": 4.9096,
+     "confidence": 0.669,
+     "p_published": 0.6686,
+     "correct": true
+    },
+    "photoz": {
+     "z": 4.9096,
+     "confidence": 0.996,
+     "p_published": 0.9958,
+     "correct": true
+    },
+    "photoz_2024": {
+     "z": 4.9096,
+     "confidence": 0.941,
+     "p_published": 0.9409,
+     "correct": true
+    }
+   },
+   "photoz": {
+    "centre": 4.5,
+    "width": 0.4,
+    "offset": -1.03
+   },
+   "rule": {
+    "uniform": "none",
+    "photoz": "none"
+   },
+   "rule_5sigma": "none",
+   "xcorr": {
+    "uniform": "wrong",
+    "spt": "wrong"
+   },
+   "xcorr_photoz": "correct"
+  },
+  {
+   "source": "SPT0109-47",
+   "z_published": 3.614,
+   "group": "several",
+   "status": "confident & correct",
+   "detections_5sigma": 2,
+   "engine": {
+    "uniform": {
+     "z": 3.6131,
+     "confidence": 1.0,
+     "p_published": 1.0,
+     "correct": true
+    },
+    "spt": {
+     "z": 3.6131,
+     "confidence": 1.0,
+     "p_published": 1.0,
+     "correct": true
+    },
+    "photoz": {
+     "z": 3.6131,
+     "confidence": 1.0,
+     "p_published": 1.0,
+     "correct": true
+    },
+    "photoz_2024": {
+     "z": 3.6131,
+     "confidence": 1.0,
+     "p_published": 1.0,
+     "correct": true
+    }
+   },
+   "photoz": {
+    "centre": 3.8,
+    "width": 0.5,
+    "offset": 0.37
+   },
+   "rule": {
+    "uniform": "correct",
+    "photoz": "correct"
+   },
+   "rule_5sigma": "correct",
+   "xcorr": {
+    "uniform": "correct",
+    "spt": "correct"
+   },
+   "xcorr_photoz": "correct"
+  },
+  {
+   "source": "SPT0112-55",
+   "z_published": 3.443,
+   "group": "none",
+   "status": "ambiguous (best != truth)",
+   "detections_5sigma": 0,
+   "engine": {
+    "uniform": {
+     "z": 5.734,
+     "confidence": 0.031,
+     "p_published": 0.0055,
+     "correct": false
+    },
+    "spt": {
+     "z": 4.0428,
+     "confidence": 0.04,
+     "p_published": 0.0124,
+     "correct": false
+    },
+    "photoz": {
+     "z": 5.734,
+     "confidence": 0.082,
+     "p_published": 0.0004,
+     "correct": false
+    },
+    "photoz_2024": {
+     "z": 3.7967,
+     "confidence": 0.101,
+     "p_published": 0.0302,
+     "correct": false
+    }
+   },
+   "photoz": {
+    "centre": 6.2,
+    "width": 1.0,
+    "offset": 2.76
+   },
+   "rule": {
+    "uniform": "none",
+    "photoz": "none"
+   },
+   "rule_5sigma": "none",
+   "xcorr": {
+    "uniform": "wrong",
+    "spt": "wrong"
+   },
+   "xcorr_photoz": "wrong"
+  },
+  {
+   "source": "SPT0136-63",
+   "z_published": 4.299,
+   "group": "several",
+   "status": "confident & correct",
+   "detections_5sigma": 2,
+   "engine": {
+    "uniform": {
+     "z": 4.2989,
+     "confidence": 1.0,
+     "p_published": 1.0,
+     "correct": true
+    },
+    "spt": {
+     "z": 4.2989,
+     "confidence": 1.0,
+     "p_published": 1.0,
+     "correct": true
+    },
+    "photoz": {
+     "z": 4.2989,
+     "confidence": 1.0,
+     "p_published": 1.0,
+     "correct": true
+    },
+    "photoz_2024": {
+     "z": 4.2989,
+     "confidence": 1.0,
+     "p_published": 1.0,
+     "correct": true
+    }
+   },
+   "photoz": {
+    "centre": 4.5,
+    "width": 0.8,
+    "offset": 0.25
+   },
+   "rule": {
+    "uniform": "correct",
+    "photoz": "correct"
+   },
+   "rule_5sigma": "correct",
+   "xcorr": {
+    "uniform": "correct",
+    "spt": "correct"
+   },
+   "xcorr_photoz": "correct"
+  },
+  {
+   "source": "SPT0147-64",
+   "z_published": 4.803,
+   "group": "several",
+   "status": "confident & correct",
+   "detections_5sigma": 1,
+   "engine": {
+    "uniform": {
+     "z": 4.8022,
+     "confidence": 0.989,
+     "p_published": 0.9894,
+     "correct": true
+    },
+    "spt": {
+     "z": 4.8022,
+     "confidence": 0.996,
+     "p_published": 0.9959,
+     "correct": true
+    },
+    "photoz": {
+     "z": 4.8022,
+     "confidence": 0.996,
+     "p_published": 0.9958,
+     "correct": true
+    },
+    "photoz_2024": {
+     "z": 4.8022,
+     "confidence": 0.998,
+     "p_published": 0.9981,
+     "correct": true
+    }
+   },
+   "photoz": {
+    "centre": 5.3,
+    "width": 0.6,
+    "offset": 0.83
+   },
+   "rule": {
+    "uniform": "correct",
+    "photoz": "correct"
+   },
+   "rule_5sigma": "none",
+   "xcorr": {
+    "uniform": "correct",
+    "spt": "wrong"
+   },
+   "xcorr_photoz": "correct"
+  },
+  {
+   "source": "SPT0150-59",
+   "z_published": 2.788,
+   "group": "one",
+   "status": "ambiguous (best = truth) [tentative ID]",
+   "detections_5sigma": 1,
+   "engine": {
+    "uniform": {
+     "z": 2.789,
+     "confidence": 0.6,
+     "p_published": 0.6,
+     "correct": true
+    },
+    "spt": {
+     "z": 2.789,
+     "confidence": 0.902,
+     "p_published": 0.9024,
+     "correct": true
+    },
+    "photoz": {
+     "z": 2.789,
+     "confidence": 0.997,
+     "p_published": 0.997,
+     "correct": true
+    },
+    "photoz_2024": {
+     "z": 2.789,
+     "confidence": 0.998,
+     "p_published": 0.9979,
+     "correct": true
+    }
+   },
+   "photoz": {
+    "centre": 3.7,
+    "width": 0.6,
+    "offset": 1.52
+   },
+   "rule": {
+    "uniform": "none",
+    "photoz": "correct"
+   },
+   "rule_5sigma": "none",
+   "xcorr": {
+    "uniform": "wrong",
+    "spt": "correct"
+   },
+   "xcorr_photoz": "wrong"
+  },
+  {
+   "source": "SPT0155-62",
+   "z_published": 4.349,
+   "group": "several",
+   "status": "confident & correct",
+   "detections_5sigma": 2,
+   "engine": {
+    "uniform": {
+     "z": 4.3504,
+     "confidence": 1.0,
+     "p_published": 1.0,
+     "correct": true
+    },
+    "spt": {
+     "z": 4.3504,
+     "confidence": 1.0,
+     "p_published": 1.0,
+     "correct": true
+    },
+    "photoz": {
+     "z": 4.3504,
+     "confidence": 1.0,
+     "p_published": 1.0,
+     "correct": true
+    },
+    "photoz_2024": {
+     "z": 4.3504,
+     "confidence": 1.0,
+     "p_published": 1.0,
+     "correct": true
+    }
+   },
+   "photoz": {
+    "centre": 6.2,
+    "width": 0.6,
+    "offset": 3.08
+   },
+   "rule": {
+    "uniform": "correct",
+    "photoz": "correct"
+   },
+   "rule_5sigma": "correct",
+   "xcorr": {
+    "uniform": "correct",
+    "spt": "correct"
+   },
+   "xcorr_photoz": "wrong"
+  },
+  {
+   "source": "SPT0202-61",
+   "z_published": 5.018,
+   "group": "several",
+   "status": "ambiguous (best = truth)",
+   "detections_5sigma": 1,
+   "engine": {
+    "uniform": {
+     "z": 5.017,
+     "confidence": 0.829,
+     "p_published": 0.8288,
+     "correct": true
+    },
+    "spt": {
+     "z": 5.017,
+     "confidence": 0.894,
+     "p_published": 0.8935,
+     "correct": true
+    },
+    "photoz": {
+     "z": 5.017,
+     "confidence": 1.0,
+     "p_published": 1.0,
+     "correct": true
+    },
+    "photoz_2024": {
+     "z": 5.017,
+     "confidence": 1.0,
+     "p_published": 0.9998,
+     "correct": true
+    }
+   },
+   "photoz": {
+    "centre": 5.6,
+    "width": 0.5,
+    "offset": 1.16
+   },
+   "rule": {
+    "uniform": "none",
+    "photoz": "correct"
+   },
+   "rule_5sigma": "none",
+   "xcorr": {
+    "uniform": "wrong",
+    "spt": "wrong"
+   },
+   "xcorr_photoz": "correct"
+  },
+  {
+   "source": "SPT0245-63",
+   "z_published": 5.626,
+   "group": "several",
+   "status": "confident & correct",
+   "detections_5sigma": 2,
+   "engine": {
+    "uniform": {
+     "z": 5.6237,
+     "confidence": 1.0,
+     "p_published": 1.0,
+     "correct": true
+    },
+    "spt": {
+     "z": 5.6237,
+     "confidence": 1.0,
+     "p_published": 1.0,
+     "correct": true
+    },
+    "photoz": {
+     "z": 5.6237,
+     "confidence": 1.0,
+     "p_published": 1.0,
+     "correct": true
+    },
+    "photoz_2024": {
+     "z": 5.6237,
+     "confidence": 1.0,
+     "p_published": 1.0,
+     "correct": true
+    }
+   },
+   "photoz": {
+    "centre": 5.4,
+    "width": 0.8,
+    "offset": -0.28
+   },
+   "rule": {
+    "uniform": "correct",
+    "photoz": "correct"
+   },
+   "rule_5sigma": "correct",
+   "xcorr": {
+    "uniform": "correct",
+    "spt": "wrong"
+   },
+   "xcorr_photoz": "correct"
+  },
+  {
+   "source": "SPT0311-58",
+   "z_published": 6.901,
+   "group": "several",
+   "status": "ambiguous (best = truth)",
+   "detections_5sigma": 0,
+   "engine": {
+    "uniform": {
+     "z": 6.902,
+     "confidence": 0.854,
+     "p_published": 0.8539,
+     "correct": true
+    },
+    "spt": {
+     "z": 6.902,
+     "confidence": 0.21,
+     "p_published": 0.2098,
+     "correct": true
+    },
+    "photoz": {
+     "z": 6.902,
+     "confidence": 0.967,
+     "p_published": 0.9668,
+     "correct": true
+    },
+    "photoz_2024": {
+     "z": 6.902,
+     "confidence": 0.91,
+     "p_published": 0.9101,
+     "correct": true
+    }
+   },
+   "photoz": {
+    "centre": 6.4,
+    "width": 1.0,
+    "offset": -0.5
+   },
+   "rule": {
+    "uniform": "none",
+    "photoz": "none"
+   },
+   "rule_5sigma": "none",
+   "xcorr": {
+    "uniform": "correct",
+    "spt": "wrong"
+   },
+   "xcorr_photoz": "correct"
+  },
+  {
+   "source": "SPT0348-62",
+   "z_published": 5.654,
+   "group": "several",
+   "status": "confident & correct",
+   "detections_5sigma": 1,
+   "engine": {
+    "uniform": {
+     "z": 5.6547,
+     "confidence": 0.998,
+     "p_published": 0.9979,
+     "correct": true
+    },
+    "spt": {
+     "z": 5.6547,
+     "confidence": 0.996,
+     "p_published": 0.9964,
+     "correct": true
+    },
+    "photoz": {
+     "z": 5.6547,
+     "confidence": 1.0,
+     "p_published": 0.9999,
+     "correct": true
+    },
+    "photoz_2024": {
+     "z": 5.6547,
+     "confidence": 1.0,
+     "p_published": 0.9999,
+     "correct": true
+    }
+   },
+   "photoz": {
+    "centre": 5.2,
+    "width": 0.9,
+    "offset": -0.5
+   },
+   "rule": {
+    "uniform": "correct",
+    "photoz": "correct"
+   },
+   "rule_5sigma": "none",
+   "xcorr": {
+    "uniform": "correct",
+    "spt": "wrong"
+   },
+   "xcorr_photoz": "correct"
+  },
+  {
+   "source": "SPT0516-59",
+   "z_published": 3.404,
+   "group": "one",
+   "status": "confident & correct",
+   "detections_5sigma": 1,
+   "engine": {
+    "uniform": {
+     "z": 3.4034,
+     "confidence": 0.935,
+     "p_published": 0.9348,
+     "correct": true
+    },
+    "spt": {
+     "z": 3.4034,
+     "confidence": 0.972,
+     "p_published": 0.9716,
+     "correct": true
+    },
+    "photoz": {
+     "z": 3.4034,
+     "confidence": 0.987,
+     "p_published": 0.9874,
+     "correct": true
+    },
+    "photoz_2024": {
+     "z": 3.4034,
+     "confidence": 0.983,
+     "p_published": 0.9833,
+     "correct": true
+    }
+   },
+   "photoz": {
+    "centre": 3.2,
+    "width": 0.6,
+    "offset": -0.34
+   },
+   "rule": {
+    "uniform": "none",
+    "photoz": "none"
+   },
+   "rule_5sigma": "none",
+   "xcorr": {
+    "uniform": "correct",
+    "spt": "correct"
+   },
+   "xcorr_photoz": "correct"
+  },
+  {
+   "source": "SPT0544-40",
+   "z_published": 4.269,
+   "group": "several",
+   "status": "ambiguous (best != truth)",
+   "detections_5sigma": 0,
+   "engine": {
+    "uniform": {
+     "z": 7.2055,
+     "confidence": 0.047,
+     "p_published": 0.0078,
+     "correct": false
+    },
+    "spt": {
+     "z": 2.9517,
+     "confidence": 0.095,
+     "p_published": 0.0184,
+     "correct": false
+    },
+    "photoz": {
+     "z": 3.6868,
+     "confidence": 0.085,
+     "p_published": 0.033,
+     "correct": false
+    },
+    "photoz_2024": {
+     "z": 3.6868,
+     "confidence": 0.085,
+     "p_published": 0.033,
+     "correct": false
+    }
+   },
+   "photoz": {
+    "centre": 4.0,
+    "width": 0.6,
+    "offset": -0.45
+   },
+   "rule": {
+    "uniform": "none",
+    "photoz": "none"
+   },
+   "rule_5sigma": "none",
+   "xcorr": {
+    "uniform": "wrong",
+    "spt": "wrong"
+   },
+   "xcorr_photoz": "wrong"
+  },
+  {
+   "source": "SPT0552-42",
+   "z_published": 4.438,
+   "group": "several",
+   "status": "confident & correct",
+   "detections_5sigma": 1,
+   "engine": {
+    "uniform": {
+     "z": 4.435,
+     "confidence": 0.958,
+     "p_published": 0.9579,
+     "correct": true
+    },
+    "spt": {
+     "z": 4.435,
+     "confidence": 0.993,
+     "p_published": 0.993,
+     "correct": true
+    },
+    "photoz": {
+     "z": 4.435,
+     "confidence": 1.0,
+     "p_published": 0.9997,
+     "correct": true
+    },
+    "photoz_2024": {
+     "z": 4.435,
+     "confidence": 1.0,
+     "p_published": 0.9998,
+     "correct": true
+    }
+   },
+   "photoz": {
+    "centre": 4.9,
+    "width": 0.9,
+    "offset": 0.51
+   },
+   "rule": {
+    "uniform": "wrong",
+    "photoz": "none"
+   },
+   "rule_5sigma": "none",
+   "xcorr": {
+    "uniform": "correct",
+    "spt": "correct"
+   },
+   "xcorr_photoz": "correct"
+  },
+  {
+   "source": "SPT0553-50",
+   "z_published": 5.323,
+   "group": "several",
+   "status": "ambiguous (best = truth)",
+   "detections_5sigma": 0,
+   "engine": {
+    "uniform": {
+     "z": 5.3184,
+     "confidence": 0.636,
+     "p_published": 0.6362,
+     "correct": true
+    },
+    "spt": {
+     "z": 5.3184,
+     "confidence": 0.62,
+     "p_published": 0.6199,
+     "correct": true
+    },
+    "photoz": {
+     "z": 5.3184,
+     "confidence": 0.677,
+     "p_published": 0.6768,
+     "correct": true
+    },
+    "photoz_2024": {
+     "z": 5.3184,
+     "confidence": 0.785,
+     "p_published": 0.7851,
+     "correct": true
+    }
+   },
+   "photoz": {
+    "centre": 4.2,
+    "width": 0.9,
+    "offset": -1.25
+   },
+   "rule": {
+    "uniform": "none",
+    "photoz": "none"
+   },
+   "rule_5sigma": "none",
+   "xcorr": {
+    "uniform": "correct",
+    "spt": "wrong"
+   },
+   "xcorr_photoz": "wrong"
+  },
+  {
+   "source": "SPT0555-62",
+   "z_published": 4.815,
+   "group": "one",
+   "status": "ambiguous (best != truth)",
+   "detections_5sigma": 0,
+   "engine": {
+    "uniform": {
+     "z": 5.8495,
+     "confidence": 0.034,
+     "p_published": 0.0103,
+     "correct": false
+    },
+    "spt": {
+     "z": 4.0834,
+     "confidence": 0.035,
+     "p_published": 0.0182,
+     "correct": false
+    },
+    "photoz": {
+     "z": 5.8495,
+     "confidence": 0.042,
+     "p_published": 0.0392,
+     "correct": false
+    },
+    "photoz_2024": {
+     "z": 4.0834,
+     "confidence": 0.054,
+     "p_published": 0.036,
+     "correct": false
+    }
+   },
+   "photoz": {
+    "centre": 4.8,
+    "width": 0.7,
+    "offset": -0.02
+   },
+   "rule": {
+    "uniform": "none",
+    "photoz": "none"
+   },
+   "rule_5sigma": "none",
+   "xcorr": {
+    "uniform": "wrong",
+    "spt": "wrong"
+   },
+   "xcorr_photoz": "correct"
+  },
+  {
+   "source": "SPT0604-64",
+   "z_published": 2.481,
+   "group": "one",
+   "status": "ambiguous (best = truth)",
+   "detections_5sigma": 1,
+   "engine": {
+    "uniform": {
+     "z": 5.9601,
+     "confidence": 0.528,
+     "p_published": 0.2642,
+     "correct": false
+    },
+    "spt": {
+     "z": 2.4806,
+     "confidence": 0.479,
+     "p_published": 0.4787,
+     "correct": true
+    },
+    "photoz": {
+     "z": 2.4806,
+     "confidence": 1.0,
+     "p_published": 0.9995,
+     "correct": true
+    },
+    "photoz_2024": {
+     "z": 2.4806,
+     "confidence": 0.998,
+     "p_published": 0.998,
+     "correct": true
+    }
+   },
+   "photoz": {
+    "centre": 3.0,
+    "width": 0.4,
+    "offset": 1.3
+   },
+   "rule": {
+    "uniform": "none",
+    "photoz": "none"
+   },
+   "rule_5sigma": "none",
+   "xcorr": {
+    "uniform": "wrong",
+    "spt": "wrong"
+   },
+   "xcorr_photoz": "correct"
+  },
+  {
+   "source": "SPT0611-55",
+   "z_published": 2.026,
+   "group": "one",
+   "status": "ambiguous (best != truth)",
+   "detections_5sigma": 0,
+   "engine": {
+    "uniform": {
+     "z": 4.3362,
+     "confidence": 0.047,
+     "p_published": 0.0132,
+     "correct": false
+    },
+    "spt": {
+     "z": 4.3362,
+     "confidence": 0.104,
+     "p_published": 0.0073,
+     "correct": false
+    },
+    "photoz": {
+     "z": 2.4766,
+     "confidence": 0.182,
+     "p_published": 0.0488,
+     "correct": false
+    },
+    "photoz_2024": {
+     "z": 1.3178,
+     "confidence": 0.12,
+     "p_published": 0.0552,
+     "correct": false
+    }
+   },
+   "photoz": {
+    "centre": 2.5,
+    "width": 0.4,
+    "offset": 1.19
+   },
+   "rule": {
+    "uniform": "none",
+    "photoz": "none"
+   },
+   "rule_5sigma": "none",
+   "xcorr": {
+    "uniform": "wrong",
+    "spt": "wrong"
+   },
+   "xcorr_photoz": "wrong"
+  },
+  {
+   "source": "SPT0625-58",
+   "z_published": 2.727,
+   "group": "one",
+   "status": "ambiguous (best = truth)",
+   "detections_5sigma": 1,
+   "engine": {
+    "uniform": {
+     "z": 2.7263,
+     "confidence": 0.6,
+     "p_published": 0.5997,
+     "correct": true
+    },
+    "spt": {
+     "z": 2.7263,
+     "confidence": 0.903,
+     "p_published": 0.9032,
+     "correct": true
+    },
+    "photoz": {
+     "z": 2.7263,
+     "confidence": 0.999,
+     "p_published": 0.9987,
+     "correct": true
+    },
+    "photoz_2024": {
+     "z": 2.7263,
+     "confidence": 1.0,
+     "p_published": 0.9996,
+     "correct": true
+    }
+   },
+   "photoz": {
+    "centre": 3.4,
+    "width": 0.4,
+    "offset": 1.68
+   },
+   "rule": {
+    "uniform": "none",
+    "photoz": "none"
+   },
+   "rule_5sigma": "none",
+   "xcorr": {
+    "uniform": "correct",
+    "spt": "wrong"
+   },
+   "xcorr_photoz": "wrong"
+  },
+  {
+   "source": "SPT2037-65",
+   "z_published": 3.998,
+   "group": "one",
+   "status": "confident & correct",
+   "detections_5sigma": 1,
+   "engine": {
+    "uniform": {
+     "z": 3.9993,
+     "confidence": 0.894,
+     "p_published": 0.8937,
+     "correct": true
+    },
+    "spt": {
+     "z": 3.9993,
+     "confidence": 0.956,
+     "p_published": 0.9561,
+     "correct": true
+    },
+    "photoz": {
+     "z": 3.9993,
+     "confidence": 0.989,
+     "p_published": 0.9887,
+     "correct": true
+    },
+    "photoz_2024": {
+     "z": 3.9993,
+     "confidence": 0.981,
+     "p_published": 0.9814,
+     "correct": true
+    }
+   },
+   "photoz": {
+    "centre": 5.1,
+    "width": 0.6,
+    "offset": 1.84
+   },
+   "rule": {
+    "uniform": "none",
+    "photoz": "none"
+   },
+   "rule_5sigma": "none",
+   "xcorr": {
+    "uniform": "correct",
+    "spt": "correct"
+   },
+   "xcorr_photoz": "wrong"
+  },
+  {
+   "source": "SPT2048-55",
+   "z_published": 4.09,
+   "group": "several",
+   "status": "confident & correct",
+   "detections_5sigma": 2,
+   "engine": {
+    "uniform": {
+     "z": 4.0893,
+     "confidence": 1.0,
+     "p_published": 1.0,
+     "correct": true
+    },
+    "spt": {
+     "z": 4.0893,
+     "confidence": 1.0,
+     "p_published": 1.0,
+     "correct": true
+    },
+    "photoz": {
+     "z": 4.0893,
+     "confidence": 1.0,
+     "p_published": 1.0,
+     "correct": true
+    },
+    "photoz_2024": {
+     "z": 4.0893,
+     "confidence": 1.0,
+     "p_published": 1.0,
+     "correct": true
+    }
+   },
+   "photoz": {
+    "centre": 5.1,
+    "width": 0.7,
+    "offset": 1.44
+   },
+   "rule": {
+    "uniform": "correct",
+    "photoz": "correct"
+   },
+   "rule_5sigma": "correct",
+   "xcorr": {
+    "uniform": "correct",
+    "spt": "correct"
+   },
+   "xcorr_photoz": "wrong"
+  },
+  {
+   "source": "SPT2101-60",
+   "z_published": 3.155,
+   "group": "one",
+   "status": "ambiguous (best = truth)",
+   "detections_5sigma": 1,
+   "engine": {
+    "uniform": {
+     "z": 3.1551,
+     "confidence": 0.444,
+     "p_published": 0.4444,
+     "correct": true
+    },
+    "spt": {
+     "z": 3.1551,
+     "confidence": 0.783,
+     "p_published": 0.7832,
+     "correct": true
+    },
+    "photoz": {
+     "z": 3.1551,
+     "confidence": 0.835,
+     "p_published": 0.8345,
+     "correct": true
+    },
+    "photoz_2024": {
+     "z": 3.1551,
+     "confidence": 0.858,
+     "p_published": 0.8579,
+     "correct": true
+    }
+   },
+   "photoz": {
+    "centre": 3.1,
+    "width": 0.6,
+    "offset": -0.09
+   },
+   "rule": {
+    "uniform": "none",
+    "photoz": "none"
+   },
+   "rule_5sigma": "none",
+   "xcorr": {
+    "uniform": "wrong",
+    "spt": "correct"
+   },
+   "xcorr_photoz": "correct"
+  }
+ ]
+}

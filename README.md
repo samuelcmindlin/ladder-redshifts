@@ -91,15 +91,29 @@ cubes, and each answer is scored against the published redshift (Reuter et al. 2
   - **One revised value shows the limit.** The 2024 photometric redshift of SPT2349-52 is 2.8 errors from the
     published redshift and sits on the wrong reading of its line. Every rule then answers wrongly, and the
     engine gives that wrong redshift 0.93, just under its threshold of 0.95.
-  - **No wrong answer is not the same as a low rate of wrong answers.** On the 19 real spectra the engine gave
+  - **No wrong answer is not the same as a low rate of wrong answers.** On these 19 real spectra the engine gave
     15 confident answers with the 2020 photometric prior, none wrong. That bounds its wrong-answer rate below
     18% at 95% confidence. About 60 are needed to bound it below 5%.
   - **What this is not.** Eleven sources, from the development sample; a difference of a few sources between
     methods shows nothing. The photometric redshifts rest on a dust-temperature prior measured on the same
     sample.
-- **A test on 23 sources the engine was not developed on is planned and not yet run.** The plan, the sample and
-  the outcomes to be reported were fixed in tag `v0.2.0`, before any of those spectra was downloaded
-  ([`docs/independent-test-plan.md`](docs/independent-test-plan.md)).
+- **On 23 sources the engine was not developed on, it gave no confident wrong answer.** The plan, the sample and
+  the outcomes to report were fixed in tag `v0.2.0` before those spectra were downloaded
+  ([`docs/independent-test-plan.md`](docs/independent-test-plan.md)), and the code was run once
+  ([`docs/results.md`](docs/results.md), section 11).
+  - **Confident answers:** 11 with the survey prior and 17 with the photometric prior, none wrong. Pooled with
+    the development sample, 0 wrong of 32 bounds the wrong-answer rate below 9%.
+  - **Fewer multi-line sources were settled than before:** 9 of 13 with the survey prior, against 8 of 8 on the
+    development sample. These scans are shallower: only 5 of the 13 show two lines at 5σ in our spectra.
+  - **One-line sources:** 5 of 8 settled with the photometric prior, all correctly.
+  - **Against the rule chosen beforehand, with no prior:** the engine settled 9 multi-line sources and the rule 7,
+    with one wrong answer. That is two sources, and decides nothing.
+  - **Against the rule chosen beforehand, with the photometric prior:** the engine settled 17 sources and the rule
+    10. The engine settled seven the rule did not, and the rule none the engine did not.
+  - **What this is not.** One survey, one team's redshifts, and not blind: the published answers were known when
+    the plan was written, though the code does not use them.
+
+  ![The 23 sources of the independent test](figures/independent/summary.png)
 
   ![The one-line sources with their photometric redshifts as priors](figures/redshift_photoz.png)
 - **Second real test.** For SPT0027-50 (ALMA Band 2 science verification, 76.9–111.0 GHz) the engine gives
@@ -158,7 +172,7 @@ Requires Python ≥ 3.9 with numpy, scipy and matplotlib (astropy too for the ar
 
 ```bash
 python -m pip install -r requirements.txt
-python -m pytest                 # 34 regression tests, synthetic and real, under a minute
+python -m pytest                 # 35 regression tests, synthetic and real, about a minute
 bash reproduce.sh                # every real-data result and every figure from the shipped spectra, 1-2 min
 bash reproduce.sh --full         # also re-run the synthetic studies (about 1.8 hours on 2 cores)
 ```
@@ -226,7 +240,8 @@ scripts/                 one-off checks: the first review's diagnostics, the tru
                          calibration of the shipped spectra, the engine on pure noise, the High-z Sudoku code
                          on the same sources (needs your own copy of that code), the photometric-redshift
                          table and its accuracy, the independent test sample (both need the SPT
-                         collaboration's posted tables)
+                         collaboration's posted tables), and the independent test's noise-added run
+                         and report
 data/                    published redshifts, extracted spectra, cut-out targets and manifest (see data/README.md)
 results/                 every number reported, as JSON/CSV (see results/README.md)
 figures/                 every figure (see figures/README.md)
@@ -254,13 +269,14 @@ tests/                   regression tests
   The engine then trusts the ratios more than it should: the excitation prior is a coarse grid, and line fluxes
   are taken as known to the noise level. For bright lines its confidence between such readings is not reliable
   ([`docs/development-notes.md`](docs/development-notes.md), "Known open issues").
-- **Small real sample.** The real-data test covers 18 sources from one ALMA programme in one band, plus SPT0027-50.
-  These were also the spectra on which the method's bugs were found and fixed
-  ([`docs/development-notes.md`](docs/development-notes.md)), so they are a development sample, not a blind test.
-  About 100 new sources across several surveys, run with a frozen version, would test the score properly.
+- **Small real sample.** The development sample is 18 sources from one ALMA programme in one band, plus
+  SPT0027-50. These were the spectra on which the method's bugs were found and fixed
+  ([`docs/development-notes.md`](docs/development-notes.md)). A further 23 sources from a second programme of the
+  same survey were then run once with a frozen version ([`docs/results.md`](docs/results.md), section 11). That
+  is 41 sources from one survey. About 100 new sources across several surveys would test the score properly.
   Tags `v0.1.0` and `v0.2.0` hold the same engine: the 0.95 threshold, the ±0.006 window, the line list and the
-  template priors. `v0.2.0` adds the comparisons of sections 9 and 10 and the plan for a test on 23 further
-  sources ([`docs/independent-test-plan.md`](docs/independent-test-plan.md)).
+  template priors. `v0.2.0` adds the comparisons of sections 9 and 10 and the plan for the test on the 23
+  sources ([`docs/independent-test-plan.md`](docs/independent-test-plan.md)); it is the version that was run.
 - **Where the truth comes from.** For the 7 multi-line sources the published redshifts came from these same 3 mm
   spectra. Agreement there shows that the engine reaches the published answer automatically; it is not an
   independent confirmation. For the 11 single-line sources the truth came from follow-up in other bands that the

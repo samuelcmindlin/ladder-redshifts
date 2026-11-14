@@ -684,3 +684,32 @@ def test_wrong_rate_bound_and_the_second_sample():
             if f.exists():
                 f.unlink()
 
+
+def test_the_independent_sample_results_are_those_of_the_current_code():
+    """The 23 spectra of the independent test, re-run from the saved spectra in a separate process with
+    $LADDER_REDSHIFTS_SAMPLE set, give the stored results; and the stored report has the outcomes quoted in the
+    README: no confident wrong answer, 9 of 13 multi-line sources settled with the survey prior."""
+    import json
+    import os
+    import subprocess
+    code = ('import json; from ladder_redshifts import photoz as P; from ladder_redshifts.paths import RESULTS; '
+            'rows = json.loads(json.dumps(P.analyse())); saved = json.loads((RESULTS / "redshift_photoz.json").read_text()); '
+            'print(len(rows), rows == saved["sources"], json.loads(json.dumps(P.summarise(rows))) == saved["summary"])')
+    env = dict(os.environ, LADDER_REDSHIFTS_SAMPLE='independent', LADDER_REDSHIFTS_ROOT=str(ROOT))
+    out = subprocess.run([sys.executable, '-c', code], env=env, capture_output=True, text=True, cwd=str(ROOT))
+    assert out.stdout.split() == ['23', 'True', 'True'], out.stderr[-2000:]
+    rep = json.loads((ROOT / 'results' / 'independent' / 'report.json').read_text())
+    pr, g = rep['primary'], rep['groups']
+    assert (pr['spt']['confident_answers'], pr['spt']['wrong'], pr['photoz']['confident_answers'], pr['photoz']['wrong']) \
+        == (11, 0, 17, 0)
+    assert (pr['spt']['pooled_confident_answers'], pr['photoz']['pooled_confident_answers']) == (19, 32)
+    assert pr['photoz']['pooled_wrong_rate_upper_95'] == 0.089
+    assert (g['several']['n'], g['one']['n'], g['none']['n']) == (13, 9, 1)
+    assert g['several']['engine']['spt']['confident_correct'] == 9 and g['one']['engine']['photoz']['confident_correct'] == 6
+    assert g['several']['chosen_rule']['uniform'] == dict(correct=7, wrong=1, none=5)
+    d = rep['as_observed_engine_against_chosen_rule']
+    assert len(d['photoz']['engine_only']) == 7 and d['photoz']['rule_only'] == [] and d['uniform']['rule_only'] == []
+    batch = json.loads((ROOT / 'results' / 'independent' / 'redshift_real_batch.json').read_text())
+    assert sum(r['verdict'].startswith('confident & correct') for r in batch) == 11
+    assert not any(r['verdict'].startswith('confident') and 'correct' not in r['verdict'] for r in batch)
+

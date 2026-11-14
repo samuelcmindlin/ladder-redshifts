@@ -3,6 +3,9 @@
 Written on 13 November 2026 and fixed in tag `v0.2.0`, before any spectrum of the sample was downloaded. The
 outcome will be reported whatever it is, in `docs/results.md`, with every departure from this plan listed.
 
+**Status:** run on 14 November 2026. The outcome and the departures are in
+[`results.md`](results.md), section 11. The rest of this file is as it was in the tag.
+
 ## Why
 
 Every result in this repository so far is on the 18 SPT sources of ALMA project 2016.1.00672.S and on SPT0027-50.

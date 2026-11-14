@@ -1,0 +1,963 @@
+23:59:28 start alma_cutouts_independent/member.uid___A001_X2f7_X446.ari_l.SPT0020-51_sci.spw0_85009MHz.12m.cube.I.pbcor.fits
+23:59:28 cube member.uid___A001_X2f7_X446.ari_l.SPT0020-51_sci.spw0_85009MHz.12m.cube.I.pbcor.fits
+23:59:29   saved SPT0020-51_f85.009.npz: 119 chans of 55.1 km/s, 84.087-85.931 GHz, box 33 px (0.510"/px), median rms 1.656 mJy/beam
+23:59:29 start alma_cutouts_independent/member.uid___A001_X2f7_X446.ari_l.SPT0020-51_sci.spw1_86884MHz.12m.cube.I.pbcor.fits
+23:59:29 cube member.uid___A001_X2f7_X446.ari_l.SPT0020-51_sci.spw1_86884MHz.12m.cube.I.pbcor.fits
+23:59:29   saved SPT0020-51_f86.884.npz: 119 chans of 53.9 km/s, 85.962-87.806 GHz, box 33 px (0.510"/px), median rms 1.626 mJy/beam
+23:59:29 start alma_cutouts_independent/member.uid___A001_X2f7_X446.ari_l.SPT0020-51_sci.spw2_97052MHz.12m.cube.I.pbcor.fits
+23:59:29 cube member.uid___A001_X2f7_X446.ari_l.SPT0020-51_sci.spw2_97052MHz.12m.cube.I.pbcor.fits
+23:59:29   saved SPT0020-51_f97.052.npz: 119 chans of 48.3 km/s, 96.130-97.974 GHz, box 33 px (0.510"/px), median rms 1.678 mJy/beam
+23:59:29 start alma_cutouts_independent/member.uid___A001_X2f7_X446.ari_l.SPT0020-51_sci.spw3_98885MHz.12m.cube.I.pbcor.fits
+23:59:29 cube member.uid___A001_X2f7_X446.ari_l.SPT0020-51_sci.spw3_98885MHz.12m.cube.I.pbcor.fits
+23:59:29   saved SPT0020-51_f98.885.npz: 119 chans of 47.4 km/s, 97.963-99.807 GHz, box 33 px (0.510"/px), median rms 1.818 mJy/beam
+23:59:29 start alma_cutouts_independent/member.uid___A001_X2f7_X44a.ari_l.SPT0020-51_sci.spw0_88760MHz.12m.cube.I.pbcor.fits
+23:59:29 cube member.uid___A001_X2f7_X44a.ari_l.SPT0020-51_sci.spw0_88760MHz.12m.cube.I.pbcor.fits
+23:59:30   saved SPT0020-51_f88.760.npz: 119 chans of 52.8 km/s, 87.838-89.682 GHz, box 33 px (0.490"/px), median rms 1.586 mJy/beam
+23:59:30 start alma_cutouts_independent/member.uid___A001_X2f7_X44a.ari_l.SPT0020-51_sci.spw1_90635MHz.12m.cube.I.pbcor.fits
+23:59:30 cube member.uid___A001_X2f7_X44a.ari_l.SPT0020-51_sci.spw1_90635MHz.12m.cube.I.pbcor.fits
+23:59:30   saved SPT0020-51_f90.635.npz: 119 chans of 51.7 km/s, 89.713-91.557 GHz, box 33 px (0.490"/px), median rms 1.685 mJy/beam
+23:59:30 start alma_cutouts_independent/member.uid___A001_X2f7_X44a.ari_l.SPT0020-51_sci.spw2_100760MHz.12m.cube.I.pbcor.fits
+23:59:30 cube member.uid___A001_X2f7_X44a.ari_l.SPT0020-51_sci.spw2_100760MHz.12m.cube.I.pbcor.fits
+23:59:30   saved SPT0020-51_f100.760.npz: 119 chans of 46.5 km/s, 99.838-101.682 GHz, box 33 px (0.490"/px), median rms 1.675 mJy/beam
+23:59:30 start alma_cutouts_independent/member.uid___A001_X2f7_X44a.ari_l.SPT0020-51_sci.spw3_102635MHz.12m.cube.I.pbcor.fits
+23:59:30 cube member.uid___A001_X2f7_X44a.ari_l.SPT0020-51_sci.spw3_102635MHz.12m.cube.I.pbcor.fits
+23:59:30   saved SPT0020-51_f102.635.npz: 119 chans of 45.6 km/s, 101.713-103.557 GHz, box 33 px (0.490"/px), median rms 1.769 mJy/beam
+23:59:30 start alma_cutouts_independent/member.uid___A001_X2f7_X44e.ari_l.SPT0020-51_sci.spw0_92510MHz.12m.cube.I.pbcor.fits
+23:59:30 cube member.uid___A001_X2f7_X44e.ari_l.SPT0020-51_sci.spw0_92510MHz.12m.cube.I.pbcor.fits
+23:59:30   saved SPT0020-51_f92.510.npz: 104 chans of 50.6 km/s, 91.705-93.315 GHz, box 35 px (0.470"/px), median rms 1.538 mJy/beam
+23:59:30 start alma_cutouts_independent/member.uid___A001_X2f7_X44e.ari_l.SPT0020-51_sci.spw1_94385MHz.12m.cube.I.pbcor.fits
+23:59:30 cube member.uid___A001_X2f7_X44e.ari_l.SPT0020-51_sci.spw1_94385MHz.12m.cube.I.pbcor.fits
+23:59:30   saved SPT0020-51_f94.385.npz: 104 chans of 49.6 km/s, 93.580-95.190 GHz, box 35 px (0.470"/px), median rms 1.525 mJy/beam
+23:59:30 start alma_cutouts_independent/member.uid___A001_X2f7_X44e.ari_l.SPT0020-51_sci.spw2_104510MHz.12m.cube.I.pbcor.fits
+23:59:30 cube member.uid___A001_X2f7_X44e.ari_l.SPT0020-51_sci.spw2_104510MHz.12m.cube.I.pbcor.fits
+23:59:30   saved SPT0020-51_f104.510.npz: 104 chans of 44.8 km/s, 103.705-105.315 GHz, box 35 px (0.470"/px), median rms 1.699 mJy/beam
+23:59:30 start alma_cutouts_independent/member.uid___A001_X2f7_X44e.ari_l.SPT0020-51_sci.spw3_106385MHz.12m.cube.I.pbcor.fits
+23:59:30 cube member.uid___A001_X2f7_X44e.ari_l.SPT0020-51_sci.spw3_106385MHz.12m.cube.I.pbcor.fits
+23:59:30   saved SPT0020-51_f106.385.npz: 104 chans of 44.0 km/s, 105.580-107.190 GHz, box 35 px (0.470"/px), median rms 1.851 mJy/beam
+23:59:30 start alma_cutouts_independent/member.uid___A001_X2f7_X452.ari_l.SPT0020-51_sci.spw0_96260MHz.12m.cube.I.pbcor.fits
+23:59:30 cube member.uid___A001_X2f7_X452.ari_l.SPT0020-51_sci.spw0_96260MHz.12m.cube.I.pbcor.fits
+23:59:30   saved SPT0020-51_f96.260.npz: 104 chans of 48.7 km/s, 95.455-97.065 GHz, box 35 px (0.460"/px), median rms 1.637 mJy/beam
+23:59:30 start alma_cutouts_independent/member.uid___A001_X2f7_X452.ari_l.SPT0020-51_sci.spw1_98135MHz.12m.cube.I.pbcor.fits
+23:59:30 cube member.uid___A001_X2f7_X452.ari_l.SPT0020-51_sci.spw1_98135MHz.12m.cube.I.pbcor.fits
+23:59:30   saved SPT0020-51_f98.135.npz: 104 chans of 47.7 km/s, 97.330-98.940 GHz, box 35 px (0.460"/px), median rms 1.565 mJy/beam
+23:59:30 start alma_cutouts_independent/member.uid___A001_X2f7_X452.ari_l.SPT0020-51_sci.spw2_108260MHz.12m.cube.I.pbcor.fits
+23:59:30 cube member.uid___A001_X2f7_X452.ari_l.SPT0020-51_sci.spw2_108260MHz.12m.cube.I.pbcor.fits
+23:59:31   saved SPT0020-51_f108.260.npz: 104 chans of 43.3 km/s, 107.455-109.065 GHz, box 35 px (0.460"/px), median rms 1.900 mJy/beam
+23:59:31 start alma_cutouts_independent/member.uid___A001_X2f7_X452.ari_l.SPT0020-51_sci.spw3_110135MHz.12m.cube.I.pbcor.fits
+23:59:31 cube member.uid___A001_X2f7_X452.ari_l.SPT0020-51_sci.spw3_110135MHz.12m.cube.I.pbcor.fits
+23:59:31   saved SPT0020-51_f110.135.npz: 104 chans of 42.5 km/s, 109.330-110.940 GHz, box 35 px (0.460"/px), median rms 2.071 mJy/beam
+23:59:31 start alma_cutouts_independent/member.uid___A001_X2f7_X456.ari_l.SPT0020-51_sci.spw0_100010MHz.12m.cube.I.pbcor.fits
+23:59:31 cube member.uid___A001_X2f7_X456.ari_l.SPT0020-51_sci.spw0_100010MHz.12m.cube.I.pbcor.fits
+23:59:31   saved SPT0020-51_f100.010.npz: 104 chans of 46.8 km/s, 99.205-100.815 GHz, box 37 px (0.440"/px), median rms 1.647 mJy/beam
+23:59:31 start alma_cutouts_independent/member.uid___A001_X2f7_X456.ari_l.SPT0020-51_sci.spw1_101885MHz.12m.cube.I.pbcor.fits
+23:59:31 cube member.uid___A001_X2f7_X456.ari_l.SPT0020-51_sci.spw1_101885MHz.12m.cube.I.pbcor.fits
+23:59:31   saved SPT0020-51_f101.885.npz: 104 chans of 46.0 km/s, 101.080-102.690 GHz, box 37 px (0.440"/px), median rms 1.612 mJy/beam
+23:59:31 start alma_cutouts_independent/member.uid___A001_X2f7_X456.ari_l.SPT0020-51_sci.spw2_112010MHz.12m.cube.I.pbcor.fits
+23:59:31 cube member.uid___A001_X2f7_X456.ari_l.SPT0020-51_sci.spw2_112010MHz.12m.cube.I.pbcor.fits
+23:59:31   saved SPT0020-51_f112.010.npz: 104 chans of 41.8 km/s, 111.205-112.815 GHz, box 37 px (0.440"/px), median rms 2.202 mJy/beam
+23:59:31 start alma_cutouts_independent/member.uid___A001_X2f7_X456.ari_l.SPT0020-51_sci.spw3_113885MHz.12m.cube.I.pbcor.fits
+23:59:31 cube member.uid___A001_X2f7_X456.ari_l.SPT0020-51_sci.spw3_113885MHz.12m.cube.I.pbcor.fits
+23:59:31   saved SPT0020-51_f113.885.npz: 104 chans of 41.1 km/s, 113.080-114.690 GHz, box 37 px (0.440"/px), median rms 2.869 mJy/beam
+23:59:31 DONE: 20 cubes extracted
+23:59:43 start alma_cutouts_independent
+23:59:43 cube member.uid___A001_X2f7_X432.ari_l.SPT2037-65_sci.spw0_85016MHz.12m.cube.I.pbcor.fits
+23:59:43   saved SPT2037-65_f85.016.npz: 119 chans of 55.1 km/s, 84.094-85.938 GHz, box 31 px (0.530"/px), median rms 1.843 mJy/beam
+23:59:43 cube member.uid___A001_X2f7_X432.ari_l.SPT2037-65_sci.spw1_86891MHz.12m.cube.I.pbcor.fits
+23:59:43   saved SPT2037-65_f86.891.npz: 119 chans of 53.9 km/s, 85.969-87.813 GHz, box 31 px (0.530"/px), median rms 1.776 mJy/beam
+23:59:43 cube member.uid___A001_X2f7_X432.ari_l.SPT2037-65_sci.spw2_97079MHz.12m.cube.I.pbcor.fits
+23:59:43   saved SPT2037-65_f97.079.npz: 119 chans of 48.3 km/s, 96.157-98.001 GHz, box 31 px (0.530"/px), median rms 2.014 mJy/beam
+23:59:43 cube member.uid___A001_X2f7_X432.ari_l.SPT2037-65_sci.spw3_98891MHz.12m.cube.I.pbcor.fits
+23:59:43   saved SPT2037-65_f98.891.npz: 119 chans of 47.4 km/s, 97.970-99.813 GHz, box 31 px (0.530"/px), median rms 2.111 mJy/beam
+23:59:43 cube member.uid___A001_X2f7_X432.ari_l.SPT2048-55_sci.spw0_85016MHz.12m.cube.I.pbcor.fits
+23:59:43   saved SPT2048-55_f85.016.npz: 119 chans of 55.1 km/s, 84.094-85.938 GHz, box 31 px (0.530"/px), median rms 1.838 mJy/beam
+23:59:43 cube member.uid___A001_X2f7_X432.ari_l.SPT2048-55_sci.spw1_86891MHz.12m.cube.I.pbcor.fits
+23:59:43   saved SPT2048-55_f86.891.npz: 119 chans of 53.9 km/s, 85.969-87.813 GHz, box 31 px (0.530"/px), median rms 1.759 mJy/beam
+23:59:43 cube member.uid___A001_X2f7_X432.ari_l.SPT2048-55_sci.spw2_97079MHz.12m.cube.I.pbcor.fits
+23:59:43   saved SPT2048-55_f97.079.npz: 119 chans of 48.3 km/s, 96.157-98.001 GHz, box 31 px (0.530"/px), median rms 1.991 mJy/beam
+23:59:43 cube member.uid___A001_X2f7_X432.ari_l.SPT2048-55_sci.spw3_98892MHz.12m.cube.I.pbcor.fits
+23:59:43   saved SPT2048-55_f98.892.npz: 119 chans of 47.4 km/s, 97.970-99.813 GHz, box 31 px (0.530"/px), median rms 2.137 mJy/beam
+23:59:43 cube member.uid___A001_X2f7_X432.ari_l.SPT2101-60_sci.spw0_85017MHz.12m.cube.I.pbcor.fits
+23:59:44   saved SPT2101-60_f85.017.npz: 119 chans of 55.1 km/s, 84.095-85.939 GHz, box 31 px (0.530"/px), median rms 1.841 mJy/beam
+23:59:44 cube member.uid___A001_X2f7_X432.ari_l.SPT2101-60_sci.spw1_86892MHz.12m.cube.I.pbcor.fits
+23:59:44   saved SPT2101-60_f86.892.npz: 119 chans of 53.9 km/s, 85.970-87.814 GHz, box 31 px (0.530"/px), median rms 1.766 mJy/beam
+23:59:44 cube member.uid___A001_X2f7_X432.ari_l.SPT2101-60_sci.spw2_97079MHz.12m.cube.I.pbcor.fits
+23:59:44   saved SPT2101-60_f97.079.npz: 119 chans of 48.3 km/s, 96.158-98.001 GHz, box 31 px (0.530"/px), median rms 1.954 mJy/beam
+23:59:44 cube member.uid___A001_X2f7_X432.ari_l.SPT2101-60_sci.spw3_98892MHz.12m.cube.I.pbcor.fits
+23:59:44   saved SPT2101-60_f98.892.npz: 119 chans of 47.4 km/s, 97.970-99.814 GHz, box 31 px (0.530"/px), median rms 2.130 mJy/beam
+23:59:44 cube member.uid___A001_X2f7_X436.ari_l.SPT2037-65_sci.spw0_88761MHz.12m.cube.I.pbcor.fits
+23:59:44   saved SPT2037-65_f88.761.npz: 119 chans of 52.8 km/s, 87.839-89.683 GHz, box 35 px (0.480"/px), median rms 1.757 mJy/beam
+23:59:44 cube member.uid___A001_X2f7_X436.ari_l.SPT2037-65_sci.spw1_90636MHz.12m.cube.I.pbcor.fits
+23:59:44   saved SPT2037-65_f90.636.npz: 119 chans of 51.7 km/s, 89.714-91.558 GHz, box 35 px (0.480"/px), median rms 1.722 mJy/beam
+23:59:44 cube member.uid___A001_X2f7_X436.ari_l.SPT2037-65_sci.spw2_100761MHz.12m.cube.I.pbcor.fits
+23:59:44   saved SPT2037-65_f100.761.npz: 119 chans of 46.5 km/s, 99.839-101.683 GHz, box 35 px (0.480"/px), median rms 1.915 mJy/beam
+23:59:44 cube member.uid___A001_X2f7_X436.ari_l.SPT2037-65_sci.spw3_102636MHz.12m.cube.I.pbcor.fits
+23:59:44   saved SPT2037-65_f102.636.npz: 119 chans of 45.6 km/s, 101.714-103.558 GHz, box 35 px (0.480"/px), median rms 2.079 mJy/beam
+23:59:44 cube member.uid___A001_X2f7_X436.ari_l.SPT2048-55_sci.spw0_88761MHz.12m.cube.I.pbcor.fits
+23:59:44   saved SPT2048-55_f88.761.npz: 119 chans of 52.8 km/s, 87.839-89.683 GHz, box 35 px (0.480"/px), median rms 1.719 mJy/beam
+23:59:44 cube member.uid___A001_X2f7_X436.ari_l.SPT2048-55_sci.spw1_90636MHz.12m.cube.I.pbcor.fits
+23:59:44   saved SPT2048-55_f90.636.npz: 119 chans of 51.7 km/s, 89.714-91.558 GHz, box 35 px (0.480"/px), median rms 1.742 mJy/beam
+23:59:44 cube member.uid___A001_X2f7_X436.ari_l.SPT2048-55_sci.spw2_100761MHz.12m.cube.I.pbcor.fits
+23:59:45   saved SPT2048-55_f100.761.npz: 119 chans of 46.5 km/s, 99.839-101.683 GHz, box 35 px (0.480"/px), median rms 1.894 mJy/beam
+23:59:45 cube member.uid___A001_X2f7_X436.ari_l.SPT2048-55_sci.spw3_102636MHz.12m.cube.I.pbcor.fits
+23:59:45   saved SPT2048-55_f102.636.npz: 119 chans of 45.6 km/s, 101.714-103.558 GHz, box 35 px (0.480"/px), median rms 2.099 mJy/beam
+23:59:45 cube member.uid___A001_X2f7_X436.ari_l.SPT2101-60_sci.spw0_88761MHz.12m.cube.I.pbcor.fits
+23:59:45   saved SPT2101-60_f88.761.npz: 119 chans of 52.8 km/s, 87.839-89.683 GHz, box 35 px (0.480"/px), median rms 1.695 mJy/beam
+23:59:45 cube member.uid___A001_X2f7_X436.ari_l.SPT2101-60_sci.spw1_90636MHz.12m.cube.I.pbcor.fits
+23:59:45   saved SPT2101-60_f90.636.npz: 119 chans of 51.7 km/s, 89.714-91.558 GHz, box 35 px (0.480"/px), median rms 1.702 mJy/beam
+23:59:45 cube member.uid___A001_X2f7_X436.ari_l.SPT2101-60_sci.spw2_100761MHz.12m.cube.I.pbcor.fits
+23:59:45   saved SPT2101-60_f100.761.npz: 119 chans of 46.5 km/s, 99.840-101.683 GHz, box 35 px (0.480"/px), median rms 1.877 mJy/beam
+23:59:45 cube member.uid___A001_X2f7_X436.ari_l.SPT2101-60_sci.spw3_102637MHz.12m.cube.I.pbcor.fits
+23:59:45   saved SPT2101-60_f102.637.npz: 119 chans of 45.6 km/s, 101.715-103.558 GHz, box 35 px (0.480"/px), median rms 2.047 mJy/beam
+23:59:45 cube member.uid___A001_X2f7_X43a.ari_l.SPT2037-65_sci.spw0_92511MHz.12m.cube.I.pbcor.fits
+23:59:45   saved SPT2037-65_f92.511.npz: 119 chans of 50.6 km/s, 91.589-93.433 GHz, box 35 px (0.470"/px), median rms 1.763 mJy/beam
+23:59:45 cube member.uid___A001_X2f7_X43a.ari_l.SPT2037-65_sci.spw1_94386MHz.12m.cube.I.pbcor.fits
+23:59:45   saved SPT2037-65_f94.386.npz: 119 chans of 49.6 km/s, 93.464-95.308 GHz, box 35 px (0.470"/px), median rms 1.798 mJy/beam
+23:59:45 cube member.uid___A001_X2f7_X43a.ari_l.SPT2037-65_sci.spw2_104511MHz.12m.cube.I.pbcor.fits
+23:59:45   saved SPT2037-65_f104.511.npz: 119 chans of 44.8 km/s, 103.589-105.433 GHz, box 35 px (0.470"/px), median rms 1.999 mJy/beam
+23:59:45 cube member.uid___A001_X2f7_X43a.ari_l.SPT2037-65_sci.spw3_106386MHz.12m.cube.I.pbcor.fits
+23:59:45   saved SPT2037-65_f106.386.npz: 119 chans of 44.0 km/s, 105.464-107.308 GHz, box 35 px (0.470"/px), median rms 2.172 mJy/beam
+23:59:45 cube member.uid___A001_X2f7_X43a.ari_l.SPT2048-55_sci.spw0_92511MHz.12m.cube.I.pbcor.fits
+23:59:45   saved SPT2048-55_f92.511.npz: 119 chans of 50.6 km/s, 91.589-93.433 GHz, box 35 px (0.470"/px), median rms 1.771 mJy/beam
+23:59:45 cube member.uid___A001_X2f7_X43a.ari_l.SPT2048-55_sci.spw1_94386MHz.12m.cube.I.pbcor.fits
+23:59:46   saved SPT2048-55_f94.386.npz: 119 chans of 49.6 km/s, 93.464-95.308 GHz, box 35 px (0.470"/px), median rms 1.722 mJy/beam
+23:59:46 cube member.uid___A001_X2f7_X43a.ari_l.SPT2048-55_sci.spw2_104511MHz.12m.cube.I.pbcor.fits
+23:59:46   saved SPT2048-55_f104.511.npz: 119 chans of 44.8 km/s, 103.589-105.433 GHz, box 35 px (0.470"/px), median rms 2.002 mJy/beam
+23:59:46 cube member.uid___A001_X2f7_X43a.ari_l.SPT2048-55_sci.spw3_106386MHz.12m.cube.I.pbcor.fits
+23:59:46   saved SPT2048-55_f106.386.npz: 119 chans of 44.0 km/s, 105.464-107.308 GHz, box 35 px (0.470"/px), median rms 2.187 mJy/beam
+23:59:46 cube member.uid___A001_X2f7_X43a.ari_l.SPT2101-60_sci.spw0_92511MHz.12m.cube.I.pbcor.fits
+23:59:46   saved SPT2101-60_f92.511.npz: 119 chans of 50.6 km/s, 91.590-93.433 GHz, box 35 px (0.470"/px), median rms 1.782 mJy/beam
+23:59:46 cube member.uid___A001_X2f7_X43a.ari_l.SPT2101-60_sci.spw1_94386MHz.12m.cube.I.pbcor.fits
+23:59:46   saved SPT2101-60_f94.386.npz: 119 chans of 49.6 km/s, 93.464-95.308 GHz, box 35 px (0.470"/px), median rms 1.722 mJy/beam
+23:59:46 cube member.uid___A001_X2f7_X43a.ari_l.SPT2101-60_sci.spw2_104512MHz.12m.cube.I.pbcor.fits
+23:59:46   saved SPT2101-60_f104.512.npz: 119 chans of 44.8 km/s, 103.590-105.433 GHz, box 35 px (0.470"/px), median rms 2.013 mJy/beam
+23:59:46 cube member.uid___A001_X2f7_X43a.ari_l.SPT2101-60_sci.spw3_106387MHz.12m.cube.I.pbcor.fits
+23:59:46   saved SPT2101-60_f106.387.npz: 119 chans of 44.0 km/s, 105.465-107.308 GHz, box 35 px (0.470"/px), median rms 2.195 mJy/beam
+23:59:46 cube member.uid___A001_X2f7_X43e.ari_l.SPT2037-65_sci.spw0_96261MHz.12m.cube.I.pbcor.fits
+23:59:46   saved SPT2037-65_f96.261.npz: 119 chans of 48.7 km/s, 95.339-97.183 GHz, box 37 px (0.450"/px), median rms 1.701 mJy/beam
+23:59:46 cube member.uid___A001_X2f7_X43e.ari_l.SPT2037-65_sci.spw1_98136MHz.12m.cube.I.pbcor.fits
+23:59:46   saved SPT2037-65_f98.136.npz: 119 chans of 47.7 km/s, 97.214-99.058 GHz, box 37 px (0.450"/px), median rms 1.665 mJy/beam
+23:59:46 cube member.uid___A001_X2f7_X43e.ari_l.SPT2037-65_sci.spw2_108261MHz.12m.cube.I.pbcor.fits
+23:59:46   saved SPT2037-65_f108.261.npz: 119 chans of 43.3 km/s, 107.339-109.183 GHz, box 37 px (0.450"/px), median rms 2.080 mJy/beam
+23:59:46 cube member.uid___A001_X2f7_X43e.ari_l.SPT2037-65_sci.spw3_110136MHz.12m.cube.I.pbcor.fits
+23:59:46   saved SPT2037-65_f110.136.npz: 119 chans of 42.5 km/s, 109.214-111.058 GHz, box 37 px (0.450"/px), median rms 2.263 mJy/beam
+23:59:46 cube member.uid___A001_X2f7_X43e.ari_l.SPT2048-55_sci.spw0_96261MHz.12m.cube.I.pbcor.fits
+23:59:47   saved SPT2048-55_f96.261.npz: 119 chans of 48.7 km/s, 95.339-97.183 GHz, box 37 px (0.450"/px), median rms 1.661 mJy/beam
+23:59:47 cube member.uid___A001_X2f7_X43e.ari_l.SPT2048-55_sci.spw1_98136MHz.12m.cube.I.pbcor.fits
+23:59:47   saved SPT2048-55_f98.136.npz: 119 chans of 47.7 km/s, 97.214-99.058 GHz, box 37 px (0.450"/px), median rms 1.649 mJy/beam
+23:59:47 cube member.uid___A001_X2f7_X43e.ari_l.SPT2048-55_sci.spw2_108261MHz.12m.cube.I.pbcor.fits
+23:59:47   saved SPT2048-55_f108.261.npz: 119 chans of 43.3 km/s, 107.339-109.183 GHz, box 37 px (0.450"/px), median rms 2.029 mJy/beam
+23:59:47 cube member.uid___A001_X2f7_X43e.ari_l.SPT2048-55_sci.spw3_110136MHz.12m.cube.I.pbcor.fits
+23:59:47   saved SPT2048-55_f110.136.npz: 119 chans of 42.5 km/s, 109.214-111.058 GHz, box 37 px (0.450"/px), median rms 2.261 mJy/beam
+23:59:47 cube member.uid___A001_X2f7_X43e.ari_l.SPT2101-60_sci.spw0_96261MHz.12m.cube.I.pbcor.fits
+23:59:47   saved SPT2101-60_f96.261.npz: 119 chans of 48.7 km/s, 95.339-97.183 GHz, box 37 px (0.450"/px), median rms 1.642 mJy/beam
+23:59:47 cube member.uid___A001_X2f7_X43e.ari_l.SPT2101-60_sci.spw1_98136MHz.12m.cube.I.pbcor.fits
+23:59:47   saved SPT2101-60_f98.136.npz: 119 chans of 47.7 km/s, 97.214-99.058 GHz, box 37 px (0.450"/px), median rms 1.629 mJy/beam
+23:59:47 cube member.uid___A001_X2f7_X43e.ari_l.SPT2101-60_sci.spw2_108262MHz.12m.cube.I.pbcor.fits
+23:59:47   saved SPT2101-60_f108.262.npz: 119 chans of 43.3 km/s, 107.340-109.184 GHz, box 37 px (0.450"/px), median rms 2.035 mJy/beam
+23:59:47 cube member.uid___A001_X2f7_X43e.ari_l.SPT2101-60_sci.spw3_110137MHz.12m.cube.I.pbcor.fits
+23:59:47   saved SPT2101-60_f110.137.npz: 119 chans of 42.5 km/s, 109.215-111.059 GHz, box 37 px (0.450"/px), median rms 2.211 mJy/beam
+23:59:47 cube member.uid___A001_X2f7_X442.ari_l.SPT2037-65_sci.spw0_100012MHz.12m.cube.I.pbcor.fits
+23:59:47   saved SPT2037-65_f100.012.npz: 119 chans of 46.8 km/s, 99.090-100.933 GHz, box 53 px (0.310"/px), median rms 1.911 mJy/beam
+23:59:47 cube member.uid___A001_X2f7_X442.ari_l.SPT2037-65_sci.spw1_101887MHz.12m.cube.I.pbcor.fits
+23:59:48   saved SPT2037-65_f101.887.npz: 119 chans of 46.0 km/s, 100.965-102.808 GHz, box 53 px (0.310"/px), median rms 2.015 mJy/beam
+23:59:48 cube member.uid___A001_X2f7_X442.ari_l.SPT2037-65_sci.spw2_112012MHz.12m.cube.I.pbcor.fits
+23:59:48   saved SPT2037-65_f112.012.npz: 119 chans of 41.8 km/s, 111.090-112.934 GHz, box 53 px (0.310"/px), median rms 2.730 mJy/beam
+23:59:48 cube member.uid___A001_X2f7_X442.ari_l.SPT2037-65_sci.spw3_113887MHz.12m.cube.I.pbcor.fits
+23:59:48   saved SPT2037-65_f113.887.npz: 119 chans of 41.1 km/s, 112.965-114.809 GHz, box 53 px (0.310"/px), median rms 3.655 mJy/beam
+23:59:48 cube member.uid___A001_X2f7_X442.ari_l.SPT2048-55_sci.spw0_100011MHz.12m.cube.I.pbcor.fits
+23:59:48   saved SPT2048-55_f100.011.npz: 119 chans of 46.8 km/s, 99.089-100.932 GHz, box 53 px (0.310"/px), median rms 1.903 mJy/beam
+23:59:48 cube member.uid___A001_X2f7_X442.ari_l.SPT2048-55_sci.spw1_101886MHz.12m.cube.I.pbcor.fits
+23:59:48   saved SPT2048-55_f101.886.npz: 119 chans of 46.0 km/s, 100.964-102.807 GHz, box 53 px (0.310"/px), median rms 1.968 mJy/beam
+23:59:48 cube member.uid___A001_X2f7_X442.ari_l.SPT2048-55_sci.spw2_112011MHz.12m.cube.I.pbcor.fits
+23:59:49   saved SPT2048-55_f112.011.npz: 119 chans of 41.8 km/s, 111.089-112.932 GHz, box 53 px (0.310"/px), median rms 2.718 mJy/beam
+23:59:49 cube member.uid___A001_X2f7_X442.ari_l.SPT2048-55_sci.spw3_113886MHz.12m.cube.I.pbcor.fits
+23:59:49   saved SPT2048-55_f113.886.npz: 119 chans of 41.1 km/s, 112.964-114.807 GHz, box 53 px (0.310"/px), median rms 3.606 mJy/beam
+23:59:49 cube member.uid___A001_X2f7_X442.ari_l.SPT2101-60_sci.spw0_100012MHz.12m.cube.I.pbcor.fits
+23:59:49   saved SPT2101-60_f100.012.npz: 119 chans of 46.8 km/s, 99.090-100.933 GHz, box 53 px (0.310"/px), median rms 1.898 mJy/beam
+23:59:49 cube member.uid___A001_X2f7_X442.ari_l.SPT2101-60_sci.spw1_101887MHz.12m.cube.I.pbcor.fits
+23:59:49   saved SPT2101-60_f101.887.npz: 119 chans of 46.0 km/s, 100.965-102.808 GHz, box 53 px (0.310"/px), median rms 1.933 mJy/beam
+23:59:49 cube member.uid___A001_X2f7_X442.ari_l.SPT2101-60_sci.spw2_112012MHz.12m.cube.I.pbcor.fits
+23:59:49   saved SPT2101-60_f112.012.npz: 119 chans of 41.8 km/s, 111.090-112.934 GHz, box 53 px (0.310"/px), median rms 2.694 mJy/beam
+23:59:49 cube member.uid___A001_X2f7_X442.ari_l.SPT2101-60_sci.spw3_113887MHz.12m.cube.I.pbcor.fits
+23:59:49   saved SPT2101-60_f113.887.npz: 119 chans of 41.1 km/s, 112.965-114.809 GHz, box 53 px (0.310"/px), median rms 3.710 mJy/beam
+23:59:49 skip (done) member.uid___A001_X2f7_X446.ari_l.SPT0020-51_sci.spw0_85009MHz.12m.cube.I.pbcor.fits
+23:59:49 skip (done) member.uid___A001_X2f7_X446.ari_l.SPT0020-51_sci.spw1_86884MHz.12m.cube.I.pbcor.fits
+23:59:49 skip (done) member.uid___A001_X2f7_X446.ari_l.SPT0020-51_sci.spw2_97052MHz.12m.cube.I.pbcor.fits
+23:59:49 skip (done) member.uid___A001_X2f7_X446.ari_l.SPT0020-51_sci.spw3_98885MHz.12m.cube.I.pbcor.fits
+23:59:49 cube member.uid___A001_X2f7_X446.ari_l.SPT0109-47_sci.spw0_85010MHz.12m.cube.I.pbcor.fits
+23:59:49   saved SPT0109-47_f85.010.npz: 119 chans of 55.1 km/s, 84.088-85.932 GHz, box 33 px (0.510"/px), median rms 1.744 mJy/beam
+23:59:49 cube member.uid___A001_X2f7_X446.ari_l.SPT0109-47_sci.spw1_86885MHz.12m.cube.I.pbcor.fits
+23:59:49   saved SPT0109-47_f86.885.npz: 119 chans of 53.9 km/s, 85.963-87.807 GHz, box 33 px (0.510"/px), median rms 1.657 mJy/beam
+23:59:49 cube member.uid___A001_X2f7_X446.ari_l.SPT0109-47_sci.spw2_97053MHz.12m.cube.I.pbcor.fits
+23:59:50   saved SPT0109-47_f97.053.npz: 119 chans of 48.3 km/s, 96.131-97.975 GHz, box 33 px (0.510"/px), median rms 1.751 mJy/beam
+23:59:50 cube member.uid___A001_X2f7_X446.ari_l.SPT0109-47_sci.spw3_98886MHz.12m.cube.I.pbcor.fits
+23:59:50   saved SPT0109-47_f98.886.npz: 119 chans of 47.4 km/s, 97.964-99.808 GHz, box 33 px (0.510"/px), median rms 1.885 mJy/beam
+23:59:50 cube member.uid___A001_X2f7_X446.ari_l.SPT0112-55_sci.spw0_85009MHz.12m.cube.I.pbcor.fits
+23:59:50   saved SPT0112-55_f85.009.npz: 119 chans of 55.1 km/s, 84.087-85.931 GHz, box 33 px (0.510"/px), median rms 1.942 mJy/beam
+23:59:50 cube member.uid___A001_X2f7_X446.ari_l.SPT0112-55_sci.spw1_86884MHz.12m.cube.I.pbcor.fits
+23:59:50   saved SPT0112-55_f86.884.npz: 119 chans of 53.9 km/s, 85.962-87.806 GHz, box 33 px (0.510"/px), median rms 1.845 mJy/beam
+23:59:50 cube member.uid___A001_X2f7_X446.ari_l.SPT0112-55_sci.spw2_97052MHz.12m.cube.I.pbcor.fits
+23:59:50   saved SPT0112-55_f97.052.npz: 119 chans of 48.3 km/s, 96.130-97.974 GHz, box 33 px (0.510"/px), median rms 1.942 mJy/beam
+23:59:50 cube member.uid___A001_X2f7_X446.ari_l.SPT0112-55_sci.spw3_98885MHz.12m.cube.I.pbcor.fits
+23:59:50   saved SPT0112-55_f98.885.npz: 119 chans of 47.4 km/s, 97.963-99.807 GHz, box 33 px (0.510"/px), median rms 2.062 mJy/beam
+23:59:50 skip (done) member.uid___A001_X2f7_X44a.ari_l.SPT0020-51_sci.spw0_88760MHz.12m.cube.I.pbcor.fits
+23:59:50 skip (done) member.uid___A001_X2f7_X44a.ari_l.SPT0020-51_sci.spw1_90635MHz.12m.cube.I.pbcor.fits
+23:59:50 skip (done) member.uid___A001_X2f7_X44a.ari_l.SPT0020-51_sci.spw2_100760MHz.12m.cube.I.pbcor.fits
+23:59:50 skip (done) member.uid___A001_X2f7_X44a.ari_l.SPT0020-51_sci.spw3_102635MHz.12m.cube.I.pbcor.fits
+23:59:50 cube member.uid___A001_X2f7_X44a.ari_l.SPT0109-47_sci.spw0_88761MHz.12m.cube.I.pbcor.fits
+23:59:50   saved SPT0109-47_f88.761.npz: 119 chans of 52.8 km/s, 87.839-89.683 GHz, box 33 px (0.490"/px), median rms 1.734 mJy/beam
+23:59:50 cube member.uid___A001_X2f7_X44a.ari_l.SPT0109-47_sci.spw1_90636MHz.12m.cube.I.pbcor.fits
+23:59:50   saved SPT0109-47_f90.636.npz: 119 chans of 51.7 km/s, 89.714-91.558 GHz, box 33 px (0.490"/px), median rms 1.763 mJy/beam
+23:59:50 cube member.uid___A001_X2f7_X44a.ari_l.SPT0109-47_sci.spw2_100761MHz.12m.cube.I.pbcor.fits
+23:59:50   saved SPT0109-47_f100.761.npz: 119 chans of 46.5 km/s, 99.839-101.683 GHz, box 33 px (0.490"/px), median rms 1.766 mJy/beam
+23:59:50 cube member.uid___A001_X2f7_X44a.ari_l.SPT0109-47_sci.spw3_102636MHz.12m.cube.I.pbcor.fits
+23:59:50   saved SPT0109-47_f102.636.npz: 119 chans of 45.6 km/s, 101.714-103.558 GHz, box 33 px (0.490"/px), median rms 1.872 mJy/beam
+23:59:50 cube member.uid___A001_X2f7_X44a.ari_l.SPT0112-55_sci.spw0_88760MHz.12m.cube.I.pbcor.fits
+23:59:50   saved SPT0112-55_f88.760.npz: 119 chans of 52.8 km/s, 87.838-89.682 GHz, box 33 px (0.490"/px), median rms 1.733 mJy/beam
+23:59:50 cube member.uid___A001_X2f7_X44a.ari_l.SPT0112-55_sci.spw1_90635MHz.12m.cube.I.pbcor.fits
+23:59:51   saved SPT0112-55_f90.635.npz: 119 chans of 51.7 km/s, 89.713-91.557 GHz, box 33 px (0.490"/px), median rms 1.723 mJy/beam
+23:59:51 cube member.uid___A001_X2f7_X44a.ari_l.SPT0112-55_sci.spw2_100760MHz.12m.cube.I.pbcor.fits
+23:59:51   saved SPT0112-55_f100.760.npz: 119 chans of 46.5 km/s, 99.838-101.682 GHz, box 33 px (0.490"/px), median rms 1.754 mJy/beam
+23:59:51 cube member.uid___A001_X2f7_X44a.ari_l.SPT0112-55_sci.spw3_102635MHz.12m.cube.I.pbcor.fits
+23:59:51   saved SPT0112-55_f102.635.npz: 119 chans of 45.6 km/s, 101.713-103.557 GHz, box 33 px (0.490"/px), median rms 1.876 mJy/beam
+23:59:51 skip (done) member.uid___A001_X2f7_X44e.ari_l.SPT0020-51_sci.spw0_92510MHz.12m.cube.I.pbcor.fits
+23:59:51 skip (done) member.uid___A001_X2f7_X44e.ari_l.SPT0020-51_sci.spw1_94385MHz.12m.cube.I.pbcor.fits
+23:59:51 skip (done) member.uid___A001_X2f7_X44e.ari_l.SPT0020-51_sci.spw2_104510MHz.12m.cube.I.pbcor.fits
+23:59:51 skip (done) member.uid___A001_X2f7_X44e.ari_l.SPT0020-51_sci.spw3_106385MHz.12m.cube.I.pbcor.fits
+23:59:51 cube member.uid___A001_X2f7_X44e.ari_l.SPT0109-47_sci.spw0_92511MHz.12m.cube.I.pbcor.fits
+23:59:51   saved SPT0109-47_f92.511.npz: 104 chans of 50.6 km/s, 91.706-93.316 GHz, box 35 px (0.470"/px), median rms 1.571 mJy/beam
+23:59:51 cube member.uid___A001_X2f7_X44e.ari_l.SPT0109-47_sci.spw1_94386MHz.12m.cube.I.pbcor.fits
+23:59:51   saved SPT0109-47_f94.386.npz: 104 chans of 49.6 km/s, 93.581-95.191 GHz, box 35 px (0.470"/px), median rms 1.550 mJy/beam
+23:59:51 cube member.uid___A001_X2f7_X44e.ari_l.SPT0109-47_sci.spw2_104511MHz.12m.cube.I.pbcor.fits
+23:59:51   saved SPT0109-47_f104.511.npz: 104 chans of 44.8 km/s, 103.707-105.316 GHz, box 35 px (0.470"/px), median rms 1.755 mJy/beam
+23:59:51 cube member.uid___A001_X2f7_X44e.ari_l.SPT0109-47_sci.spw3_106386MHz.12m.cube.I.pbcor.fits
+23:59:51   saved SPT0109-47_f106.386.npz: 104 chans of 44.0 km/s, 105.582-107.191 GHz, box 35 px (0.470"/px), median rms 1.873 mJy/beam
+23:59:51 cube member.uid___A001_X2f7_X44e.ari_l.SPT0112-55_sci.spw0_92510MHz.12m.cube.I.pbcor.fits
+23:59:51   saved SPT0112-55_f92.510.npz: 104 chans of 50.6 km/s, 91.705-93.315 GHz, box 35 px (0.470"/px), median rms 1.587 mJy/beam
+23:59:51 cube member.uid___A001_X2f7_X44e.ari_l.SPT0112-55_sci.spw1_94385MHz.12m.cube.I.pbcor.fits
+23:59:51   saved SPT0112-55_f94.385.npz: 104 chans of 49.6 km/s, 93.580-95.190 GHz, box 35 px (0.470"/px), median rms 1.567 mJy/beam
+23:59:51 cube member.uid___A001_X2f7_X44e.ari_l.SPT0112-55_sci.spw2_104510MHz.12m.cube.I.pbcor.fits
+23:59:51   saved SPT0112-55_f104.510.npz: 104 chans of 44.8 km/s, 103.705-105.315 GHz, box 35 px (0.470"/px), median rms 1.780 mJy/beam
+23:59:51 cube member.uid___A001_X2f7_X44e.ari_l.SPT0112-55_sci.spw3_106385MHz.12m.cube.I.pbcor.fits
+23:59:51   saved SPT0112-55_f106.385.npz: 104 chans of 44.0 km/s, 105.580-107.190 GHz, box 35 px (0.470"/px), median rms 1.920 mJy/beam
+23:59:51 skip (done) member.uid___A001_X2f7_X452.ari_l.SPT0020-51_sci.spw0_96260MHz.12m.cube.I.pbcor.fits
+23:59:51 skip (done) member.uid___A001_X2f7_X452.ari_l.SPT0020-51_sci.spw1_98135MHz.12m.cube.I.pbcor.fits
+23:59:51 skip (done) member.uid___A001_X2f7_X452.ari_l.SPT0020-51_sci.spw2_108260MHz.12m.cube.I.pbcor.fits
+23:59:51 skip (done) member.uid___A001_X2f7_X452.ari_l.SPT0020-51_sci.spw3_110135MHz.12m.cube.I.pbcor.fits
+23:59:51 cube member.uid___A001_X2f7_X452.ari_l.SPT0109-47_sci.spw0_96261MHz.12m.cube.I.pbcor.fits
+23:59:51   saved SPT0109-47_f96.261.npz: 104 chans of 48.7 km/s, 95.456-97.066 GHz, box 35 px (0.460"/px), median rms 1.589 mJy/beam
+23:59:51 cube member.uid___A001_X2f7_X452.ari_l.SPT0109-47_sci.spw1_98136MHz.12m.cube.I.pbcor.fits
+23:59:52   saved SPT0109-47_f98.136.npz: 104 chans of 47.7 km/s, 97.331-98.941 GHz, box 35 px (0.460"/px), median rms 1.572 mJy/beam
+23:59:52 cube member.uid___A001_X2f7_X452.ari_l.SPT0109-47_sci.spw2_108261MHz.12m.cube.I.pbcor.fits
+23:59:52   saved SPT0109-47_f108.261.npz: 104 chans of 43.3 km/s, 107.457-109.066 GHz, box 35 px (0.460"/px), median rms 1.886 mJy/beam
+23:59:52 cube member.uid___A001_X2f7_X452.ari_l.SPT0109-47_sci.spw3_110136MHz.12m.cube.I.pbcor.fits
+23:59:52   saved SPT0109-47_f110.136.npz: 104 chans of 42.5 km/s, 109.332-110.941 GHz, box 35 px (0.460"/px), median rms 2.069 mJy/beam
+23:59:52 cube member.uid___A001_X2f7_X452.ari_l.SPT0112-55_sci.spw0_96260MHz.12m.cube.I.pbcor.fits
+23:59:52   saved SPT0112-55_f96.260.npz: 104 chans of 48.7 km/s, 95.455-97.065 GHz, box 35 px (0.460"/px), median rms 1.637 mJy/beam
+23:59:52 cube member.uid___A001_X2f7_X452.ari_l.SPT0112-55_sci.spw1_98135MHz.12m.cube.I.pbcor.fits
+23:59:52   saved SPT0112-55_f98.135.npz: 104 chans of 47.7 km/s, 97.330-98.940 GHz, box 35 px (0.460"/px), median rms 1.609 mJy/beam
+23:59:52 cube member.uid___A001_X2f7_X452.ari_l.SPT0112-55_sci.spw2_108260MHz.12m.cube.I.pbcor.fits
+23:59:52   saved SPT0112-55_f108.260.npz: 104 chans of 43.3 km/s, 107.456-109.065 GHz, box 35 px (0.460"/px), median rms 1.939 mJy/beam
+23:59:52 cube member.uid___A001_X2f7_X452.ari_l.SPT0112-55_sci.spw3_110135MHz.12m.cube.I.pbcor.fits
+23:59:52   saved SPT0112-55_f110.135.npz: 104 chans of 42.5 km/s, 109.331-110.940 GHz, box 35 px (0.460"/px), median rms 2.109 mJy/beam
+23:59:52 skip (done) member.uid___A001_X2f7_X456.ari_l.SPT0020-51_sci.spw0_100010MHz.12m.cube.I.pbcor.fits
+23:59:52 skip (done) member.uid___A001_X2f7_X456.ari_l.SPT0020-51_sci.spw1_101885MHz.12m.cube.I.pbcor.fits
+23:59:52 skip (done) member.uid___A001_X2f7_X456.ari_l.SPT0020-51_sci.spw2_112010MHz.12m.cube.I.pbcor.fits
+23:59:52 skip (done) member.uid___A001_X2f7_X456.ari_l.SPT0020-51_sci.spw3_113885MHz.12m.cube.I.pbcor.fits
+23:59:52 cube member.uid___A001_X2f7_X456.ari_l.SPT0109-47_sci.spw0_100011MHz.12m.cube.I.pbcor.fits
+23:59:52   saved SPT0109-47_f100.011.npz: 104 chans of 46.8 km/s, 99.207-100.816 GHz, box 37 px (0.440"/px), median rms 1.644 mJy/beam
+23:59:52 cube member.uid___A001_X2f7_X456.ari_l.SPT0109-47_sci.spw1_101886MHz.12m.cube.I.pbcor.fits
+23:59:52   saved SPT0109-47_f101.886.npz: 104 chans of 46.0 km/s, 101.082-102.691 GHz, box 37 px (0.440"/px), median rms 1.598 mJy/beam
+23:59:52 cube member.uid___A001_X2f7_X456.ari_l.SPT0109-47_sci.spw2_112011MHz.12m.cube.I.pbcor.fits
+23:59:52   saved SPT0109-47_f112.011.npz: 104 chans of 41.8 km/s, 111.207-112.816 GHz, box 37 px (0.440"/px), median rms 2.262 mJy/beam
+23:59:52 cube member.uid___A001_X2f7_X456.ari_l.SPT0109-47_sci.spw3_113886MHz.12m.cube.I.pbcor.fits
+23:59:52   saved SPT0109-47_f113.886.npz: 104 chans of 41.1 km/s, 113.082-114.691 GHz, box 37 px (0.440"/px), median rms 2.849 mJy/beam
+23:59:52 cube member.uid___A001_X2f7_X456.ari_l.SPT0112-55_sci.spw0_100010MHz.12m.cube.I.pbcor.fits
+23:59:53   saved SPT0112-55_f100.010.npz: 104 chans of 46.8 km/s, 99.205-100.815 GHz, box 37 px (0.440"/px), median rms 1.697 mJy/beam
+23:59:53 cube member.uid___A001_X2f7_X456.ari_l.SPT0112-55_sci.spw1_101885MHz.12m.cube.I.pbcor.fits
+23:59:53   saved SPT0112-55_f101.885.npz: 104 chans of 46.0 km/s, 101.080-102.690 GHz, box 37 px (0.440"/px), median rms 1.624 mJy/beam
+23:59:53 cube member.uid___A001_X2f7_X456.ari_l.SPT0112-55_sci.spw2_112010MHz.12m.cube.I.pbcor.fits
+23:59:53   saved SPT0112-55_f112.010.npz: 104 chans of 41.8 km/s, 111.206-112.815 GHz, box 37 px (0.440"/px), median rms 2.283 mJy/beam
+23:59:53 cube member.uid___A001_X2f7_X456.ari_l.SPT0112-55_sci.spw3_113885MHz.12m.cube.I.pbcor.fits
+23:59:53   saved SPT0112-55_f113.885.npz: 104 chans of 41.1 km/s, 113.081-114.690 GHz, box 37 px (0.440"/px), median rms 2.910 mJy/beam
+23:59:53 cube member.uid___A001_X2f7_X45a.ari_l.SPT0106-64_sci.spw0_85009MHz.12m.cube.I.pbcor.fits
+23:59:53   saved SPT0106-64_f85.009.npz: 119 chans of 55.1 km/s, 84.087-85.931 GHz, box 31 px (0.550"/px), median rms 1.792 mJy/beam
+23:59:53 cube member.uid___A001_X2f7_X45a.ari_l.SPT0106-64_sci.spw1_86884MHz.12m.cube.I.pbcor.fits
+23:59:53   saved SPT0106-64_f86.884.npz: 119 chans of 53.9 km/s, 85.962-87.806 GHz, box 31 px (0.550"/px), median rms 1.696 mJy/beam
+23:59:53 cube member.uid___A001_X2f7_X45a.ari_l.SPT0106-64_sci.spw2_97052MHz.12m.cube.I.pbcor.fits
+23:59:53   saved SPT0106-64_f97.052.npz: 119 chans of 48.3 km/s, 96.130-97.974 GHz, box 31 px (0.550"/px), median rms 1.887 mJy/beam
+23:59:53 cube member.uid___A001_X2f7_X45a.ari_l.SPT0106-64_sci.spw3_98885MHz.12m.cube.I.pbcor.fits
+23:59:53   saved SPT0106-64_f98.885.npz: 119 chans of 47.4 km/s, 97.963-99.807 GHz, box 31 px (0.550"/px), median rms 1.913 mJy/beam
+23:59:53 cube member.uid___A001_X2f7_X45a.ari_l.SPT0136-63_sci.spw0_85009MHz.12m.cube.I.pbcor.fits
+23:59:53   saved SPT0136-63_f85.009.npz: 119 chans of 55.1 km/s, 84.088-85.931 GHz, box 31 px (0.550"/px), median rms 1.833 mJy/beam
+23:59:53 cube member.uid___A001_X2f7_X45a.ari_l.SPT0136-63_sci.spw1_86885MHz.12m.cube.I.pbcor.fits
+23:59:53   saved SPT0136-63_f86.885.npz: 119 chans of 53.9 km/s, 85.963-87.807 GHz, box 31 px (0.550"/px), median rms 1.776 mJy/beam
+23:59:53 cube member.uid___A001_X2f7_X45a.ari_l.SPT0136-63_sci.spw2_97052MHz.12m.cube.I.pbcor.fits
+23:59:53   saved SPT0136-63_f97.052.npz: 119 chans of 48.3 km/s, 96.130-97.974 GHz, box 31 px (0.550"/px), median rms 1.909 mJy/beam
+23:59:53 cube member.uid___A001_X2f7_X45a.ari_l.SPT0136-63_sci.spw3_98885MHz.12m.cube.I.pbcor.fits
+23:59:53   saved SPT0136-63_f98.885.npz: 119 chans of 47.4 km/s, 97.963-99.807 GHz, box 31 px (0.550"/px), median rms 1.970 mJy/beam
+23:59:53 cube member.uid___A001_X2f7_X45a.ari_l.SPT0147-64_sci.spw0_85009MHz.12m.cube.I.pbcor.fits
+23:59:53   saved SPT0147-64_f85.009.npz: 119 chans of 55.1 km/s, 84.087-85.931 GHz, box 31 px (0.550"/px), median rms 1.934 mJy/beam
+23:59:53 cube member.uid___A001_X2f7_X45a.ari_l.SPT0147-64_sci.spw1_86884MHz.12m.cube.I.pbcor.fits
+23:59:53   saved SPT0147-64_f86.884.npz: 119 chans of 53.9 km/s, 85.962-87.806 GHz, box 31 px (0.550"/px), median rms 1.834 mJy/beam
+23:59:53 cube member.uid___A001_X2f7_X45a.ari_l.SPT0147-64_sci.spw2_97052MHz.12m.cube.I.pbcor.fits
+23:59:53   saved SPT0147-64_f97.052.npz: 119 chans of 48.3 km/s, 96.130-97.974 GHz, box 31 px (0.550"/px), median rms 1.953 mJy/beam
+23:59:53 cube member.uid___A001_X2f7_X45a.ari_l.SPT0147-64_sci.spw3_98885MHz.12m.cube.I.pbcor.fits
+23:59:54   saved SPT0147-64_f98.885.npz: 119 chans of 47.4 km/s, 97.963-99.807 GHz, box 31 px (0.550"/px), median rms 2.012 mJy/beam
+23:59:54 cube member.uid___A001_X2f7_X45a.ari_l.SPT0150-59_sci.spw0_85010MHz.12m.cube.I.pbcor.fits
+23:59:54   saved SPT0150-59_f85.010.npz: 119 chans of 55.1 km/s, 84.088-85.932 GHz, box 31 px (0.550"/px), median rms 1.875 mJy/beam
+23:59:54 cube member.uid___A001_X2f7_X45a.ari_l.SPT0150-59_sci.spw1_86885MHz.12m.cube.I.pbcor.fits
+23:59:54   saved SPT0150-59_f86.885.npz: 119 chans of 53.9 km/s, 85.963-87.807 GHz, box 31 px (0.550"/px), median rms 1.795 mJy/beam
+23:59:54 cube member.uid___A001_X2f7_X45a.ari_l.SPT0150-59_sci.spw2_97053MHz.12m.cube.I.pbcor.fits
+23:59:54   saved SPT0150-59_f97.053.npz: 119 chans of 48.3 km/s, 96.131-97.975 GHz, box 31 px (0.550"/px), median rms 1.927 mJy/beam
+23:59:54 cube member.uid___A001_X2f7_X45a.ari_l.SPT0150-59_sci.spw3_98886MHz.12m.cube.I.pbcor.fits
+23:59:54   saved SPT0150-59_f98.886.npz: 119 chans of 47.4 km/s, 97.964-99.808 GHz, box 31 px (0.550"/px), median rms 1.963 mJy/beam
+23:59:54 cube member.uid___A001_X2f7_X45a.ari_l.SPT0155-62_sci.spw0_85010MHz.12m.cube.I.pbcor.fits
+23:59:54   saved SPT0155-62_f85.010.npz: 119 chans of 55.1 km/s, 84.088-85.932 GHz, box 31 px (0.550"/px), median rms 1.917 mJy/beam
+23:59:54 cube member.uid___A001_X2f7_X45a.ari_l.SPT0155-62_sci.spw1_86885MHz.12m.cube.I.pbcor.fits
+23:59:54   saved SPT0155-62_f86.885.npz: 119 chans of 53.9 km/s, 85.963-87.807 GHz, box 31 px (0.550"/px), median rms 1.845 mJy/beam
+23:59:54 cube member.uid___A001_X2f7_X45a.ari_l.SPT0155-62_sci.spw2_97053MHz.12m.cube.I.pbcor.fits
+23:59:54   saved SPT0155-62_f97.053.npz: 119 chans of 48.3 km/s, 96.131-97.974 GHz, box 31 px (0.550"/px), median rms 2.018 mJy/beam
+23:59:54 cube member.uid___A001_X2f7_X45a.ari_l.SPT0155-62_sci.spw3_98886MHz.12m.cube.I.pbcor.fits
+23:59:54   saved SPT0155-62_f98.886.npz: 119 chans of 47.4 km/s, 97.964-99.807 GHz, box 31 px (0.550"/px), median rms 2.048 mJy/beam
+23:59:54 cube member.uid___A001_X2f7_X45a.ari_l.SPT0202-61_sci.spw0_85010MHz.12m.cube.I.pbcor.fits
+23:59:55   saved SPT0202-61_f85.010.npz: 119 chans of 55.1 km/s, 84.088-85.932 GHz, box 31 px (0.550"/px), median rms 1.916 mJy/beam
+23:59:55 cube member.uid___A001_X2f7_X45a.ari_l.SPT0202-61_sci.spw1_86885MHz.12m.cube.I.pbcor.fits
+23:59:55   saved SPT0202-61_f86.885.npz: 119 chans of 53.9 km/s, 85.963-87.807 GHz, box 31 px (0.550"/px), median rms 1.845 mJy/beam
+23:59:55 cube member.uid___A001_X2f7_X45a.ari_l.SPT0202-61_sci.spw2_97053MHz.12m.cube.I.pbcor.fits
+23:59:55   saved SPT0202-61_f97.053.npz: 119 chans of 48.3 km/s, 96.131-97.975 GHz, box 31 px (0.550"/px), median rms 1.923 mJy/beam
+23:59:55 cube member.uid___A001_X2f7_X45a.ari_l.SPT0202-61_sci.spw3_98886MHz.12m.cube.I.pbcor.fits
+23:59:55   saved SPT0202-61_f98.886.npz: 119 chans of 47.4 km/s, 97.964-99.808 GHz, box 31 px (0.550"/px), median rms 1.982 mJy/beam
+23:59:55 cube member.uid___A001_X2f7_X45e.ari_l.SPT0106-64_sci.spw0_88760MHz.12m.cube.I.pbcor.fits
+23:59:55   saved SPT0106-64_f88.760.npz: 119 chans of 52.8 km/s, 87.838-89.682 GHz, box 31 px (0.540"/px), median rms 1.768 mJy/beam
+23:59:55 cube member.uid___A001_X2f7_X45e.ari_l.SPT0106-64_sci.spw1_90635MHz.12m.cube.I.pbcor.fits
+23:59:55   saved SPT0106-64_f90.635.npz: 119 chans of 51.7 km/s, 89.713-91.557 GHz, box 31 px (0.540"/px), median rms 1.719 mJy/beam
+23:59:55 cube member.uid___A001_X2f7_X45e.ari_l.SPT0106-64_sci.spw2_100760MHz.12m.cube.I.pbcor.fits
+23:59:55   saved SPT0106-64_f100.760.npz: 119 chans of 46.5 km/s, 99.838-101.682 GHz, box 31 px (0.540"/px), median rms 1.815 mJy/beam
+23:59:55 cube member.uid___A001_X2f7_X45e.ari_l.SPT0106-64_sci.spw3_102635MHz.12m.cube.I.pbcor.fits
+23:59:55   saved SPT0106-64_f102.635.npz: 119 chans of 45.6 km/s, 101.713-103.557 GHz, box 31 px (0.540"/px), median rms 1.927 mJy/beam
+23:59:55 cube member.uid___A001_X2f7_X45e.ari_l.SPT0136-63_sci.spw0_88760MHz.12m.cube.I.pbcor.fits
+23:59:55   saved SPT0136-63_f88.760.npz: 119 chans of 52.8 km/s, 87.838-89.682 GHz, box 31 px (0.540"/px), median rms 1.790 mJy/beam
+23:59:55 cube member.uid___A001_X2f7_X45e.ari_l.SPT0136-63_sci.spw1_90635MHz.12m.cube.I.pbcor.fits
+23:59:55   saved SPT0136-63_f90.635.npz: 119 chans of 51.7 km/s, 89.713-91.557 GHz, box 31 px (0.540"/px), median rms 1.784 mJy/beam
+23:59:55 cube member.uid___A001_X2f7_X45e.ari_l.SPT0136-63_sci.spw2_100760MHz.12m.cube.I.pbcor.fits
+23:59:55   saved SPT0136-63_f100.760.npz: 119 chans of 46.5 km/s, 99.838-101.682 GHz, box 31 px (0.540"/px), median rms 1.876 mJy/beam
+23:59:55 cube member.uid___A001_X2f7_X45e.ari_l.SPT0136-63_sci.spw3_102635MHz.12m.cube.I.pbcor.fits
+23:59:55   saved SPT0136-63_f102.635.npz: 119 chans of 45.6 km/s, 101.713-103.557 GHz, box 31 px (0.540"/px), median rms 2.017 mJy/beam
+23:59:55 cube member.uid___A001_X2f7_X45e.ari_l.SPT0147-64_sci.spw0_88760MHz.12m.cube.I.pbcor.fits
+23:59:55   saved SPT0147-64_f88.760.npz: 119 chans of 52.8 km/s, 87.838-89.682 GHz, box 31 px (0.540"/px), median rms 1.777 mJy/beam
+23:59:55 cube member.uid___A001_X2f7_X45e.ari_l.SPT0147-64_sci.spw1_90635MHz.12m.cube.I.pbcor.fits
+23:59:55   saved SPT0147-64_f90.635.npz: 119 chans of 51.7 km/s, 89.713-91.557 GHz, box 31 px (0.540"/px), median rms 1.765 mJy/beam
+23:59:55 cube member.uid___A001_X2f7_X45e.ari_l.SPT0147-64_sci.spw2_100760MHz.12m.cube.I.pbcor.fits
+23:59:56   saved SPT0147-64_f100.760.npz: 119 chans of 46.5 km/s, 99.838-101.682 GHz, box 31 px (0.540"/px), median rms 1.823 mJy/beam
+23:59:56 cube member.uid___A001_X2f7_X45e.ari_l.SPT0147-64_sci.spw3_102635MHz.12m.cube.I.pbcor.fits
+23:59:56   saved SPT0147-64_f102.635.npz: 119 chans of 45.6 km/s, 101.713-103.557 GHz, box 31 px (0.540"/px), median rms 1.985 mJy/beam
+23:59:56 cube member.uid___A001_X2f7_X45e.ari_l.SPT0150-59_sci.spw0_88761MHz.12m.cube.I.pbcor.fits
+23:59:56   saved SPT0150-59_f88.761.npz: 119 chans of 52.8 km/s, 87.839-89.683 GHz, box 31 px (0.540"/px), median rms 1.737 mJy/beam
+23:59:56 cube member.uid___A001_X2f7_X45e.ari_l.SPT0150-59_sci.spw1_90636MHz.12m.cube.I.pbcor.fits
+23:59:56   saved SPT0150-59_f90.636.npz: 119 chans of 51.7 km/s, 89.714-91.558 GHz, box 31 px (0.540"/px), median rms 1.722 mJy/beam
+23:59:56 cube member.uid___A001_X2f7_X45e.ari_l.SPT0150-59_sci.spw2_100761MHz.12m.cube.I.pbcor.fits
+23:59:56   saved SPT0150-59_f100.761.npz: 119 chans of 46.5 km/s, 99.839-101.683 GHz, box 31 px (0.540"/px), median rms 1.781 mJy/beam
+23:59:56 cube member.uid___A001_X2f7_X45e.ari_l.SPT0150-59_sci.spw3_102636MHz.12m.cube.I.pbcor.fits
+23:59:56   saved SPT0150-59_f102.636.npz: 119 chans of 45.6 km/s, 101.714-103.558 GHz, box 31 px (0.540"/px), median rms 1.915 mJy/beam
+23:59:56 cube member.uid___A001_X2f7_X45e.ari_l.SPT0155-62_sci.spw0_88760MHz.12m.cube.I.pbcor.fits
+23:59:56   saved SPT0155-62_f88.760.npz: 119 chans of 52.8 km/s, 87.839-89.682 GHz, box 31 px (0.540"/px), median rms 1.837 mJy/beam
+23:59:56 cube member.uid___A001_X2f7_X45e.ari_l.SPT0155-62_sci.spw1_90635MHz.12m.cube.I.pbcor.fits
+23:59:56   saved SPT0155-62_f90.635.npz: 119 chans of 51.7 km/s, 89.714-91.557 GHz, box 31 px (0.540"/px), median rms 1.788 mJy/beam
+23:59:56 cube member.uid___A001_X2f7_X45e.ari_l.SPT0155-62_sci.spw2_100761MHz.12m.cube.I.pbcor.fits
+23:59:56   saved SPT0155-62_f100.761.npz: 119 chans of 46.5 km/s, 99.839-101.682 GHz, box 31 px (0.540"/px), median rms 1.895 mJy/beam
+23:59:56 cube member.uid___A001_X2f7_X45e.ari_l.SPT0155-62_sci.spw3_102636MHz.12m.cube.I.pbcor.fits
+23:59:56   saved SPT0155-62_f102.636.npz: 119 chans of 45.6 km/s, 101.714-103.557 GHz, box 31 px (0.540"/px), median rms 2.009 mJy/beam
+23:59:56 cube member.uid___A001_X2f7_X45e.ari_l.SPT0202-61_sci.spw0_88761MHz.12m.cube.I.pbcor.fits
+23:59:56   saved SPT0202-61_f88.761.npz: 119 chans of 52.8 km/s, 87.839-89.683 GHz, box 31 px (0.540"/px), median rms 1.766 mJy/beam
+23:59:56 cube member.uid___A001_X2f7_X45e.ari_l.SPT0202-61_sci.spw1_90636MHz.12m.cube.I.pbcor.fits
+23:59:56   saved SPT0202-61_f90.636.npz: 119 chans of 51.7 km/s, 89.714-91.558 GHz, box 31 px (0.540"/px), median rms 1.775 mJy/beam
+23:59:56 cube member.uid___A001_X2f7_X45e.ari_l.SPT0202-61_sci.spw2_100761MHz.12m.cube.I.pbcor.fits
+23:59:56   saved SPT0202-61_f100.761.npz: 119 chans of 46.5 km/s, 99.839-101.683 GHz, box 31 px (0.540"/px), median rms 1.844 mJy/beam
+23:59:56 cube member.uid___A001_X2f7_X45e.ari_l.SPT0202-61_sci.spw3_102636MHz.12m.cube.I.pbcor.fits
+23:59:56   saved SPT0202-61_f102.636.npz: 119 chans of 45.6 km/s, 101.714-103.558 GHz, box 31 px (0.540"/px), median rms 1.968 mJy/beam
+23:59:56 cube member.uid___A001_X2f7_X462.ari_l.SPT0106-64_sci.spw0_92510MHz.12m.cube.I.pbcor.fits
+23:59:56   saved SPT0106-64_f92.510.npz: 119 chans of 50.6 km/s, 91.588-93.432 GHz, box 31 px (0.530"/px), median rms 1.638 mJy/beam
+23:59:56 cube member.uid___A001_X2f7_X462.ari_l.SPT0106-64_sci.spw1_94385MHz.12m.cube.I.pbcor.fits
+23:59:57   saved SPT0106-64_f94.385.npz: 119 chans of 49.6 km/s, 93.463-95.307 GHz, box 31 px (0.530"/px), median rms 1.640 mJy/beam
+23:59:57 cube member.uid___A001_X2f7_X462.ari_l.SPT0106-64_sci.spw2_104510MHz.12m.cube.I.pbcor.fits
+23:59:57   saved SPT0106-64_f104.510.npz: 119 chans of 44.8 km/s, 103.588-105.432 GHz, box 31 px (0.530"/px), median rms 1.788 mJy/beam
+23:59:57 cube member.uid___A001_X2f7_X462.ari_l.SPT0106-64_sci.spw3_106385MHz.12m.cube.I.pbcor.fits
+23:59:57   saved SPT0106-64_f106.385.npz: 119 chans of 44.0 km/s, 105.463-107.307 GHz, box 31 px (0.530"/px), median rms 1.922 mJy/beam
+23:59:57 cube member.uid___A001_X2f7_X462.ari_l.SPT0136-63_sci.spw0_92510MHz.12m.cube.I.pbcor.fits
+23:59:57   saved SPT0136-63_f92.510.npz: 119 chans of 50.6 km/s, 91.588-93.432 GHz, box 31 px (0.530"/px), median rms 1.616 mJy/beam
+23:59:57 cube member.uid___A001_X2f7_X462.ari_l.SPT0136-63_sci.spw1_94385MHz.12m.cube.I.pbcor.fits
+23:59:57   saved SPT0136-63_f94.385.npz: 119 chans of 49.6 km/s, 93.463-95.307 GHz, box 31 px (0.530"/px), median rms 1.608 mJy/beam
+23:59:57 cube member.uid___A001_X2f7_X462.ari_l.SPT0136-63_sci.spw2_104510MHz.12m.cube.I.pbcor.fits
+23:59:57   saved SPT0136-63_f104.510.npz: 119 chans of 44.8 km/s, 103.588-105.432 GHz, box 31 px (0.530"/px), median rms 1.811 mJy/beam
+23:59:57 cube member.uid___A001_X2f7_X462.ari_l.SPT0136-63_sci.spw3_106385MHz.12m.cube.I.pbcor.fits
+23:59:57   saved SPT0136-63_f106.385.npz: 119 chans of 44.0 km/s, 105.463-107.307 GHz, box 31 px (0.530"/px), median rms 1.938 mJy/beam
+23:59:57 cube member.uid___A001_X2f7_X462.ari_l.SPT0147-64_sci.spw0_92510MHz.12m.cube.I.pbcor.fits
+23:59:57   saved SPT0147-64_f92.510.npz: 119 chans of 50.6 km/s, 91.588-93.432 GHz, box 31 px (0.530"/px), median rms 1.667 mJy/beam
+23:59:57 cube member.uid___A001_X2f7_X462.ari_l.SPT0147-64_sci.spw1_94385MHz.12m.cube.I.pbcor.fits
+23:59:57   saved SPT0147-64_f94.385.npz: 119 chans of 49.6 km/s, 93.463-95.307 GHz, box 31 px (0.530"/px), median rms 1.637 mJy/beam
+23:59:57 cube member.uid___A001_X2f7_X462.ari_l.SPT0147-64_sci.spw2_104510MHz.12m.cube.I.pbcor.fits
+23:59:57   saved SPT0147-64_f104.510.npz: 119 chans of 44.8 km/s, 103.588-105.432 GHz, box 31 px (0.530"/px), median rms 1.846 mJy/beam
+23:59:57 cube member.uid___A001_X2f7_X462.ari_l.SPT0147-64_sci.spw3_106385MHz.12m.cube.I.pbcor.fits
+23:59:57   saved SPT0147-64_f106.385.npz: 119 chans of 44.0 km/s, 105.463-107.307 GHz, box 31 px (0.530"/px), median rms 1.945 mJy/beam
+23:59:57 cube member.uid___A001_X2f7_X462.ari_l.SPT0150-59_sci.spw0_92511MHz.12m.cube.I.pbcor.fits
+23:59:57   saved SPT0150-59_f92.511.npz: 119 chans of 50.6 km/s, 91.589-93.433 GHz, box 31 px (0.530"/px), median rms 1.658 mJy/beam
+23:59:57 cube member.uid___A001_X2f7_X462.ari_l.SPT0150-59_sci.spw1_94386MHz.12m.cube.I.pbcor.fits
+23:59:57   saved SPT0150-59_f94.386.npz: 119 chans of 49.6 km/s, 93.464-95.308 GHz, box 31 px (0.530"/px), median rms 1.635 mJy/beam
+23:59:57 cube member.uid___A001_X2f7_X462.ari_l.SPT0150-59_sci.spw2_104511MHz.12m.cube.I.pbcor.fits
+23:59:58   saved SPT0150-59_f104.511.npz: 119 chans of 44.8 km/s, 103.589-105.433 GHz, box 31 px (0.530"/px), median rms 1.812 mJy/beam
+23:59:58 cube member.uid___A001_X2f7_X462.ari_l.SPT0150-59_sci.spw3_106386MHz.12m.cube.I.pbcor.fits
+23:59:58   saved SPT0150-59_f106.386.npz: 119 chans of 44.0 km/s, 105.464-107.308 GHz, box 31 px (0.530"/px), median rms 1.912 mJy/beam
+23:59:58 cube member.uid___A001_X2f7_X462.ari_l.SPT0155-62_sci.spw0_92510MHz.12m.cube.I.pbcor.fits
+23:59:58   saved SPT0155-62_f92.510.npz: 119 chans of 50.6 km/s, 91.589-93.432 GHz, box 31 px (0.530"/px), median rms 1.695 mJy/beam
+23:59:58 cube member.uid___A001_X2f7_X462.ari_l.SPT0155-62_sci.spw1_94385MHz.12m.cube.I.pbcor.fits
+23:59:58   saved SPT0155-62_f94.385.npz: 119 chans of 49.6 km/s, 93.464-95.307 GHz, box 31 px (0.530"/px), median rms 1.673 mJy/beam
+23:59:58 cube member.uid___A001_X2f7_X462.ari_l.SPT0155-62_sci.spw2_104511MHz.12m.cube.I.pbcor.fits
+23:59:58   saved SPT0155-62_f104.511.npz: 119 chans of 44.8 km/s, 103.589-105.432 GHz, box 31 px (0.530"/px), median rms 1.841 mJy/beam
+23:59:58 cube member.uid___A001_X2f7_X462.ari_l.SPT0155-62_sci.spw3_106386MHz.12m.cube.I.pbcor.fits
+23:59:58   saved SPT0155-62_f106.386.npz: 119 chans of 44.0 km/s, 105.464-107.307 GHz, box 31 px (0.530"/px), median rms 1.969 mJy/beam
+23:59:58 cube member.uid___A001_X2f7_X462.ari_l.SPT0202-61_sci.spw0_92511MHz.12m.cube.I.pbcor.fits
+23:59:58   saved SPT0202-61_f92.511.npz: 119 chans of 50.6 km/s, 91.589-93.433 GHz, box 31 px (0.530"/px), median rms 1.616 mJy/beam
+23:59:58 cube member.uid___A001_X2f7_X462.ari_l.SPT0202-61_sci.spw1_94386MHz.12m.cube.I.pbcor.fits
+23:59:58   saved SPT0202-61_f94.386.npz: 119 chans of 49.6 km/s, 93.464-95.308 GHz, box 31 px (0.530"/px), median rms 1.627 mJy/beam
+23:59:58 cube member.uid___A001_X2f7_X462.ari_l.SPT0202-61_sci.spw2_104511MHz.12m.cube.I.pbcor.fits
+23:59:58   saved SPT0202-61_f104.511.npz: 119 chans of 44.8 km/s, 103.589-105.433 GHz, box 31 px (0.530"/px), median rms 1.803 mJy/beam
+23:59:58 cube member.uid___A001_X2f7_X462.ari_l.SPT0202-61_sci.spw3_106386MHz.12m.cube.I.pbcor.fits
+23:59:58   saved SPT0202-61_f106.386.npz: 119 chans of 44.0 km/s, 105.464-107.308 GHz, box 31 px (0.530"/px), median rms 1.913 mJy/beam
+23:59:58 cube member.uid___A001_X2f7_X466.ari_l.SPT0106-64_sci.spw0_96260MHz.12m.cube.I.pbcor.fits
+23:59:58   saved SPT0106-64_f96.260.npz: 119 chans of 48.7 km/s, 95.338-97.182 GHz, box 35 px (0.480"/px), median rms 1.725 mJy/beam
+23:59:58 cube member.uid___A001_X2f7_X466.ari_l.SPT0106-64_sci.spw1_98135MHz.12m.cube.I.pbcor.fits
+23:59:58   saved SPT0106-64_f98.135.npz: 119 chans of 47.7 km/s, 97.213-99.057 GHz, box 35 px (0.480"/px), median rms 1.759 mJy/beam
+23:59:58 cube member.uid___A001_X2f7_X466.ari_l.SPT0106-64_sci.spw2_108260MHz.12m.cube.I.pbcor.fits
+23:59:58   saved SPT0106-64_f108.260.npz: 119 chans of 43.3 km/s, 107.338-109.182 GHz, box 35 px (0.480"/px), median rms 2.126 mJy/beam
+23:59:58 cube member.uid___A001_X2f7_X466.ari_l.SPT0106-64_sci.spw3_110135MHz.12m.cube.I.pbcor.fits
+23:59:59   saved SPT0106-64_f110.135.npz: 119 chans of 42.5 km/s, 109.213-111.057 GHz, box 35 px (0.480"/px), median rms 2.334 mJy/beam
+23:59:59 cube member.uid___A001_X2f7_X466.ari_l.SPT0136-63_sci.spw0_96260MHz.12m.cube.I.pbcor.fits
+23:59:59   saved SPT0136-63_f96.260.npz: 119 chans of 48.7 km/s, 95.338-97.182 GHz, box 35 px (0.480"/px), median rms 1.774 mJy/beam
+23:59:59 cube member.uid___A001_X2f7_X466.ari_l.SPT0136-63_sci.spw1_98135MHz.12m.cube.I.pbcor.fits
+23:59:59   saved SPT0136-63_f98.135.npz: 119 chans of 47.7 km/s, 97.213-99.057 GHz, box 35 px (0.480"/px), median rms 1.768 mJy/beam
+23:59:59 cube member.uid___A001_X2f7_X466.ari_l.SPT0136-63_sci.spw2_108260MHz.12m.cube.I.pbcor.fits
+23:59:59   saved SPT0136-63_f108.260.npz: 119 chans of 43.3 km/s, 107.338-109.182 GHz, box 35 px (0.480"/px), median rms 2.154 mJy/beam
+23:59:59 cube member.uid___A001_X2f7_X466.ari_l.SPT0136-63_sci.spw3_110135MHz.12m.cube.I.pbcor.fits
+23:59:59   saved SPT0136-63_f110.135.npz: 119 chans of 42.5 km/s, 109.213-111.057 GHz, box 35 px (0.480"/px), median rms 2.371 mJy/beam
+23:59:59 cube member.uid___A001_X2f7_X466.ari_l.SPT0147-64_sci.spw0_96260MHz.12m.cube.I.pbcor.fits
+23:59:59   saved SPT0147-64_f96.260.npz: 119 chans of 48.7 km/s, 95.338-97.182 GHz, box 35 px (0.480"/px), median rms 1.828 mJy/beam
+23:59:59 cube member.uid___A001_X2f7_X466.ari_l.SPT0147-64_sci.spw1_98135MHz.12m.cube.I.pbcor.fits
+23:59:59   saved SPT0147-64_f98.135.npz: 119 chans of 47.7 km/s, 97.213-99.057 GHz, box 35 px (0.480"/px), median rms 1.826 mJy/beam
+23:59:59 cube member.uid___A001_X2f7_X466.ari_l.SPT0147-64_sci.spw2_108260MHz.12m.cube.I.pbcor.fits
+23:59:59   saved SPT0147-64_f108.260.npz: 119 chans of 43.3 km/s, 107.338-109.182 GHz, box 35 px (0.480"/px), median rms 2.205 mJy/beam
+23:59:59 cube member.uid___A001_X2f7_X466.ari_l.SPT0147-64_sci.spw3_110135MHz.12m.cube.I.pbcor.fits
+23:59:59   saved SPT0147-64_f110.135.npz: 119 chans of 42.5 km/s, 109.213-111.057 GHz, box 35 px (0.480"/px), median rms 2.446 mJy/beam
+23:59:59 cube member.uid___A001_X2f7_X466.ari_l.SPT0150-59_sci.spw0_96261MHz.12m.cube.I.pbcor.fits
+23:59:59   saved SPT0150-59_f96.261.npz: 119 chans of 48.7 km/s, 95.339-97.183 GHz, box 35 px (0.480"/px), median rms 1.796 mJy/beam
+23:59:59 cube member.uid___A001_X2f7_X466.ari_l.SPT0150-59_sci.spw1_98136MHz.12m.cube.I.pbcor.fits
+23:59:59   saved SPT0150-59_f98.136.npz: 119 chans of 47.7 km/s, 97.214-99.058 GHz, box 35 px (0.480"/px), median rms 1.772 mJy/beam
+23:59:59 cube member.uid___A001_X2f7_X466.ari_l.SPT0150-59_sci.spw2_108261MHz.12m.cube.I.pbcor.fits
+23:59:59   saved SPT0150-59_f108.261.npz: 119 chans of 43.3 km/s, 107.339-109.183 GHz, box 35 px (0.480"/px), median rms 2.151 mJy/beam
+23:59:59 cube member.uid___A001_X2f7_X466.ari_l.SPT0150-59_sci.spw3_110136MHz.12m.cube.I.pbcor.fits
+00:00:00   saved SPT0150-59_f110.136.npz: 119 chans of 42.5 km/s, 109.214-111.058 GHz, box 35 px (0.480"/px), median rms 2.402 mJy/beam
+00:00:00 cube member.uid___A001_X2f7_X466.ari_l.SPT0155-62_sci.spw0_96261MHz.12m.cube.I.pbcor.fits
+00:00:00   saved SPT0155-62_f96.261.npz: 119 chans of 48.7 km/s, 95.339-97.182 GHz, box 35 px (0.480"/px), median rms 1.802 mJy/beam
+00:00:00 cube member.uid___A001_X2f7_X466.ari_l.SPT0155-62_sci.spw1_98136MHz.12m.cube.I.pbcor.fits
+00:00:00   saved SPT0155-62_f98.136.npz: 119 chans of 47.7 km/s, 97.214-99.057 GHz, box 35 px (0.480"/px), median rms 1.800 mJy/beam
+00:00:00 cube member.uid___A001_X2f7_X466.ari_l.SPT0155-62_sci.spw2_108261MHz.12m.cube.I.pbcor.fits
+00:00:00   saved SPT0155-62_f108.261.npz: 119 chans of 43.3 km/s, 107.339-109.183 GHz, box 35 px (0.480"/px), median rms 2.150 mJy/beam
+00:00:00 cube member.uid___A001_X2f7_X466.ari_l.SPT0155-62_sci.spw3_110136MHz.12m.cube.I.pbcor.fits
+00:00:00   saved SPT0155-62_f110.136.npz: 119 chans of 42.5 km/s, 109.214-111.058 GHz, box 35 px (0.480"/px), median rms 2.436 mJy/beam
+00:00:00 cube member.uid___A001_X2f7_X466.ari_l.SPT0202-61_sci.spw0_96261MHz.12m.cube.I.pbcor.fits
+00:00:00   saved SPT0202-61_f96.261.npz: 119 chans of 48.7 km/s, 95.339-97.183 GHz, box 35 px (0.480"/px), median rms 1.794 mJy/beam
+00:00:00 cube member.uid___A001_X2f7_X466.ari_l.SPT0202-61_sci.spw1_98136MHz.12m.cube.I.pbcor.fits
+00:00:00   saved SPT0202-61_f98.136.npz: 119 chans of 47.7 km/s, 97.214-99.058 GHz, box 35 px (0.480"/px), median rms 1.738 mJy/beam
+00:00:00 cube member.uid___A001_X2f7_X466.ari_l.SPT0202-61_sci.spw2_108261MHz.12m.cube.I.pbcor.fits
+00:00:00   saved SPT0202-61_f108.261.npz: 119 chans of 43.3 km/s, 107.339-109.183 GHz, box 35 px (0.480"/px), median rms 2.123 mJy/beam
+00:00:00 cube member.uid___A001_X2f7_X466.ari_l.SPT0202-61_sci.spw3_110136MHz.12m.cube.I.pbcor.fits
+00:00:00   saved SPT0202-61_f110.136.npz: 119 chans of 42.5 km/s, 109.214-111.058 GHz, box 35 px (0.480"/px), median rms 2.397 mJy/beam
+00:00:00 cube member.uid___A001_X2f7_X46a.ari_l.SPT0106-64_sci.spw0_100010MHz.12m.cube.I.pbcor.fits
+00:00:00   saved SPT0106-64_f100.010.npz: 119 chans of 46.8 km/s, 99.088-100.932 GHz, box 33 px (0.490"/px), median rms 1.802 mJy/beam
+00:00:00 cube member.uid___A001_X2f7_X46a.ari_l.SPT0106-64_sci.spw1_101885MHz.12m.cube.I.pbcor.fits
+00:00:00   saved SPT0106-64_f101.885.npz: 119 chans of 46.0 km/s, 100.963-102.807 GHz, box 33 px (0.490"/px), median rms 1.804 mJy/beam
+00:00:00 cube member.uid___A001_X2f7_X46a.ari_l.SPT0106-64_sci.spw2_112010MHz.12m.cube.I.pbcor.fits
+00:00:01   saved SPT0106-64_f112.010.npz: 119 chans of 41.8 km/s, 111.088-112.932 GHz, box 33 px (0.490"/px), median rms 2.511 mJy/beam
+00:00:01 cube member.uid___A001_X2f7_X46a.ari_l.SPT0106-64_sci.spw3_113885MHz.12m.cube.I.pbcor.fits
+00:00:01   saved SPT0106-64_f113.885.npz: 119 chans of 41.1 km/s, 112.963-114.807 GHz, box 33 px (0.490"/px), median rms 3.343 mJy/beam
+00:00:01 cube member.uid___A001_X2f7_X46a.ari_l.SPT0136-63_sci.spw0_100010MHz.12m.cube.I.pbcor.fits
+00:00:01   saved SPT0136-63_f100.010.npz: 119 chans of 46.8 km/s, 99.088-100.932 GHz, box 33 px (0.490"/px), median rms 1.826 mJy/beam
+00:00:01 cube member.uid___A001_X2f7_X46a.ari_l.SPT0136-63_sci.spw1_101885MHz.12m.cube.I.pbcor.fits
+00:00:01   saved SPT0136-63_f101.885.npz: 119 chans of 46.0 km/s, 100.963-102.807 GHz, box 33 px (0.490"/px), median rms 1.812 mJy/beam
+00:00:01 cube member.uid___A001_X2f7_X46a.ari_l.SPT0136-63_sci.spw2_112010MHz.12m.cube.I.pbcor.fits
+00:00:01   saved SPT0136-63_f112.010.npz: 119 chans of 41.8 km/s, 111.088-112.932 GHz, box 33 px (0.490"/px), median rms 2.467 mJy/beam
+00:00:01 cube member.uid___A001_X2f7_X46a.ari_l.SPT0136-63_sci.spw3_113885MHz.12m.cube.I.pbcor.fits
+00:00:01   saved SPT0136-63_f113.885.npz: 119 chans of 41.1 km/s, 112.963-114.807 GHz, box 33 px (0.490"/px), median rms 3.302 mJy/beam
+00:00:01 cube member.uid___A001_X2f7_X46a.ari_l.SPT0147-64_sci.spw0_100010MHz.12m.cube.I.pbcor.fits
+00:00:01   saved SPT0147-64_f100.010.npz: 119 chans of 46.8 km/s, 99.088-100.932 GHz, box 33 px (0.490"/px), median rms 1.651 mJy/beam
+00:00:01 cube member.uid___A001_X2f7_X46a.ari_l.SPT0147-64_sci.spw1_101885MHz.12m.cube.I.pbcor.fits
+00:00:01   saved SPT0147-64_f101.885.npz: 119 chans of 46.0 km/s, 100.963-102.807 GHz, box 33 px (0.490"/px), median rms 1.641 mJy/beam
+00:00:01 cube member.uid___A001_X2f7_X46a.ari_l.SPT0147-64_sci.spw2_112010MHz.12m.cube.I.pbcor.fits
+00:00:01   saved SPT0147-64_f112.010.npz: 119 chans of 41.8 km/s, 111.088-112.932 GHz, box 33 px (0.490"/px), median rms 2.292 mJy/beam
+00:00:01 cube member.uid___A001_X2f7_X46a.ari_l.SPT0147-64_sci.spw3_113885MHz.12m.cube.I.pbcor.fits
+00:00:01   saved SPT0147-64_f113.885.npz: 119 chans of 41.1 km/s, 112.963-114.807 GHz, box 33 px (0.490"/px), median rms 2.919 mJy/beam
+00:00:01 cube member.uid___A001_X2f7_X46a.ari_l.SPT0150-59_sci.spw0_100011MHz.12m.cube.I.pbcor.fits
+00:00:01   saved SPT0150-59_f100.011.npz: 119 chans of 46.8 km/s, 99.089-100.933 GHz, box 33 px (0.490"/px), median rms 1.798 mJy/beam
+00:00:01 cube member.uid___A001_X2f7_X46a.ari_l.SPT0150-59_sci.spw1_101886MHz.12m.cube.I.pbcor.fits
+00:00:02   saved SPT0150-59_f101.886.npz: 119 chans of 46.0 km/s, 100.964-102.808 GHz, box 33 px (0.490"/px), median rms 1.787 mJy/beam
+00:00:02 cube member.uid___A001_X2f7_X46a.ari_l.SPT0150-59_sci.spw2_112011MHz.12m.cube.I.pbcor.fits
+00:00:02   saved SPT0150-59_f112.011.npz: 119 chans of 41.8 km/s, 111.089-112.933 GHz, box 33 px (0.490"/px), median rms 2.459 mJy/beam
+00:00:02 cube member.uid___A001_X2f7_X46a.ari_l.SPT0150-59_sci.spw3_113886MHz.12m.cube.I.pbcor.fits
+00:00:02   saved SPT0150-59_f113.886.npz: 119 chans of 41.1 km/s, 112.964-114.808 GHz, box 33 px (0.490"/px), median rms 3.219 mJy/beam
+00:00:02 cube member.uid___A001_X2f7_X46a.ari_l.SPT0155-62_sci.spw0_100011MHz.12m.cube.I.pbcor.fits
+00:00:02   saved SPT0155-62_f100.011.npz: 119 chans of 46.8 km/s, 99.089-100.932 GHz, box 33 px (0.490"/px), median rms 1.813 mJy/beam
+00:00:02 cube member.uid___A001_X2f7_X46a.ari_l.SPT0155-62_sci.spw1_101886MHz.12m.cube.I.pbcor.fits
+00:00:02   saved SPT0155-62_f101.886.npz: 119 chans of 46.0 km/s, 100.964-102.807 GHz, box 33 px (0.490"/px), median rms 1.808 mJy/beam
+00:00:02 cube member.uid___A001_X2f7_X46a.ari_l.SPT0155-62_sci.spw2_112011MHz.12m.cube.I.pbcor.fits
+00:00:02   saved SPT0155-62_f112.011.npz: 119 chans of 41.8 km/s, 111.089-112.933 GHz, box 33 px (0.490"/px), median rms 2.478 mJy/beam
+00:00:02 cube member.uid___A001_X2f7_X46a.ari_l.SPT0155-62_sci.spw3_113886MHz.12m.cube.I.pbcor.fits
+00:00:02   saved SPT0155-62_f113.886.npz: 119 chans of 41.1 km/s, 112.964-114.808 GHz, box 33 px (0.490"/px), median rms 3.280 mJy/beam
+00:00:02 cube member.uid___A001_X2f7_X46a.ari_l.SPT0202-61_sci.spw0_100011MHz.12m.cube.I.pbcor.fits
+00:00:02   saved SPT0202-61_f100.011.npz: 119 chans of 46.8 km/s, 99.089-100.933 GHz, box 33 px (0.490"/px), median rms 1.794 mJy/beam
+00:00:02 cube member.uid___A001_X2f7_X46a.ari_l.SPT0202-61_sci.spw1_101886MHz.12m.cube.I.pbcor.fits
+00:00:02   saved SPT0202-61_f101.886.npz: 119 chans of 46.0 km/s, 100.964-102.808 GHz, box 33 px (0.490"/px), median rms 1.794 mJy/beam
+00:00:02 cube member.uid___A001_X2f7_X46a.ari_l.SPT0202-61_sci.spw2_112011MHz.12m.cube.I.pbcor.fits
+00:00:02   saved SPT0202-61_f112.011.npz: 119 chans of 41.8 km/s, 111.089-112.933 GHz, box 33 px (0.490"/px), median rms 2.478 mJy/beam
+00:00:02 cube member.uid___A001_X2f7_X46a.ari_l.SPT0202-61_sci.spw3_113886MHz.12m.cube.I.pbcor.fits
+00:00:03   saved SPT0202-61_f113.886.npz: 119 chans of 41.1 km/s, 112.964-114.808 GHz, box 33 px (0.490"/px), median rms 3.248 mJy/beam
+00:00:03 cube member.uid___A001_X2f7_X46e.ari_l.SPT0245-63_sci.spw0_85009MHz.12m.cube.I.pbcor.fits
+00:00:03   saved SPT0245-63_f85.009.npz: 104 chans of 55.1 km/s, 84.204-85.814 GHz, box 29 px (0.570"/px), median rms 1.676 mJy/beam
+00:00:03 cube member.uid___A001_X2f7_X46e.ari_l.SPT0245-63_sci.spw1_86884MHz.12m.cube.I.pbcor.fits
+00:00:03   saved SPT0245-63_f86.884.npz: 104 chans of 53.9 km/s, 86.080-87.689 GHz, box 29 px (0.570"/px), median rms 1.593 mJy/beam
+00:00:03 cube member.uid___A001_X2f7_X46e.ari_l.SPT0245-63_sci.spw2_97052MHz.12m.cube.I.pbcor.fits
+00:00:03   saved SPT0245-63_f97.052.npz: 104 chans of 48.3 km/s, 96.247-97.857 GHz, box 29 px (0.570"/px), median rms 1.702 mJy/beam
+00:00:03 cube member.uid___A001_X2f7_X46e.ari_l.SPT0245-63_sci.spw3_98885MHz.12m.cube.I.pbcor.fits
+00:00:03   saved SPT0245-63_f98.885.npz: 104 chans of 47.4 km/s, 98.080-99.690 GHz, box 29 px (0.570"/px), median rms 1.780 mJy/beam
+00:00:03 cube member.uid___A001_X2f7_X46e.ari_l.SPT0311-58_sci.spw0_85010MHz.12m.cube.I.pbcor.fits
+00:00:03   saved SPT0311-58_f85.010.npz: 104 chans of 55.1 km/s, 84.205-85.815 GHz, box 29 px (0.570"/px), median rms 1.848 mJy/beam
+00:00:03 cube member.uid___A001_X2f7_X46e.ari_l.SPT0311-58_sci.spw1_86885MHz.12m.cube.I.pbcor.fits
+00:00:03   saved SPT0311-58_f86.885.npz: 104 chans of 53.9 km/s, 86.080-87.690 GHz, box 29 px (0.570"/px), median rms 1.725 mJy/beam
+00:00:03 cube member.uid___A001_X2f7_X46e.ari_l.SPT0311-58_sci.spw2_97053MHz.12m.cube.I.pbcor.fits
+00:00:03   saved SPT0311-58_f97.053.npz: 104 chans of 48.3 km/s, 96.248-97.858 GHz, box 29 px (0.570"/px), median rms 1.936 mJy/beam
+00:00:03 cube member.uid___A001_X2f7_X46e.ari_l.SPT0311-58_sci.spw3_98886MHz.12m.cube.I.pbcor.fits
+00:00:03   saved SPT0311-58_f98.886.npz: 104 chans of 47.4 km/s, 98.081-99.690 GHz, box 29 px (0.570"/px), median rms 2.015 mJy/beam
+00:00:03 cube member.uid___A001_X2f7_X46e.ari_l.SPT0348-62_sci.spw0_85009MHz.12m.cube.I.pbcor.fits
+00:00:03   saved SPT0348-62_f85.009.npz: 104 chans of 55.1 km/s, 84.204-85.814 GHz, box 29 px (0.570"/px), median rms 1.720 mJy/beam
+00:00:03 cube member.uid___A001_X2f7_X46e.ari_l.SPT0348-62_sci.spw1_86884MHz.12m.cube.I.pbcor.fits
+00:00:04   saved SPT0348-62_f86.884.npz: 104 chans of 53.9 km/s, 86.079-87.689 GHz, box 29 px (0.570"/px), median rms 1.568 mJy/beam
+00:00:04 cube member.uid___A001_X2f7_X46e.ari_l.SPT0348-62_sci.spw2_97052MHz.12m.cube.I.pbcor.fits
+00:00:04   saved SPT0348-62_f97.052.npz: 104 chans of 48.3 km/s, 96.247-97.857 GHz, box 29 px (0.570"/px), median rms 1.698 mJy/beam
+00:00:04 cube member.uid___A001_X2f7_X46e.ari_l.SPT0348-62_sci.spw3_98885MHz.12m.cube.I.pbcor.fits
+00:00:04   saved SPT0348-62_f98.885.npz: 104 chans of 47.4 km/s, 98.080-99.690 GHz, box 29 px (0.570"/px), median rms 1.812 mJy/beam
+00:00:04 cube member.uid___A001_X2f7_X472.ari_l.SPT0245-63_sci.spw0_88760MHz.12m.cube.I.pbcor.fits
+00:00:04   saved SPT0245-63_f88.760.npz: 104 chans of 52.8 km/s, 87.955-89.565 GHz, box 31 px (0.530"/px), median rms 2.171 mJy/beam
+00:00:04 cube member.uid___A001_X2f7_X472.ari_l.SPT0245-63_sci.spw1_90635MHz.12m.cube.I.pbcor.fits
+00:00:04   saved SPT0245-63_f90.635.npz: 104 chans of 51.7 km/s, 89.830-91.440 GHz, box 31 px (0.530"/px), median rms 2.107 mJy/beam
+00:00:04 cube member.uid___A001_X2f7_X472.ari_l.SPT0245-63_sci.spw2_100760MHz.12m.cube.I.pbcor.fits
+00:00:04   saved SPT0245-63_f100.760.npz: 104 chans of 46.5 km/s, 99.955-101.565 GHz, box 31 px (0.530"/px), median rms 2.210 mJy/beam
+00:00:04 cube member.uid___A001_X2f7_X472.ari_l.SPT0245-63_sci.spw3_102635MHz.12m.cube.I.pbcor.fits
+00:00:04   saved SPT0245-63_f102.635.npz: 104 chans of 45.6 km/s, 101.830-103.440 GHz, box 31 px (0.530"/px), median rms 2.348 mJy/beam
+00:00:04 cube member.uid___A001_X2f7_X472.ari_l.SPT0311-58_sci.spw0_88761MHz.12m.cube.I.pbcor.fits
+00:00:04   saved SPT0311-58_f88.761.npz: 104 chans of 52.8 km/s, 87.956-89.565 GHz, box 31 px (0.530"/px), median rms 2.301 mJy/beam
+00:00:04 cube member.uid___A001_X2f7_X472.ari_l.SPT0311-58_sci.spw1_90636MHz.12m.cube.I.pbcor.fits
+00:00:04   saved SPT0311-58_f90.636.npz: 104 chans of 51.7 km/s, 89.831-91.440 GHz, box 31 px (0.530"/px), median rms 2.249 mJy/beam
+00:00:04 cube member.uid___A001_X2f7_X472.ari_l.SPT0311-58_sci.spw2_100761MHz.12m.cube.I.pbcor.fits
+00:00:04   saved SPT0311-58_f100.761.npz: 104 chans of 46.5 km/s, 99.956-101.565 GHz, box 31 px (0.530"/px), median rms 2.425 mJy/beam
+00:00:04 cube member.uid___A001_X2f7_X472.ari_l.SPT0311-58_sci.spw3_102636MHz.12m.cube.I.pbcor.fits
+00:00:05   saved SPT0311-58_f102.636.npz: 104 chans of 45.6 km/s, 101.831-103.440 GHz, box 31 px (0.530"/px), median rms 2.633 mJy/beam
+00:00:05 cube member.uid___A001_X2f7_X472.ari_l.SPT0348-62_sci.spw0_88760MHz.12m.cube.I.pbcor.fits
+00:00:05   saved SPT0348-62_f88.760.npz: 104 chans of 52.8 km/s, 87.955-89.565 GHz, box 31 px (0.530"/px), median rms 2.140 mJy/beam
+00:00:05 cube member.uid___A001_X2f7_X472.ari_l.SPT0348-62_sci.spw1_90635MHz.12m.cube.I.pbcor.fits
+00:00:05   saved SPT0348-62_f90.635.npz: 104 chans of 51.7 km/s, 89.830-91.440 GHz, box 31 px (0.530"/px), median rms 2.023 mJy/beam
+00:00:05 cube member.uid___A001_X2f7_X472.ari_l.SPT0348-62_sci.spw2_100760MHz.12m.cube.I.pbcor.fits
+00:00:05   saved SPT0348-62_f100.760.npz: 104 chans of 46.5 km/s, 99.955-101.564 GHz, box 31 px (0.530"/px), median rms 2.151 mJy/beam
+00:00:05 cube member.uid___A001_X2f7_X472.ari_l.SPT0348-62_sci.spw3_102635MHz.12m.cube.I.pbcor.fits
+00:00:05   saved SPT0348-62_f102.635.npz: 104 chans of 45.6 km/s, 101.830-103.439 GHz, box 31 px (0.530"/px), median rms 2.325 mJy/beam
+00:00:05 cube member.uid___A001_X2f7_X476.ari_l.SPT0245-63_sci.spw0_92510MHz.12m.cube.I.pbcor.fits
+00:00:05   saved SPT0245-63_f92.510.npz: 119 chans of 50.6 km/s, 91.588-93.432 GHz, box 33 px (0.510"/px), median rms 2.038 mJy/beam
+00:00:05 cube member.uid___A001_X2f7_X476.ari_l.SPT0245-63_sci.spw1_94385MHz.12m.cube.I.pbcor.fits
+00:00:05   saved SPT0245-63_f94.385.npz: 119 chans of 49.6 km/s, 93.463-95.307 GHz, box 33 px (0.510"/px), median rms 1.984 mJy/beam
+00:00:05 cube member.uid___A001_X2f7_X476.ari_l.SPT0245-63_sci.spw2_104510MHz.12m.cube.I.pbcor.fits
+00:00:05   saved SPT0245-63_f104.510.npz: 119 chans of 44.8 km/s, 103.588-105.432 GHz, box 33 px (0.510"/px), median rms 2.196 mJy/beam
+00:00:05 cube member.uid___A001_X2f7_X476.ari_l.SPT0245-63_sci.spw3_106385MHz.12m.cube.I.pbcor.fits
+00:00:06   saved SPT0245-63_f106.385.npz: 119 chans of 44.0 km/s, 105.463-107.307 GHz, box 33 px (0.510"/px), median rms 2.344 mJy/beam
+00:00:06 cube member.uid___A001_X2f7_X476.ari_l.SPT0311-58_sci.spw0_92511MHz.12m.cube.I.pbcor.fits
+00:00:06   saved SPT0311-58_f92.511.npz: 119 chans of 50.6 km/s, 91.589-93.433 GHz, box 33 px (0.510"/px), median rms 2.277 mJy/beam
+00:00:06 cube member.uid___A001_X2f7_X476.ari_l.SPT0311-58_sci.spw1_94386MHz.12m.cube.I.pbcor.fits
+00:00:06   saved SPT0311-58_f94.386.npz: 119 chans of 49.6 km/s, 93.464-95.308 GHz, box 33 px (0.510"/px), median rms 2.268 mJy/beam
+00:00:06 cube member.uid___A001_X2f7_X476.ari_l.SPT0311-58_sci.spw2_104511MHz.12m.cube.I.pbcor.fits
+00:00:06   saved SPT0311-58_f104.511.npz: 119 chans of 44.8 km/s, 103.589-105.433 GHz, box 33 px (0.510"/px), median rms 2.577 mJy/beam
+00:00:06 cube member.uid___A001_X2f7_X476.ari_l.SPT0311-58_sci.spw3_106386MHz.12m.cube.I.pbcor.fits
+00:00:06   saved SPT0311-58_f106.386.npz: 119 chans of 44.0 km/s, 105.464-107.308 GHz, box 33 px (0.510"/px), median rms 2.734 mJy/beam
+00:00:06 cube member.uid___A001_X2f7_X476.ari_l.SPT0348-62_sci.spw0_92510MHz.12m.cube.I.pbcor.fits
+00:00:06   saved SPT0348-62_f92.510.npz: 119 chans of 50.6 km/s, 91.588-93.432 GHz, box 33 px (0.510"/px), median rms 2.071 mJy/beam
+00:00:06 cube member.uid___A001_X2f7_X476.ari_l.SPT0348-62_sci.spw1_94385MHz.12m.cube.I.pbcor.fits
+00:00:06   saved SPT0348-62_f94.385.npz: 119 chans of 49.6 km/s, 93.463-95.307 GHz, box 33 px (0.510"/px), median rms 1.978 mJy/beam
+00:00:06 cube member.uid___A001_X2f7_X476.ari_l.SPT0348-62_sci.spw2_104510MHz.12m.cube.I.pbcor.fits
+00:00:06   saved SPT0348-62_f104.510.npz: 119 chans of 44.8 km/s, 103.588-105.432 GHz, box 33 px (0.510"/px), median rms 2.251 mJy/beam
+00:00:06 cube member.uid___A001_X2f7_X476.ari_l.SPT0348-62_sci.spw3_106385MHz.12m.cube.I.pbcor.fits
+00:00:06   saved SPT0348-62_f106.385.npz: 119 chans of 44.0 km/s, 105.463-107.307 GHz, box 33 px (0.510"/px), median rms 2.344 mJy/beam
+00:00:06 cube member.uid___A001_X2f7_X47a.ari_l.SPT0245-63_sci.spw0_96260MHz.12m.cube.I.pbcor.fits
+00:00:06   saved SPT0245-63_f96.260.npz: 119 chans of 48.7 km/s, 95.338-97.182 GHz, box 33 px (0.500"/px), median rms 1.806 mJy/beam
+00:00:06 cube member.uid___A001_X2f7_X47a.ari_l.SPT0245-63_sci.spw1_98135MHz.12m.cube.I.pbcor.fits
+00:00:06   saved SPT0245-63_f98.135.npz: 119 chans of 47.7 km/s, 97.213-99.057 GHz, box 33 px (0.500"/px), median rms 1.756 mJy/beam
+00:00:06 cube member.uid___A001_X2f7_X47a.ari_l.SPT0245-63_sci.spw2_108260MHz.12m.cube.I.pbcor.fits
+00:00:06   saved SPT0245-63_f108.260.npz: 119 chans of 43.3 km/s, 107.338-109.182 GHz, box 33 px (0.500"/px), median rms 2.108 mJy/beam
+00:00:06 cube member.uid___A001_X2f7_X47a.ari_l.SPT0245-63_sci.spw3_110135MHz.12m.cube.I.pbcor.fits
+00:00:07   saved SPT0245-63_f110.135.npz: 119 chans of 42.5 km/s, 109.213-111.057 GHz, box 33 px (0.500"/px), median rms 2.303 mJy/beam
+00:00:07 cube member.uid___A001_X2f7_X47a.ari_l.SPT0311-58_sci.spw0_96261MHz.12m.cube.I.pbcor.fits
+00:00:07   saved SPT0311-58_f96.261.npz: 119 chans of 48.7 km/s, 95.339-97.183 GHz, box 33 px (0.500"/px), median rms 1.993 mJy/beam
+00:00:07 cube member.uid___A001_X2f7_X47a.ari_l.SPT0311-58_sci.spw1_98136MHz.12m.cube.I.pbcor.fits
+00:00:07   saved SPT0311-58_f98.136.npz: 119 chans of 47.7 km/s, 97.214-99.058 GHz, box 33 px (0.500"/px), median rms 1.978 mJy/beam
+00:00:07 cube member.uid___A001_X2f7_X47a.ari_l.SPT0311-58_sci.spw2_108261MHz.12m.cube.I.pbcor.fits
+00:00:07   saved SPT0311-58_f108.261.npz: 119 chans of 43.3 km/s, 107.339-109.183 GHz, box 33 px (0.500"/px), median rms 2.442 mJy/beam
+00:00:07 cube member.uid___A001_X2f7_X47a.ari_l.SPT0311-58_sci.spw3_110136MHz.12m.cube.I.pbcor.fits
+00:00:07   saved SPT0311-58_f110.136.npz: 119 chans of 42.5 km/s, 109.214-111.058 GHz, box 33 px (0.500"/px), median rms 2.719 mJy/beam
+00:00:07 cube member.uid___A001_X2f7_X47a.ari_l.SPT0348-62_sci.spw0_96260MHz.12m.cube.I.pbcor.fits
+00:00:07   saved SPT0348-62_f96.260.npz: 119 chans of 48.7 km/s, 95.338-97.182 GHz, box 33 px (0.500"/px), median rms 1.777 mJy/beam
+00:00:07 cube member.uid___A001_X2f7_X47a.ari_l.SPT0348-62_sci.spw1_98135MHz.12m.cube.I.pbcor.fits
+00:00:07   saved SPT0348-62_f98.135.npz: 119 chans of 47.7 km/s, 97.213-99.057 GHz, box 33 px (0.500"/px), median rms 1.758 mJy/beam
+00:00:07 cube member.uid___A001_X2f7_X47a.ari_l.SPT0348-62_sci.spw2_108260MHz.12m.cube.I.pbcor.fits
+00:00:07   saved SPT0348-62_f108.260.npz: 119 chans of 43.3 km/s, 107.338-109.182 GHz, box 33 px (0.500"/px), median rms 2.127 mJy/beam
+00:00:07 cube member.uid___A001_X2f7_X47a.ari_l.SPT0348-62_sci.spw3_110135MHz.12m.cube.I.pbcor.fits
+00:00:07   saved SPT0348-62_f110.135.npz: 119 chans of 42.5 km/s, 109.213-111.057 GHz, box 33 px (0.500"/px), median rms 2.305 mJy/beam
+00:00:07 cube member.uid___A001_X2f7_X47e.ari_l.SPT0245-63_sci.spw0_100010MHz.12m.cube.I.pbcor.fits
+00:00:07   saved SPT0245-63_f100.010.npz: 119 chans of 46.8 km/s, 99.088-100.932 GHz, box 35 px (0.480"/px), median rms 2.281 mJy/beam
+00:00:07 cube member.uid___A001_X2f7_X47e.ari_l.SPT0245-63_sci.spw1_101885MHz.12m.cube.I.pbcor.fits
+00:00:07   saved SPT0245-63_f101.885.npz: 119 chans of 46.0 km/s, 100.963-102.807 GHz, box 35 px (0.480"/px), median rms 2.290 mJy/beam
+00:00:07 cube member.uid___A001_X2f7_X47e.ari_l.SPT0245-63_sci.spw2_112010MHz.12m.cube.I.pbcor.fits
+00:00:07   saved SPT0245-63_f112.010.npz: 119 chans of 41.8 km/s, 111.088-112.932 GHz, box 35 px (0.480"/px), median rms 3.062 mJy/beam
+00:00:07 cube member.uid___A001_X2f7_X47e.ari_l.SPT0245-63_sci.spw3_113885MHz.12m.cube.I.pbcor.fits
+00:00:08   saved SPT0245-63_f113.885.npz: 119 chans of 41.1 km/s, 112.963-114.807 GHz, box 35 px (0.480"/px), median rms 4.007 mJy/beam
+00:00:08 cube member.uid___A001_X2f7_X47e.ari_l.SPT0311-58_sci.spw0_100011MHz.12m.cube.I.pbcor.fits
+00:00:08   saved SPT0311-58_f100.011.npz: 119 chans of 46.8 km/s, 99.089-100.933 GHz, box 35 px (0.480"/px), median rms 2.487 mJy/beam
+00:00:08 cube member.uid___A001_X2f7_X47e.ari_l.SPT0311-58_sci.spw1_101886MHz.12m.cube.I.pbcor.fits
+00:00:08   saved SPT0311-58_f101.886.npz: 119 chans of 46.0 km/s, 100.964-102.808 GHz, box 35 px (0.480"/px), median rms 2.533 mJy/beam
+00:00:08 cube member.uid___A001_X2f7_X47e.ari_l.SPT0311-58_sci.spw2_112011MHz.12m.cube.I.pbcor.fits
+00:00:08   saved SPT0311-58_f112.011.npz: 119 chans of 41.8 km/s, 111.089-112.933 GHz, box 35 px (0.480"/px), median rms 3.551 mJy/beam
+00:00:08 cube member.uid___A001_X2f7_X47e.ari_l.SPT0311-58_sci.spw3_113886MHz.12m.cube.I.pbcor.fits
+00:00:08   saved SPT0311-58_f113.886.npz: 119 chans of 41.1 km/s, 112.964-114.808 GHz, box 35 px (0.480"/px), median rms 4.608 mJy/beam
+00:00:08 cube member.uid___A001_X2f7_X47e.ari_l.SPT0348-62_sci.spw0_100010MHz.12m.cube.I.pbcor.fits
+00:00:08   saved SPT0348-62_f100.010.npz: 119 chans of 46.8 km/s, 99.088-100.932 GHz, box 35 px (0.480"/px), median rms 2.205 mJy/beam
+00:00:08 cube member.uid___A001_X2f7_X47e.ari_l.SPT0348-62_sci.spw1_101885MHz.12m.cube.I.pbcor.fits
+00:00:08   saved SPT0348-62_f101.885.npz: 119 chans of 46.0 km/s, 100.963-102.807 GHz, box 35 px (0.480"/px), median rms 2.175 mJy/beam
+00:00:08 cube member.uid___A001_X2f7_X47e.ari_l.SPT0348-62_sci.spw2_112010MHz.12m.cube.I.pbcor.fits
+00:00:08   saved SPT0348-62_f112.010.npz: 119 chans of 41.8 km/s, 111.088-112.932 GHz, box 35 px (0.480"/px), median rms 2.975 mJy/beam
+00:00:08 cube member.uid___A001_X2f7_X47e.ari_l.SPT0348-62_sci.spw3_113885MHz.12m.cube.I.pbcor.fits
+00:00:08   saved SPT0348-62_f113.885.npz: 119 chans of 41.1 km/s, 112.963-114.807 GHz, box 35 px (0.480"/px), median rms 3.848 mJy/beam
+00:00:08 cube member.uid___A001_X2f7_X482.ari_l.SPT0544-40_sci.spw0_85009MHz.12m.cube.I.pbcor.fits
+00:00:08   saved SPT0544-40_f85.009.npz: 119 chans of 55.1 km/s, 84.087-85.931 GHz, box 35 px (0.460"/px), median rms 2.244 mJy/beam
+00:00:08 cube member.uid___A001_X2f7_X482.ari_l.SPT0544-40_sci.spw1_86884MHz.12m.cube.I.pbcor.fits
+00:00:08   saved SPT0544-40_f86.884.npz: 119 chans of 53.9 km/s, 85.962-87.806 GHz, box 35 px (0.460"/px), median rms 2.089 mJy/beam
+00:00:08 cube member.uid___A001_X2f7_X482.ari_l.SPT0544-40_sci.spw2_97052MHz.12m.cube.I.pbcor.fits
+00:00:08   saved SPT0544-40_f97.052.npz: 119 chans of 48.3 km/s, 96.130-97.974 GHz, box 35 px (0.460"/px), median rms 2.235 mJy/beam
+00:00:08 cube member.uid___A001_X2f7_X482.ari_l.SPT0544-40_sci.spw3_98885MHz.12m.cube.I.pbcor.fits
+00:00:09   saved SPT0544-40_f98.885.npz: 119 chans of 47.4 km/s, 97.963-99.807 GHz, box 35 px (0.460"/px), median rms 2.359 mJy/beam
+00:00:09 cube member.uid___A001_X2f7_X482.ari_l.SPT0552-42_sci.spw0_85009MHz.12m.cube.I.pbcor.fits
+00:00:09   saved SPT0552-42_f85.009.npz: 119 chans of 55.1 km/s, 84.087-85.931 GHz, box 35 px (0.460"/px), median rms 2.203 mJy/beam
+00:00:09 cube member.uid___A001_X2f7_X482.ari_l.SPT0552-42_sci.spw1_86884MHz.12m.cube.I.pbcor.fits
+00:00:09   saved SPT0552-42_f86.884.npz: 119 chans of 53.9 km/s, 85.962-87.806 GHz, box 35 px (0.460"/px), median rms 2.065 mJy/beam
+00:00:09 cube member.uid___A001_X2f7_X482.ari_l.SPT0552-42_sci.spw2_97052MHz.12m.cube.I.pbcor.fits
+00:00:09   saved SPT0552-42_f97.052.npz: 119 chans of 48.3 km/s, 96.130-97.974 GHz, box 35 px (0.460"/px), median rms 2.171 mJy/beam
+00:00:09 cube member.uid___A001_X2f7_X482.ari_l.SPT0552-42_sci.spw3_98885MHz.12m.cube.I.pbcor.fits
+00:00:09   saved SPT0552-42_f98.885.npz: 119 chans of 47.4 km/s, 97.963-99.807 GHz, box 35 px (0.460"/px), median rms 2.321 mJy/beam
+00:00:09 cube member.uid___A001_X2f7_X482.ari_l.SPT0553-50_sci.spw0_85008MHz.12m.cube.I.pbcor.fits
+00:00:09   saved SPT0553-50_f85.008.npz: 119 chans of 55.1 km/s, 84.087-85.930 GHz, box 35 px (0.460"/px), median rms 2.202 mJy/beam
+00:00:09 cube member.uid___A001_X2f7_X482.ari_l.SPT0553-50_sci.spw1_86884MHz.12m.cube.I.pbcor.fits
+00:00:09   saved SPT0553-50_f86.884.npz: 119 chans of 53.9 km/s, 85.962-87.806 GHz, box 35 px (0.460"/px), median rms 2.089 mJy/beam
+00:00:09 cube member.uid___A001_X2f7_X482.ari_l.SPT0553-50_sci.spw2_97051MHz.12m.cube.I.pbcor.fits
+00:00:09   saved SPT0553-50_f97.051.npz: 119 chans of 48.3 km/s, 96.129-97.973 GHz, box 35 px (0.460"/px), median rms 2.182 mJy/beam
+00:00:09 cube member.uid___A001_X2f7_X482.ari_l.SPT0553-50_sci.spw3_98884MHz.12m.cube.I.pbcor.fits
+00:00:09   saved SPT0553-50_f98.884.npz: 119 chans of 47.4 km/s, 97.962-99.806 GHz, box 35 px (0.460"/px), median rms 2.333 mJy/beam
+00:00:09 cube member.uid___A001_X2f7_X486.ari_l.SPT0544-40_sci.spw0_88760MHz.12m.cube.I.pbcor.fits
+00:00:09   saved SPT0544-40_f88.760.npz: 119 chans of 52.8 km/s, 87.838-89.682 GHz, box 37 px (0.450"/px), median rms 2.441 mJy/beam
+00:00:09 cube member.uid___A001_X2f7_X486.ari_l.SPT0544-40_sci.spw1_90635MHz.12m.cube.I.pbcor.fits
+00:00:10   saved SPT0544-40_f90.635.npz: 119 chans of 51.7 km/s, 89.713-91.557 GHz, box 37 px (0.450"/px), median rms 2.323 mJy/beam
+00:00:10 cube member.uid___A001_X2f7_X486.ari_l.SPT0544-40_sci.spw2_100760MHz.12m.cube.I.pbcor.fits
+00:00:10   saved SPT0544-40_f100.760.npz: 119 chans of 46.5 km/s, 99.838-101.682 GHz, box 37 px (0.450"/px), median rms 2.474 mJy/beam
+00:00:10 cube member.uid___A001_X2f7_X486.ari_l.SPT0544-40_sci.spw3_102635MHz.12m.cube.I.pbcor.fits
+00:00:10   saved SPT0544-40_f102.635.npz: 119 chans of 45.6 km/s, 101.713-103.557 GHz, box 37 px (0.450"/px), median rms 2.807 mJy/beam
+00:00:10 cube member.uid___A001_X2f7_X486.ari_l.SPT0552-42_sci.spw0_88760MHz.12m.cube.I.pbcor.fits
+00:00:10   saved SPT0552-42_f88.760.npz: 119 chans of 52.8 km/s, 87.838-89.682 GHz, box 37 px (0.450"/px), median rms 2.412 mJy/beam
+00:00:10 cube member.uid___A001_X2f7_X486.ari_l.SPT0552-42_sci.spw1_90635MHz.12m.cube.I.pbcor.fits
+00:00:10   saved SPT0552-42_f90.635.npz: 119 chans of 51.7 km/s, 89.713-91.557 GHz, box 37 px (0.450"/px), median rms 2.308 mJy/beam
+00:00:10 cube member.uid___A001_X2f7_X486.ari_l.SPT0552-42_sci.spw2_100760MHz.12m.cube.I.pbcor.fits
+00:00:10   saved SPT0552-42_f100.760.npz: 119 chans of 46.5 km/s, 99.838-101.682 GHz, box 37 px (0.450"/px), median rms 2.457 mJy/beam
+00:00:10 cube member.uid___A001_X2f7_X486.ari_l.SPT0552-42_sci.spw3_102635MHz.12m.cube.I.pbcor.fits
+00:00:10   saved SPT0552-42_f102.635.npz: 119 chans of 45.6 km/s, 101.713-103.557 GHz, box 37 px (0.450"/px), median rms 2.787 mJy/beam
+00:00:10 cube member.uid___A001_X2f7_X486.ari_l.SPT0553-50_sci.spw0_88759MHz.12m.cube.I.pbcor.fits
+00:00:10   saved SPT0553-50_f88.759.npz: 119 chans of 52.8 km/s, 87.837-89.681 GHz, box 37 px (0.450"/px), median rms 2.184 mJy/beam
+00:00:10 cube member.uid___A001_X2f7_X486.ari_l.SPT0553-50_sci.spw1_90634MHz.12m.cube.I.pbcor.fits
+00:00:10   saved SPT0553-50_f90.634.npz: 119 chans of 51.7 km/s, 89.712-91.556 GHz, box 37 px (0.450"/px), median rms 2.109 mJy/beam
+00:00:10 cube member.uid___A001_X2f7_X486.ari_l.SPT0553-50_sci.spw2_100759MHz.12m.cube.I.pbcor.fits
+00:00:10   saved SPT0553-50_f100.759.npz: 119 chans of 46.5 km/s, 99.837-101.681 GHz, box 37 px (0.450"/px), median rms 2.236 mJy/beam
+00:00:10 cube member.uid___A001_X2f7_X486.ari_l.SPT0553-50_sci.spw3_102634MHz.12m.cube.I.pbcor.fits
+00:00:11   saved SPT0553-50_f102.634.npz: 119 chans of 45.6 km/s, 101.712-103.556 GHz, box 37 px (0.450"/px), median rms 2.525 mJy/beam
+00:00:11 cube member.uid___A001_X2f7_X48a.ari_l.SPT0544-40_sci.spw0_92510MHz.12m.cube.I.pbcor.fits
+00:00:11   saved SPT0544-40_f92.510.npz: 119 chans of 50.6 km/s, 91.588-93.432 GHz, box 39 px (0.420"/px), median rms 2.198 mJy/beam
+00:00:11 cube member.uid___A001_X2f7_X48a.ari_l.SPT0544-40_sci.spw1_94385MHz.12m.cube.I.pbcor.fits
+00:00:11   saved SPT0544-40_f94.385.npz: 119 chans of 49.6 km/s, 93.463-95.307 GHz, box 39 px (0.420"/px), median rms 2.232 mJy/beam
+00:00:11 cube member.uid___A001_X2f7_X48a.ari_l.SPT0544-40_sci.spw2_104510MHz.12m.cube.I.pbcor.fits
+00:00:11   saved SPT0544-40_f104.510.npz: 119 chans of 44.8 km/s, 103.588-105.432 GHz, box 39 px (0.420"/px), median rms 2.619 mJy/beam
+00:00:11 cube member.uid___A001_X2f7_X48a.ari_l.SPT0544-40_sci.spw3_106385MHz.12m.cube.I.pbcor.fits
+00:00:11   saved SPT0544-40_f106.385.npz: 119 chans of 44.0 km/s, 105.463-107.307 GHz, box 39 px (0.420"/px), median rms 2.712 mJy/beam
+00:00:11 cube member.uid___A001_X2f7_X48a.ari_l.SPT0552-42_sci.spw0_92510MHz.12m.cube.I.pbcor.fits
+00:00:11   saved SPT0552-42_f92.510.npz: 119 chans of 50.6 km/s, 91.588-93.432 GHz, box 39 px (0.420"/px), median rms 2.101 mJy/beam
+00:00:11 cube member.uid___A001_X2f7_X48a.ari_l.SPT0552-42_sci.spw1_94385MHz.12m.cube.I.pbcor.fits
+00:00:11   saved SPT0552-42_f94.385.npz: 119 chans of 49.6 km/s, 93.463-95.307 GHz, box 39 px (0.420"/px), median rms 2.074 mJy/beam
+00:00:11 cube member.uid___A001_X2f7_X48a.ari_l.SPT0552-42_sci.spw2_104510MHz.12m.cube.I.pbcor.fits
+00:00:11   saved SPT0552-42_f104.510.npz: 119 chans of 44.8 km/s, 103.588-105.432 GHz, box 39 px (0.420"/px), median rms 2.533 mJy/beam
+00:00:11 cube member.uid___A001_X2f7_X48a.ari_l.SPT0552-42_sci.spw3_106385MHz.12m.cube.I.pbcor.fits
+00:00:11   saved SPT0552-42_f106.385.npz: 119 chans of 44.0 km/s, 105.463-107.307 GHz, box 39 px (0.420"/px), median rms 2.585 mJy/beam
+00:00:11 cube member.uid___A001_X2f7_X48a.ari_l.SPT0553-50_sci.spw0_92509MHz.12m.cube.I.pbcor.fits
+00:00:12   saved SPT0553-50_f92.509.npz: 119 chans of 50.6 km/s, 91.587-93.431 GHz, box 39 px (0.420"/px), median rms 2.039 mJy/beam
+00:00:12 cube member.uid___A001_X2f7_X48a.ari_l.SPT0553-50_sci.spw1_94384MHz.12m.cube.I.pbcor.fits
+00:00:12   saved SPT0553-50_f94.384.npz: 119 chans of 49.6 km/s, 93.462-95.306 GHz, box 39 px (0.420"/px), median rms 2.065 mJy/beam
+00:00:12 cube member.uid___A001_X2f7_X48a.ari_l.SPT0553-50_sci.spw2_104509MHz.12m.cube.I.pbcor.fits
+00:00:12   saved SPT0553-50_f104.509.npz: 119 chans of 44.8 km/s, 103.587-105.431 GHz, box 39 px (0.420"/px), median rms 2.437 mJy/beam
+00:00:12 cube member.uid___A001_X2f7_X48a.ari_l.SPT0553-50_sci.spw3_106384MHz.12m.cube.I.pbcor.fits
+00:00:12   saved SPT0553-50_f106.384.npz: 119 chans of 44.0 km/s, 105.462-107.306 GHz, box 39 px (0.420"/px), median rms 2.494 mJy/beam
+00:00:12 cube member.uid___A001_X2f7_X48e.ari_l.SPT0544-40_sci.spw0_96260MHz.12m.cube.I.pbcor.fits
+00:00:12   saved SPT0544-40_f96.260.npz: 119 chans of 48.7 km/s, 95.338-97.182 GHz, box 35 px (0.460"/px), median rms 1.661 mJy/beam
+00:00:12 cube member.uid___A001_X2f7_X48e.ari_l.SPT0544-40_sci.spw1_98135MHz.12m.cube.I.pbcor.fits
+00:00:12   saved SPT0544-40_f98.135.npz: 119 chans of 47.7 km/s, 97.213-99.057 GHz, box 35 px (0.460"/px), median rms 1.565 mJy/beam
+00:00:12 cube member.uid___A001_X2f7_X48e.ari_l.SPT0544-40_sci.spw2_108260MHz.12m.cube.I.pbcor.fits
+00:00:12   saved SPT0544-40_f108.260.npz: 119 chans of 43.3 km/s, 107.338-109.182 GHz, box 35 px (0.460"/px), median rms 1.920 mJy/beam
+00:00:12 cube member.uid___A001_X2f7_X48e.ari_l.SPT0544-40_sci.spw3_110135MHz.12m.cube.I.pbcor.fits
+00:00:12   saved SPT0544-40_f110.135.npz: 119 chans of 42.5 km/s, 109.213-111.057 GHz, box 35 px (0.460"/px), median rms 2.367 mJy/beam
+00:00:12 cube member.uid___A001_X2f7_X48e.ari_l.SPT0552-42_sci.spw0_96260MHz.12m.cube.I.pbcor.fits
+00:00:12   saved SPT0552-42_f96.260.npz: 119 chans of 48.7 km/s, 95.338-97.182 GHz, box 35 px (0.460"/px), median rms 1.631 mJy/beam
+00:00:12 cube member.uid___A001_X2f7_X48e.ari_l.SPT0552-42_sci.spw1_98135MHz.12m.cube.I.pbcor.fits
+00:00:13   saved SPT0552-42_f98.135.npz: 119 chans of 47.7 km/s, 97.213-99.057 GHz, box 35 px (0.460"/px), median rms 1.579 mJy/beam
+00:00:13 cube member.uid___A001_X2f7_X48e.ari_l.SPT0552-42_sci.spw2_108260MHz.12m.cube.I.pbcor.fits
+00:00:13   saved SPT0552-42_f108.260.npz: 119 chans of 43.3 km/s, 107.338-109.182 GHz, box 35 px (0.460"/px), median rms 1.920 mJy/beam
+00:00:13 cube member.uid___A001_X2f7_X48e.ari_l.SPT0552-42_sci.spw3_110135MHz.12m.cube.I.pbcor.fits
+00:00:13   saved SPT0552-42_f110.135.npz: 119 chans of 42.5 km/s, 109.213-111.057 GHz, box 35 px (0.460"/px), median rms 2.279 mJy/beam
+00:00:13 cube member.uid___A001_X2f7_X48e.ari_l.SPT0553-50_sci.spw0_96259MHz.12m.cube.I.pbcor.fits
+00:00:13   saved SPT0553-50_f96.259.npz: 119 chans of 48.7 km/s, 95.337-97.181 GHz, box 35 px (0.460"/px), median rms 1.663 mJy/beam
+00:00:13 cube member.uid___A001_X2f7_X48e.ari_l.SPT0553-50_sci.spw1_98134MHz.12m.cube.I.pbcor.fits
+00:00:13   saved SPT0553-50_f98.134.npz: 119 chans of 47.7 km/s, 97.212-99.056 GHz, box 35 px (0.460"/px), median rms 1.598 mJy/beam
+00:00:13 cube member.uid___A001_X2f7_X48e.ari_l.SPT0553-50_sci.spw2_108259MHz.12m.cube.I.pbcor.fits
+00:00:13   saved SPT0553-50_f108.259.npz: 119 chans of 43.3 km/s, 107.337-109.181 GHz, box 35 px (0.460"/px), median rms 1.964 mJy/beam
+00:00:13 cube member.uid___A001_X2f7_X48e.ari_l.SPT0553-50_sci.spw3_110134MHz.12m.cube.I.pbcor.fits
+00:00:13   saved SPT0553-50_f110.134.npz: 119 chans of 42.5 km/s, 109.212-111.056 GHz, box 35 px (0.460"/px), median rms 2.328 mJy/beam
+00:00:13 cube member.uid___A001_X2f7_X492.ari_l.SPT0544-40_sci.spw0_100010MHz.12m.cube.I.pbcor.fits
+00:00:13   saved SPT0544-40_f100.010.npz: 119 chans of 46.8 km/s, 99.088-100.932 GHz, box 37 px (0.440"/px), median rms 1.637 mJy/beam
+00:00:13 cube member.uid___A001_X2f7_X492.ari_l.SPT0544-40_sci.spw1_101885MHz.12m.cube.I.pbcor.fits
+00:00:13   saved SPT0544-40_f101.885.npz: 119 chans of 46.0 km/s, 100.963-102.807 GHz, box 37 px (0.440"/px), median rms 1.641 mJy/beam
+00:00:13 cube member.uid___A001_X2f7_X492.ari_l.SPT0544-40_sci.spw2_112010MHz.12m.cube.I.pbcor.fits
+00:00:13   saved SPT0544-40_f112.010.npz: 119 chans of 41.8 km/s, 111.088-112.932 GHz, box 37 px (0.440"/px), median rms 2.211 mJy/beam
+00:00:13 cube member.uid___A001_X2f7_X492.ari_l.SPT0544-40_sci.spw3_113885MHz.12m.cube.I.pbcor.fits
+00:00:14   saved SPT0544-40_f113.885.npz: 119 chans of 41.1 km/s, 112.963-114.807 GHz, box 37 px (0.440"/px), median rms 2.972 mJy/beam
+00:00:14 cube member.uid___A001_X2f7_X492.ari_l.SPT0552-42_sci.spw0_100010MHz.12m.cube.I.pbcor.fits
+00:00:14   saved SPT0552-42_f100.010.npz: 119 chans of 46.8 km/s, 99.088-100.932 GHz, box 37 px (0.440"/px), median rms 1.610 mJy/beam
+00:00:14 cube member.uid___A001_X2f7_X492.ari_l.SPT0552-42_sci.spw1_101885MHz.12m.cube.I.pbcor.fits
+00:00:14   saved SPT0552-42_f101.885.npz: 119 chans of 46.0 km/s, 100.963-102.807 GHz, box 37 px (0.440"/px), median rms 1.605 mJy/beam
+00:00:14 cube member.uid___A001_X2f7_X492.ari_l.SPT0552-42_sci.spw2_112010MHz.12m.cube.I.pbcor.fits
+00:00:14   saved SPT0552-42_f112.010.npz: 119 chans of 41.8 km/s, 111.088-112.932 GHz, box 37 px (0.440"/px), median rms 2.150 mJy/beam
+00:00:14 cube member.uid___A001_X2f7_X492.ari_l.SPT0552-42_sci.spw3_113885MHz.12m.cube.I.pbcor.fits
+00:00:14   saved SPT0552-42_f113.885.npz: 119 chans of 41.1 km/s, 112.963-114.807 GHz, box 37 px (0.440"/px), median rms 2.885 mJy/beam
+00:00:14 cube member.uid___A001_X2f7_X492.ari_l.SPT0553-50_sci.spw0_100009MHz.12m.cube.I.pbcor.fits
+00:00:14   saved SPT0553-50_f100.009.npz: 119 chans of 46.8 km/s, 99.087-100.931 GHz, box 37 px (0.440"/px), median rms 1.624 mJy/beam
+00:00:14 cube member.uid___A001_X2f7_X492.ari_l.SPT0553-50_sci.spw1_101884MHz.12m.cube.I.pbcor.fits
+00:00:14   saved SPT0553-50_f101.884.npz: 119 chans of 46.0 km/s, 100.962-102.806 GHz, box 37 px (0.440"/px), median rms 1.654 mJy/beam
+00:00:14 cube member.uid___A001_X2f7_X492.ari_l.SPT0553-50_sci.spw2_112009MHz.12m.cube.I.pbcor.fits
+00:00:14   saved SPT0553-50_f112.009.npz: 119 chans of 41.8 km/s, 111.087-112.931 GHz, box 37 px (0.440"/px), median rms 2.183 mJy/beam
+00:00:14 cube member.uid___A001_X2f7_X492.ari_l.SPT0553-50_sci.spw3_113884MHz.12m.cube.I.pbcor.fits
+00:00:15   saved SPT0553-50_f113.884.npz: 119 chans of 41.1 km/s, 112.962-114.806 GHz, box 37 px (0.440"/px), median rms 3.018 mJy/beam
+00:00:15 cube member.uid___A001_X2f7_X496.ari_l.SPT0516-59_sci.spw0_85009MHz.12m.cube.I.pbcor.fits
+00:00:15   saved SPT0516-59_f85.009.npz: 119 chans of 55.1 km/s, 84.087-85.931 GHz, box 31 px (0.550"/px), median rms 1.757 mJy/beam
+00:00:15 cube member.uid___A001_X2f7_X496.ari_l.SPT0516-59_sci.spw1_86884MHz.12m.cube.I.pbcor.fits
+00:00:15   saved SPT0516-59_f86.884.npz: 119 chans of 53.9 km/s, 85.962-87.806 GHz, box 31 px (0.550"/px), median rms 1.705 mJy/beam
+00:00:15 cube member.uid___A001_X2f7_X496.ari_l.SPT0516-59_sci.spw2_97052MHz.12m.cube.I.pbcor.fits
+00:00:15   saved SPT0516-59_f97.052.npz: 119 chans of 48.3 km/s, 96.130-97.974 GHz, box 31 px (0.550"/px), median rms 1.898 mJy/beam
+00:00:15 cube member.uid___A001_X2f7_X496.ari_l.SPT0516-59_sci.spw3_98885MHz.12m.cube.I.pbcor.fits
+00:00:15   saved SPT0516-59_f98.885.npz: 119 chans of 47.4 km/s, 97.963-99.807 GHz, box 31 px (0.550"/px), median rms 2.005 mJy/beam
+00:00:15 cube member.uid___A001_X2f7_X496.ari_l.SPT0555-62_sci.spw0_85008MHz.12m.cube.I.pbcor.fits
+00:00:15   saved SPT0555-62_f85.008.npz: 119 chans of 55.1 km/s, 84.086-85.930 GHz, box 31 px (0.550"/px), median rms 1.773 mJy/beam
+00:00:15 cube member.uid___A001_X2f7_X496.ari_l.SPT0555-62_sci.spw1_86883MHz.12m.cube.I.pbcor.fits
+00:00:15   saved SPT0555-62_f86.883.npz: 119 chans of 53.9 km/s, 85.961-87.805 GHz, box 31 px (0.550"/px), median rms 1.676 mJy/beam
+00:00:15 cube member.uid___A001_X2f7_X496.ari_l.SPT0555-62_sci.spw2_97051MHz.12m.cube.I.pbcor.fits
+00:00:15   saved SPT0555-62_f97.051.npz: 119 chans of 48.3 km/s, 96.129-97.973 GHz, box 31 px (0.550"/px), median rms 1.904 mJy/beam
+00:00:15 cube member.uid___A001_X2f7_X496.ari_l.SPT0555-62_sci.spw3_98884MHz.12m.cube.I.pbcor.fits
+00:00:15   saved SPT0555-62_f98.884.npz: 119 chans of 47.4 km/s, 97.962-99.806 GHz, box 31 px (0.550"/px), median rms 2.006 mJy/beam
+00:00:16 cube member.uid___A001_X2f7_X496.ari_l.SPT0604-64_sci.spw0_85008MHz.12m.cube.I.pbcor.fits
+00:00:16   saved SPT0604-64_f85.008.npz: 119 chans of 55.1 km/s, 84.086-85.930 GHz, box 31 px (0.550"/px), median rms 1.804 mJy/beam
+00:00:16 cube member.uid___A001_X2f7_X496.ari_l.SPT0604-64_sci.spw1_86883MHz.12m.cube.I.pbcor.fits
+00:00:16   saved SPT0604-64_f86.883.npz: 119 chans of 53.9 km/s, 85.961-87.805 GHz, box 31 px (0.550"/px), median rms 1.729 mJy/beam
+00:00:16 cube member.uid___A001_X2f7_X496.ari_l.SPT0604-64_sci.spw2_97051MHz.12m.cube.I.pbcor.fits
+00:00:16   saved SPT0604-64_f97.051.npz: 119 chans of 48.3 km/s, 96.129-97.973 GHz, box 31 px (0.550"/px), median rms 1.934 mJy/beam
+00:00:16 cube member.uid___A001_X2f7_X496.ari_l.SPT0604-64_sci.spw3_98884MHz.12m.cube.I.pbcor.fits
+00:00:16   saved SPT0604-64_f98.884.npz: 119 chans of 47.4 km/s, 97.962-99.805 GHz, box 31 px (0.550"/px), median rms 2.114 mJy/beam
+00:00:16 cube member.uid___A001_X2f7_X496.ari_l.SPT0611-55_sci.spw0_85008MHz.12m.cube.I.pbcor.fits
+00:00:16   saved SPT0611-55_f85.008.npz: 119 chans of 55.1 km/s, 84.087-85.930 GHz, box 31 px (0.550"/px), median rms 1.767 mJy/beam
+00:00:16 cube member.uid___A001_X2f7_X496.ari_l.SPT0611-55_sci.spw1_86884MHz.12m.cube.I.pbcor.fits
+00:00:16   saved SPT0611-55_f86.884.npz: 119 chans of 53.9 km/s, 85.962-87.806 GHz, box 31 px (0.550"/px), median rms 1.701 mJy/beam
+00:00:16 cube member.uid___A001_X2f7_X496.ari_l.SPT0611-55_sci.spw2_97051MHz.12m.cube.I.pbcor.fits
+00:00:16   saved SPT0611-55_f97.051.npz: 119 chans of 48.3 km/s, 96.129-97.973 GHz, box 31 px (0.550"/px), median rms 1.929 mJy/beam
+00:00:16 cube member.uid___A001_X2f7_X496.ari_l.SPT0611-55_sci.spw3_98884MHz.12m.cube.I.pbcor.fits
+00:00:17   saved SPT0611-55_f98.884.npz: 119 chans of 47.4 km/s, 97.962-99.806 GHz, box 31 px (0.550"/px), median rms 2.049 mJy/beam
+00:00:17 cube member.uid___A001_X2f7_X496.ari_l.SPT0625-58_sci.spw0_85008MHz.12m.cube.I.pbcor.fits
+00:00:17   saved SPT0625-58_f85.008.npz: 119 chans of 55.1 km/s, 84.086-85.930 GHz, box 31 px (0.550"/px), median rms 1.739 mJy/beam
+00:00:17 cube member.uid___A001_X2f7_X496.ari_l.SPT0625-58_sci.spw1_86883MHz.12m.cube.I.pbcor.fits
+00:00:17   saved SPT0625-58_f86.883.npz: 119 chans of 53.9 km/s, 85.961-87.805 GHz, box 31 px (0.550"/px), median rms 1.692 mJy/beam
+00:00:17 cube member.uid___A001_X2f7_X496.ari_l.SPT0625-58_sci.spw2_97051MHz.12m.cube.I.pbcor.fits
+00:00:17   saved SPT0625-58_f97.051.npz: 119 chans of 48.3 km/s, 96.129-97.973 GHz, box 31 px (0.550"/px), median rms 1.858 mJy/beam
+00:00:17 cube member.uid___A001_X2f7_X496.ari_l.SPT0625-58_sci.spw3_98884MHz.12m.cube.I.pbcor.fits
+00:00:17   saved SPT0625-58_f98.884.npz: 119 chans of 47.4 km/s, 97.962-99.806 GHz, box 31 px (0.550"/px), median rms 2.011 mJy/beam
+00:00:17 cube member.uid___A001_X2f7_X49a.ari_l.SPT0516-59_sci.spw0_88760MHz.12m.cube.I.pbcor.fits
+00:00:17   saved SPT0516-59_f88.760.npz: 119 chans of 52.8 km/s, 87.838-89.682 GHz, box 31 px (0.530"/px), median rms 1.672 mJy/beam
+00:00:17 cube member.uid___A001_X2f7_X49a.ari_l.SPT0516-59_sci.spw1_90635MHz.12m.cube.I.pbcor.fits
+00:00:17   saved SPT0516-59_f90.635.npz: 119 chans of 51.7 km/s, 89.713-91.557 GHz, box 31 px (0.530"/px), median rms 1.680 mJy/beam
+00:00:17 cube member.uid___A001_X2f7_X49a.ari_l.SPT0516-59_sci.spw2_100760MHz.12m.cube.I.pbcor.fits
+00:00:17   saved SPT0516-59_f100.760.npz: 119 chans of 46.5 km/s, 99.838-101.682 GHz, box 31 px (0.530"/px), median rms 1.743 mJy/beam
+00:00:17 cube member.uid___A001_X2f7_X49a.ari_l.SPT0516-59_sci.spw3_102635MHz.12m.cube.I.pbcor.fits
+00:00:17   saved SPT0516-59_f102.635.npz: 119 chans of 45.6 km/s, 101.713-103.557 GHz, box 31 px (0.530"/px), median rms 1.968 mJy/beam
+00:00:17 cube member.uid___A001_X2f7_X49a.ari_l.SPT0555-62_sci.spw0_88759MHz.12m.cube.I.pbcor.fits
+00:00:18   saved SPT0555-62_f88.759.npz: 119 chans of 52.8 km/s, 87.837-89.681 GHz, box 31 px (0.530"/px), median rms 1.681 mJy/beam
+00:00:18 cube member.uid___A001_X2f7_X49a.ari_l.SPT0555-62_sci.spw1_90634MHz.12m.cube.I.pbcor.fits
+00:00:18   saved SPT0555-62_f90.634.npz: 119 chans of 51.7 km/s, 89.712-91.556 GHz, box 31 px (0.530"/px), median rms 1.685 mJy/beam
+00:00:18 cube member.uid___A001_X2f7_X49a.ari_l.SPT0555-62_sci.spw2_100759MHz.12m.cube.I.pbcor.fits
+00:00:18   saved SPT0555-62_f100.759.npz: 119 chans of 46.5 km/s, 99.837-101.681 GHz, box 31 px (0.530"/px), median rms 1.764 mJy/beam
+00:00:18 cube member.uid___A001_X2f7_X49a.ari_l.SPT0555-62_sci.spw3_102634MHz.12m.cube.I.pbcor.fits
+00:00:18   saved SPT0555-62_f102.634.npz: 119 chans of 45.6 km/s, 101.712-103.556 GHz, box 31 px (0.530"/px), median rms 1.917 mJy/beam
+00:00:18 cube member.uid___A001_X2f7_X49a.ari_l.SPT0604-64_sci.spw0_88759MHz.12m.cube.I.pbcor.fits
+00:00:18   saved SPT0604-64_f88.759.npz: 119 chans of 52.8 km/s, 87.837-89.681 GHz, box 31 px (0.530"/px), median rms 1.746 mJy/beam
+00:00:18 cube member.uid___A001_X2f7_X49a.ari_l.SPT0604-64_sci.spw1_90634MHz.12m.cube.I.pbcor.fits
+00:00:18   saved SPT0604-64_f90.634.npz: 119 chans of 51.7 km/s, 89.712-91.556 GHz, box 31 px (0.530"/px), median rms 1.714 mJy/beam
+00:00:18 cube member.uid___A001_X2f7_X49a.ari_l.SPT0604-64_sci.spw2_100758MHz.12m.cube.I.pbcor.fits
+00:00:18   saved SPT0604-64_f100.758.npz: 119 chans of 46.5 km/s, 99.837-101.680 GHz, box 31 px (0.530"/px), median rms 1.796 mJy/beam
+00:00:18 cube member.uid___A001_X2f7_X49a.ari_l.SPT0604-64_sci.spw3_102633MHz.12m.cube.I.pbcor.fits
+00:00:18   saved SPT0604-64_f102.633.npz: 119 chans of 45.6 km/s, 101.712-103.555 GHz, box 31 px (0.530"/px), median rms 1.997 mJy/beam
+00:00:18 cube member.uid___A001_X2f7_X49a.ari_l.SPT0611-55_sci.spw0_88759MHz.12m.cube.I.pbcor.fits
+00:00:18   saved SPT0611-55_f88.759.npz: 119 chans of 52.8 km/s, 87.837-89.681 GHz, box 31 px (0.530"/px), median rms 1.728 mJy/beam
+00:00:18 cube member.uid___A001_X2f7_X49a.ari_l.SPT0611-55_sci.spw1_90634MHz.12m.cube.I.pbcor.fits
+00:00:19   saved SPT0611-55_f90.634.npz: 119 chans of 51.7 km/s, 89.712-91.556 GHz, box 31 px (0.530"/px), median rms 1.694 mJy/beam
+00:00:19 cube member.uid___A001_X2f7_X49a.ari_l.SPT0611-55_sci.spw2_100759MHz.12m.cube.I.pbcor.fits
+00:00:19   saved SPT0611-55_f100.759.npz: 119 chans of 46.5 km/s, 99.837-101.681 GHz, box 31 px (0.530"/px), median rms 1.787 mJy/beam
+00:00:19 cube member.uid___A001_X2f7_X49a.ari_l.SPT0611-55_sci.spw3_102634MHz.12m.cube.I.pbcor.fits
+00:00:19   saved SPT0611-55_f102.634.npz: 119 chans of 45.6 km/s, 101.712-103.556 GHz, box 31 px (0.530"/px), median rms 1.984 mJy/beam
+00:00:19 cube member.uid___A001_X2f7_X49a.ari_l.SPT0625-58_sci.spw0_88759MHz.12m.cube.I.pbcor.fits
+00:00:19   saved SPT0625-58_f88.759.npz: 119 chans of 52.8 km/s, 87.837-89.681 GHz, box 31 px (0.530"/px), median rms 1.673 mJy/beam
+00:00:19 cube member.uid___A001_X2f7_X49a.ari_l.SPT0625-58_sci.spw1_90634MHz.12m.cube.I.pbcor.fits
+00:00:19   saved SPT0625-58_f90.634.npz: 119 chans of 51.7 km/s, 89.712-91.556 GHz, box 31 px (0.530"/px), median rms 1.680 mJy/beam
+00:00:19 cube member.uid___A001_X2f7_X49a.ari_l.SPT0625-58_sci.spw2_100759MHz.12m.cube.I.pbcor.fits
+00:00:19   saved SPT0625-58_f100.759.npz: 119 chans of 46.5 km/s, 99.837-101.681 GHz, box 31 px (0.530"/px), median rms 1.745 mJy/beam
+00:00:19 cube member.uid___A001_X2f7_X49a.ari_l.SPT0625-58_sci.spw3_102634MHz.12m.cube.I.pbcor.fits
+00:00:19   saved SPT0625-58_f102.634.npz: 119 chans of 45.6 km/s, 101.712-103.555 GHz, box 31 px (0.530"/px), median rms 1.917 mJy/beam
+00:00:19 cube member.uid___A001_X2f7_X49e.ari_l.SPT0516-59_sci.spw0_92510MHz.12m.cube.I.pbcor.fits
+00:00:19   saved SPT0516-59_f92.510.npz: 119 chans of 50.6 km/s, 91.588-93.432 GHz, box 33 px (0.500"/px), median rms 1.665 mJy/beam
+00:00:19 cube member.uid___A001_X2f7_X49e.ari_l.SPT0516-59_sci.spw1_94385MHz.12m.cube.I.pbcor.fits
+00:00:19   saved SPT0516-59_f94.385.npz: 119 chans of 49.6 km/s, 93.463-95.307 GHz, box 33 px (0.500"/px), median rms 1.660 mJy/beam
+00:00:19 cube member.uid___A001_X2f7_X49e.ari_l.SPT0516-59_sci.spw2_104510MHz.12m.cube.I.pbcor.fits
+00:00:19   saved SPT0516-59_f104.510.npz: 119 chans of 44.8 km/s, 103.588-105.432 GHz, box 33 px (0.500"/px), median rms 1.850 mJy/beam
+00:00:19 cube member.uid___A001_X2f7_X49e.ari_l.SPT0516-59_sci.spw3_106385MHz.12m.cube.I.pbcor.fits
+00:00:19   saved SPT0516-59_f106.385.npz: 119 chans of 44.0 km/s, 105.463-107.307 GHz, box 33 px (0.500"/px), median rms 2.083 mJy/beam
+00:00:19 cube member.uid___A001_X2f7_X49e.ari_l.SPT0555-62_sci.spw0_92509MHz.12m.cube.I.pbcor.fits
+00:00:20   saved SPT0555-62_f92.509.npz: 119 chans of 50.6 km/s, 91.587-93.431 GHz, box 33 px (0.500"/px), median rms 1.670 mJy/beam
+00:00:20 cube member.uid___A001_X2f7_X49e.ari_l.SPT0555-62_sci.spw1_94384MHz.12m.cube.I.pbcor.fits
+00:00:20   saved SPT0555-62_f94.384.npz: 119 chans of 49.6 km/s, 93.462-95.306 GHz, box 33 px (0.500"/px), median rms 1.643 mJy/beam
+00:00:20 cube member.uid___A001_X2f7_X49e.ari_l.SPT0555-62_sci.spw2_104509MHz.12m.cube.I.pbcor.fits
+00:00:20   saved SPT0555-62_f104.509.npz: 119 chans of 44.8 km/s, 103.587-105.431 GHz, box 33 px (0.500"/px), median rms 1.821 mJy/beam
+00:00:20 cube member.uid___A001_X2f7_X49e.ari_l.SPT0555-62_sci.spw3_106384MHz.12m.cube.I.pbcor.fits
+00:00:20   saved SPT0555-62_f106.384.npz: 119 chans of 44.0 km/s, 105.462-107.306 GHz, box 33 px (0.500"/px), median rms 2.089 mJy/beam
+00:00:20 cube member.uid___A001_X2f7_X49e.ari_l.SPT0604-64_sci.spw0_92509MHz.12m.cube.I.pbcor.fits
+00:00:20   saved SPT0604-64_f92.509.npz: 119 chans of 50.6 km/s, 91.587-93.431 GHz, box 33 px (0.500"/px), median rms 1.688 mJy/beam
+00:00:20 cube member.uid___A001_X2f7_X49e.ari_l.SPT0604-64_sci.spw1_94384MHz.12m.cube.I.pbcor.fits
+00:00:20   saved SPT0604-64_f94.384.npz: 119 chans of 49.6 km/s, 93.462-95.306 GHz, box 33 px (0.500"/px), median rms 1.643 mJy/beam
+00:00:20 cube member.uid___A001_X2f7_X49e.ari_l.SPT0604-64_sci.spw2_104508MHz.12m.cube.I.pbcor.fits
+00:00:20   saved SPT0604-64_f104.508.npz: 119 chans of 44.8 km/s, 103.587-105.430 GHz, box 33 px (0.500"/px), median rms 1.851 mJy/beam
+00:00:20 cube member.uid___A001_X2f7_X49e.ari_l.SPT0604-64_sci.spw3_106383MHz.12m.cube.I.pbcor.fits
+00:00:20   saved SPT0604-64_f106.383.npz: 119 chans of 44.0 km/s, 105.461-107.305 GHz, box 33 px (0.500"/px), median rms 2.106 mJy/beam
+00:00:20 cube member.uid___A001_X2f7_X49e.ari_l.SPT0611-55_sci.spw0_92509MHz.12m.cube.I.pbcor.fits
+00:00:21   saved SPT0611-55_f92.509.npz: 119 chans of 50.6 km/s, 91.587-93.431 GHz, box 33 px (0.500"/px), median rms 1.645 mJy/beam
+00:00:21 cube member.uid___A001_X2f7_X49e.ari_l.SPT0611-55_sci.spw1_94384MHz.12m.cube.I.pbcor.fits
+00:00:21   saved SPT0611-55_f94.384.npz: 119 chans of 49.6 km/s, 93.462-95.306 GHz, box 33 px (0.500"/px), median rms 1.652 mJy/beam
+00:00:21 cube member.uid___A001_X2f7_X49e.ari_l.SPT0611-55_sci.spw2_104509MHz.12m.cube.I.pbcor.fits
+00:00:21   saved SPT0611-55_f104.509.npz: 119 chans of 44.8 km/s, 103.587-105.431 GHz, box 33 px (0.500"/px), median rms 1.823 mJy/beam
+00:00:21 cube member.uid___A001_X2f7_X49e.ari_l.SPT0611-55_sci.spw3_106384MHz.12m.cube.I.pbcor.fits
+00:00:21   saved SPT0611-55_f106.384.npz: 119 chans of 44.0 km/s, 105.462-107.306 GHz, box 33 px (0.500"/px), median rms 2.071 mJy/beam
+00:00:21 cube member.uid___A001_X2f7_X49e.ari_l.SPT0625-58_sci.spw0_92509MHz.12m.cube.I.pbcor.fits
+00:00:21   saved SPT0625-58_f92.509.npz: 119 chans of 50.6 km/s, 91.587-93.431 GHz, box 33 px (0.500"/px), median rms 1.626 mJy/beam
+00:00:21 cube member.uid___A001_X2f7_X49e.ari_l.SPT0625-58_sci.spw1_94384MHz.12m.cube.I.pbcor.fits
+00:00:21   saved SPT0625-58_f94.384.npz: 119 chans of 49.6 km/s, 93.462-95.306 GHz, box 33 px (0.500"/px), median rms 1.623 mJy/beam
+00:00:21 cube member.uid___A001_X2f7_X49e.ari_l.SPT0625-58_sci.spw2_104509MHz.12m.cube.I.pbcor.fits
+00:00:21   saved SPT0625-58_f104.509.npz: 119 chans of 44.8 km/s, 103.587-105.430 GHz, box 33 px (0.500"/px), median rms 1.823 mJy/beam
+00:00:21 cube member.uid___A001_X2f7_X49e.ari_l.SPT0625-58_sci.spw3_106383MHz.12m.cube.I.pbcor.fits
+00:00:21   saved SPT0625-58_f106.383.npz: 119 chans of 44.0 km/s, 105.462-107.305 GHz, box 33 px (0.500"/px), median rms 2.024 mJy/beam
+00:00:21 cube member.uid___A001_X2f7_X4a2.ari_l.SPT0516-59_sci.spw0_96260MHz.12m.cube.I.pbcor.fits
+00:00:22   saved SPT0516-59_f96.260.npz: 119 chans of 48.7 km/s, 95.338-97.182 GHz, box 33 px (0.490"/px), median rms 1.461 mJy/beam
+00:00:22 cube member.uid___A001_X2f7_X4a2.ari_l.SPT0516-59_sci.spw1_98135MHz.12m.cube.I.pbcor.fits
+00:00:22   saved SPT0516-59_f98.135.npz: 119 chans of 47.7 km/s, 97.213-99.057 GHz, box 33 px (0.490"/px), median rms 1.472 mJy/beam
+00:00:22 cube member.uid___A001_X2f7_X4a2.ari_l.SPT0516-59_sci.spw2_108260MHz.12m.cube.I.pbcor.fits
+00:00:22   saved SPT0516-59_f108.260.npz: 119 chans of 43.3 km/s, 107.338-109.182 GHz, box 33 px (0.490"/px), median rms 1.736 mJy/beam
+00:00:22 cube member.uid___A001_X2f7_X4a2.ari_l.SPT0516-59_sci.spw3_110135MHz.12m.cube.I.pbcor.fits
+00:00:22   saved SPT0516-59_f110.135.npz: 119 chans of 42.5 km/s, 109.213-111.057 GHz, box 33 px (0.490"/px), median rms 2.028 mJy/beam
+00:00:22 cube member.uid___A001_X2f7_X4a2.ari_l.SPT0555-62_sci.spw0_96259MHz.12m.cube.I.pbcor.fits
+00:00:22   saved SPT0555-62_f96.259.npz: 119 chans of 48.7 km/s, 95.337-97.181 GHz, box 33 px (0.490"/px), median rms 1.466 mJy/beam
+00:00:22 cube member.uid___A001_X2f7_X4a2.ari_l.SPT0555-62_sci.spw1_98134MHz.12m.cube.I.pbcor.fits
+00:00:22   saved SPT0555-62_f98.134.npz: 119 chans of 47.7 km/s, 97.212-99.056 GHz, box 33 px (0.490"/px), median rms 1.446 mJy/beam
+00:00:22 cube member.uid___A001_X2f7_X4a2.ari_l.SPT0555-62_sci.spw2_108259MHz.12m.cube.I.pbcor.fits
+00:00:22   saved SPT0555-62_f108.259.npz: 119 chans of 43.3 km/s, 107.337-109.181 GHz, box 33 px (0.490"/px), median rms 1.737 mJy/beam
+00:00:22 cube member.uid___A001_X2f7_X4a2.ari_l.SPT0555-62_sci.spw3_110134MHz.12m.cube.I.pbcor.fits
+00:00:23   saved SPT0555-62_f110.134.npz: 119 chans of 42.5 km/s, 109.212-111.056 GHz, box 33 px (0.490"/px), median rms 2.056 mJy/beam
+00:00:23 cube member.uid___A001_X2f7_X4a2.ari_l.SPT0604-64_sci.spw0_96259MHz.12m.cube.I.pbcor.fits
+00:00:23   saved SPT0604-64_f96.259.npz: 119 chans of 48.7 km/s, 95.337-97.180 GHz, box 33 px (0.490"/px), median rms 1.493 mJy/beam
+00:00:23 cube member.uid___A001_X2f7_X4a2.ari_l.SPT0604-64_sci.spw1_98134MHz.12m.cube.I.pbcor.fits
+00:00:23   saved SPT0604-64_f98.134.npz: 119 chans of 47.7 km/s, 97.212-99.055 GHz, box 33 px (0.490"/px), median rms 1.453 mJy/beam
+00:00:23 cube member.uid___A001_X2f7_X4a2.ari_l.SPT0604-64_sci.spw2_108258MHz.12m.cube.I.pbcor.fits
+00:00:23   saved SPT0604-64_f108.258.npz: 119 chans of 43.3 km/s, 107.336-109.180 GHz, box 33 px (0.490"/px), median rms 1.753 mJy/beam
+00:00:23 cube member.uid___A001_X2f7_X4a2.ari_l.SPT0604-64_sci.spw3_110133MHz.12m.cube.I.pbcor.fits
+00:00:23   saved SPT0604-64_f110.133.npz: 119 chans of 42.5 km/s, 109.211-111.055 GHz, box 33 px (0.490"/px), median rms 2.084 mJy/beam
+00:00:23 cube member.uid___A001_X2f7_X4a2.ari_l.SPT0611-55_sci.spw0_96259MHz.12m.cube.I.pbcor.fits
+00:00:23   saved SPT0611-55_f96.259.npz: 119 chans of 48.7 km/s, 95.337-97.181 GHz, box 33 px (0.490"/px), median rms 1.505 mJy/beam
+00:00:23 cube member.uid___A001_X2f7_X4a2.ari_l.SPT0611-55_sci.spw1_98134MHz.12m.cube.I.pbcor.fits
+00:00:23   saved SPT0611-55_f98.134.npz: 119 chans of 47.7 km/s, 97.212-99.056 GHz, box 33 px (0.490"/px), median rms 1.474 mJy/beam
+00:00:23 cube member.uid___A001_X2f7_X4a2.ari_l.SPT0611-55_sci.spw2_108259MHz.12m.cube.I.pbcor.fits
+00:00:23   saved SPT0611-55_f108.259.npz: 119 chans of 43.3 km/s, 107.337-109.181 GHz, box 33 px (0.490"/px), median rms 1.784 mJy/beam
+00:00:23 cube member.uid___A001_X2f7_X4a2.ari_l.SPT0611-55_sci.spw3_110134MHz.12m.cube.I.pbcor.fits
+00:00:23   saved SPT0611-55_f110.134.npz: 119 chans of 42.5 km/s, 109.212-111.056 GHz, box 33 px (0.490"/px), median rms 2.105 mJy/beam
+00:00:23 cube member.uid___A001_X2f7_X4a2.ari_l.SPT0625-58_sci.spw0_96259MHz.12m.cube.I.pbcor.fits
+00:00:24   saved SPT0625-58_f96.259.npz: 119 chans of 48.7 km/s, 95.337-97.181 GHz, box 33 px (0.490"/px), median rms 1.463 mJy/beam
+00:00:24 cube member.uid___A001_X2f7_X4a2.ari_l.SPT0625-58_sci.spw1_98134MHz.12m.cube.I.pbcor.fits
+00:00:24   saved SPT0625-58_f98.134.npz: 119 chans of 47.7 km/s, 97.212-99.056 GHz, box 33 px (0.490"/px), median rms 1.458 mJy/beam
+00:00:24 cube member.uid___A001_X2f7_X4a2.ari_l.SPT0625-58_sci.spw2_108258MHz.12m.cube.I.pbcor.fits
+00:00:24   saved SPT0625-58_f108.258.npz: 119 chans of 43.3 km/s, 107.337-109.180 GHz, box 33 px (0.490"/px), median rms 1.737 mJy/beam
+00:00:24 cube member.uid___A001_X2f7_X4a2.ari_l.SPT0625-58_sci.spw3_110133MHz.12m.cube.I.pbcor.fits
+00:00:24   saved SPT0625-58_f110.133.npz: 119 chans of 42.5 km/s, 109.212-111.055 GHz, box 33 px (0.490"/px), median rms 2.069 mJy/beam
+00:00:24 cube member.uid___A001_X2f7_X4a6.ari_l.SPT0516-59_sci.spw0_100010MHz.12m.cube.I.pbcor.fits
+00:00:24   saved SPT0516-59_f100.010.npz: 119 chans of 46.8 km/s, 99.088-100.932 GHz, box 35 px (0.470"/px), median rms 1.493 mJy/beam
+00:00:24 cube member.uid___A001_X2f7_X4a6.ari_l.SPT0516-59_sci.spw1_101885MHz.12m.cube.I.pbcor.fits
+00:00:24   saved SPT0516-59_f101.885.npz: 119 chans of 46.0 km/s, 100.963-102.807 GHz, box 35 px (0.470"/px), median rms 1.465 mJy/beam
+00:00:24 cube member.uid___A001_X2f7_X4a6.ari_l.SPT0516-59_sci.spw2_112010MHz.12m.cube.I.pbcor.fits
+00:00:24   saved SPT0516-59_f112.010.npz: 119 chans of 41.8 km/s, 111.088-112.932 GHz, box 35 px (0.470"/px), median rms 2.065 mJy/beam
+00:00:24 cube member.uid___A001_X2f7_X4a6.ari_l.SPT0516-59_sci.spw3_113885MHz.12m.cube.I.pbcor.fits
+00:00:24   saved SPT0516-59_f113.885.npz: 119 chans of 41.1 km/s, 112.963-114.807 GHz, box 35 px (0.470"/px), median rms 2.857 mJy/beam
+00:00:24 cube member.uid___A001_X2f7_X4a6.ari_l.SPT0555-62_sci.spw0_100009MHz.12m.cube.I.pbcor.fits
+00:00:25   saved SPT0555-62_f100.009.npz: 119 chans of 46.8 km/s, 99.087-100.931 GHz, box 35 px (0.470"/px), median rms 1.520 mJy/beam
+00:00:25 cube member.uid___A001_X2f7_X4a6.ari_l.SPT0555-62_sci.spw1_101884MHz.12m.cube.I.pbcor.fits
+00:00:25   saved SPT0555-62_f101.884.npz: 119 chans of 46.0 km/s, 100.962-102.806 GHz, box 35 px (0.470"/px), median rms 1.464 mJy/beam
+00:00:25 cube member.uid___A001_X2f7_X4a6.ari_l.SPT0555-62_sci.spw2_112009MHz.12m.cube.I.pbcor.fits
+00:00:25   saved SPT0555-62_f112.009.npz: 119 chans of 41.8 km/s, 111.087-112.931 GHz, box 35 px (0.470"/px), median rms 2.032 mJy/beam
+00:00:25 cube member.uid___A001_X2f7_X4a6.ari_l.SPT0555-62_sci.spw3_113884MHz.12m.cube.I.pbcor.fits
+00:00:25   saved SPT0555-62_f113.884.npz: 119 chans of 41.1 km/s, 112.962-114.806 GHz, box 35 px (0.470"/px), median rms 2.915 mJy/beam
+00:00:25 cube member.uid___A001_X2f7_X4a6.ari_l.SPT0604-64_sci.spw0_100009MHz.12m.cube.I.pbcor.fits
+00:00:26   saved SPT0604-64_f100.009.npz: 119 chans of 46.8 km/s, 99.087-100.930 GHz, box 35 px (0.470"/px), median rms 1.541 mJy/beam
+00:00:26 cube member.uid___A001_X2f7_X4a6.ari_l.SPT0604-64_sci.spw1_101883MHz.12m.cube.I.pbcor.fits
+00:00:26   saved SPT0604-64_f101.883.npz: 119 chans of 46.0 km/s, 100.962-102.805 GHz, box 35 px (0.470"/px), median rms 1.487 mJy/beam
+00:00:26 cube member.uid___A001_X2f7_X4a6.ari_l.SPT0604-64_sci.spw2_112008MHz.12m.cube.I.pbcor.fits
+00:00:26   saved SPT0604-64_f112.008.npz: 119 chans of 41.8 km/s, 111.086-112.930 GHz, box 35 px (0.470"/px), median rms 2.087 mJy/beam
+00:00:26 cube member.uid___A001_X2f7_X4a6.ari_l.SPT0604-64_sci.spw3_113883MHz.12m.cube.I.pbcor.fits
+00:00:27   saved SPT0604-64_f113.883.npz: 119 chans of 41.1 km/s, 112.961-114.805 GHz, box 35 px (0.470"/px), median rms 2.916 mJy/beam
+00:00:27 cube member.uid___A001_X2f7_X4a6.ari_l.SPT0611-55_sci.spw0_100009MHz.12m.cube.I.pbcor.fits
+00:00:27   saved SPT0611-55_f100.009.npz: 119 chans of 46.8 km/s, 99.087-100.931 GHz, box 35 px (0.470"/px), median rms 1.550 mJy/beam
+00:00:27 cube member.uid___A001_X2f7_X4a6.ari_l.SPT0611-55_sci.spw1_101884MHz.12m.cube.I.pbcor.fits
+00:00:27   saved SPT0611-55_f101.884.npz: 119 chans of 46.0 km/s, 100.962-102.806 GHz, box 35 px (0.470"/px), median rms 1.493 mJy/beam
+00:00:27 cube member.uid___A001_X2f7_X4a6.ari_l.SPT0611-55_sci.spw2_112009MHz.12m.cube.I.pbcor.fits
+00:00:27   saved SPT0611-55_f112.009.npz: 119 chans of 41.8 km/s, 111.087-112.931 GHz, box 35 px (0.470"/px), median rms 2.112 mJy/beam
+00:00:27 cube member.uid___A001_X2f7_X4a6.ari_l.SPT0611-55_sci.spw3_113884MHz.12m.cube.I.pbcor.fits
+00:00:27   saved SPT0611-55_f113.884.npz: 119 chans of 41.1 km/s, 112.962-114.806 GHz, box 35 px (0.470"/px), median rms 3.008 mJy/beam
+00:00:27 cube member.uid___A001_X2f7_X4a6.ari_l.SPT0625-58_sci.spw0_100009MHz.12m.cube.I.pbcor.fits
+00:00:27   saved SPT0625-58_f100.009.npz: 119 chans of 46.8 km/s, 99.087-100.931 GHz, box 35 px (0.470"/px), median rms 1.503 mJy/beam
+00:00:27 cube member.uid___A001_X2f7_X4a6.ari_l.SPT0625-58_sci.spw1_101884MHz.12m.cube.I.pbcor.fits
+00:00:27   saved SPT0625-58_f101.884.npz: 119 chans of 46.0 km/s, 100.962-102.805 GHz, box 35 px (0.470"/px), median rms 1.467 mJy/beam
+00:00:27 cube member.uid___A001_X2f7_X4a6.ari_l.SPT0625-58_sci.spw2_112008MHz.12m.cube.I.pbcor.fits
+00:00:27   saved SPT0625-58_f112.008.npz: 119 chans of 41.8 km/s, 111.086-112.930 GHz, box 35 px (0.470"/px), median rms 2.052 mJy/beam
+00:00:27 cube member.uid___A001_X2f7_X4a6.ari_l.SPT0625-58_sci.spw3_113883MHz.12m.cube.I.pbcor.fits
+00:00:27   saved SPT0625-58_f113.883.npz: 119 chans of 41.1 km/s, 112.961-114.805 GHz, box 35 px (0.470"/px), median rms 2.880 mJy/beam
+00:00:27 DONE: 440 cubes extracted

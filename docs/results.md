@@ -826,3 +826,161 @@ published redshift is returned as an answer:
   further sources.
 - **Follow-up is still what confirmed these redshifts.** With the photometric prior the engine would have left
   four to seven of the eleven for follow-up, not none.
+
+## 11. The test on spectra the engine was not developed on
+
+Run on 14 November 2026, once, with the code of tag `v0.2.0`, as set out in
+[`independent-test-plan.md`](independent-test-plan.md). The plan and the tag were public before the spectra were
+downloaded. Everything the plan asked for is reported here, with the departures from it listed at the end.
+Numbers: `results/independent/` (`report.json` gathers the outcomes). Spectra: `data/independent/spectra/`.
+
+![The 23 sources](../figures/independent/summary.png)
+
+### The data
+
+- **23 sources of ALMA project 2015.1.00504.S,** 460 re-imaged (ARI-L) cubes, cut out at the published positions
+  and extracted with the script and settings of the development sample. No cube failed and no source was
+  dropped. The extraction needed no change.
+- **The same noise correction as before.** The stated noise had to be lowered to 0.74 of its value (median of 460
+  windows; 0.75 for the development sample).
+- **These scans are shallower, as expected.** Reuter et al. list two or three lines from the 3 mm scan for 13 of
+  the sources. In our spectra only 5 of those 13 show two lines at 5σ; 5 show one; 3 show none. So this sample
+  tests the engine on real second lines below 5σ, which the development sample could only do with added noise.
+
+### Primary outcomes
+
+| Outcome fixed in the plan | Development sample | This sample |
+|---|---|---|
+| 1. Confident answers that are wrong, survey prior | 0 of 8 | **0 of 11** |
+| 1. Confident answers that are wrong, 2020 photometric prior | 0 of 15 | **0 of 17** |
+| 2. Multi-line sources, confident and correct, survey prior | 8 of 8 | **9 of 13** |
+| 3. One-line sources, confident and correct, 2020 photometric prior | 7 of 11 | **5 of 8** (6 of 9 with SPT0150-59) |
+| 3. One-line sources, best redshift is the published one, survey prior | 10 of 11 | **6 of 8** (7 of 9 with SPT0150-59) |
+
+- **No confident answer was wrong.** Pooled with the development sample that is 0 of 19 with the survey prior and
+  0 of 32 with the photometric prior. The 95% upper bounds on the wrong-answer rate are 15% and 9%. The plan's
+  reading: none or one wrong is consistent with the 0.95 threshold.
+- **Fewer multi-line sources were settled than in the development sample:** 9 of 13, not all. The four left open
+  are SPT0202-61 (0.89), SPT0553-50 (0.62), SPT0311-58 (0.21) and SPT0544-40 (0.10, with a different best
+  redshift). The last three have no line at 5σ in our spectra.
+- **The survey prior worked against the highest redshift.** SPT0311-58 is at z = 6.90. With no prior the engine
+  gives its published redshift 0.85; the survey prior, centred on 3.9, cuts that to 0.21; its photometric
+  redshift (6.4 ± 1.0) raises it to 0.97.
+- **SPT0150-59,** whose published redshift is tentative: the engine's best redshift agrees with it, at 0.90 with
+  the survey prior and 1.00 with the photometric prior.
+- **SPT0112-55,** which has no line in this scan: the engine gives no redshift more than 0.10 under any prior. It
+  does not invent a confident answer from noise.
+
+### Each source
+
+Confidence of the engine's best redshift; bold marks 0.95 or more. Where the best redshift is not the published
+one, it is named. The offset is (z_phot − published z) / error.
+
+| Source | Published z | Lines at 5σ in our spectrum | Engine, no prior | Engine, survey prior | Engine, 2020 photometric prior (z_phot, offset) | Rule chosen beforehand, no prior | Same, photometric prior |
+|---|---|---|---|---|---|---|---|
+| *Two or three lines published from the scan* | | | | | | | |
+| SPT0109-47 | 3.614 | 2 | **1.00** | **1.00** | **1.00** (3.8 ± 0.5, +0.4) | correct | correct |
+| SPT2048-55 | 4.090 | 2 | **1.00** | **1.00** | **1.00** (5.1 ± 0.7, +1.4) | correct | correct |
+| SPT0020-51 | 4.123 | 1 | **1.00** | **1.00** | **1.00** (4.2 ± 0.7, +0.1) | — | correct |
+| SPT0544-40 | 4.269 | 0 | 0.05 for z = 7.205 | 0.10 for z = 2.952 | 0.09 for z = 3.687 (4 ± 0.6, −0.5) | — | — |
+| SPT0136-63 | 4.299 | 2 | **1.00** | **1.00** | **1.00** (4.5 ± 0.8, +0.2) | correct | correct |
+| SPT0155-62 | 4.349 | 2 | **1.00** | **1.00** | **1.00** (6.2 ± 0.6, +3.1) | correct | correct |
+| SPT0552-42 | 4.438 | 1 | **0.96** | **0.99** | **1.00** (4.9 ± 0.9, +0.5) | **wrong** | — |
+| SPT0147-64 | 4.803 | 1 | **0.99** | **1.00** | **1.00** (5.3 ± 0.6, +0.8) | correct | correct |
+| SPT0202-61 | 5.018 | 1 | 0.83 | 0.89 | **1.00** (5.6 ± 0.5, +1.2) | — | correct |
+| SPT0553-50 | 5.323 | 0 | 0.64 | 0.62 | 0.68 (4.2 ± 0.9, −1.2) | — | — |
+| SPT0245-63 | 5.626 | 2 | **1.00** | **1.00** | **1.00** (5.4 ± 0.8, −0.3) | correct | correct |
+| SPT0348-62 | 5.654 | 1 | **1.00** | **1.00** | **1.00** (5.2 ± 0.9, −0.5) | correct | correct |
+| SPT0311-58 | 6.901 | 0 | 0.85 | 0.21 | **0.97** (6.4 ± 1, −0.5) | — | — |
+| *One line published from the scan* | | | | | | | |
+| SPT0611-55 | 2.026 | 0 | 0.05 for z = 4.336 | 0.10 for z = 4.336 | 0.18 for z = 2.477 (2.5 ± 0.4, +1.2) | — | — |
+| SPT0604-64 | 2.481 | 1 | 0.53 for z = 5.960 | 0.48 | **1.00** (3 ± 0.4, +1.3) | — | — |
+| SPT0625-58 | 2.727 | 1 | 0.60 | 0.90 | **1.00** (3.4 ± 0.4, +1.7) | — | — |
+| SPT0150-59 | 2.788 | 1 | 0.60 | 0.90 | **1.00** (3.7 ± 0.6, +1.5) | — | correct |
+| SPT2101-60 | 3.155 | 1 | 0.44 | 0.78 | 0.83 (3.1 ± 0.6, −0.1) | — | — |
+| SPT0516-59 | 3.404 | 1 | 0.94 | **0.97** | **0.99** (3.2 ± 0.6, −0.3) | — | — |
+| SPT2037-65 | 3.998 | 1 | 0.89 | **0.96** | **0.99** (5.1 ± 0.6, +1.8) | — | — |
+| SPT0555-62 | 4.815 | 0 | 0.03 for z = 5.849 | 0.04 for z = 4.083 | 0.04 for z = 5.849 (4.8 ± 0.7, −0.0) | — | — |
+| SPT0106-64 | 4.910 | 1 | 0.50 | 0.67 | **1.00** (4.5 ± 0.4, −1.0) | — | — |
+| *No line published from the scan* | | | | | | | |
+| SPT0112-55 | 3.443 | 0 | 0.03 for z = 5.734 | 0.04 for z = 4.043 | 0.08 for z = 5.734 (6.2 ± 1, +2.8) | — | — |
+
+- **A photometric redshift three errors off did no harm where two lines were detected.** SPT0155-62's is
+  6.2 ± 0.6 against a published 4.349, and the engine stays at 1.00 for the published redshift.
+
+### Secondary outcomes: the comparison methods
+
+**As observed.** The two rule settings were chosen on the development draws (section 9 and section 10) and not
+changed. Answers given on the 22 sources that have a line in the scan, correct / wrong:
+
+| | 13 multi-line sources | 9 one-line sources |
+|---|---|---|
+| Engine, no prior | 9 / 0 | 0 / 0 |
+| Rule chosen beforehand, no prior | 7 / 1 | 0 / 0 |
+| Rule that needs every line at 5σ | 5 / 0 | 0 / 0 |
+| Engine, 2020 photometric prior | 11 / 0 | 6 / 0 |
+| Rule chosen beforehand, same prior | 9 / 0 | 1 / 0 |
+| Engine, 2024 photometric prior | 10 / 0 | 5 / 0 |
+
+- **With no prior the engine settled two sources the rule did not, and the rule none the engine did not.** They
+  are SPT0020-51, where the rule gave no answer, and SPT0552-42, where it gave a wrong one. Two sources decide
+  nothing (sign test p = 0.5).
+- **With the photometric prior the engine settled seven sources the rule did not, and the rule none the engine
+  did not** (sign test p = 0.016): two multi-line and five one-line sources.
+- **Hindsight does not rescue the rules.** Of all 72 settings with no prior, the best that gives no wrong answer
+  on these spectra settles 9, as the engine does; 24 settings give a wrong answer. Of the 216 with the
+  photometric prior, the best with no wrong answer settles 14 of the 23, against the engine's 17; 96 give a
+  wrong answer.
+- **Cross-correlation, best guess with no prior:** right for 11 of the 13 multi-line sources (engine 12) and for
+  3 of the 9 one-line sources (engine 6), where its choice is arbitrary (section 9).
+
+**Noise added.** `python -m ladder_redshifts.degrade` needs two published lines at 5σ in each multi-line
+spectrum, the second at 5.5σ or more. Five of the 13 have that (SPT0109-47, SPT0136-63, SPT0155-62, SPT0245-63,
+SPT2048-55), and the test was run on those: 4,000 draws.
+
+| S/N of the second line | Engine, no prior | Rule chosen beforehand, no prior | Engine, photometric prior | Rule chosen beforehand, same prior |
+|---|---|---|---|---|
+| 4 | 0.90 | 0.69 | 0.97 | 0.84 |
+| 3.5 | 0.74 | 0.48 | 0.90 | 0.58 |
+| 3 | 0.49 | 0.29 | 0.67 | 0.29 |
+| Wrong answers, of 4,000 | 0 | 7 | 5 | 22 |
+
+- **The rule chosen on the development draws did worse on new sources,** as a setting picked by its own score
+  should. With no prior the engine is ahead for four of the five sources at each level and behind for one
+  (SPT0109-47, whose second line is \[CI\]).
+- **Pooled with the seven development sources, no prior:** the engine is ahead for 6 and behind for 6 at 4σ, and
+  ahead for 7 and behind for 5 at 3.5σ and 3σ. Section 9's conclusion stands: with no prior neither is better.
+- **With the photometric prior the engine is ahead for all five sources at every level.** Pooled with the
+  development sources it is ahead for 11 and behind for none at 4σ, 11 and 1 at 3.5σ, 12 and none at 3σ
+  (sign test p = 0.001, 0.006 and below 0.001).
+
+### What changed and what did not
+
+- **Held up.** No confident wrong answer, on 23 more sources and with two kinds of prior. With a photometric prior
+  the engine settles more sources than the rules, on real spectra and with noise added.
+- **Did not hold up.** That every multi-line source is settled: 9 of 13 here. On shallow scans the engine leaves
+  sources open, as it should, but they stay open.
+- **Unchanged.** With no prior, the engine against a detection rule: level on the development sample, two
+  sources ahead here, nothing either way pooled.
+- **Still small.** 0 wrong of 32 bounds the wrong-answer rate below 9%, not below 5%.
+
+### Departures from the plan
+
+- **The noise-added test ran on 5 of the 13 multi-line sources,** through `scripts/independent_noise_test.py`.
+  The planned command stops with an error when a source has fewer than two lines at 5σ. The wrapper restricts
+  the list of sources and calls the unchanged module.
+- **Per-source figures of the two rule settings in that test** were recomputed by `scripts/independent_report.py`
+  on the same draws, because the results file keeps them only for settings chosen on the sample at hand. The
+  recomputed means match the stored ones.
+- **Where it ran.** `batch_real` and `photoz` on the user's machine (Python 3.10), from the cut-outs. The
+  noise-added test in a second environment (Python 3.13), from the saved spectra. Re-running `batch_real` and
+  `photoz` there from the saved spectra gave identical redshifts and confidences.
+- **Not kept:** the noise-test figures for this sample, because their titles name the development project.
+- **Nothing in `ladder_redshifts/` was changed** between the tag and the run. No source was excluded.
+
+### What this test still cannot show
+
+- **Same survey, same team's redshifts, same telescope.** A sample from another survey would be a harder test.
+- **Not blind.** The published redshifts were known when the plan was written. The code does not use them.
+- **Our spectra are not the survey's.** Point-source spectra cut from archive cubes show fewer lines at 5σ than
+  the paper lists. The survey's own extraction may be deeper.

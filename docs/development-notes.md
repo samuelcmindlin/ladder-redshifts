@@ -340,6 +340,26 @@ claim is withdrawn.
 - **Bounds.** `photoz.upper_bound` gives the exact 95% upper bound on the wrong-answer rate: 31% from 8 confident
   answers, 18% from 15.
 
+## The independent test, run on 14 November 2026
+
+[`results.md`](results.md), section 11, has the outcome. For the record of how it was done:
+
+- **Order of events.** Tag `v0.2.0` and the plan were pushed at 23:50 UTC on 13 November. The list of cubes was
+  fetched at 23:51 and the 460 cut-outs between 23:51 and 23:58. Extraction and the run followed.
+- **The archive cut these cubes.** Each cut-out is 80 × 80 pixels and 4 to 16 MB; 3.0 GB in all.
+- **No change to the extraction.** The one thing prepared in advance, reading ARI-L file names, was in the tag.
+- **One command of the plan could not run.** `degrade` assumes every multi-line source shows two lines at 5σ.
+  That was true of the development sample and of 5 of the 13 here. A wrapper outside the package restricts the
+  sources; the module is untouched. The assumption should have been caught when the plan was written.
+- **What the test taught about the claims.**
+  - The 0.95 threshold held: no confident wrong answer in 11 and 17 more.
+  - "All multi-line sources are settled" was a property of a deep sample. Here it is 9 of 13.
+  - The rule setting picked on the development draws lost ground on new sources, as expected of a setting
+    picked by its own score. With no prior, engine and rule remain level when both samples are pooled.
+  - The lead with a photometric prior carried over: 17 sources against 10 as observed, and all five sources at
+    every noise level.
+- **Guarded by** `test_the_independent_sample_results_are_those_of_the_current_code`.
+
 ## Known open issues
 
 - **The comparison rule.** It is a simplified Sudoku-style rule, not the High-z Sudoku code. That code has now been

@@ -10,6 +10,7 @@ dist/
 # ALMA downloads (large; rebuild with scripts/alma/)
 alma_cutouts/
 alma_cutouts_independent/
+alma_cutouts_independent.test.log
 alma_admit/
 # per-window cube cut-out spectra written by scripts/alma/extract_cube_spectra.py (~270 MB)
 data/*/*.npz
