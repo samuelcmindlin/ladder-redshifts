@@ -984,3 +984,136 @@ SPT2048-55), and the test was run on those: 4,000 draws.
 - **Not blind.** The published redshifts were known when the plan was written. The code does not use them.
 - **Our spectra are not the survey's.** Point-source spectra cut from archive cubes show fewer lines at 5σ than
   the paper lists. The survey's own extraction may be deeper.
+
+## 12. A joint likelihood of spectrum and photometry, after Bing et al. (2024)
+
+Added on 14 November 2026. Bing et al. (2024, A&A 683, A232; arXiv:2403.00911, section 4.2) find redshifts from blind spectral
+scans without detecting lines one by one. At each trial redshift they predict the flux of every CO and \[CI\]
+line from the galaxy's infrared luminosity, compare that model spectrum with the whole observed spectrum by
+chi-square, and multiply the result by the likelihood of the photometry. This is the published method nearest
+to the engine when the engine is given a photometric redshift, and this repository did not cite it until now
+([`development-notes.md`](development-notes.md)). The comparisons of sections 9 to 11 are with detection rules
+and a cross-correlation. This section adds the comparison that was missing.
+
+`scripts/compare_joint_likelihood.py` re-implements the method from the paper's text; no code is published.
+Numbers: `results/redshift_joint_likelihood.json`, the same file under `results/independent/`, and
+`results/redshift_joint_likelihood_pooled.json`.
+
+![The engine against the joint likelihood, noise added](../figures/redshift_joint_likelihood.png)
+
+### What was run
+
+- **The method.** Line luminosities from Table 7 of the paper, lines as Gaussians of 500 km/s, chi-square
+  against the continuum-subtracted spectrum on the engine's grid. The infrared luminosity at each trial redshift
+  is from a modified blackbody fitted to the photometry of Reuter et al. (2020, Table D.1); checked against the
+  survey's own luminosities for all 81 SPT sources, it agrees to 0.05 dex in the median, with 0.11 dex scatter.
+- **Two things differ from the paper by design.** The photometric term is each source's published photometric
+  redshift, the same prior the engine is given, so that the two methods differ only in how they read the
+  spectrum. And the paper defines no threshold for an answer; here the likelihood goes through the engine's own
+  code for confidence, so "confident" means 0.95 for both.
+- **A family of 16 variants, because one reading of a paper can be a weak one.** Line strengths fixed at the
+  prediction, or shifted by ±0.5 and ±1 times each relation's scatter (the test of the paper's Appendix D). Or
+  the scatter taken into the likelihood: each line's strength is integrated over a log-normal of the width in
+  Table 7, centred on the prediction or 0.5 or 1 times the scatter below it. Each with lines of 500 and of
+  300 km/s.
+- **The variant to compare with was chosen on the development sample and then fixed.** The criterion is the one
+  used for the rule family in section 9: the most confident and correct answers over the 5,600 noise-added draws
+  among the variants that are confidently wrong no more often than the engine. With no prior that is the
+  scatter form centred one scatter below the prediction, 500 km/s. With the photometric prior it is the scatter
+  form centred half a scatter below, 300 km/s. The 23 sources of section 11 were then run once.
+- **The draws are those of sections 9 to 11.** The script stops unless the engine's counts on them equal the
+  stored ones.
+
+### With line strengths fixed, as the paper writes it
+
+- **It is confidently wrong for most of these sources.** With the photometric prior, on the real spectra as
+  observed: 6 right and 10 wrong of the 19 development sources, 1 right and 14 wrong of the 23 others. With
+  noise added it returns a different redshift with confidence in 4,136 of 9,600 draws with no prior.
+- **Why.** The lines in our spectra are fainter than the relations predict: by 0.22 dex in the median for the
+  28 lines measured at 5σ or more in the development sample, and by 0.32 dex for the 21 in the other, each with
+  a scatter of 0.2 dex. The relations' own scatter is 0.2 to 0.5 dex. A line measured at an S/N of 20 cannot be
+  0.2 dex from a fixed prediction, so the chi-square prefers a redshift whose predicted lines happen to fit
+  better, or one with no line in the band.
+- **This may not carry over to the paper's own sources.** Theirs are faint, with lines at an S/N of 3 to 5, where
+  a strength off by a factor of two costs little. Ours are strongly lensed and bright. Part of the offset may
+  also be ours: point-source spectra from archive cubes can lose flux, and the luminosity we use is that of a
+  modified blackbody.
+- **Shifting the fixed strengths down by one scatter helps but does not cure it:** 120 wrong answers in the
+  5,600 development draws, against the engine's 4.
+
+### With the scatter in the likelihood
+
+Fraction of noise draws in which the published redshift is returned with confidence; the last row is the number
+of draws in which a different redshift is.
+
+| S/N of the second line | Engine, no prior | Joint likelihood, no prior | Engine, photometric prior | Joint likelihood, same prior |
+|---|---|---|---|---|
+| *Development sample, 7 sources* | | | | |
+| 4 | 0.87 | 0.92 | 0.95 | 0.92 |
+| 3.5 | 0.73 | 0.78 | 0.89 | 0.85 |
+| 3 | 0.47 | 0.50 | 0.73 | 0.68 |
+| Wrong answers, of 5,600 | 4 | 2 | 9 | 8 |
+| *Independent sample, 5 sources* | | | | |
+| 4 | 0.90 | 0.94 | 0.97 | 0.96 |
+| 3.5 | 0.74 | 0.74 | 0.90 | 0.87 |
+| 3 | 0.49 | 0.44 | 0.67 | 0.69 |
+| Wrong answers, of 4,000 | 0 | 1 | 5 | 19 |
+
+The real spectra as observed, confident and correct / confident and wrong:
+
+| | 19 development sources | 23 independent sources | All 42 |
+|---|---|---|---|
+| Engine, no prior | 8 / 0 | 9 / 0 | 17 / 0 |
+| Joint likelihood, no prior | 8 / 0 | 10 / 0 | 18 / 0 |
+| Engine, survey prior | 8 / 0 | 11 / 0 | 19 / 0 |
+| Joint likelihood, survey prior | 10 / 0 | 9 / 0 | 19 / 0 |
+| Engine, photometric prior | 15 / 0 | 17 / 0 | 32 / 0 |
+| Joint likelihood, photometric prior | 15 / 0 | 15 / 0 | 30 / 0 |
+| Joint likelihood with fixed strengths, photometric prior | 6 / 10 | 1 / 14 | 7 / 24 |
+
+- **The two methods do equally well.** No difference in this section is larger than a few sources or a few
+  points, and the differences go both ways.
+- **Neither gave a confident wrong answer on the 42 real spectra.**
+- **With no prior the joint likelihood is slightly ahead where the second line is at 4σ:** 0.93 against 0.88
+  over the twelve sources, ahead for ten of them and behind for one (sign test p = 0.012, one of six such
+  comparisons). At 3.5σ and 3σ neither is ahead (6 to 4 and 6 to 5). Over all 9,600 draws it returns the
+  published redshift in 6,506 and the engine in 6,456. It has more to go on: it uses the photometry to set the
+  line strengths, and the engine with no prior uses none.
+- **With the photometric prior the engine is slightly ahead,** for 7 sources to 2 at 4σ, 8 to 3 at 3.5σ and 6
+  to 6 at 3σ; none of these is significant. Over all draws: 7,546 against 7,367. On the independent draws the
+  joint likelihood was wrong more often, 19 against 5.
+- **On the 23 unseen sources as observed, with the photometric prior, the engine settled 17 and the joint
+  likelihood 15.** The two are the one-line sources SPT0516-59 and SPT2037-65, which the joint likelihood leaves
+  at 0.945 and 0.83. With no prior the joint likelihood settled one the engine did not: SPT0311-58, at 0.98
+  against 0.85.
+- **The choice of variant mattered less than it might have, with one exception.** All six scatter forms give no
+  wrong answer on the 42 real spectra. But with no prior, the form centred on the prediction itself, with
+  nothing tuned to this survey, is behind the engine: 5,992 draws against 6,456, with 15 wrong against 4, and on
+  the independent sources 0.80, 0.57 and 0.33 at the three levels against 0.90, 0.74 and 0.49. Centring it one
+  scatter lower, which the development sample chose, amounts to calibrating the luminosity relations on this
+  survey. The engine needs no such calibration, because its amplitude is free.
+
+### What this section shows, in short
+
+- **The engine has no advantage over a joint likelihood that allows for the scatter of its luminosity
+  relations.** Its bank of line-ratio templates, its several line widths and its velocity tolerance buy nothing
+  measurable on these 42 sources.
+- **So the lead of sections 10 and 11 is a lead of likelihood methods over detection rules.** With a photometric
+  prior the engine settled 17 of the 23 unseen sources and the rule chosen beforehand 10. The joint likelihood
+  settled 15. Reading the whole spectrum is what helps; which of the two likelihoods does it is secondary.
+- **What the engine does not need:** photometry, when no prior is used, and a calibration of the luminosity
+  relations on the survey at hand.
+- **What the published recipe does need, on bright sources:** the scatter of its relations in the likelihood.
+  With strengths fixed it was confidently wrong for 24 of these 42 sources.
+
+### Limits of this comparison
+
+- **It is our re-implementation,** written from the paper, with the choices listed at the top of the script. The
+  authors' own code, their galaxy templates and their photometric likelihood were not used.
+- **The variant was chosen on the development sample by its score there.** That favours the joint likelihood on
+  that sample. On the independent sample both methods were fixed in advance.
+- **The independent sources were not new to us.** The engine's results on them were known (section 11) when the
+  joint likelihood was built. Its variant was fixed on the development sample first and it was run on them
+  once, but this is not the test fixed before download that section 11 was.
+- **Twelve sources carry the noise-added test, and 42 the rest,** all from one survey. Six sign tests were made;
+  one of them falling below 0.05 is not strong evidence.

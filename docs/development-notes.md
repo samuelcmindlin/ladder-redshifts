@@ -360,6 +360,40 @@ claim is withdrawn.
     every noise level.
 - **Guarded by** `test_the_independent_sample_results_are_those_of_the_current_code`.
 
+## A nearer earlier method, found late: 14 November 2026
+
+[`results.md`](results.md), section 12, has the comparison. For the record:
+
+- **How it was found.** Not by a literature search before release. Bing et al. (2024, A&A 683, A232) turned up
+  on 14 November, after the independent test, when the question was how the work would be received. Until then
+  the README called Yun et al. (2015) the closest earlier method. With a photometric prior, Bing et al. is
+  closer: a likelihood over the whole spectrum, multiplied by a photometric likelihood. Birkin et al. (2021),
+  who choose the transition of a single line with a photometric-redshift distribution, was not cited either.
+- **What was done.** The method was re-implemented outside the package, with 16 variants. The variant to compare
+  with was chosen on the 5,600 development draws by the criterion already used for the rules, and written to the
+  results file. The 23 other sources were then run once. Nothing in `ladder_redshifts/` changed.
+- **The first criterion written was dropped before any full run.** It let the joint likelihood choose its
+  confidence threshold as well as its variant while the engine stayed at 0.95, which compares two methods at
+  different operating points. Both are now compared at 0.95, and counted at every other threshold in the
+  results file.
+- **What it changes.**
+  - The engine is not better than a joint likelihood that carries the scatter of its luminosity relations.
+    The two are level on 42 real spectra and 9,600 noise draws.
+  - "With a redshift prior the engine is ahead of every rule setting tried" stands, but it is a statement about
+    rules. It should not be read as a lead over other likelihood methods.
+  - The published recipe with fixed line strengths is confidently wrong for 24 of the 42 sources. Their lines
+    are 0.2 to 0.3 dex below the predicted strengths in our spectra, and bright.
+- **What the engine could take from it.** The first open issue below asks for an uncertainty on each line flux
+  inside the likelihood. The integral over each line's strength in `ln_marginal` is that, for a model with
+  predicted strengths.
+- **Not independent in the sense of section 11.** The engine's results on the 23 sources were known when the
+  joint likelihood was built. Its variant was fixed first and it was run once, but the plan was not public
+  beforehand.
+- **Also corrected:** the README's ALMA acknowledgement now names project 2015.1.00504.S, the source of the 23
+  spectra. It had been left out on 14 November.
+- **Guarded by** `test_joint_likelihood_equals_an_explicit_model_spectrum_and_its_strength_integral_is_right` and
+  `test_the_joint_likelihood_comparison_is_that_of_the_current_code_and_says_what_the_readme_says`.
+
 ## Known open issues
 
 - **The comparison rule.** It is a simplified Sudoku-style rule, not the High-z Sudoku code. That code has now been

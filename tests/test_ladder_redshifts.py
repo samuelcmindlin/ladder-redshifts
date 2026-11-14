@@ -713,3 +713,103 @@ def test_the_independent_sample_results_are_those_of_the_current_code():
     assert sum(r['verdict'].startswith('confident & correct') for r in batch) == 11
     assert not any(r['verdict'].startswith('confident') and 'correct' not in r['verdict'] for r in batch)
 
+
+
+def _joint():
+    sys.path.insert(0, str(ROOT / 'scripts'))
+    import compare_joint_likelihood as C
+    return C
+
+
+def test_joint_likelihood_equals_an_explicit_model_spectrum_and_its_strength_integral_is_right():
+    """The comparison method after Bing et al. (2024), scripts/compare_joint_likelihood.py. (a) With line strengths
+    fixed, its log-likelihood is the chi-square difference between no lines and a model spectrum built pixel by
+    pixel, also where CO(7-6) and [CI](2-1) overlap. (b) The integral over a line's strength agrees with direct
+    numerical integration, for faint and for bright lines. (c) The fitted luminosity of a modified blackbody
+    placed at a known redshift is recovered."""
+    from scipy.integrate import quad
+    from ladder_redshifts.batch_real import read_spectrum, to_grid_auto
+    from ladder_redshifts.realspec import engine_likelihood
+    C = _joint()
+    src = 'SPT0054-41'
+    g = to_grid_auto(read_spectrum(ROOT / 'data' / 'spectra' / f'{src}.csv'))
+    grid, d, sig, cov = g
+    e = engine_likelihood(*g)['e']
+    J = C.Joint(grid, e.lnz, *C.read_photometry()[src])
+    L = J.loglike(d, sig, cov)
+    sg = np.where(cov, sig, 1.0)
+    flux, q = np.where(cov, d * sg, 0.0), np.arange(grid.npix)
+    for z in (1.2, 2.3, 4.877, 6.9):
+        i = int(np.argmin(np.abs(e.lnz - np.log1p(z))))
+        for k, v in enumerate(C.VARIANTS):
+            if v['strength'] != 'fixed':
+                continue
+            s = v['fwhm'] / 2.3548 / C.PIX_KMS
+            amp = J.peaks[v['fwhm']][i] * 10 ** (v['offset'] * C.SCATTER)
+            m = sum(amp[j] * np.exp(-0.5 * ((q - J.P[i, j]) / s) ** 2) for j in range(len(C.NU)) if J.inr[i, j])
+            brute = float(np.sum(np.where(cov, (flux * m - 0.5 * m * m) / sg ** 2, 0.0)))
+            assert abs(brute - L[k, i]) < 1e-5 * max(1.0, abs(brute)), (z, v)
+    assert J.inr[int(np.argmin(np.abs(e.lnz - np.log1p(6.9))))][list(C.PAIR)].all()      # the close pair was tested
+    for sd, pred, meas in ((0.27, 3.0, 2.0), (0.19, 12.0, 9.0), (0.5, 30.0, 45.0), (0.3, 6.0, -1.0), (0.22, 20.0, 4.5)):
+        A, B = pred ** 2, meas * pred                        # predicted and measured S/N of the line
+        ref = B * B / (2 * A) if B > 0 else 0.0
+        f = lambda t: np.exp(-0.5 * t * t) / np.sqrt(2 * np.pi) * np.exp(10 ** (t * sd) * B - 0.5 * 10 ** (2 * t * sd) * A - ref)
+        val = quad(f, -12, 12, points=[np.log10(B / A) / sd] if B > 0 else None, limit=400, epsabs=0, epsrel=1e-10)[0]
+        got = float(C.ln_marginal(np.array([[B]]), np.array([[A]]), np.array([[sd]]))[0, 0])
+        assert abs(got - (np.log(val) + ref)) < 0.01, (sd, pred, meas)
+    nu = C.C_LIGHT / (np.array(C.BANDS_UM) * 1e-6)
+    f_obs = C.greybody(nu * (1 + 4.0), 45.0)
+    f_obs = f_obs / f_obs.max() * 100.0
+    lum, temp = C.infrared_luminosity(f_obs, 0.01 * f_obs, [4.0])
+    ni = C._NU_INT
+    shape = C.greybody(ni, 45.0)
+    norm = 100.0 / C.greybody(nu * 5.0, 45.0).max()
+    want = (4 * np.pi * (C.lum_dist_mpc(np.array([4.0]))[0] * C.MPC) ** 2 * norm * 1e-29
+            * (0.5 * (shape[1:] + shape[:-1]) * np.diff(ni)).sum() / 5.0 / C.L_SUN)
+    assert temp[0] == 45.0 and abs(lum[0] / want - 1) < 1e-6
+    assert abs(C.lum_dist_mpc(np.array([3.0]))[0] / 26030 - 1) < 0.01
+
+
+def test_the_joint_likelihood_comparison_is_that_of_the_current_code_and_says_what_the_readme_says():
+    """The stored comparison with the joint likelihood: the real spectra of both samples re-run give the stored
+    rows; the variant used on the independent sample is the one the development draws chose; the noise-added
+    draws were those of degrade.py; and the pooled counts are the ones quoted in the README and in
+    docs/results.md, section 12."""
+    import json
+    import os
+    import subprocess
+    C = _joint()
+    dev = json.loads((ROOT / 'results' / 'redshift_joint_likelihood.json').read_text())
+    ind = json.loads((ROOT / 'results' / 'independent' / 'redshift_joint_likelihood.json').read_text())
+    code = ('import sys, json; sys.path.insert(0, "scripts"); import compare_joint_likelihood as C; '
+            'rows = json.loads(json.dumps(C.as_observed(C.read_photometry()))); saved = json.loads(C.OUT.read_text()); '
+            'print(len(rows), rows == saved["as_observed"]["sources"], '
+            'json.loads(json.dumps(C.observed_summary(rows, saved["noise_added"]["chosen"]))) == saved["as_observed"]["summary"])')
+    for sample, n in (('', 19), ('independent', 23)):
+        env = dict(os.environ, LADDER_REDSHIFTS_SAMPLE=sample, LADDER_REDSHIFTS_ROOT=str(ROOT))
+        out = subprocess.run([sys.executable, '-c', code], env=env, capture_output=True, text=True, cwd=str(ROOT))
+        assert out.stdout.split() == [str(n), 'True', 'True'], (sample, out.stdout, out.stderr[-2000:])
+    # the choice was made on the development draws, by the stated criterion, and carried over unchanged
+    counts = dev['noise_added']['counts']
+    chosen = C.choose({p: np.array(counts[p]['engine']) for p in C.PRIORS}, {p: np.array(counts[p]['joint']) for p in C.PRIORS})
+    assert json.loads(json.dumps(chosen)) == dev['noise_added']['chosen'] == ind['noise_added']['chosen']
+    assert [chosen[p]['variant'] for p in C.PRIORS] == [dict(strength='scatter', offset=-1.0, fwhm=500.0),
+                                                        dict(strength='scatter', offset=-0.5, fwhm=300.0)]
+    assert dev['noise_added']['same_draws_as_degrade'] and ind['noise_added']['same_draws_as_degrade']
+    assert (dev['noise_added']['total_draws'], ind['noise_added']['total_draws']) == (5600, 4000)
+    for o in (dev, ind):                                     # the summary follows from the stored counts
+        na = o['noise_added']
+        cc = {p: {k: na['counts'][p][k] for k in ('engine', 'joint', 'top')} for p in C.PRIORS}
+        assert json.loads(json.dumps(C.noise_summary(cc, na['chosen'], na['sources'], na['draws_per_level']))) == na['summary']
+    pooled = json.loads((ROOT / 'results' / 'redshift_joint_likelihood_pooled.json').read_text())
+    ao, na = pooled['as_observed'], pooled['noise_added']
+    assert ao['photoz']['sources'] == 42
+    assert [(ao[p]['engine']['confident_correct'], ao[p]['engine']['confident_wrong'], ao[p]['chosen']['confident_correct'],
+             ao[p]['chosen']['confident_wrong']) for p in ('uniform', 'spt', 'photoz')] == [(17, 0, 18, 0), (19, 0, 19, 0), (32, 0, 30, 0)]
+    assert (ao['photoz']['as_published']['confident_correct'], ao['photoz']['as_published']['confident_wrong']) == (7, 24)
+    assert [(na[p]['engine']['correct'], na[p]['engine']['wrong'], na[p]['chosen']['correct'], na[p]['chosen']['wrong'])
+            for p in C.PRIORS] == [(6456, 4, 6506, 3), (7546, 14, 7367, 27)]
+    assert [(x['engine_ahead'], x['engine_behind']) for x in na['uniform']['engine_against_chosen_by_source']] == [(1, 10), (4, 6), (5, 6)]
+    assert [(x['engine_ahead'], x['engine_behind']) for x in na['photoz']['engine_against_chosen_by_source']] == [(7, 2), (8, 3), (6, 6)]
+    med = [o['as_observed']['lines_measured_over_predicted']['median_dex'] for o in (dev, ind)]
+    assert med == [-0.22, -0.315]

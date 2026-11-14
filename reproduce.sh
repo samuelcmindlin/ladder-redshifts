@@ -1,7 +1,7 @@
 #!/bin/bash
 # Regenerate every result and figure from the data in this repository.
 #   bash reproduce.sh          real-data results, the sonification and all figures (1-2 min)
-#   bash reproduce.sh --full   also re-run the synthetic studies from scratch (about 1.8 hours on 2 cores)
+#   bash reproduce.sh --full   also re-run the synthetic studies from scratch (about 2.2 hours on 2 cores)
 # Logs go to logs/. Random seeds are fixed: with the same library versions a clean run leaves git status unchanged.
 set -euo pipefail
 cd "$(dirname "$0")"
@@ -25,6 +25,10 @@ if [ "${1:-}" = "--full" ]; then
   run ladder_redshifts.followup                 # ~15 min
   run ladder_redshifts.tuning 200               # ~55 min on 2 cores
   echo "== scripts/noise_only_check.py"; "$PY" scripts/noise_only_check.py > logs/noise_only.txt 2>&1   # ~5 min
+  # the joint likelihood after Bing et al. (2024): development sample first (it fixes the variant), then the other
+  echo "== scripts/compare_joint_likelihood.py run"                                                      # ~25 min
+  "$PY" scripts/compare_joint_likelihood.py run 100 > logs/joint_likelihood.txt 2>&1
+  LADDER_REDSHIFTS_SAMPLE=independent "$PY" scripts/compare_joint_likelihood.py run 100 > logs/joint_likelihood_independent.txt 2>&1
 else
   run ladder_redshifts.atlas --plot-only        # re-plot from results/redshift_atlas_raw.npz
   run ladder_redshifts.traps --plot-only        # re-plot from results/redshift_traps*.json/npz
@@ -33,6 +37,8 @@ else
   run ladder_redshifts.tuning --plot-only       # re-plot from results/redshift_tuning.json
   echo "(synthetic studies re-plotted from saved results; use --full to re-run them)"
 fi
+echo "== scripts/compare_joint_likelihood.py plot"       # both samples together, from the saved results
+"$PY" scripts/compare_joint_likelihood.py plot > logs/joint_likelihood_plot.txt 2>&1
 echo
 grep -h "^summary:" logs/batch_real.txt
 echo "done; logs in logs/"

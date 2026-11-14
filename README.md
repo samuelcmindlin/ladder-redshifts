@@ -114,6 +114,28 @@ cubes, and each answer is scored against the published redshift (Reuter et al. 2
     the plan was written, though the code does not use them.
 
   ![The 23 sources of the independent test](figures/independent/summary.png)
+- **A joint likelihood of spectrum and photometry does as well as the engine.** Bing et al. (2024) compare the
+  whole spectrum with a model whose line strengths come from the infrared luminosity. It is the nearest
+  published method, and this page did not cite it until 14 November 2026. Re-implemented here and run on the
+  same 42 spectra and the same noise draws ([`docs/results.md`](docs/results.md), section 12):
+  - **With the scatter of its luminosity relations in the likelihood, it matches the engine.** With photometric
+    priors it settles 30 of the 42 sources and the engine 32, neither with a wrong answer. With noise added and
+    the second line at 4σ it returns the published redshift in 93% of draws with no prior and the engine in
+    88%; with the photometric prior, 93% and 96%. No difference is larger than a few points or two sources.
+  - **So the engine's lead with a prior is a lead of likelihood methods over detection rules,** not of this
+    engine over other likelihood methods. On the 23 unseen sources, with photometric priors: engine 17, joint
+    likelihood 15, rule 10.
+  - **As the paper writes it, with line strengths fixed, it is confidently wrong for 24 of the 42.** The lines
+    of these bright, lensed sources are 0.2 to 0.3 dex fainter in our spectra than the relations predict. The
+    paper's own sources are faint, where this matters less.
+  - **What the engine does not need:** photometry when no prior is used, or a calibration of the luminosity
+    relations on the survey. The form of the joint likelihood with nothing tuned to this survey is behind the
+    engine with no prior, 62% of draws against 67%.
+  - **What this is not.** Our re-implementation from the paper's text, with our own modified-blackbody
+    luminosities and the published photometric redshifts in place of the paper's photometric fit. The variant
+    was chosen on the development sample.
+
+  ![The engine against the joint likelihood](figures/redshift_joint_likelihood.png)
 
   ![The one-line sources with their photometric redshifts as priors](figures/redshift_photoz.png)
 - **Second real test.** For SPT0027-50 (ALMA Band 2 science verification, 76.9–111.0 GHz) the engine gives
@@ -172,7 +194,7 @@ Requires Python ≥ 3.9 with numpy, scipy and matplotlib (astropy too for the ar
 
 ```bash
 python -m pip install -r requirements.txt
-python -m pytest                 # 35 regression tests, synthetic and real, about a minute
+python -m pytest                 # 37 regression tests, synthetic and real, about a minute
 bash reproduce.sh                # every real-data result and every figure from the shipped spectra, 1-2 min
 bash reproduce.sh --full         # also re-run the synthetic studies (about 1.8 hours on 2 cores)
 ```
@@ -273,7 +295,7 @@ tests/                   regression tests
   SPT0027-50. These were the spectra on which the method's bugs were found and fixed
   ([`docs/development-notes.md`](docs/development-notes.md)). A further 23 sources from a second programme of the
   same survey were then run once with a frozen version ([`docs/results.md`](docs/results.md), section 11). That
-  is 41 sources from one survey. About 100 new sources across several surveys would test the score properly.
+  is 42 sources from one survey. About 100 new sources across several surveys would test the score properly.
   Tags `v0.1.0` and `v0.2.0` hold the same engine: the 0.95 threshold, the ±0.006 window, the line list and the
   template priors. `v0.2.0` adds the comparisons of sections 9 and 10 and the plan for the test on the 23
   sources ([`docs/independent-test-plan.md`](docs/independent-test-plan.md)); it is the version that was run.
@@ -296,7 +318,10 @@ tests/                   regression tests
     so is the family of 72 settings built on it. So is the window rule of section 10, which borrows only the
     photometric accuracy that the Sudoku code assumes. The first comparison used one setting of this rule and
     overstated the engine; a rule we did not think of could do better than any of the 72.
-  - **Cross-correlation.** It is our re-implementation of the closest earlier method (Yun et al. 2015), from the
+  - **Joint likelihood.** It is our re-implementation of Bing et al. (2024), from the paper's text, with a
+    family of 16 variants of our own. The luminosities are from our fit of a modified blackbody, and the
+    photometric term is the published photometric redshift, not the paper's fit of galaxy templates.
+  - **Cross-correlation.** It is our re-implementation of an earlier method (Yun et al. 2015), from the
     paper's description: the weights are fitted to the composite of Spilker et al. (2014), the line width is our
     choice, and the paper's photometric redshifts came from a radio-to-millimetre spectral index, not from the
     dust continuum as here ([`docs/results.md`](docs/results.md), sections 9 and 10). The authors' code has not
@@ -333,11 +358,23 @@ tests/                   regression tests
   (doi:10.1093/mnras/stv1963; arXiv:1508.05425), appendix A: redshifts from Redshift Search Receiver spectra on
   the Large Millimeter Telescope, by cross-correlating the spectrum with a template of many transitions weighted
   by their relative strengths in a composite spectrum, with the significance set by shuffling the spectrum and
-  the result multiplied by a photometric-redshift probability. This is the closest earlier method. For a single
+  the result multiplied by a photometric-redshift probability. For a single
   template, the statistic T used here is that cross-correlation with an analytic normalisation; this engine adds
   a bank of templates with a prior, a posterior with a confidence score, and the velocity tolerance
   ([`docs/method.md`](docs/method.md), section 3). A re-implementation is compared with the engine in
   [`docs/results.md`](docs/results.md), section 9; the authors' own code has not been run.
+- Bing et al. 2024, A&A 683, A232 (arXiv:2403.00911), section 4.2: redshifts of NIKA2 sources from NOEMA scans
+  by a joint
+  likelihood. A model spectrum, with the flux of every CO and \[CI\] line predicted from the infrared luminosity
+  at each trial redshift, is compared with the whole spectrum by chi-square, and the result is multiplied by the
+  likelihood of the photometry. With Yun et al. this is the closest earlier method, and the closest of all when
+  the engine is given a photometric redshift. It fixes the line strengths from the photometry where the engine
+  leaves the amplitude free and carries a bank of line ratios; it was applied to four sources, with no
+  confidence threshold. A re-implementation is compared with the engine in
+  [`docs/results.md`](docs/results.md), section 12: once the scatter of its luminosity relations is put into
+  the likelihood, the two do equally well. The authors' own code has not been run.
+- Birkin et al. 2021, MNRAS 501, 3926 (arXiv:2009.03341), section 2.4: the transition of a single detected line
+  chosen with the probability distribution of a photometric redshift, for 20 sources.
 - Spilker et al. 2014, ApJ 785, 149 (arXiv:1403.1667): the composite spectrum of SPT galaxies. Its line
   luminosities (Table 2) set the weights of the cross-correlation re-implemented here.
 - Lupu et al. 2012, ApJ 757, 135: Z-Spec redshift search, combining the S/N of the predicted lines at each trial
@@ -356,7 +393,8 @@ tests/                   regression tests
 
 ## Acknowledgements
 
-This work makes use of the following ALMA data: ADS/JAO.ALMA#2011.0.00025.SV and ADS/JAO.ALMA#2016.1.00672.S. ALMA
+This work makes use of the following ALMA data: ADS/JAO.ALMA#2011.0.00025.SV, ADS/JAO.ALMA#2015.1.00504.S and
+ADS/JAO.ALMA#2016.1.00672.S. ALMA
 is a partnership of ESO (representing its member states), NSF (USA) and NINS (Japan), together with NRC (Canada),
 NSTC and ASIAA (Taiwan), and KASI (Republic of Korea), in cooperation with the Republic of Chile. The Joint ALMA
 Observatory is operated by ESO, AUI/NRAO and NAOJ. The National Radio Astronomy Observatory and Green Bank
@@ -364,7 +402,8 @@ Observatory are facilities of the U.S. National Science Foundation operated unde
 Associated Universities, Inc. (Wording: [ALMA publication
 acknowledgement](https://almascience.eso.org/alma-data/publication-acknowledgement).)
 
-The photometric redshifts are from Table F.1 of Reuter et al. (2020), as posted by the SPT-SMG collaboration at
+The photometric redshifts and the photometry are from Tables F.1 and D.1 of Reuter et al. (2020), as posted by
+the SPT-SMG collaboration at
 [spt-smg/publicdata](https://github.com/spt-smg/publicdata).
 
 This is independent research by Samuel Mindlin. Code, data reduction and documentation were developed with substantial

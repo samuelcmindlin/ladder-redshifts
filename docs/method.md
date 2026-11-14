@@ -146,6 +146,7 @@ All share the same matched-filter front end (`ladder.py`).
 | `sudoku` | A simplified High-z Sudoku rule. Lines are detected at ≥ 5σ. A solution is kept if it explains every detection to within 300 km/s and predicts no line of expected S/N > 8 where the data show < 3σ. The rule answers only when a single solution survives. This is a re-implementation for comparison, not the authors' code. |
 | `naive` | Assumes the detections are adjacent CO rungs and takes the smallest spacing as the fundamental. It fails whenever [CI] sits between rungs, and is kept as a baseline. |
 | `guided` | The `sudoku` rule followed by a guided look for a weaker line. If the 5σ detections leave several solutions, a solution is confirmed when the data reach 3σ (or 4σ) within 150 km/s of a line it predicts and that no detection accounts for. The rule answers when exactly one solution is confirmed. Given a redshift prior, it also answers when one of the remaining solutions holds at least 0.95 of the prior weight among them. It stands for what an observer does by eye and is used in the degradation and photometric-prior tests (section 10). With `ci_prunes=False` a missing \[CI\] line does not count against a solution. |
+| `joint` | A joint likelihood of spectrum and photometry, re-implemented after Bing et al. (2024, section 4.2) in `scripts/compare_joint_likelihood.py`, outside the package. At each trial redshift the flux of every CO and \[CI\] line is predicted from the infrared luminosity, and the model spectrum is compared with the whole spectrum by chi-square. In the form used for the comparison, each line's strength is integrated over the scatter of its luminosity relation. It is given the same prior as the engine and scored with the engine's confidence. Section 10 has the details. |
 | `xcorr` | A template cross-correlation re-implemented after Yun et al. (2015, appendix A): ζ(z) is the sum over all lines of the smoothed spectrum at each line's predicted position, weighted by the line's relative strength, and its S/N is ζ less its mean, over its standard deviation, under random shuffles of the spectrum. The best guess is the redshift of highest S/N, or of highest S/N × p(z) when a prior is given. It has no confidence and never abstains. Used only in the degradation test (section 10). |
 
 ## 5. Ambiguity function
@@ -288,6 +289,29 @@ the draws of one source are not independent.
   compared with the engine's best guess.
 - **Two states of knowledge.** Everything is run with no redshift prior, where each method has only the spectrum,
   and again with the survey prior.
+
+**A joint likelihood after Bing et al. (2024).** `scripts/compare_joint_likelihood.py` is written from section 4.2
+of the paper; no code is published.
+
+- **The model.** For a trial redshift z and infrared luminosity L_IR(z), each line of the paper's Table 7 has
+  L′ = 10^((log L_IR − A) / N), which becomes a flux through the relation of Solomon et al. (1997) and a Gaussian
+  of 500 km/s FWHM on the 50 km/s grid. The log-likelihood relative to no lines is Σ (m d − m²/2) / σ² over the
+  observed pixels, with d the continuum-subtracted flux and m the model. This is the paper's exp(−χ²/2).
+- **The luminosity.** At each redshift a modified blackbody (emissivity index 2, optically thick below 100 μm,
+  temperature free) is fitted to the photometry of Reuter et al. (2020, Table D.1) at rest wavelengths of 50 μm
+  or more, with 10% added to the errors, and integrated over 8–1000 μm. It is the apparent luminosity; the line
+  fluxes are apparent too. The paper fits galaxy templates instead.
+- **The scatter.** The paper fixes each line at its predicted strength. The variant used for the comparison
+  integrates each line's strength factor s over a log-normal of the relation's scatter:
+  ∫ p(s) exp(s B − s² A / 2) ds, with B = Σ m d / σ² and A = Σ m² / σ² for that line. For a line measured above
+  4σ the integrand is far narrower than any fixed grid in log s, so the nodes are placed across the data's own
+  Gaussian in s; otherwise across the log-normal. Against direct numerical integration the result is right to
+  0.01 in the log, except where a line predicted above an S/N of 40 is absent, where the value is below −25.
+- **The photometric term and the confidence.** The paper multiplies by the likelihood of its template fit and
+  reports the maximum. Here the term is the same prior the engine gets, and the likelihood goes through
+  `Engine.posterior`, so the confidence and its threshold are the engine's.
+- **Sixteen variants,** and how one is chosen on the development sample and then fixed:
+  [`results.md`](results.md), section 12.
 
 **The cross-correlation, in detail.** `ladder.cross_correlation` is written from the description in Yun et al.
 (2015), not from their code, and differs from it in three ways.

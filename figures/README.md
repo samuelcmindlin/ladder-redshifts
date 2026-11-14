@@ -41,6 +41,12 @@
 - **E.** Calibration.
 - **F.** Redshift deserts.
 
+`redshift_joint_likelihood.png` (made by `scripts/compare_joint_likelihood.py plot`): real multi-line spectra
+with noise added, both samples, with no prior and with each source's photometric redshift. Three curves per
+panel: the engine; a joint spectrum-and-photometry likelihood after Bing et al. (2024) in the variant chosen on
+the development sample; and the same with line strengths fixed as the paper writes it. Each panel gives the
+number of draws in which a different redshift was returned with confidence.
+
 ## `independent/`: the 23 sources of the independent test
 
 | Figure | What it shows | Made by |

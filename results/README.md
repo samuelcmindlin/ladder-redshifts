@@ -1,6 +1,6 @@
 # Results files
 
-Every file here is written by a module of `ladder_redshifts` or, for three, by a script. `reproduce.sh` regenerates
+Every file here is written by a module of `ladder_redshifts` or, for a few, by a script. `reproduce.sh` regenerates
 the fast ones, and `reproduce.sh --full` regenerates all of them except `redshift_sudoku_comparison.json`, which
 needs a copy of the High-z Sudoku code, and `redshift_photoz_calibration.json`, which needs the SPT collaboration's
 posted tables. [`docs/results.md`](../docs/results.md) has the tables drawn from these
@@ -25,16 +25,26 @@ files.
 | `redshift_photoz.json` | Each source's published photometric redshift as its prior, on the 19 real spectra that have one. For each source and each of three versions of the prior (2020 as published, 2024 revision, 2020 recalibrated): centre, width and offset from the published z; the engine's best z, confidence, `p_published` and candidates; the guided rule and the window rule, each with a missing \[CI\] line counted (`ci_counted`) and with CO lines only (`co_only`); the rule solution the prior favours (`pick`); the cross-correlation × p(z). `summary` counts outcomes for the one-line and the multi-line sources, and under `all` gives the number of confident answers, how many were wrong, and the exact 95% upper bound on the wrong-answer rate. | `photoz` |
 | `redshift_photoz_calibration.json` | How well the photometric redshifts of Reuter et al. (2020, Table F.1) match the spectroscopic ones, for all 81 SPT sources, the 60 outside this sample and the 21 in it, for the 2020 values and the 2024 revision; the shift and widening used for the recalibrated prior; the SPT0452-50 entry; SHA-256 of the two posted tables it was computed from. | `scripts/photoz_calibration.py` (needs the posted tables) |
 
+`redshift_joint_likelihood.json` and `redshift_joint_likelihood_pooled.json` are written by
+`scripts/compare_joint_likelihood.py` ([`docs/results.md`](../docs/results.md), section 12):
+
+| File | Contents | Written by |
+|---|---|---|
+| `redshift_joint_likelihood.json` | The engine and 16 variants of a joint spectrum-and-photometry likelihood after Bing et al. (2024) on the 19 real spectra (`as_observed`: redshift, confidence and whether correct, for three priors, and the predicted and measured strength of each line at the published redshift) and on the 5,600 noise-added draws of `redshift_degradation.json` (`noise_added`: the variant chosen and why, a summary, and the raw counts of correct and wrong answers per source, level, variant and confidence threshold). | `compare_joint_likelihood.py run` (15 min on 2 cores) |
+| `redshift_joint_likelihood_pooled.json` | Both samples together: answers on the 42 real spectra, totals over the 9,600 draws, and for how many sources the engine is ahead of or behind the chosen variant at three noise levels. | `compare_joint_likelihood.py plot` |
+
 ## `independent/`: the test on 23 sources the engine was not developed on
 
 Written by the same modules with `LADDER_REDSHIFTS_SAMPLE=independent`, in the single run of 14 November 2026
-([`docs/results.md`](../docs/results.md), section 11). `reproduce.sh` does not touch this folder.
+([`docs/results.md`](../docs/results.md), section 11). `reproduce.sh` does not touch this folder, except that
+`reproduce.sh --full` re-runs `redshift_joint_likelihood.json`.
 
 | File | Contents | Written by |
 |---|---|---|
 | `redshift_real_batch.json`, `.csv` | As above, for the 23 spectra of `data/independent/`. The `route` field records that they were made from the cut-outs. | `batch_real` |
 | `redshift_photoz.json` | As above, for the same spectra. | `photoz` |
 | `redshift_degradation.json`, `redshift_rule_family.csv` | The noise-added test on the five multi-line sources that show two lines at 5σ. `as_observed` covers all 23 sources. The rule settings named under `chosen` there are re-chosen on this sample; the two settings chosen beforehand are in `report.json`. | `scripts/independent_noise_test.py` |
+| `redshift_joint_likelihood.json` | As the file of that name above, for the 23 spectra and the 4,000 draws of this sample, run once on 14 November 2026 with the variant chosen on the development sample. | `compare_joint_likelihood.py run` (10 min) |
 | `report.json` | The outcomes fixed in the plan: confident answers and wrong ones with their bounds, counts by group, the engine against the two rule settings chosen beforehand (as observed and with noise added, per source), and one row per source. | `scripts/independent_report.py` |
 
 To re-run from the saved spectra (the numbers are reproduced; `route` then reads "saved spectrum"):
